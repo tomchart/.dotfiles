@@ -5,6 +5,7 @@ echo "Making symlinks..."
 ln -sf ~/dotfiles/.cmtm.sh ~
 ln -sf ~/dotfiles/.gitconfig ~
 ln -sf ~/dotfiles/.tmux.conf ~
+ln -sf ~/dotfiles/.vimrc ~
 
 echo "Installing zsh, tmux, neovim..."
 pkgs='zsh tmux neovim'
