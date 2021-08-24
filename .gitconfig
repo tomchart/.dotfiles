@@ -15,6 +15,7 @@
 	ll = log --oneline
 	last = log -1 HEAD --stat
 	cm = commit -m
+    cma - commit -ma
 	rv = remote -v
 	d = diff
 	dv = difftool -t vimdiff -y
