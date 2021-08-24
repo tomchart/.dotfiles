@@ -1,0 +1,28 @@
+[user]
+	email = tom@reventus.co.uk
+	name = Tom Hart
+[core]
+	editor = vim
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[alias]
+	p = push
+	s = status
+	st = status -sb
+	ll = log --oneline
+	last = log -1 HEAD --stat
+	cm = commit -m
+	rv = remote -v
+	d = diff
+	dv = difftool -t vimdiff -y
+	gl = config --global -l
+	se = !git rev-list --all | xargs git grep -F
+	co = checkout
+	lg = log --graph --decorate --oneline
+[help]
+	autocorrect = 20
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
