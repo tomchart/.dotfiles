@@ -138,6 +138,6 @@ alias nv="nvim"
 alias tm="tmux"
 alias tma="tmux attach"
 alias tmd="tmux detach"
-alias cmtm="~/./cmtm.sh"
+alias cmtm="~/./.cmtm.sh"
 
 cd ~
