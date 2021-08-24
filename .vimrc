@@ -300,18 +300,18 @@ if has("autocmd")
 endif
 
 " marcus binds
-    imap jj <esc>
+imap jj <esc>
 
-    nmap gk gg
-    vmap gk gg
-    nmap gj G
-    vmap gj G
-    nmap gh ^
-    vmap gh ^
-    nmap gl $
-    vmap gl g_
+nmap gk gg
+vmap gk gg
+nmap gj G
+vmap gj G
+nmap gh ^
+vmap gh ^
+nmap gl $
+vmap gl g_
 
-    nmap Y y$
+nmap Y y$
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
