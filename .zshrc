@@ -123,8 +123,6 @@ else
     start_agent;
 fi
 
-export PYTHONPATH="${PYTHONPATH}:/home/tom/local/.bin:/home/tom"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 function cmstatus() {
