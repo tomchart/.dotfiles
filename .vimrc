@@ -300,18 +300,18 @@ if has("autocmd")
 endif
 
 " marcus binds
-    map('i', 'jj', '<esc>')
+    imap jj <esc>
 
-    map('n', 'gk', 'gg')
-    map('v', 'gk', 'gg')
-    map('n', 'gj', 'G')
-    map('v', 'gj', 'G')
-    map('n', 'gh', '^')
-    map('v', 'gh', '^')
-    map('n', 'gl', '$')
-    map('v', 'gl', 'g_')
+    nmap gk gg
+    vmap gk gg
+    nmap gj G
+    vmap gj G
+    nmap gh ^
+    vmap gh ^
+    nmap gl $
+    vmap gl g_
 
-    map('n', 'Y', 'y$')
+    nmap Y y$
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
