@@ -115,6 +115,8 @@ function cmstatus() {
 		print $NF,$9,$10,$11,status
 	}'
 }
+# Pretty print the path
+alias path='echo $PATH | tr -s ":" "\n"'
 
 alias sshv="ssh Version6@10.50.4.97"
 alias s="ssh tom@192.168.48.59 -p 988"
@@ -126,8 +128,11 @@ alias mbuild='python3 -m mkdocs build'
 alias cmp='docker pause sendmessages deletefiles trackurls updatestatus > /dev/null;cmstatus'
 alias cmu='docker unpause sendmessages deletefiles trackurls updatestatus > /dev/null;cmstatus'
 alias uu="sudo apt update && sudo apt upgrade -y"
-alias cmtm="~/cm-tm/./cm-tmux.sh"
 alias nv="nvim"
+
+alias tm="tmux"
 alias tma="tmux attach"
+alias tmd="tmux detach"
+alias cmtm="~/cm-tm/./cm-tmux.sh"
 
 cd ~
