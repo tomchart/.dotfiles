@@ -3,8 +3,9 @@ sudo mkdir ~/.dotfiles
 errors_path=~/.dotfiles/errors
 
 echo "Making symlinks..."
-ln -s ~/dotfiles/.zshrc ~/.zshrc
-ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/dotfiles/.zshrc ~
+ln -s ~/dotfiles/.gitconfig ~
+ln -s ~/dotfiles/tmux.con ~
 
 
 
