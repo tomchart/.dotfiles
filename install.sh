@@ -5,7 +5,6 @@ echo "Making symlinks..."
 ln -sf ~/dotfiles/.cmtm.sh ~
 ln -sf ~/dotfiles/.gitconfig ~
 ln -sf ~/dotfiles/.tmux.conf ~
-ln -sf ~/dotfiles/.zshrc ~
 
 echo "Installing zsh, tmux, neovim..."
 pkgs='zsh tmux neovim'
@@ -29,3 +28,5 @@ chsh -s $(which zsh) 2> >(tee $errors_path)
 
 echo "Done. Starting zsh..."
 exec zsh
+ln -sf ~/dotfiles/.zshrc ~
+source ~/.zshrc
