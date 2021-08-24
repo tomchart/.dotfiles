@@ -3,11 +3,13 @@ sudo mkdir ~/.dotfiles
 errors_path=~/.dotfiles/errors
 
 echo "Making symlinks..."
-ln -s ~/.zshrc /mnt/c/users/admin/.dotfiles/.zshrc
+ln -s ~/dotfiles/.zshrc ~/.zshrc
+ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 
 
-echo "Installing zsh, tmux..."
-pkgs='zsh tmux'
+
+echo "Installing zsh, tmux, neovim..."
+pkgs='zsh tmux neovim'
 for pkg in $pkgs; do
     sudo apt install -y $pkg 2> >(tee $errors_path)
 done
