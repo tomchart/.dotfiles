@@ -2,9 +2,10 @@
 errors_path=~/dotfiles/errors
 
 echo "Making symlinks..."
-ln -s ~/dotfiles/.* ~
-
-
+ln -s ~/dotfiles/.cmtm.sh ~
+ln -s ~/dotfiles/.gitconfig ~
+ln -s ~/dotfiles/.tmux.conf ~
+ln -s ~/dotfiles/.zshrc ~
 
 echo "Installing zsh, tmux, neovim..."
 pkgs='zsh tmux neovim'
