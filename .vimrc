@@ -299,6 +299,18 @@ if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
 
+" marcus binds
+    map('i', 'jj', '<esc>')
+
+    map('n', 'gk', 'gg')
+    map('v', 'gk', 'gg')
+    map('n', 'gj', 'G')
+    map('v', 'gj', 'G')
+    map('n', 'gh', '^')
+    map('v', 'gh', '^')
+    map('n', 'gl', '$')
+    map('v', 'gl', 'g_')
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
