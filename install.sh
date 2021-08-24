@@ -4,7 +4,7 @@ errors_path=~/dotfiles/errors
 echo "Making symlinks..."
 ln -s ~/dotfiles/.zshrc ~
 ln -s ~/dotfiles/.gitconfig ~
-ln -s ~/dotfiles/tmux.conf ~
+ln -s ~/dotfiles/.tmux.conf ~
 
 
 
