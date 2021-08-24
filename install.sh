@@ -1,6 +1,5 @@
 #!/bin/bash
-sudo mkdir ~/.dotfiles
-errors_path=~/.dotfiles/errors
+errors_path=~/dotfiles/errors
 
 echo "Making symlinks..."
 ln -s ~/dotfiles/.zshrc ~
