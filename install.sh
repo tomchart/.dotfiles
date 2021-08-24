@@ -29,5 +29,3 @@ chsh -s $(which zsh) 2> >(tee $errors_path)
 
 echo "Done. Starting zsh..."
 exec zsh
-ln -sf ~/dotfiles/.zshrc ~
-source ~/.zshrc
