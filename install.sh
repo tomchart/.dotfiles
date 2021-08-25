@@ -5,7 +5,8 @@ echo "Making symlinks..."
 ln -isv ~/dotfiles/.cmtm.sh ~
 ln -isv ~/dotfiles/.gitconfig ~
 ln -isv ~/dotfiles/.tmux.conf ~
-ln -isv ~/dotfiles/.vimrc ~
+ln -isv ~/dotfiles/init.vim ~/.config/nvim
+exit
 
 echo "Installing zsh, tmux, neovim..."
 pkgs='zsh tmux neovim'
@@ -18,7 +19,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 
 
 echo "Installing Oh My Zsh..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended 2> >(tee $errors_path)
+sh -c "$(curl-fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended 2> >(tee $errors_path)
 
 echo "Installing Oh My Zsh plugins: fast-syntax-highlighting, zsh-autosuggestions..."
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions 2> >(tee $errors_path)

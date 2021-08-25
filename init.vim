@@ -1,3 +1,22 @@
+
+" being loading plugins
+call plug#begin('~/.local/share/nvim/plugged')
+
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+Plug 'junegunn/vim-easy-align'
+Plug 'justinmk/vim-sneak'
+Plug 'tpope/vim-commentary'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+Plug 'ryanoasis/vim-devicons' " vimscript
+Plug 'glepnir/dashboard-nvim'
+Plug 'dracula/vim', { 'as': 'dracula' } 
+
+
+" Initialize plugin system
+call plug#end()
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer:
 "       Amir Salihefendic — @amix3k
@@ -312,6 +331,12 @@ nmap gl $
 vmap gl g_
 
 nmap Y y$
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking

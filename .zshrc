@@ -134,6 +134,7 @@ alias cmp='docker pause sendmessages deletefiles trackurls updatestatus > /dev/n
 alias cmu='docker unpause sendmessages deletefiles trackurls updatestatus > /dev/null;cmstatus'
 alias uu="sudo apt update && sudo apt upgrade -y"
 alias nv="nvim"
+alias vi="nvim"
 
 alias tm="tmux"
 alias tma="tmux attach"
