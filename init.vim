@@ -1,21 +1,4 @@
 
-" being loading plugins
-call plug#begin('~/.local/share/nvim/plugged')
-
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'junegunn/vim-easy-align'
-Plug 'justinmk/vim-sneak'
-Plug 'tpope/vim-commentary'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
-Plug 'ryanoasis/vim-devicons' " vimscript
-Plug 'glepnir/dashboard-nvim'
-Plug 'dracula/vim', { 'as': 'dracula' } 
-
-
-" Initialize plugin system
-call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer:
@@ -78,12 +61,6 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
-" Avoid garbled characters in Chinese language windows OS
-let $LANG='en'
-set langmenu=en
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
-
 " Turn on the Wild menu
 set wildmenu
 
@@ -97,9 +74,6 @@ endif
 
 "Always show current position
 set ruler
-
-" Height of the command bar
-set cmdheight=1
 
 " A buffer becomes hidden when it is abandoned
 set hid
@@ -173,8 +147,6 @@ if has("gui_running")
     set guitablabel=%M\ %t
 endif
 
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -366,6 +338,8 @@ map <leader>x :e ~/buffer.md<cr>
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
+" Set encoding
+set encoding=UTF-8
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
@@ -419,3 +393,21 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
+
+set guifont=Hack\ 10
+
+" being loading plugins
+call plug#begin('~/.local/share/nvim/plugged')
+
+Plug 'junegunn/vim-easy-align'
+Plug 'justinmk/vim-sneak'
+Plug 'tpope/vim-commentary'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+Plug 'glepnir/dashboard-nvim'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'ryanoasis/vim-devicons' 
+
+" Initialize plugin system
+call plug#end()
