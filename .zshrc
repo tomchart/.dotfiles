@@ -158,5 +158,6 @@ alias tm="tmux"
 alias tma="tmux attach"
 alias tmd="tmux detach"
 alias cmtm="~/./.cmtm.sh"
+alias tms="~/dotfiles/./tmux-session-setup.sh"
 
 cd ~
