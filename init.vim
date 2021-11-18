@@ -405,9 +405,11 @@ Plug 'tpope/vim-commentary'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'glepnir/dashboard-nvim'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'ryanoasis/vim-devicons' 
+Plug 'jdhao/better-escape.vim'
+" Plug 'ryanoasis/vim-devicons' 
 
 " Initialize plugin system
 call plug#end()
