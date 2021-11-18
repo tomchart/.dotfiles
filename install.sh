@@ -6,6 +6,7 @@ ln -isv ~/dotfiles/.cmtm.sh ~
 ln -isv ~/dotfiles/.gitconfig ~
 ln -isv ~/dotfiles/.tmux.conf ~
 ln -isv ~/dotfiles/init.lua ~/.config/nvim
+ln -isv ~/dotfiles/lua ~/.config/nvim
 exit
 
 echo "Installing zsh, tmux, neovim..."
