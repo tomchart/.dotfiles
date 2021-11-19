@@ -21,6 +21,9 @@ o.smartcase = true
 o.ignorecase = true
 o.termguicolors = true
 o.cursorline = true
+o.swapfile = false
+o.splitbelow = true
+o.splitright = true
 
 
 -----------------------------------------------------

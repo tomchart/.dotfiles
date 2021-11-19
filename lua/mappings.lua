@@ -29,7 +29,7 @@ map('i', 'jj', '<esc>')
 map('n', '<leader><cr>', ':noh<cr>')
 
 -- some comfort binds
--- thanks again marcus, these are tight as fuck
+-- (thanks again marcus, these are tight as fuck)
 map('n', 'gk', 'gg')
 map('v', 'gk', 'gg')
 map('n', 'gj', 'G')
@@ -38,6 +38,21 @@ map('n', 'gh', '^')
 map('v', 'gh', '^')
 map('n', 'gl', '$')
 map('v', 'gl', 'g_')
+
+-- move & manipulate windows
+map('n', '<c-j>', '<c-w>j')
+map('n', '<c-k>', '<c-w>k')
+map('n', '<c-l>', '<c-w>l')
+map('n', '<c-h>', '<c-w>h')
+map('n', '<c-w>j', '<c-w>J')
+map('n', '<c-w>k', '<c-w>K')
+map('n', '<c-w>l', '<c-w>L')
+map('n', '<c-w>h', '<c-w>H')
+map('n', '<c-w><', '<c-w>5<')
+map('n', '<c-w>>', '<c-w>5>')
+map('n', '<c-w>-', '<c-w>5-')
+map('n', '<c-w>=', '<c-w>5+')
+map('n', '<c-w>e', '<c-w>=')
 
 -- copy to end of line from current pos with Y
 map('n', 'Y', 'y$')
