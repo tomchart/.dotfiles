@@ -15,6 +15,7 @@ return require('packer').startup(function()
         }
 
         -- UI
+        use {'dracula/vim', as = 'dracula'}
         use 'machakann/vim-highlightedyank'
         use 'lukas-reineke/indent-blankline.nvim'
         use 'glepnir/dashboard-nvim'
@@ -44,8 +45,9 @@ return require('packer').startup(function()
                 requires = { {'nvim-lua/plenary.nvim'} }
         }
 
-        -- Theme
-        use {'dracula/vim', as = 'dracula'}
+        -- Text objects
+        use 'windwp/nvim-autopairs'
+
 end)
 
 
