@@ -16,8 +16,12 @@ return require('packer').startup(function()
 	use 'tpope/vim-surround'
 	use 'tpope/vim-fugitive'
     use {
+	"SmiteshP/nvim-gps",
+	requires = "nvim-treesitter/nvim-treesitter"
+    }
+    use {
         'famiu/feline.nvim',
-        config = [[ require 'plugins.statusline' ]]
+        config = [[ require 'plugins.feline' ]]
     }
     use {
         'bkad/CamelCaseMotion',
