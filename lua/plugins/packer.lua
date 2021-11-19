@@ -4,7 +4,15 @@ local cmd = vim.cmd
 cmd('autocmd BufWritePost packer.lua source <afile> | PackerCompile')
 
 return require('packer').startup(function()
-            use 'wbthomason/packer.nvim'
+        -- Packer
+        use 'wbthomason/packer.nvim'
+
+        -- Syntax
+        use {
+                'nvim-treesitter/nvim-treesitter',
+                run = ':TSUpdate',
+                config = [[ require 'plugins.nvim_treesitter' ]],
+        }
 
         -- UI
         use 'machakann/vim-highlightedyank'
