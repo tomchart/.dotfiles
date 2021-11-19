@@ -16,6 +16,10 @@ return require('packer').startup(function()
 	use 'tpope/vim-surround'
 	use 'tpope/vim-fugitive'
     use {
+        'famiu/feline.nvim',
+        config = [[ require 'plugins.statusline' ]]
+    }
+    use {
         'bkad/CamelCaseMotion',
 		config = [[ require 'plugins.camelcasemotion' ]]
     }
