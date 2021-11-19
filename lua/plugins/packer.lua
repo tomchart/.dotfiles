@@ -15,6 +15,10 @@ return require('packer').startup(function()
 	use 'tpope/vim-commentary'
 	use 'tpope/vim-surround'
 	use 'tpope/vim-fugitive'
+    use {
+        'bkad/CamelCaseMotion',
+		config = [[ require 'plugins.camelcasemotion' ]]
+    }
 	use {
 		'kyazdani42/nvim-tree.lua',
 		config = [[ require 'plugins.nvim_tree' ]],
