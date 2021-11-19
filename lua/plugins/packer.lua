@@ -19,8 +19,13 @@ return require('packer').startup(function()
 		'kyazdani42/nvim-tree.lua',
 		config = [[ require 'plugins.nvim_tree' ]],
 		requires = 'kyazdani42/nvim-web-devicons',
-    }
+	}
+    	use {
+		'nvim-telescope/telescope.nvim',
+		requires = { {'nvim-lua/plenary.nvim'} }
+	}
 
+	-- Theme
 	use {'dracula/vim', as = 'dracula'}
 end)
 
