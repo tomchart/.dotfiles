@@ -71,4 +71,7 @@ map('n', '<c-b>', '<cmd>Telescope buffers<cr>')
 map('n', '<c-f>', '<cmd>Telescope current_buffer_fuzzy_find<cr>')
 map('n', '<c-g>', '<cmd>Telescope live_grep<cr>')
 
+-- nvim-bufferline.lua
+map('n', 'L', '<cmd>BufferLineCycleNext<cr>')
+map('n', 'H', '<cmd>BufferLineCyclePrev<cr>')
 

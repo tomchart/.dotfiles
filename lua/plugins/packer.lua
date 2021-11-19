@@ -19,7 +19,11 @@ return require('packer').startup(function()
         use 'machakann/vim-highlightedyank'
         use 'lukas-reineke/indent-blankline.nvim'
         use 'glepnir/dashboard-nvim'
-        use 'airblade/vim-gitgutter'
+        use {
+                'akinsho/bufferline.nvim',
+                config = [[ require 'plugins.nvim_bufferline' ]],
+                requires = 'kyazdani42/nvim-web-devicons'
+        }
         use {
                 'airblade/vim-gitgutter',
                 config = [[ require 'plugins.vim_gitgutter' ]],
