@@ -28,6 +28,7 @@ o.splitbelow = true
 o.splitright = true
 o.showtabline = 2
 o.tabstop = 4
+vim.wo.colorcolumn = "99999"    -- fix annoying indent artifacts bug
 
 
 -----------------------------------------------------
