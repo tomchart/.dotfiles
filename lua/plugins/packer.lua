@@ -4,41 +4,35 @@ local cmd = vim.cmd
 cmd('autocmd BufWritePost packer.lua source <afile> | PackerCompile')
 
 return require('packer').startup(function()
-	use 'wbthomason/packer.nvim'
+            use 'wbthomason/packer.nvim'
 
-	-- UI
-	use 'machakann/vim-highlightedyank'
+            -- UI
+            use 'machakann/vim-highlightedyank'
 
-	-- Command
-	use 'justinmk/vim-sneak'
-	use 'tpope/vim-eunuch'
-	use 'tpope/vim-commentary'
-	use 'tpope/vim-surround'
-	use 'tpope/vim-fugitive'
-    use {
-	"SmiteshP/nvim-gps",
-	requires = "nvim-treesitter/nvim-treesitter"
-    }
-    use {
-        'famiu/feline.nvim',
-        config = [[ require 'plugins.feline' ]]
-    }
-    use {
-        'bkad/CamelCaseMotion',
-		config = [[ require 'plugins.camelcasemotion' ]]
-    }
-	use {
-		'kyazdani42/nvim-tree.lua',
-		config = [[ require 'plugins.nvim_tree' ]],
-		requires = 'kyazdani42/nvim-web-devicons',
-	}
-    	use {
-		'nvim-telescope/telescope.nvim',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
+            -- Command
+            use 'justinmk/vim-sneak'
+            use 'tpope/vim-eunuch'
+            use 'tpope/vim-commentary'
+            use 'tpope/vim-surround'
+            use 'tpope/vim-fugitive'
+            use 'lukas-reineke/indent-blankline.nvim'
+            use 'glepnir/dashboard-nvim'
+            use {
+                'bkad/CamelCaseMotion',
+                config = [[ require 'plugins.camelcasemotion' ]]
+            }
+            use {
+                'kyazdani42/nvim-tree.lua',
+                config = [[ require 'plugins.nvim_tree' ]],
+                requires = 'kyazdani42/nvim-web-devicons',
+            }
+            use {
+                'nvim-telescope/telescope.nvim',
+                requires = { {'nvim-lua/plenary.nvim'} }
+            }
 
-	-- Theme
-	use {'dracula/vim', as = 'dracula'}
+            -- Theme
+            use {'dracula/vim', as = 'dracula'}
 end)
 
 
