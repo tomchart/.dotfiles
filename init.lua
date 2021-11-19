@@ -17,6 +17,8 @@ cmd('colorscheme dracula')
 -----------------------------------------------------
 -- options
 -----------------------------------------------------
+o.expandtab = true
+o.mouse = 'a'
 o.smartcase = true
 o.ignorecase = true
 o.termguicolors = true
@@ -24,6 +26,8 @@ o.cursorline = true
 o.swapfile = false
 o.splitbelow = true
 o.splitright = true
+o.showtabline = 2
+o.tabstop = 4
 
 
 -----------------------------------------------------
