@@ -5,7 +5,7 @@ echo "Making symlinks..."
 ln -isv ~/dotfiles/.cmtm.sh ~
 ln -isv ~/dotfiles/.gitconfig ~
 ln -isv ~/dotfiles/.tmux.conf ~
-mkdir -pv ~/.config/nvim && ln -isv ~/.dotfiles/init.lua ~/.config/nvim && ln -isv ~/.dotfiles/lua ~/.config/nvim
+mkdir -pv ~/.config/nvim && ln -isv ~/dotfiles/init.lua ~/.config/nvim && ln -isv ~/dotfiles/lua ~/.config/nvim
 exit
 
 echo "Installing zsh, tmux, neovim..."
