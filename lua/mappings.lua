@@ -75,3 +75,5 @@ map('n', '<c-g>', '<cmd>Telescope live_grep<cr>')
 map('n', 'L', '<cmd>BufferLineCycleNext<cr>')
 map('n', 'H', '<cmd>BufferLineCyclePrev<cr>')
 
+-- nvim-lspconfig
+map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')

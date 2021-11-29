@@ -14,11 +14,16 @@ return require('packer').startup(function()
                 config = [[ require 'plugins.nvim_treesitter' ]],
         }
 
+        -- Completion
+        use {
+                'neovim/nvim-lspconfig',
+                config = [[ require 'plugins.nvim_lspconfig' ]],
+        }
+
         -- UI
         use {'dracula/vim', as = 'dracula'}
         use 'machakann/vim-highlightedyank'
         use 'lukas-reineke/indent-blankline.nvim'
-        use 'glepnir/dashboard-nvim'
         use {
                 'akinsho/bufferline.nvim',
                 config = [[ require 'plugins.nvim_bufferline' ]],

@@ -138,6 +138,8 @@ function cmstatus() {
 		print $NF,$9,$10,$11,status
 	}'
 }
+
+
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
