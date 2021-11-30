@@ -140,6 +140,13 @@ function cmstatus() {
 }
 
 
+# Nodejs fix for WSL
+# from https://github.com/nodejs/help/wiki/Installation#how-to-install-nodejs-via-binary-archive-on-linux
+VERSION=v16.13.0
+DISTRO=linux-x64
+export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
+
+
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
