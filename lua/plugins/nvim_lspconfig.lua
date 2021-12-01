@@ -25,9 +25,22 @@ lspconfig.html.setup{}
 
 lspconfig.sqlls.setup{
         cmd = {"sql-language-server", "up", "--method", "stdio", "--debug"},
-        -- args = {"up", "--method", "stdio"},
         filetypes = {"sql", "mysql"},
         root_dir = function(fname)
                 return fn.getcwd()
         end,
+        settings = {
+                sqlLanguageServer = {
+                        connections = {
+                                name = "sql-language-server",
+                                adapter = "mysql",
+                                host = "172.23.128.1",
+                                port = 13337,
+                                user = "wsl",
+                                password = "${env:DB_PASSWORD}",
+                                database = "debtrecovery",
+                                projectPaths = {"/home/tom/New-Workflow-Processes", "/home/tom/reventus", "/home/tom/contactme"},
+                        }
+                }
+        }
 }
