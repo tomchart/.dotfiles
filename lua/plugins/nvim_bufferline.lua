@@ -33,7 +33,7 @@ bufferline.setup{
                         end
                         return s
                 end,
-                show_buffer_close_icons = true,
+                show_close_icon = true,
                 separator_style = "slant",
                 offsets = {{filetype = "NvimTree", text = "File Explorer"}} 
 
