@@ -13,7 +13,10 @@ bufferline.setup{
                 },
         },
         options = {
-                middle_mouse_command = "bdelete! %d",
+                middle_mouse_command = function(bufnum)
+                        require('bufdelete').bufdelete(bufnum)
+                end,
+                right_mouse_command = "vertical sbuffer %d",
                 indicator_icon = '▎',
                 buffer_close_icon = '',
                 modified_icon = '●',
@@ -33,7 +36,8 @@ bufferline.setup{
                         end
                         return s
                 end,
-                show_close_icon = true,
+                show_buffer_close_icons = false,
+                show_close_icon = false,
                 separator_style = "slant",
                 offsets = {{filetype = "NvimTree", text = "File Explorer"}} 
 

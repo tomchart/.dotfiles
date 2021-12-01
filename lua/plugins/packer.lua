@@ -30,8 +30,10 @@ return require('packer').startup(function()
 
         -- UI
         use {'dracula/vim', as = 'dracula'}
+        use 'onsails/lspkind-nvim'
         use 'machakann/vim-highlightedyank'
         use 'lukas-reineke/indent-blankline.nvim'
+        use 'famiu/bufdelete.nvim'
         use {
                 'akinsho/bufferline.nvim',
                 config = [[ require 'plugins.nvim_bufferline' ]],
@@ -61,9 +63,20 @@ return require('packer').startup(function()
                 'nvim-telescope/telescope.nvim',
                 requires = { {'nvim-lua/plenary.nvim'} }
         }
+        use 'hrsh7th/cmp-nvim-lsp'
+        use {
+                'hrsh7th/nvim-cmp',
+                config = [[ require 'plugins.nvim_cmp']],
+        }
+        use 'hrsh7th/cmp-vsnip'
+        use 'hrsh7th/vim-vsnip'
+        
 
         -- Text objects
-        use 'windwp/nvim-autopairs'
+       use {
+                'windwp/nvim-autopairs',
+                config = [[ require 'plugins.nvim_autopairs' ]],
+        }
 
 end)
 
