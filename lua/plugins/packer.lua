@@ -30,13 +30,20 @@ return require('packer').startup(function()
 
         -- UI
         use {'dracula/vim', as = 'dracula'}
+        use {
+                'glepnir/dashboard-nvim',
+                config = [[ require 'plugins.dashboard-nvim']]
+        }
         use 'onsails/lspkind-nvim'
         use {
                 'ray-x/lsp_signature.nvim',
                 config = [[ require 'plugins.lsp_signature' ]],
         }
         use 'machakann/vim-highlightedyank'
-        use 'lukas-reineke/indent-blankline.nvim'
+        use {
+                'lukas-reineke/indent-blankline.nvim',
+                config = [[ require 'plugins.indent-blankline']]
+        }
         use 'famiu/bufdelete.nvim'
         use {
                 'akinsho/bufferline.nvim',
