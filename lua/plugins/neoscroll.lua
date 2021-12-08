@@ -1,6 +1,8 @@
 require('neoscroll').setup(
         {
                 hide_cursor = true,
+                mappings = {'<C-u>', '<C-d>', '<C-b>', '<C-f>',
+                '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},
         }
 )
 
