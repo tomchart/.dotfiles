@@ -54,6 +54,14 @@ return require('packer').startup(function()
                 'airblade/vim-gitgutter',
                 config = [[ require 'plugins.vim_gitgutter' ]],
         }
+        use {
+                'luukvbaal/stabilize.nvim',
+                config = [[ require 'plugins.stabilize']]
+        }
+        use {
+                'karb94/neoscroll.nvim',
+                config = [[ require 'plugins.neoscroll']]
+        }
 
         -- Command
         use 'justinmk/vim-sneak'
