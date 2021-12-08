@@ -14,6 +14,10 @@ lspconfig.pyright.setup{
         autoSearchPaths = true,
         diagnosticMode = "workspace",
         useLibraryCodeForTypes = true,
+        pythonPath = "/usr/bin/python",
+        extraPaths = {
+                "/home/tom/.local/lib/python3.7/site-packages",
+                                }
        },
       },
     },
