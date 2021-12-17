@@ -30,7 +30,7 @@ o.showtabline = 2
 o.tabstop = 4
 o.number = true
 vim.wo.colorcolumn = "99999"    -- fix annoying indent artifacts bug
-vim.lsp.set_log_level("debug")
+-- vim.lsp.set_log_level("debug")
 
 
 -----------------------------------------------------
