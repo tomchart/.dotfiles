@@ -27,6 +27,18 @@ return require('packer').startup(function()
                 'neovim/nvim-lspconfig',
                 config = [[ require 'plugins.nvim_lspconfig' ]],
         }
+        use {
+                'hrsh7th/nvim-cmp',
+                config = function()
+                    require 'plugins.cmp'
+                end,
+                requires = {
+                    use 'hrsh7th/vim-vsnip',
+                    use 'hrsh7th/cmp-vsnip',
+                    use 'hrsh7th/cmp-nvim-lsp',
+                    use 'hrsh7th/cmp-nvim-lua'
+                },
+        }
 
         -- UI
         use {'dracula/vim', as = 'dracula'}
@@ -91,13 +103,7 @@ return require('packer').startup(function()
                 'nvim-telescope/telescope.nvim',
                 requires = { {'nvim-lua/plenary.nvim'} }
         }
-        use 'hrsh7th/cmp-nvim-lsp'
-        use {
-                'hrsh7th/nvim-cmp',
-                config = [[ require 'plugins.nvim_cmp']],
-        }
-        use 'hrsh7th/cmp-vsnip'
-        use 'hrsh7th/vim-vsnip'
+        
         
 
         -- Text objects
