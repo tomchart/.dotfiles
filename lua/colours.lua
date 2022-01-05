@@ -43,6 +43,9 @@ local function highlight_group(group, args)
   cmd(highlight_cmd)
 end
 
+-- git
+highlight.link('DiffDelete', 'DraculaRed', true)
+
 local palette = {
   cyan = extract_highlight_colours('DraculaCyan').guifg,
   green = extract_highlight_colours('DraculaCyan').guifg,
