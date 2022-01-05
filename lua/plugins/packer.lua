@@ -24,9 +24,11 @@ return require('packer').startup(function()
 
         -- Completion
         use {
-                'neovim/nvim-lspconfig',
-                config = [[ require 'plugins.nvim_lspconfig' ]],
-        }
+            'neovim/nvim-lspconfig',
+            config = function()
+                require 'plugins.lspconfig'
+            end,
+        } 
         use {
                 'hrsh7th/nvim-cmp',
                 config = function()
@@ -48,11 +50,11 @@ return require('packer').startup(function()
         -- UI
         use {'dracula/vim', as = 'dracula'}
         use {
-        'NTBBloodbath/galaxyline.nvim',
-        config = function()
+            'NTBBloodbath/galaxyline.nvim',
+            config = function()
                 require 'plugins.galaxyline'
-        end,
-        requires = 'kyazdani42/nvim-web-devicons',
+            end,
+            requires = 'kyazdani42/nvim-web-devicons',
         }
         use {
                 'glepnir/dashboard-nvim',
