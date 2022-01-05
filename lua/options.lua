@@ -16,5 +16,7 @@ o.splitright = true
 o.showtabline = 2
 o.tabstop = 4
 o.number = true
+o.hidden = true
+o.showmode = false
 vim.wo.colorcolumn = "99999"    -- fix annoying indent artifacts bug
 -- vim.lsp.set_log_level("debug")
