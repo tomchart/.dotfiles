@@ -18,5 +18,9 @@ o.tabstop = 4
 o.number = true
 o.hidden = true
 o.showmode = false
+o.shiftwidth = 4
+o.signcolumn = 'yes'
+o.swapfile = false
+o.updatetime = 100
 vim.wo.colorcolumn = "99999"    -- fix annoying indent artifacts bug
 -- vim.lsp.set_log_level("debug")
