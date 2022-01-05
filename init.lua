@@ -10,13 +10,6 @@ require 'options'
 require 'colours'
 
 -----------------------------------------------------
--- theme/colours
------------------------------------------------------
-cmd('packadd dracula')
-cmd('colorscheme dracula')
-
-
------------------------------------------------------
 -- misc
 -----------------------------------------------------
 -- jump to last position when opening a file
