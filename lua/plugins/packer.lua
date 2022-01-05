@@ -62,6 +62,7 @@ return require('packer').startup(function()
                 'karb94/neoscroll.nvim',
                 config = [[ require 'plugins.neoscroll']]
         }
+        use 'chrisbra/Colorizer'
 
         -- Command
         use 'justinmk/vim-sneak'
