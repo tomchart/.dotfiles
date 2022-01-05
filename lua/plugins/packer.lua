@@ -31,6 +31,13 @@ return require('packer').startup(function()
         -- UI
         use {'dracula/vim', as = 'dracula'}
         use {
+        'NTBBloodbath/galaxyline.nvim',
+        config = function()
+                require 'plugins.galaxyline'
+        end,
+        requires = 'kyazdani42/nvim-web-devicons',
+        }
+        use {
                 'glepnir/dashboard-nvim',
                 config = [[ require 'plugins.dashboard-nvim']]
         }
