@@ -140,13 +140,6 @@ function cmstatus() {
 }
 
 
-# Nodejs fix for WSL
-# from https://github.com/nodejs/help/wiki/Installation#how-to-install-nodejs-via-binary-archive-on-linux
-VERSION=v16.13.0
-DISTRO=linux-x64
-export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
-
-
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
@@ -169,3 +162,7 @@ alias cmtm="~/./.cmtm.sh"
 alias tms="~/dotfiles/./tmux-session-setup.sh"
 
 cd ~
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
