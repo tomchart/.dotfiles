@@ -36,8 +36,13 @@ return require('packer').startup(function()
                     use 'hrsh7th/vim-vsnip',
                     use 'hrsh7th/cmp-vsnip',
                     use 'hrsh7th/cmp-nvim-lsp',
-                    use 'hrsh7th/cmp-nvim-lua'
+                    use 'hrsh7th/cmp-nvim-lua',
+                    use 'onsails/lspkind-nvim'
                 },
+        }
+        use {
+                'ray-x/lsp_signature.nvim',
+                config = [[ require 'plugins.lsp_signature' ]],
         }
 
         -- UI
@@ -52,11 +57,6 @@ return require('packer').startup(function()
         use {
                 'glepnir/dashboard-nvim',
                 config = [[ require 'plugins.dashboard-nvim']]
-        }
-        use 'onsails/lspkind-nvim'
-        use {
-                'ray-x/lsp_signature.nvim',
-                config = [[ require 'plugins.lsp_signature' ]],
         }
         use 'machakann/vim-highlightedyank'
         use {
