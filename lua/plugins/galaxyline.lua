@@ -19,7 +19,6 @@ local mode_symbol_to_mode = {
 local function get_diag_count(severity_level)
     local count = 0
     local diag = vim.diagnostic.get(0, { severity = severity_level})
-    print(severity_value)
     for _ in pairs(diag) do
         count = count + 1
     end
