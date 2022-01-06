@@ -1,5 +1,6 @@
 local fn = vim.fn
 local diagnostic = vim.lsp.diagnostic
+local diag = vim.diagnostic
 local highlight = vim.highlight
 local galaxyline = require 'galaxyline'
 local condition = require 'galaxyline.condition'
@@ -15,6 +16,23 @@ local mode_symbol_to_mode = {
   [''] = 'Visual Block',
   R = 'Replace',
 }
+
+local diag_shorthand_to_value = {
+    ERROR = diag.ERROR,
+    WARN = diag.WARN,
+    INFO = diag.INFO,
+    HINT = diag.HINT
+}
+
+local function get_diag_count(severity_level)
+    local count = 0
+    local severity_value = diag_shorthand_to_value[severity_level]
+    local diag = vim.diagnostic.get(0, { severity = severity_value})
+    for _ in pairs(diag) do
+        count = count + 1
+    end
+    return count
+end
 
 galaxyline.section.left = {
   {
@@ -120,7 +138,7 @@ galaxyline.section.right = {
   {
     DiagnosticHint = {
       provider = function()
-        return diagnostic.get_count(0, 'Hint')
+        return get_diag_count(HINT)
       end,
       highlight = 'DiagnosticHint',
       icon = '  ',
@@ -129,7 +147,7 @@ galaxyline.section.right = {
   {
     DiagnosticWarn = {
       provider = function()
-        return diagnostic.get_count(0, 'Warning')
+        return get_diag_count(WARN)
       end,
       highlight = 'DiagnosticWarn',
       icon = '   ',
@@ -138,7 +156,7 @@ galaxyline.section.right = {
   {
     DiagnosticError = {
       provider = function()
-        return diagnostic.get_count(0, 'Error')
+            return get_diag_count(ERROR)
       end,
       highlight = 'DiagnosticError',
       icon = '   ',
