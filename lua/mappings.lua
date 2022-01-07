@@ -63,12 +63,14 @@ map('n', 'Y', 'y$')
 -------------------------------------------------------
 -- nvim-tree.lua
 map('n', '<c-n>', '<cmd>NvimTreeToggle<cr>')
+map('n', '<leader>r', '<cmd>NvimTreeRefresh<cr>')
 
 -- telescope.nvim
 map('n', '<c-p>', '<cmd>Telescope find_files<cr>')
 map('n', '<c-b>', '<cmd>Telescope buffers<cr>')
 map('n', '<c-f>', '<cmd>Telescope current_buffer_fuzzy_find<cr>')
 map('n', '<c-g>', '<cmd>Telescope live_grep<cr>')
+map('n', 'gd', '<cmd>Telescope lsp_definitions<cr>')
 
 -- nvim-bufferline.lua
 map('n', 'L', '<cmd>BufferLineCycleNext<cr>')
