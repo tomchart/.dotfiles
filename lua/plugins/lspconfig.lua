@@ -17,6 +17,7 @@ lspconfig.pyright.setup{
         pythonPath = "/usr/bin/python",
         extraPaths = {
                 "/home/tom/.local/lib/python3.7/site-packages",
+                "/usr/local/lib/python3.7/site-packages",
                                 }
        },
       },
