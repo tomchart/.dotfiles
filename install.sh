@@ -8,6 +8,11 @@ for pkg in $pkgs; do
     sudo apt install $pkg
 done
 
+echo "Installing ripgrep..."
+curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
+sudo dpkg -i ripgrep_13.0.0_amd64.deb
+rm ripgrep_13.0.0_amd64.deb
+
 echo "Installing fzf..."
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install 
 

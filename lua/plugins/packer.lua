@@ -79,10 +79,6 @@ return require('packer').startup(function()
                 'luukvbaal/stabilize.nvim',
                 config = [[ require 'plugins.stabilize']]
         }
-        use {
-                'karb94/neoscroll.nvim',
-                config = [[ require 'plugins.neoscroll']]
-        }
         use 'chrisbra/Colorizer'
 
         -- Command
