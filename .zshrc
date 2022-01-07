@@ -160,6 +160,7 @@ alias tma="tmux attach"
 alias tmd="tmux detach"
 alias cmtm="~/./.cmtm.sh"
 alias tms="~/dotfiles/./tmux-session-setup.sh"
+alias v="lsb_release -a"
 
 cd ~
 
