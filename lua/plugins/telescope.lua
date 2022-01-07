@@ -1,5 +1,6 @@
 local telescope = require 'telescope'
 local layout = require 'telescope.actions.layout'
+local actions = require 'telescope.actions'
 
 telescope.setup {
   defaults = {
@@ -17,6 +18,12 @@ telescope.setup {
       },
       n = {
         ['<c-h>'] = layout.toggle_preview,
+      },
+      i = {
+        ['<c-s>'] = actions.select_vertical,
+      },
+      n = {
+        ['<c-s>'] = actions.select_vertical,
       },
     },
     sorting_strategy = 'ascending',
