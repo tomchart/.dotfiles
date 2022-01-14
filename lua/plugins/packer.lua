@@ -88,7 +88,6 @@ return require('packer').startup(function()
         use 'tpope/vim-surround'
         use 'tpope/vim-fugitive'
         use 'junegunn/gv.vim'
-        use 'junegunn/vim-peekaboo'
         use {
                 'bkad/CamelCaseMotion',
                 config = [[ require 'plugins.camelcasemotion' ]]
