@@ -139,6 +139,12 @@ function cmstatus() {
 	}'
 }
 
+function dns_reset() {
+    sudo rm /etc/resolv.conf
+    sudo bash -c 'echo "nameserver 8.8.8.8" > /etc/resolv.conf'
+    sudo bash -c 'echo "[network]" > /etc/wsl.conf'
+    sudo bash -c 'echo "generateResolvConf = false" >> /etc/wsl.conf'
+}
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
@@ -149,6 +155,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias cms=cmstatus
+alias dns=dns_reset
 alias mbuild='python3 -m mkdocs build'
 alias cmp='docker pause sendmessages deletefiles trackurls updatestatus > /dev/null;cmstatus'
 alias cmu='docker unpause sendmessages deletefiles trackurls updatestatus > /dev/null;cmstatus'
@@ -156,8 +163,8 @@ alias uu="sudo apt update && sudo apt upgrade -y"
 alias nv="nvim"
 
 # cd aliases
-alias d='cd ~/dotfiles'
-alias s='cd ~/scratch'
+alias d='cd ~/dotfiles/'
+alias s='cd ~/scratch/'
 
 alias tm="tmux"
 alias tma="tmux attach"
