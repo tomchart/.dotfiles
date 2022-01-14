@@ -54,8 +54,18 @@ map('n', '<c-w>-', '<c-w>5-')
 map('n', '<c-w>=', '<c-w>5+')
 map('n', '<c-w>e', '<c-w>=')
 
+-- quit binds for comfort
+map('i', '<c-Q>', '<esc>:q<cr>')
+map('n', '<c-Q>', ':q<cr>')
+map('v', '<c-Q>', '<esc>')
+map('n', '<leader>q', ':q<cr>')
+map('n', '<leader>Q', ':qa!<cr>')
+
 -- copy to end of line from current pos with Y
 map('n', 'Y', 'y$')
+
+-- qq to record, Q to replay
+map('n', 'Q', '@q')
 
 
 -------------------------------------------------------
@@ -63,6 +73,7 @@ map('n', 'Y', 'y$')
 -------------------------------------------------------
 -- nvim-tree.lua
 map('n', '<c-n>', '<cmd>NvimTreeToggle<cr>')
+map('n', '<leader>n', '<cmd>NvimTreeToggle<cr>')
 map('n', '<leader>r', '<cmd>NvimTreeRefresh<cr>')
 
 -- telescope.nvim
