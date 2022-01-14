@@ -164,7 +164,7 @@ alias nv="nvim"
 
 # cd aliases
 alias d='cd ~/dotfiles/'
-alias s='cd ~/scratch/'
+alias r='cd ~/reventus/'
 
 alias tm="tmux"
 alias tma="tmux attach"
