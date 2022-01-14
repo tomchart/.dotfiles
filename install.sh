@@ -1,5 +1,7 @@
 #!/bin/bash
 
+node_version='v12.22.8'
+
 echo "Hi!"
 
 pkgs='zsh tmux neovim git build-essential'
@@ -8,11 +10,11 @@ for pkg in $pkgs; do
     sudo apt install $pkg
 done
 
-echo "Installing nvm..."
-# do installation
-
-echo "Installing language servers..."
-# do installation
+echo "Installing nvm and node ${node_version}..."
+if curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash && nvm install $node_version; then
+    echo "Installing language servers..."
+    npm i -g pyright
+    npm i -g bash-language-server
 
 echo "Installing ripgrep..."
 curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
@@ -36,6 +38,7 @@ echo "Making symlinks..."
 ln -isv ~/dotfiles/.cmtm.sh ~
 ln -isv ~/dotfiles/.gitconfig ~
 ln -isv ~/dotfiles/.tmux.conf ~
+ln -isv ~/dotfiles/.zshrc ~
 mkdir -pv ~/.config/nvim && ln -isv ~/dotfiles/init.lua ~/.config/nvim && ln -isv ~/dotfiles/lua ~/.config/nvim
 
 echo "Changing login shell..."
