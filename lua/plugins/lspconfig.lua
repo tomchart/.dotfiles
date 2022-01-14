@@ -24,7 +24,14 @@ lspconfig.pyright.setup{
     },
   }
 
-lspconfig.bashls.setup{}
+lspconfig.bashls.setup{
+    cmd = { "bash-language-server", "start" },
+    cmd_env = {
+      GLOB_PATTERN = "*@(.sh|.inc|.bash|.command|.zsh|.zshrc)"
+    },
+    filetypes = { "sh", "zsh", "zshrc" },
+    single_file_support = true
+}
 lspconfig.dockerls.setup{}
 lspconfig.html.setup{}
 
