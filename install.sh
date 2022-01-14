@@ -34,6 +34,11 @@ git clone https://github.com/zdharma/fast-syntax-highlighting.git ${ZSH_CUSTOM:-
 echo "Installing tmux plugin manager..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+echo "Installing nvim..."
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt-get update
+sudo apt-get install neovim
+
 echo "Making symlinks..."
 ln -isv ~/dotfiles/.cmtm.sh ~
 ln -isv ~/dotfiles/.gitconfig ~
