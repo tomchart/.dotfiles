@@ -67,6 +67,10 @@ map('n', 'Y', 'y$')
 -- qq to record, Q to replay
 map('n', 'Q', '@q')
 
+-- remap jumplist to <leader>o and <leader>i
+map('n', '<leader>o', '<c-o>')
+map('n', '<leader>i', '<tab>')
+
 
 -------------------------------------------------------
 -- plugin mappings
@@ -82,6 +86,8 @@ map('n', '<c-b>', '<cmd>Telescope buffers<cr>')
 map('n', '<c-f>', '<cmd>Telescope current_buffer_fuzzy_find<cr>')
 map('n', '<c-g>', '<cmd>Telescope live_grep<cr>')
 map('n', 'gd', '<cmd>Telescope lsp_definitions<cr>')
+map('n', '<leader>gc', '<cmd>Telescope git_commits<cr>')
+map('n', '<c-o>', '<cmd>Telescope oldfiles<cr>')
 
 -- nvim-bufferline.lua
 map('n', 'L', '<cmd>BufferLineCycleNext<cr>')
