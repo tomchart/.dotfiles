@@ -71,11 +71,11 @@ ZSH_THEME="dracula"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    fancy-ctrl-z
     git
     # thefuck       # not working for some reason??
     zsh-autosuggestions
     zsh-syntax-highlighting
-    fancy-ctrl-z
     )
 
 source $ZSH/oh-my-zsh.sh
