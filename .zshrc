@@ -169,7 +169,7 @@ alias r='cd ~/reventus/'
 alias tm="tmux"
 alias tma="tmux attach"
 alias tmd="tmux detach"
-alias cmtm="~/./.cmtm.sh"
+alias cmtm="~/.cmtm.sh"
 alias tms="~/dotfiles/./tmux-session-setup.sh"
 alias v="lsb_release -a"
 
