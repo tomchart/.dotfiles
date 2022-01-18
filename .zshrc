@@ -75,6 +75,7 @@ plugins=(
     # thefuck       # not working for some reason??
     zsh-autosuggestions
     zsh-syntax-highlighting
+    fancy-ctrl-z
     )
 
 source $ZSH/oh-my-zsh.sh
