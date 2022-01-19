@@ -1,48 +1,13 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+#####################
+#                   #
+# ZSH Configuration #
+#                   #
+#####################
+ 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/tom/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="dracula"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
@@ -54,22 +19,9 @@ ZSH_THEME="dracula"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(
     fancy-ctrl-z
     git
@@ -80,12 +32,11 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+######################
+#                    #
+# User configuration #
+#                    #
+######################
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -94,18 +45,7 @@ else
   export EDITOR='nvim'
 fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
+# shh env stuff that doesnt really work lol
 SSH_ENV="$HOME/.ssh/agent-environment"
 
 function start_agent {
@@ -129,10 +69,14 @@ else
     start_agent;
 fi
 
+# add home folder to pythonpath
+# why tf am i doing this instead of using pyenv idk
 export PYTHONPATH="${PYTHONPATH}:/home/tom/local/.bin:/home/tom"
 
+# some fzf thing
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# contactme status function with pretty coloured output
 function cmstatus() {
 	docker ps |
 	grep contactme |
@@ -145,6 +89,8 @@ function cmstatus() {
 	}'
 }
 
+# clear contents of resolv.conf and replace with google dns
+# hopefully fixes annoying wsl shit network speed bug
 function dns_reset() {
     sudo rm /etc/resolv.conf
     sudo bash -c 'echo "nameserver 8.8.8.8" > /etc/resolv.conf'
@@ -155,31 +101,51 @@ function dns_reset() {
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
+# officedata
 alias sshv="ssh Version6@10.50.4.97"
+# ubuntu
 alias s="ssh tom@192.168.48.59 -p 988"
+
+# ls stuff
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+# custom funcs
 alias cms=cmstatus
 alias dns=dns_reset
-alias mbuild='python3 -m mkdocs build'
+
+# contactme pause and unpause
 alias cmp='docker pause sendmessages deletefiles trackurls updatestatus > /dev/null;cmstatus'
 alias cmu='docker unpause sendmessages deletefiles trackurls updatestatus > /dev/null;cmstatus'
+
+# quickly update and upgrade with no prompting
 alias uu="sudo apt update && sudo apt upgrade -y"
+
+# nv4lyf
 alias nv="nvim"
 
 # cd aliases
 alias d='cd ~/dotfiles/'
 alias r='cd ~/reventus/'
 
+# tmux stuff
 alias tm="tmux"
 alias tma="tmux attach"
 alias tmd="tmux detach"
 alias cmtm="~/.cmtm.sh"
 alias tms="~/dotfiles/./tmux-session-setup.sh"
+
+# helpful to see version in ubuntu (always forget lsb_release)
 alias v="lsb_release -a"
 
 cd ~
+
+##################
+#                #
+# nvm init stuff #
+#                #
+##################
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
