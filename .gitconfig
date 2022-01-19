@@ -23,6 +23,8 @@
 	se = !git rev-list --all | xargs git grep -F
 	co = checkout
 	lg = log --graph --decorate --oneline
+[color]
+    ui = true
 [help]
 	autocorrect = 20
 [url "ssh://git@github.com/"]
