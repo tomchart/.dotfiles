@@ -71,10 +71,6 @@ return require('packer').startup(function()
                 config = [[ require 'plugins.nvim_bufferline' ]],
                 requires = 'kyazdani42/nvim-web-devicons'
         }
-        -- use {
-        --         'airblade/vim-gitgutter',
-        --         config = [[ require 'plugins.vim_gitgutter' ]],
-        -- }
         use {
           'lewis6991/gitsigns.nvim',
               requires = {
@@ -86,7 +82,6 @@ return require('packer').startup(function()
                 'luukvbaal/stabilize.nvim',
                 config = [[ require 'plugins.stabilize']]
         }
-        use 'chrisbra/Colorizer'
 
         -- Command
         use 'justinmk/vim-sneak'
@@ -95,6 +90,12 @@ return require('packer').startup(function()
         use 'tpope/vim-surround'
         use 'tpope/vim-fugitive'
         use 'junegunn/gv.vim'
+        use 'chrisbra/Colorizer'
+        use {
+          "folke/trouble.nvim",
+          requires = "kyazdani42/nvim-web-devicons",
+          config = [[ requite 'plugins.trouble']] 
+        }
         use {
                 'bkad/CamelCaseMotion',
                 config = [[ require 'plugins.camelcasemotion' ]]
