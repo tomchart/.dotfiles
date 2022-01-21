@@ -71,9 +71,16 @@ return require('packer').startup(function()
                 config = [[ require 'plugins.nvim_bufferline' ]],
                 requires = 'kyazdani42/nvim-web-devicons'
         }
+        -- use {
+        --         'airblade/vim-gitgutter',
+        --         config = [[ require 'plugins.vim_gitgutter' ]],
+        -- }
         use {
-                'airblade/vim-gitgutter',
-                config = [[ require 'plugins.vim_gitgutter' ]],
+          'lewis6991/gitsigns.nvim',
+              requires = {
+                'nvim-lua/plenary.nvim'
+              },
+              config = [[ require 'plugins.gitsigns']]
         }
         use {
                 'luukvbaal/stabilize.nvim',
@@ -102,7 +109,9 @@ return require('packer').startup(function()
                 config = [[ require 'plugins.telescope' ]],
                 requires = 'nvim-lua/plenary.nvim',
         }
-        
+
+        -- Performance
+        use 'nathom/filetype.nvim'
         
 
         -- Text objects
