@@ -95,3 +95,7 @@ map('n', 'H', '<cmd>BufferLineCyclePrev<cr>')
 
 -- nvim-lspconfig
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
+
+-- trouble
+map('n', '<leader>xx', '<cmd>Trouble<cr>')
+map('n', '<leader>xd', '<cmd>Trouble document_diagnostics<cr>')

@@ -94,7 +94,7 @@ return require('packer').startup(function()
         use {
           "folke/trouble.nvim",
           requires = "kyazdani42/nvim-web-devicons",
-          config = [[ requite 'plugins.trouble']] 
+          config = [[ require 'plugins.trouble']] 
         }
         use {
                 'bkad/CamelCaseMotion',
