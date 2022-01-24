@@ -99,3 +99,10 @@ map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
 -- trouble
 map('n', '<leader>xx', '<cmd>Trouble<cr>')
 map('n', '<leader>xd', '<cmd>Trouble document_diagnostics<cr>')
+
+-- gitsigns
+on_attach = function(bufnr)
+    local gs = package.loaded.gitsigns
+    end
+map('n', '<leader>hj', "&diff ? '<leader>hj' : '<cmd>Gitsigns next_hunk<CR>'", {expr=true})
+map('n', '<leader>hk', "&diff ? '<leader>hk' : '<cmd>Gitsigns prev_hunk<CR>'", {expr=true})
