@@ -48,6 +48,7 @@ ln -isv ~/dotfiles/.cmtm.sh ~
 ln -isv ~/dotfiles/.gitconfig ~
 ln -isv ~/dotfiles/.tmux.conf ~
 ln -isv ~/dotfiles/.zshrc ~
+ln -isv ~/dotfiles/custom-mappings.zsh ${ZSH_CUSTOM}
 mkdir -pv ~/.config/nvim && ln -isv ~/dotfiles/init.lua ~/.config/nvim && ln -isv ~/dotfiles/lua ~/.config/nvim
 
 echo "Changing login shell..."
