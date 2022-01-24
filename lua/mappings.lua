@@ -1,6 +1,7 @@
 local g = vim.g
 local api = vim.api
 local cmd = vim.cmd
+local gs = package.loaded.gitsigns
 
 cmd('autocmd BufWritePost mappings.lua source <afile>')
 
@@ -101,8 +102,27 @@ map('n', '<leader>xx', '<cmd>Trouble<cr>')
 map('n', '<leader>xd', '<cmd>Trouble document_diagnostics<cr>')
 
 -- gitsigns
-on_attach = function(bufnr)
-    local gs = package.loaded.gitsigns
-    end
-map('n', '<leader>hj', "&diff ? '<leader>hj' : '<cmd>Gitsigns next_hunk<CR>'", {expr=true})
-map('n', '<leader>hk', "&diff ? '<leader>hk' : '<cmd>Gitsigns prev_hunk<CR>'", {expr=true})
+    -- -- navigation
+    -- local function lua_map(mode, l, r, opts)
+    --   opts = opts or {}
+    --   opts.buffer = bufnr
+    --   vim.keymap.set(mode, l, r, opts)
+    -- end
+    -- lua_map('n', '<leader>hj', "&diff ? '<leader>hj' : '<cmd>Gitsigns next_hunk<CR>'", {expr=true})
+    -- lua_map('n', '<leader>hk', "&diff ? '<leader>hk' : '<cmd>Gitsigns prev_hunk<CR>'", {expr=true})
+
+    -- -- actions
+    -- lua_map({'n', 'v'}, '<leader>hs', gs.stage_hunk)
+    -- lua_map({'n', 'v'}, '<leader>hr', gs.reset_hunk)
+    -- lua_map('n', '<leader>hS', gs.stage_buffer)
+    -- lua_map('n', '<leader>hu', gs.undo_stage_hunk)
+    -- lua_map('n', '<leader>hR', gs.reset_buffer)
+    -- lua_map('n', '<leader>hp', gs.preview_hunk)
+    -- lua_map('n', '<leader>hb', function() gs.blame_line{full=true} end)
+    -- lua_map('n', '<leader>tb', gs.toggle_current_line_blame)
+    -- lua_map('n', '<leader>hd', gs.diffthis)
+    -- lua_map('n', '<leader>hD', function() gs.diffthis('~') end)
+    -- lua_map('n', '<leader>td', gs.toggle_deleted)
+
+    -- -- Text object
+    -- lua_map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
