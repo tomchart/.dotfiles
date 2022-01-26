@@ -89,6 +89,7 @@ map('n', '<c-g>', '<cmd>Telescope live_grep<cr>')
 map('n', 'gd', '<cmd>Telescope lsp_definitions<cr>')
 map('n', '<leader>gc', '<cmd>Telescope git_commits<cr>')
 map('n', '<c-o>', '<cmd>Telescope oldfiles<cr>')
+map('n', '<c-d>', '<cmd>Telescope git_status<cr>')
 
 -- nvim-bufferline.lua
 map('n', 'L', '<cmd>BufferLineCycleNext<cr>')
