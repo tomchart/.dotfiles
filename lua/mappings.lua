@@ -55,6 +55,9 @@ map('n', '<c-w>-', '<c-w>5-')
 map('n', '<c-w>=', '<c-w>5+')
 map('n', '<c-w>e', '<c-w>=')
 
+-- close buffer
+map('n', '<leader>dd', '<cmd>bdelete<cr>')
+
 -- quit binds for comfort
 map('i', '<c-Q>', '<esc>:q<cr>')
 map('n', '<c-Q>', ':q<cr>')
