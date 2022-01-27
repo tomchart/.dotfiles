@@ -47,8 +47,13 @@ return require('packer').startup(function()
                 config = [[ require 'plugins.lsp_signature' ]],
         }
 
-        -- UI
+        -- Theme
         use {'dracula/vim', as = 'dracula'}
+        use {'marko-cerovac/material.nvim', as = 'material'}
+        use 'folke/tokyonight.nvim'
+        use 'sainnhe/everforest'
+
+        -- UI
         use {
             'NTBBloodbath/galaxyline.nvim',
             config = function()

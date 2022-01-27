@@ -4,6 +4,9 @@ local o = vim.o
 cmd('packadd dracula')
 cmd('colorscheme dracula')
 
+vim.g.tokyonight_style = "night"
+cmd('colorscheme tokyonight')
+
 o.expandtab = true
 o.mouse = 'a'
 o.smartcase = true
