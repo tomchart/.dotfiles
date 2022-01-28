@@ -5,14 +5,6 @@ local actions = require 'telescope.actions'
 -- TODO - some theming
 telescope.setup {
   defaults = {
-    layout_config = {
-      horizontal = {
-        width = 0.9,
-        prompt_position = 'top',
-        preview_width = 0.5,
-      },
-      vertical = { width = 0.9 },
-    },
     mappings = {
       i = {
         ['<c-h>'] = layout.toggle_preview,
