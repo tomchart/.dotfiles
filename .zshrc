@@ -110,7 +110,7 @@ alias path='echo $PATH | tr -s ":" "\n"'
 # officedata
 alias sshv="ssh Version6@10.50.4.97"
 # ubuntu
-alias s="ssh tom@192.168.48.59 -p 988"
+alias s="ssh -i ~/.ssh/id_ubuntu tom@192.168.48.59 -p 988"
 
 # ls stuff
 alias ll='ls -alF'
