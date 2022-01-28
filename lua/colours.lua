@@ -3,8 +3,9 @@ local api = vim.api
 local fn = vim.fn
 local cmd = vim.cmd
 
---- this is all stolen from marcus
---- until i play around with this and figure out how it works
+local fg = require('utils').fg
+local bg = require('utils').bg
+local fg_bg = require('utils').fg_bg
 
 --- @class HighlightColours
 --- @field guifg string|nil
@@ -56,6 +57,10 @@ local palette = {
 
   bg = extract_highlight_colours('Normal').guibg,
   fg = extract_highlight_colours('Normal').guifg,
+
+  black2 = extract_highlight_colours('DraculaBgDark').guibg,
+  darker_black = extract_highlight_colours('DraculaBgDarker').guibg,
+  light = extract_highlight_colours('DraculaBgLighter').guibg
 }
 
 -- galaxyline
@@ -72,3 +77,19 @@ for mode, colour in pairs(mode_to_colour) do
   highlight_group('Galaxyline' .. mode .. 'Mode', { guifg = palette.bg, guibg = colour })
   highlight_group('Galaxyline' .. mode .. 'ModeSeparator', { guifg = colour, guibg = palette.bg })
 end
+
+-- telescope
+fg_bg('TelescopeBorder', palette.black2, palette.black2)
+fg_bg('TelescopePromptBorder', palette.light, palette.light)
+
+fg_bg('TelescopePromptNormal', palette.fg, palette.light)
+fg_bg('TelescopePromptPrefix', palette.red, palette.light)
+
+bg('TelescopeNormal', palette.black2)
+
+fg_bg('TelescopePreviewTitle', palette.black2, palette.green)
+fg_bg('TelescopePromptTitle', palette.black2, palette.red)
+fg_bg('TelescopeResultsTitle', palette.black2, palette.black2)
+
+bg('TelescopeSelection', palette.light)
+
