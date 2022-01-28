@@ -8,6 +8,7 @@ cmd('autocmd BufWritePost mappings.lua source <afile>')
 g.mapleader = ' '
 
 -- nicked this func from marcus
+-- TODO - remove this and use the new lua keymaps
 local function map(mode, lhs, rhs, opts)
   local options = {
     noremap = true,

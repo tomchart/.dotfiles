@@ -1,11 +1,11 @@
 local cmd = vim.cmd
 local o = vim.o
 
-cmd('packadd dracula')
+cmd('autocmd ColorScheme dracula hi Normal ctermbg=None')
 cmd('colorscheme dracula')
 
-vim.g.tokyonight_style = "night"
-cmd('colorscheme tokyonight')
+-- vim.g.tokyonight_style = "night"
+-- cmd('colorscheme tokyonight')
 
 o.expandtab = true
 o.mouse = 'a'
