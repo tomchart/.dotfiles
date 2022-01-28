@@ -8,6 +8,9 @@ cmd('autocmd BufWritePost keymappings.lua source <afile>')
 g.keymapleader = ' '
 
 
+-- TODO - fix some bindings that are now broken from using keymap
+
+
 -------------------------------------------------------
 -- moving around, tabs, windows, and buffers
 -------------------------------------------------------
