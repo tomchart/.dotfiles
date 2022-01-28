@@ -93,11 +93,15 @@ function cmstatus() {
 
 # clear contents of resolv.conf and replace with google dns
 # hopefully fixes annoying wsl shit network speed bug
-function dns_reset() {
+dns_reset() {
     sudo rm /etc/resolv.conf
     sudo bash -c 'echo "nameserver 8.8.8.8" > /etc/resolv.conf'
     sudo bash -c 'echo "[network]" > /etc/wsl.conf'
     sudo bash -c 'echo "generateResolvConf = false" >> /etc/wsl.conf'
+}
+
+octal_folder_perms() {
+    stat -c "%a %n" $1
 }
 
 # Pretty print the path
@@ -140,6 +144,9 @@ alias tms="~/dotfiles/./tmux-session-setup.sh"
 
 # helpful to see version in ubuntu (always forget lsb_release)
 alias v="lsb_release -a"
+
+# see octal permission for folder
+alias oct=octal_folder_perms
 
 cd ~
 
