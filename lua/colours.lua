@@ -60,7 +60,8 @@ local palette = {
 
   black2 = extract_highlight_colours('DraculaBgDark').guibg,
   darker_black = extract_highlight_colours('DraculaBgDarker').guibg,
-  light = extract_highlight_colours('DraculaBgLighter').guibg
+  light = extract_highlight_colours('DraculaBgLight').guibg,
+  lighter = extract_highlight_colours('DraculaBgLighter').guibg
 }
 
 -- galaxyline
@@ -84,6 +85,7 @@ fg_bg('TelescopePromptBorder', palette.light, palette.light)
 
 fg_bg('TelescopePromptNormal', palette.fg, palette.light)
 fg_bg('TelescopePromptPrefix', palette.red, palette.light)
+fg('TelescopePromptCounter', palette.fg)
 
 bg('TelescopeNormal', palette.black2)
 
