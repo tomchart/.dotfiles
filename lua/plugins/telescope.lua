@@ -2,6 +2,7 @@ local telescope = require 'telescope'
 local layout = require 'telescope.actions.layout'
 local actions = require 'telescope.actions'
 
+-- TODO - some theming
 telescope.setup {
   defaults = {
     layout_config = {
