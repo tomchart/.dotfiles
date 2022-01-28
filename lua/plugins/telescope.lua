@@ -44,7 +44,13 @@ telescope.setup {
     },
     prompt_prefix = ' 🔍  ',
     selection_caret = '  ',
-  },
+    },
+    winblend = 0,
+    border = {},
+    borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    color_devicons = true,
+    use_less = true,
+    set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
     lsp_definitions = {
         -- copied and modified from make_entry.gen_from_quickfix
         entry_maker = function(entry)
