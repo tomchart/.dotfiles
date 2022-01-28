@@ -9,6 +9,8 @@ export ZSH="/home/tom/.oh-my-zsh"
 
 ZSH_THEME="dracula"
 
+export TERM="xterm-256color"
+
 # Uncomment the following line to display red dots whilst waiting for completion.
 # Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
 # See https://github.com/ohmyzsh/ohmyzsh/issues/5765
