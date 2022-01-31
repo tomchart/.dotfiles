@@ -89,7 +89,9 @@ return require('packer').startup(function()
         }
 
         -- Command
-        use 'justinmk/vim-sneak'
+        -- use 'justinmk/vim-sneak'
+        use 'ggandor/lightspeed.nvim'
+        use 'tpope/vim-repeat'
         use 'tpope/vim-eunuch'
         use 'tpope/vim-commentary'
         use 'tpope/vim-surround'
