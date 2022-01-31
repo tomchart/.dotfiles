@@ -125,6 +125,9 @@ alias dns=dns_reset
 alias cmp='docker pause sendmessages deletefiles trackurls updatestatus > /dev/null;cmstatus'
 alias cmu='docker unpause sendmessages deletefiles trackurls updatestatus > /dev/null;cmstatus'
 
+# docker configure env
+alias denv='export DOCKER_HOST=tcp://$HOST:2376 DOCKER_TLS_VERIFY=1 && export COMPOSE_TLS_VERSION=TLSv1_2'
+
 # quickly update and upgrade with no prompting
 alias uu="sudo apt update && sudo apt upgrade -y"
 
