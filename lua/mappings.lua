@@ -5,7 +5,7 @@ local keymap = vim.keymap.set
 
 cmd('autocmd BufWritePost keymappings.lua source <afile>')
 
-g.keymapleader = ' '
+g.mapleader = ' '
 
 
 -- TODO - fix some bindings that are now broken from using keymap
