@@ -95,3 +95,6 @@ fg_bg('TelescopeResultsTitle', palette.black2, palette.black2)
 
 bg('TelescopeSelection', palette.light)
 
+-- fidget
+fg('FidgetTitle', palette.purple)
+

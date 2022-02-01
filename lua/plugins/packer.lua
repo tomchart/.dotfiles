@@ -84,9 +84,10 @@ return require('packer').startup(function()
               config = [[ require 'plugins.gitsigns']]
         }
         use {
-                'luukvbaal/stabilize.nvim',
-                config = [[ require 'plugins.stabilize']]
+            'j-hui/fidget.nvim',
+            config = [[ require 'plugins.fidget' ]]
         }
+        
 
         -- Command
         -- use 'justinmk/vim-sneak'
@@ -120,6 +121,10 @@ return require('packer').startup(function()
 
         -- Performance
         use 'nathom/filetype.nvim'
+        use {
+            'luukvbaal/stabilize.nvim',
+            config = [[ require 'plugins.stabilize']]
+        }
         
 
         -- Text objects
