@@ -128,6 +128,14 @@ alias cmu='docker unpause sendmessages deletefiles trackurls updatestatus > /dev
 # docker configure env
 alias denv='export DOCKER_HOST=tcp://$HOST:2376 DOCKER_TLS_VERIFY=1 && export COMPOSE_TLS_VERSION=TLSv1_2'
 
+# start secure dockerd 
+alias dd='sudo dockerd \
+    --tlsverify \
+    --tlscacert=/home/tom/ca/ca.pem \
+    --tlscert=/home/tom/ca/docker-server/docker-server-cert.pem \
+    --tlskey=/home/tom/ca/docker-server/docker-server-key.pem \
+    -H=0.0.0.0:2376'
+
 # quickly update and upgrade with no prompting
 alias uu="sudo apt update && sudo apt upgrade -y"
 
