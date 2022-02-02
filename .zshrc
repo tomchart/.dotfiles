@@ -131,7 +131,7 @@ alias denv='export DOCKER_HOST=tcp://$HOST:2376 DOCKER_TLS_VERIFY=1 && export CO
 # start secure dockerd 
 alias dd='sudo dockerd \
     --tlsverify \
-    --tlscacert=/home/tom/ca/ca.pem \
+    --tlscacert=/home/tom/ca/ca/ca.pem \
     --tlscert=/home/tom/ca/docker-server/docker-server-cert.pem \
     --tlskey=/home/tom/ca/docker-server/docker-server-key.pem \
     -H=0.0.0.0:2376'
