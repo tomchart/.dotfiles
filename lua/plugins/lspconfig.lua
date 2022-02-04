@@ -55,7 +55,7 @@ local servers = {
 }
 
 local sumneko_root_path = '/opt/lua-language-server'
-local sumneko_binary = sumneko_root_path .. '/bin/lua-language-server'
+local sumneko_binary = sumneko_root_path .. '/bin/macOS/lua-language-server'
 local runtime_path = vim.split(package.path, ';')
 
 lspconfig.sumneko_lua.setup {
