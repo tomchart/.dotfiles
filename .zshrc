@@ -5,7 +5,7 @@
 #####################
  
 # Path to your oh-my-zsh installation.
-export ZSH="/home/tom/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="dracula"
 
@@ -73,7 +73,7 @@ fi
 
 # add home folder to pythonpath
 # why tf am i doing this instead of using pyenv idk
-export PYTHONPATH="${PYTHONPATH}:/home/tom/local/.bin:/home/tom"
+export PYTHONPATH="${PYTHONPATH}:$HOME/local/.bin:$HOME"
 
 # add cargo to path
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -135,9 +135,9 @@ alias denv='export DOCKER_HOST=tcp://$HOST:2376 DOCKER_TLS_VERIFY=1 && export CO
 # start secure dockerd 
 alias dd='sudo dockerd \
     --tlsverify \
-    --tlscacert=/home/tom/ca/ca/ca.pem \
-    --tlscert=/home/tom/ca/docker-server/docker-server-cert.pem \
-    --tlskey=/home/tom/ca/docker-server/docker-server-key.pem \
+    --tlscacert=$HOME/ca/ca/ca.pem \
+    --tlscert=$HOME/ca/docker-server/docker-server-cert.pem \
+    --tlskey=$HOME/ca/docker-server/docker-server-key.pem \
     -H=0.0.0.0:2376'
 
 # quickly update and upgrade with no prompting
