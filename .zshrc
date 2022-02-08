@@ -75,8 +75,8 @@ fi
 # why tf am i doing this instead of using pyenv idk
 export PYTHONPATH="${PYTHONPATH}:$HOME/local/.bin:$HOME"
 
-# add cargo to path
-export PATH="$HOME/.cargo/bin:$PATH"
+# add cargo, sumneko to path
+export PATH="$HOME/.cargo/bin:/opt/lua-language-server/bin:$PATH"
 
 # some fzf thing
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

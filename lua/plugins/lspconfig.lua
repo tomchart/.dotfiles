@@ -1,6 +1,41 @@
 local lspconfig = require 'lspconfig'
 local fn = vim.fn
 
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, 'lua/?.lua')
+table.insert(runtime_path, 'lua/?/init.lua')
+
+-- Don't add ~/.config/nvim to the LSP libraries because that's just a symlink
+-- to ~/.dotfiles/nvim/lua, so when we're in ~/.dotfiles/nvim/lua we end up
+-- with duplicate symbols
+-- (stolen from marcus)
+local runtime_files = vim.api.nvim_get_runtime_file('', true)
+local config_dir = fn.expand '~/.config/nvim'
+local lua_library = {}
+for _, file in ipairs(runtime_files) do
+    if file:sub(1, #config_dir) ~= config_dir then
+        table.insert(lua_library, file)
+    end
+end
+
+lspconfig.sumneko_lua.setup {
+    cmd = { 'lua-language-server' };
+    settings = {
+        Lua = {
+            runtime = {
+                version = 'LuaJIT',
+                path = runtime_path,
+            },
+            diagnostics = {
+                globals = { 'vim' },
+            },
+            workspace = {
+                library = lua_library,
+            },
+        },
+    },
+}
+
 local servers = {
     pyright = {
     root_dir = function(fname)
@@ -52,31 +87,6 @@ local servers = {
             }
         }
     }
-}
-
-local sumneko_root_path = '/opt/lua-language-server'
-local sumneko_binary = sumneko_root_path .. '/bin/lua-language-server'
-local runtime_path = vim.split(package.path, ';')
-
-lspconfig.sumneko_lua.setup {
-    cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua'};
-    settings = {
-        Lua = {
-        runtime = {
-            version = 'LuaJIT',
-            path = runtime_path,
-        },
-        diagnostics = {
-            globals = {'vim'},
-        },
-        workspace = {
-            library = vim.api.nvim_get_runtime_file("", true),
-        },
-        telemetry = {
-            enable = false,
-        },
-        },
-    },
 }
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
