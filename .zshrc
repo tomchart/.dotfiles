@@ -75,6 +75,9 @@ fi
 # why tf am i doing this instead of using pyenv idk
 export PYTHONPATH="${PYTHONPATH}:/home/tom/local/.bin:/home/tom"
 
+# add cargo to path
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # some fzf thing
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -113,9 +116,10 @@ alias sshv="ssh Version6@10.50.4.97"
 alias s="ssh -i ~/.ssh/id_ubuntu tom@192.168.48.59 -p 988"
 
 # ls stuff
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll='exa -alF --group-directories-first'
+alias lt='exa -lFT --group-directories-first'
+alias la='exa -alFT --group-directories-first'
+alias l='exa'
 
 # custom funcs
 alias cms=cmstatus
