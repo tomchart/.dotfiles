@@ -28,7 +28,11 @@ return require('packer').startup(function()
             config = function()
                 require 'plugins.lspconfig'
             end,
-        } 
+        }
+        use {
+            'jose-elias-alvarez/null-ls.nvim',
+            config = [[ require 'plugins.null-ls' ]]
+        }
         use {
                 'hrsh7th/nvim-cmp',
                 config = function()
@@ -87,7 +91,6 @@ return require('packer').startup(function()
             'j-hui/fidget.nvim',
             config = [[ require 'plugins.fidget' ]]
         }
-        
 
         -- Command
         use 'ggandor/lightspeed.nvim'
@@ -124,7 +127,6 @@ return require('packer').startup(function()
             'luukvbaal/stabilize.nvim',
             config = [[ require 'plugins.stabilize']]
         }
-        
 
         -- Text objects
        use {
