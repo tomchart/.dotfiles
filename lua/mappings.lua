@@ -1,15 +1,12 @@
 local g = vim.g
-local api = vim.api
 local cmd = vim.cmd
 local keymap = vim.keymap.set
 
-cmd('autocmd BufWritePost keymappings.lua source <afile>')
+-- write on edit
+cmd('autocmd BufWritePost mappings.lua source <afile>')
 
+-- set leader to space
 g.mapleader = ' '
-
-
--- TODO - fix some bindings that are now broken from using keymap
-
 
 -------------------------------------------------------
 -- moving around, tabs, windows, and buffers
@@ -76,7 +73,7 @@ keymap('n', '<leader>n', '<cmd>NvimTreeToggle<cr>')
 keymap('n', '<leader>r', '<cmd>NvimTreeRefresh<cr>')
 
 -- telescope.nvim
-keymap('n', '<c-p>', '<cmd>Telescope find_files<cr>')
+keymap('n', '<c-p>', [[<cmd>lua require'plugins.telescope'.find_files()<cr>]])
 keymap('n', '<c-b>', '<cmd>Telescope buffers<cr>')
 keymap('n', '<c-f>', '<cmd>Telescope current_buffer_fuzzy_find<cr>')
 keymap('n', '<c-g>', '<cmd>Telescope live_grep<cr>')

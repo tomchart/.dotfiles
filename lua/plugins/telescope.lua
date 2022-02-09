@@ -1,6 +1,9 @@
 local telescope = require 'telescope'
 local layout = require 'telescope.actions.layout'
 local actions = require 'telescope.actions'
+local builtin = require 'telescope.builtin'
+
+local M = {}
 
 telescope.setup {
   defaults = {
@@ -77,3 +80,13 @@ telescope.setup {
         end,
     },
 }
+
+-- create custom find_files to include dotfiles but not gitfiles
+-- TODO - convert all used telescope commands in mappings.lua to custom funcs like this
+M.find_files = function()
+    builtin.find_files {
+        find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden' }
+    }
+end
+
+return M
