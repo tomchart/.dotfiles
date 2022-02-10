@@ -111,7 +111,7 @@ octal_folder_perms() {
 alias path='echo $PATH | tr -s ":" "\n"'
 
 # officedata
-alias sshv="ssh Version6@10.50.4.97"
+alias sshv="ssh -o PubkeyAuthentication=no Version6@10.50.4.97"
 # ubuntu
 alias s="ssh -i ~/.ssh/id_ubuntu tom@192.168.48.59 -p 988"
 
