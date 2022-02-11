@@ -49,34 +49,34 @@ local function should_tab_out()
 end
 
 cmp.setup {
-        sources = {
-                {name = 'nvim_lsp'},
-                {name = 'vsnip'}
-        },
-        snippet = {
-                expand = function(args)
-                        fn['vsnip#anonymous'](args.body)
-                end,
-        },
-        confirmation = {
-                default_behavior = cmp.ConfirmBehavior.Replace,
-        },
-        mapping = {
-                ['<c-space>'] = cmp.mapping.complete(),
-                ['<Tab>'] = function(fallback)
-                if cmp.visible() then
-                        cmp.close()
-                elseif should_tab_out() then
-                        feedkeys('<right>', 'i')
-                else
-                        fallback()
-                end
+    sources = {
+            {name = 'nvim_lsp'},
+            {name = 'vsnip'}
+    },
+    snippet = {
+        expand = function(args)
+            fn['vsnip#anonymous'](args.body)
         end,
-                ['<cr>'] = cmp.mapping.confirm({select = true}),
-        },
-        formatting = {
-                format = lspkind.cmp_format({with_text = false, maxwidth = 50})
-        },
+    },
+    confirmation = {
+        default_behavior = cmp.ConfirmBehavior.Replace,
+    },
+    mapping = {
+        ['<c-space>'] = cmp.mapping.complete(),
+        ['<Tab>'] = function(fallback)
+        if cmp.visible() then
+            cmp.close()
+        elseif should_tab_out() then
+            feedkeys('<right>', 'i')
+        else
+            fallback()
+            end
+        end,
+        ['<cr>'] = cmp.mapping.confirm({select = true}),
+    },
+    formatting = {
+        format = lspkind.cmp_format({with_text = false, maxwidth = 50})
+    },
 }
 
 cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
