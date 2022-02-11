@@ -34,7 +34,7 @@ if osx; then
 fi
 
 if linux; then
-    pkgs='zsh tmux neovim git build-essential'
+    pkgs='zsh tmux neovim git build-essential cargo'
     for pkg in $pkgs; do
         echo "Installing $pkg..."
         sudo apt install $pkg
