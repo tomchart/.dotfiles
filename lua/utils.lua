@@ -84,4 +84,8 @@ M.highlight_group = function(group, args)
   cmd(highlight_cmd)
 end
 
+M.change_terminal_filetype = function()
+    vim.api.nvim_command('setlocal filetype=term')
+end
+
 return M

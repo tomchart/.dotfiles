@@ -4,7 +4,7 @@ local highlight = vim.highlight
 local galaxyline = require 'galaxyline'
 local condition = require 'galaxyline.condition'
 
-galaxyline.short_line_list = { 'NvimTree' }
+galaxyline.short_line_list = { 'NvimTree', 'term' }
 
 local mode_symbol_to_mode = {
   n = 'Normal',
