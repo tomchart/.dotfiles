@@ -13,6 +13,7 @@ g.mapleader = ' '
 -------------------------------------------------------
 -- in insert mode, jj exits this mode
 keymap('i', 'jj', '<esc>')
+keymap('t', 'jj', '<c-\\><c-n>')
 
 -- <leader><cr> hides highlight
 keymap('n', '<leader><cr>', ':noh<cr>')
@@ -62,6 +63,9 @@ keymap('n', 'Q', '@q')
 -- rekeymap jumplist to <leader>o and <leader>i
 keymap('n', '<leader>o', '<c-o>')
 keymap('n', '<leader>i', '<tab>')
+
+-- open terminal with <c-t>
+keymap('n', '<c-t>', '<cmd>terminal<cr>')
 
 
 -------------------------------------------------------
