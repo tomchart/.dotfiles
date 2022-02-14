@@ -1,5 +1,6 @@
 local g = vim.g
 local fn = vim.fn
+local cmd = vim.cmd
 local api = vim.api
 local keymap = vim.keymap.set
 
@@ -99,6 +100,4 @@ keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
 -- trouble
 keymap('n', '<leader>xx', '<cmd>Trouble<cr>')
 keymap('n', '<leader>xd', '<cmd>Trouble document_diagnostics<cr>')
-<<<<<<< HEAD
-=======
 keymap('i', '<Tab>', function() tab_binding() end)
