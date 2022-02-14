@@ -1,6 +1,10 @@
 local g = vim.g
-local cmd = vim.cmd
+local fn = vim.fn
+local api = vim.api
 local keymap = vim.keymap.set
+
+local telescope = require 'telescope.builtin'
+local nvim_tree = require 'nvim-tree'
 
 -- write on edit
 cmd('autocmd BufWritePost mappings.lua source <afile>')
@@ -72,19 +76,18 @@ keymap('n', '<c-t>', '<cmd>terminal<cr>')
 -- plugin keymappings
 -------------------------------------------------------
 -- nvim-tree.lua
-keymap('n', '<c-n>', '<cmd>NvimTreeToggle<cr>')
-keymap('n', '<leader>n', '<cmd>NvimTreeToggle<cr>')
-keymap('n', '<leader>r', '<cmd>NvimTreeRefresh<cr>')
+keymap('n', '<c-n>', nvim_tree.toggle)
+keymap('n', '<leader>n', nvim_tree.toggle)
 
 -- telescope.nvim
-keymap('n', '<c-p>', [[<cmd>lua require'plugins.telescope'.find_files()<cr>]])
-keymap('n', '<c-b>', '<cmd>Telescope buffers<cr>')
-keymap('n', '<c-f>', '<cmd>Telescope current_buffer_fuzzy_find<cr>')
-keymap('n', '<c-g>', '<cmd>Telescope live_grep<cr>')
-keymap('n', 'gd', '<cmd>Telescope lsp_definitions<cr>')
-keymap('n', '<leader>gc', '<cmd>Telescope git_commits<cr>')
-keymap('n', '<c-o>', '<cmd>Telescope oldfiles<cr>')
-keymap('n', '<c-d>', '<cmd>Telescope git_status<cr>')
+keymap('n', '<c-p>', telescope.find_files)
+keymap('n', '<c-b>', telescope.buffers)
+keymap('n', '<c-f>', telescope.current_buffer_fuzzy_find)
+keymap('n', '<c-g>', telescope.live_grep)
+keymap('n', 'gd', telescope.lsp_definitions)
+keymap('n', '<leader>gc', telescope.git_commits)
+keymap('n', '<c-o>', telescope.oldfiles)
+keymap('n', '<c-d>', telescope.git_status)
 
 -- nvim-bufferline.lua
 keymap('n', 'L', '<cmd>BufferLineCycleNext<cr>')
@@ -96,3 +99,6 @@ keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
 -- trouble
 keymap('n', '<leader>xx', '<cmd>Trouble<cr>')
 keymap('n', '<leader>xd', '<cmd>Trouble document_diagnostics<cr>')
+<<<<<<< HEAD
+=======
+keymap('i', '<Tab>', function() tab_binding() end)
