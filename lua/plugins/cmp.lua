@@ -1,7 +1,6 @@
 local cmp = require 'cmp'
 local lspkind = require 'lspkind'
 local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
-local highlight = vim.highlight
 local o = vim.o
 local fn = vim.fn
 local api = vim.api
@@ -48,11 +47,13 @@ local function should_tab_out()
   return brackets[next_char] == true
 end
 
-cmp.setup {
-    sources = {
-            {name = 'nvim_lsp'},
-            {name = 'vsnip'}
-    },
+cmp.setup({
+    sources = cmp.config.sources({
+            { name = 'nvim_lsp' },
+            { name = 'vsnip' },
+    }, {
+        { name = 'buffer' }
+    }),
     snippet = {
         expand = function(args)
             fn['vsnip#anonymous'](args.body)
@@ -78,5 +79,6 @@ cmp.setup {
         format = lspkind.cmp_format({with_text = false, maxwidth = 50})
     },
 }
+)
 
 cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
