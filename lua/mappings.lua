@@ -4,8 +4,8 @@ local cmd = vim.cmd
 local api = vim.api
 local keymap = vim.keymap.set
 
-local telescope = require 'telescope.builtin'
-local nvim_tree = require 'nvim-tree'
+local telescope = require("telescope.builtin")
+local nvim_tree = require("nvim-tree")
 local telescope = require("telescope.builtin")
 
 -- write on edit
@@ -78,8 +78,8 @@ keymap("n", "<c-t>", "<cmd>terminal<cr>")
 -- plugin keymappings
 -------------------------------------------------------
 -- nvim-tree.lua
-keymap('n', '<c-n>', nvim_tree.toggle)
-keymap('n', '<leader>n', nvim_tree.toggle)
+keymap("n", "<c-n>", nvim_tree.toggle)
+keymap("n", "<leader>n", nvim_tree.toggle)
 
 -- telescope.nvim
 keymap("n", "<c-p>", telescope.find_files)
