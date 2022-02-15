@@ -18,23 +18,28 @@ for _, file in ipairs(runtime_files) do
     end
 end
 
-lspconfig.sumneko_lua.setup {
-    cmd = { 'lua-language-server' };
-    settings = {
-        Lua = {
-            runtime = {
-                version = 'LuaJIT',
-                path = runtime_path,
-            },
-            diagnostics = {
-                globals = { 'vim' },
-            },
-            workspace = {
-                library = lua_library,
-            },
-        },
-    },
-}
+lspconfig.sumneko_lua.setup({
+	cmd = {
+		"lua-language-server",
+		"-E",
+		"/opt/lua-language-server/main.lua",
+	},
+	settings = {
+		Lua = {
+			runtime = {
+				version = "LuaJIT",
+				path = runtime_path,
+			},
+			diagnostics = {
+				globals = { "vim" },
+				disable = { "lowercase-global" },
+			},
+			workspace = {
+				library = lua_library,
+			},
+		},
+	},
+})
 
 local servers = {
     pyright = {
