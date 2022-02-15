@@ -11,9 +11,9 @@ end
 
 cmd('autocmd BufWritePost packer.lua source <afile> | PackerCompile')
 
-return require('packer').startup(function()
-        -- Packer
-        use 'wbthomason/packer.nvim'
+return require("packer").startup(function(use)
+	-- Packer
+	use("wbthomason/packer.nvim")
 
         -- Syntax
         use {
