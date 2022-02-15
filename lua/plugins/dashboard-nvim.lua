@@ -72,4 +72,4 @@ g.dashboard_custom_section = {
 }
 
 local plugins_count = vim.fn.len(vim.fn.globpath("~/.local/share/nvim/site/pack/packer/start", "*", 0, 1))
-g.dashboard_custom_footer = { "Loaded " .. plugins_count .. " plugins" }
+g.dashboard_custom_footer = { "❤️ Loaded " .. plugins_count .. " plugins ❤️" }
