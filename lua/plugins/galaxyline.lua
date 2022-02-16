@@ -3,8 +3,9 @@ local diag = vim.diagnostic
 local highlight = vim.highlight
 local galaxyline = require("galaxyline")
 local condition = require("galaxyline.condition")
+local gps = require("nvim-gps")
 
-galaxyline.short_line_list = { 'NvimTree', 'term' }
+galaxyline.short_line_list = { "NvimTree", "term" }
 
 local mode_symbol_to_mode = {
 	n = "Normal",
@@ -112,6 +113,24 @@ galaxyline.section.left = {
 			provider = "FileName",
 			condition = condition.buffer_not_empty,
 			separator = "",
+		},
+	},
+	{
+		Space = {
+			provider = function()
+				return " "
+			end,
+			condition = condition.check_git_workspace,
+		},
+	},
+	{
+		nvimGPS = {
+			provider = function()
+				return gps.get_location()
+			end,
+			condition = function()
+				return gps.is_available()
+			end,
 		},
 	},
 }

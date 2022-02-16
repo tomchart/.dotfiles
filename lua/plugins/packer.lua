@@ -67,14 +67,20 @@ return require("packer").startup(function(use)
 		end,
 		requires = "kyazdani42/nvim-web-devicons",
 	})
+	-- Lua
+	use({
+		"SmiteshP/nvim-gps",
+		requires = "nvim-treesitter/nvim-treesitter",
+		config = [[ require 'plugins.nvim-gps' ]],
+	})
 	use({
 		"glepnir/dashboard-nvim",
-		config = [[ require 'plugins.dashboard-nvim']],
+		config = [[ require 'plugins.dashboard-nvim' ]],
 	})
 	use("machakann/vim-highlightedyank")
 	use({
 		"lukas-reineke/indent-blankline.nvim",
-		config = [[ require 'plugins.indent-blankline']],
+		config = [[ require 'plugins.indent-blankline' ]],
 	})
 	use("famiu/bufdelete.nvim")
 	use({
@@ -94,34 +100,34 @@ return require("packer").startup(function(use)
 		config = [[ require 'plugins.fidget' ]],
 	})
 
-        -- Command
-        use 'ggandor/lightspeed.nvim'
-        use 'tpope/vim-repeat'
-        use 'tpope/vim-eunuch'
-        use 'tpope/vim-commentary'
-        use 'tpope/vim-surround'
-        use 'tpope/vim-fugitive'
-        use 'junegunn/gv.vim'
-        use 'chrisbra/Colorizer'
-        use {
-          "folke/trouble.nvim",
-          requires = "kyazdani42/nvim-web-devicons",
-          config = [[ require 'plugins.trouble']] 
-        }
-        use {
-                'bkad/CamelCaseMotion',
-                config = [[ require 'plugins.camelcasemotion' ]]
-        }
-        use {
-                'kyazdani42/nvim-tree.lua',
-                config = [[ require 'plugins.nvim_tree' ]],
-                requires = 'kyazdani42/nvim-web-devicons',
-        }
-        use {
-                'nvim-telescope/telescope.nvim',
-                config = [[ require 'plugins.telescope' ]],
-                requires = 'nvim-lua/plenary.nvim',
-        }
+	-- Command
+	use("ggandor/lightspeed.nvim")
+	use("tpope/vim-repeat")
+	use("tpope/vim-eunuch")
+	use("tpope/vim-commentary")
+	use("tpope/vim-surround")
+	use("tpope/vim-fugitive")
+	use("junegunn/gv.vim")
+	use("chrisbra/Colorizer")
+	use({
+		"folke/trouble.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+		config = [[ require 'plugins.trouble']],
+	})
+	use({
+		"bkad/CamelCaseMotion",
+		config = [[ require 'plugins.camelcasemotion' ]],
+	})
+	use({
+		"kyazdani42/nvim-tree.lua",
+		config = [[ require 'plugins.nvim_tree' ]],
+		requires = "kyazdani42/nvim-web-devicons",
+	})
+	use({
+		"nvim-telescope/telescope.nvim",
+		config = [[ require 'plugins.telescope' ]],
+		requires = "nvim-lua/plenary.nvim",
+	})
 	-- Performance
 	use("nathom/filetype.nvim")
 	use({
