@@ -1,12 +1,9 @@
 local g = vim.g
-local fn = vim.fn
 local cmd = vim.cmd
-local api = vim.api
 local keymap = vim.keymap.set
 
 local telescope = require("telescope.builtin")
 local nvim_tree = require("nvim-tree")
-local telescope = require("telescope.builtin")
 
 -- write on edit
 cmd("autocmd BufWritePost mappings.lua source <afile>")
@@ -49,10 +46,10 @@ keymap("n", "<c-w>>", "<c-w>5>")
 keymap("n", "<c-w>-", "<c-w>5-")
 keymap("n", "<c-w>=", "<c-w>5+")
 keymap("n", "<c-w>e", "<c-w>=")
-keymap("n", "<c-v>", "<c-w>v")
+-- keymap("n", "<c-v>", "<c-w>v")
 
 -- close buffer
-keymap("n", "<leader>dd", "<cmd>Bdelete<cr>")
+keymap("n", "bd", "<cmd>Bdelete<cr>")
 
 -- quit binds for comfort
 keymap("i", "<c-Q>", "<esc>:q<cr>")
@@ -86,10 +83,11 @@ keymap("n", "<c-p>", telescope.find_files)
 keymap("n", "<c-b>", telescope.buffers)
 keymap("n", "<c-f>", telescope.current_buffer_fuzzy_find)
 keymap("n", "<c-g>", telescope.live_grep)
-keymap("n", "gd", telescope.lsp_definitions)
-keymap("n", "<leader>gc", telescope.git_commits)
 keymap("n", "<c-o>", telescope.oldfiles)
 keymap("n", "<c-d>", telescope.git_status)
+keymap("n", "<leader>c", telescope.git_commits)
+keymap("n", "<leader>r", telescope.resume)
+keymap("n", "<leader>d", telescope.lsp_definitions)
 
 -- nvim-bufferline.lua
 keymap("n", "L", "<cmd>BufferLineCycleNext<cr>")
