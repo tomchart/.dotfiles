@@ -56,6 +56,7 @@ local servers = {
 					extraPaths = {
 						"/home/tom/.local/lib/python3.7/site-packages",
 						"/usr/local/lib/python3.7/site-packages",
+						"/home/tom/.pyenv/versions/rev3910/lib/python3.9/site-packages",
 					},
 				},
 			},
