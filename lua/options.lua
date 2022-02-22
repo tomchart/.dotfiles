@@ -1,10 +1,10 @@
 local cmd = vim.cmd
 local o = vim.o
 
-cmd('colorscheme dracula')
+cmd("colorscheme dracula")
 
 o.expandtab = true
-o.mouse = 'a'
+o.mouse = "a"
 o.smartcase = true
 o.ignorecase = true
 o.termguicolors = true
@@ -18,9 +18,9 @@ o.number = true
 o.hidden = true
 o.showmode = false
 o.shiftwidth = 4
-o.signcolumn = 'yes'
+o.signcolumn = "yes"
 o.swapfile = false
 o.updatetime = 100
 o.scrolloff = 5
-vim.wo.colorcolumn = "99999"    -- fix annoying indent artifacts bug
+vim.wo.colorcolumn = "99999" -- fix annoying indent artifacts bug
 -- vim.lsp.set_log_level("debug")
