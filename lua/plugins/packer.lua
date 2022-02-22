@@ -30,7 +30,9 @@ return require("packer").startup(function(use)
 	})
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
-		config = [[ require 'plugins.null-ls' ]],
+		config = function()
+			require("plugins.null-ls")
+		end,
 	})
 	use({
 		"hrsh7th/nvim-cmp",
@@ -67,6 +69,7 @@ return require("packer").startup(function(use)
 		end,
 		requires = "kyazdani42/nvim-web-devicons",
 	})
+
 	-- Lua
 	use({
 		"SmiteshP/nvim-gps",
@@ -93,7 +96,9 @@ return require("packer").startup(function(use)
 		requires = {
 			"nvim-lua/plenary.nvim",
 		},
-		config = [[ require 'plugins.gitsigns']],
+		config = function()
+			require("plugins.gitsigns")
+		end,
 	})
 	use({
 		"j-hui/fidget.nvim",
