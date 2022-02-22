@@ -57,9 +57,6 @@ return require("packer").startup(function(use)
 
 	-- Theme
 	use({ "dracula/vim", as = "dracula" })
-	use({ "marko-cerovac/material.nvim", as = "material" })
-	use("folke/tokyonight.nvim")
-	use("sainnhe/everforest")
 
 	-- UI
 	use({
@@ -112,8 +109,6 @@ return require("packer").startup(function(use)
 	use("tpope/vim-commentary")
 	use("tpope/vim-surround")
 	use("tpope/vim-fugitive")
-	use("junegunn/gv.vim")
-	use("chrisbra/Colorizer")
 	use({
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
