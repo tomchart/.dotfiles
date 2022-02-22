@@ -9,6 +9,9 @@ local palette = require("utils").palette
 -- git
 hi.link("DiffDelete", "DraculaRed", true)
 
+-- gitsigns
+hi.link("GitSignsCurrentLineBlame", "DraculaComment")
+
 -- galaxyline
 local mode_to_colour = {
 	Normal = palette.purple,
