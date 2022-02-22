@@ -6,10 +6,13 @@ local sources = {
 	null_ls.builtins.diagnostics.mypy,
 }
 
--- TODO - fix the fucking annoying global bug
-
 null_ls.setup({
 	sources = sources,
+	log = {
+		enable = true,
+		level = "warn",
+		use_console = false,
+	},
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then
 			vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")

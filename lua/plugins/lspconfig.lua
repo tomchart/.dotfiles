@@ -50,6 +50,7 @@ local servers = {
 			python = {
 				analysis = {
 					autoSearchPaths = true,
+					autoImportCompletions = false,
 					diagnosticMode = "workspace",
 					useLibraryCodeForTypes = true,
 					pythonPath = "/usr/bin/python",
