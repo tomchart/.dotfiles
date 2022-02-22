@@ -21,7 +21,7 @@ telescope.setup({
 				["<c-s>"] = actions.select_vertical,
 			},
 		},
-		file_ignore_patterns = { ".git" },
+		file_ignore_patterns = { ".git/" },
 		sorting_strategy = "ascending",
 		layout_strategy = "horizontal",
 		layout_config = {
@@ -91,7 +91,7 @@ telescope.setup({
 -- TODO - convert all used telescope commands in mappings.lua to custom funcs like this
 M.find_files = function()
 	builtin.find_files({
-		find_command = { "rg", "--files", "--iglob", "!.git" },
+		find_command = { "rg", "--files" },
 	})
 end
 
