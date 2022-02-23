@@ -1,10 +1,10 @@
 local hi = vim.highlight
 
-local fg = require("utils").fg
-local bg = require("utils").bg
-local fg_bg = require("utils").fg_bg
-local highlight_group = require("utils").highlight_group
-local palette = require("utils").palette
+local fg = require("core.utils").fg
+local bg = require("core.utils").bg
+local fg_bg = require("core.utils").fg_bg
+local highlight_group = require("core.utils").highlight_group
+local palette = require("core.utils").palette
 
 -- git
 hi.link("DiffDelete", "DraculaRed", true)
