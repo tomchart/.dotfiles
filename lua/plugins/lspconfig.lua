@@ -3,6 +3,7 @@ local fn = vim.fn
 
 local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "lua/core/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 -- Don't add ~/.config/nvim to the LSP libraries because that's just a symlink
