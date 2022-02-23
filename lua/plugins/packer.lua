@@ -134,6 +134,7 @@ return require("packer").startup(function(use)
 		"luukvbaal/stabilize.nvim",
 		config = [[ require 'plugins.stabilize']],
 	})
+	use("dstein64/vim-startuptime")
 
 	-- Text objects
 	use({
