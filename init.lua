@@ -5,7 +5,6 @@ if present then
 end
 
 local core_modules = {
-	"core.options",
 	"core.misc",
 	"core.mappings",
 }
@@ -19,11 +18,7 @@ end
 
 require("core.mappings").misc()
 
-require("core.mappings").nvimtree()
-require("core.mappings").tele()
-require("core.mappings").bufferline()
-require("core.mappings").lspconf()
-require("core.mappings").trouble()
 
+require("plugins.init")
+require("core.options")
 require("colours")
-require("plugins.packer")
