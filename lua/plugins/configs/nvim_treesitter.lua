@@ -1,6 +1,6 @@
-local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+local ts_configs = require("nvim-treesitter.configs")
 
-require("nvim-treesitter.configs").setup({
+ts_configs.setup({
 	ensure_installed = "maintained",
 	highlight = {
 		enable = true,

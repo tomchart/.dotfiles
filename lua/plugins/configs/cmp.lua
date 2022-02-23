@@ -1,21 +1,23 @@
-local cmp = require("cmp")
-local lspkind = require("lspkind")
+local present, cmp = pcall(require, "cmp")
+
+-- local lspkind = require("lspkind")
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-local o = vim.o
-local fn = vim.fn
-local api = vim.api
+
+if not present then
+    return
+end
 
 -- this whole lua file is stolen from marcus p much
 -- shoutout the real og one time
 
-o.shortmess = o.shortmess .. "c"
+vim.o.shortmess = vim.o.shortmess .. "c"
 
 local function replace_termcodes(s)
-	return api.nvim_replace_termcodes(s, false, false, true)
+	return vim.api.nvim_replace_termcodes(s, false, false, true)
 end
 
 local function feedkeys(keys, mode)
-	api.nvim_feedkeys(replace_termcodes(keys), mode, true)
+	vim.api.nvim_feedkeys(replace_termcodes(keys), mode, true)
 end
 
 -- Check if we should tab out of a pair of brackets / quotes. Returns true if
@@ -34,8 +36,8 @@ local function should_tab_out()
 		["`"] = true,
 	}
 
-	local line = fn.getline(".")
-	local col = fn.col(".")
+	local line = vim.fn.getline(".")
+	local col = vim.fn.col(".")
 	local next_char = line:sub(col, col)
 
 	if quotes[next_char] then
@@ -56,7 +58,7 @@ cmp.setup({
 	}),
 	snippet = {
 		expand = function(args)
-			fn["vsnip#anonymous"](args.body)
+			vim.fn["vsnip#anonymous"](args.body)
 		end,
 	},
 	confirmation = {
@@ -76,7 +78,7 @@ cmp.setup({
 		["<cr>"] = cmp.mapping.confirm({ select = true }),
 	},
 	formatting = {
-		format = lspkind.cmp_format({ with_text = false, maxwidth = 50 }),
+		-- format = lspkind.cmp_format({ with_text = false, maxwidth = 50 }),
 	},
 	experimental = {
 		ghost_text = true,

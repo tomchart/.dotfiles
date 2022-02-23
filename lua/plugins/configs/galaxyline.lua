@@ -3,7 +3,7 @@ local diag = vim.diagnostic
 local highlight = vim.highlight
 local galaxyline = require("galaxyline")
 local condition = require("galaxyline.condition")
-local gps = require("nvim-gps")
+-- local gps = require("nvim-gps")
 
 galaxyline.short_line_list = { "NvimTree", "term" }
 
@@ -123,16 +123,16 @@ galaxyline.section.left = {
 			condition = condition.check_git_workspace,
 		},
 	},
-	{
-		nvimGPS = {
-			provider = function()
-				return gps.get_location()
-			end,
-			condition = function()
-				return gps.is_available()
-			end,
-		},
-	},
+	-- {
+	-- 	nvimGPS = {
+	-- 		provider = function()
+	-- 			return gps.get_location()
+	-- 		end,
+	-- 		condition = function()
+	-- 			return gps.is_available()
+	-- 		end,
+	-- 	},
+	-- },
 }
 
 galaxyline.section.right = {
