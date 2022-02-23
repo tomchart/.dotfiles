@@ -1,9 +1,21 @@
+local present, galaxyline = pcall(require, "galaxyline")
+if not present then
+    return
+end
+
+local present, condition = pcall(require, "galaxyline.condition")
+if not condition then
+    return
+end
+
+local present, gps = pcall(require, "nvim-gps")
+if not present then
+    return
+end
+
 local fn = vim.fn
 local diag = vim.diagnostic
 local highlight = vim.highlight
-local galaxyline = require("galaxyline")
-local condition = require("galaxyline.condition")
--- local gps = require("nvim-gps")
 
 galaxyline.short_line_list = { "NvimTree", "term" }
 

@@ -1,4 +1,8 @@
-local lspconfig = require("lspconfig")
+local present, lspconfig = pcall(require, "lspconfig")
+if not present then
+    return
+end
+
 local fn = vim.fn
 
 local runtime_path = vim.split(package.path, ";")
@@ -97,7 +101,8 @@ local servers = {
 	-- },
 }
 
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = vim.lsp.protocol.make_client_capabilities()
 for server, config in pairs(servers) do
 	lspconfig[server].setup({
 		capabilities = capabilities,

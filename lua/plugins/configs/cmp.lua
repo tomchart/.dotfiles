@@ -1,8 +1,5 @@
 local present, cmp = pcall(require, "cmp")
 
--- local lspkind = require("lspkind")
-local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-
 if not present then
     return
 end
@@ -49,7 +46,7 @@ local function should_tab_out()
 	return brackets[next_char] == true
 end
 
-cmp.setup({
+local default = {
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
 		{ name = "vsnip" },
@@ -78,11 +75,17 @@ cmp.setup({
 		["<cr>"] = cmp.mapping.confirm({ select = true }),
 	},
 	formatting = {
-		-- format = lspkind.cmp_format({ with_text = false, maxwidth = 50 }),
+		-- format = require("lspkind-nvim").cmp_format({ with_text = false, maxwidth = 50 }),
 	},
 	experimental = {
 		ghost_text = true,
 	},
-})
+}
+-- cmp.event:on("confirm_done", require("nvim-autopairs").completion.cmp.on_confirm_done())
 
-cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+local M = {}
+M.setup = function()
+    cmp.setup(default)
+end
+
+return M
