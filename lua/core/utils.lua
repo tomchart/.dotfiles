@@ -10,31 +10,13 @@ local api = vim.api
 --- Extracts the guifg and guibg colours from a highlight group.
 --- @param name string
 --- @return HighlightColours
-local function extract_highlight_colours(name)
+M.extract_highlight_colours = function(name)
 	local highlight_string = api.nvim_exec("highlight " .. name, true)
 	return {
 		guifg = highlight_string:match("guifg=(#[%d%a]+)"),
 		guibg = highlight_string:match("guibg=(#[%d%a]+)"),
 	}
 end
-
--- Define the colour palette
-M.palette = {
-  cyan = extract_highlight_colours('DraculaCyan').guifg,
-  green = extract_highlight_colours('DraculaCyan').guifg,
-  orange = extract_highlight_colours('DraculaOrange').guifg,
-  purple = extract_highlight_colours('DraculaPurple').guifg,
-  red = extract_highlight_colours('DraculaRed').guifg,
-  pink = extract_highlight_colours('DraculaPink').guifg,
-
-  bg = extract_highlight_colours('Normal').guibg,
-  fg = extract_highlight_colours('Normal').guifg,
-
-  black2 = extract_highlight_colours('DraculaBgDark').guibg,
-  darker_black = extract_highlight_colours('DraculaBgDarker').guibg,
-  light = extract_highlight_colours('DraculaBgLight').guibg,
-  lighter = extract_highlight_colours('DraculaBgLighter').guibg
-}
 
 -- Highlights functions
 
