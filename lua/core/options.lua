@@ -1,7 +1,4 @@
-local cmd = vim.cmd
 local o = vim.o
-
-cmd("colorscheme dracula")
 
 o.expandtab = true
 o.mouse = "a"
