@@ -5,3 +5,6 @@ cmd([[autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe
 
 -- set filetype when terminal opened
 cmd([[autocmd TermOpen * :lua require('utils').change_terminal_filetype()]])
+
+-- no comment markers on newlines from commented line
+cmd([[autocmd FileType c,cpp setlocal formatoptions-=r]])
