@@ -159,8 +159,14 @@ local plugins = {
 		"machakann/vim-highlightedyank",
 		after = "bufdelete.nvim",
 	},
+	{
+		"j-hui/fidget.nvim",
+		setup = function()
+			require("plugins.configs.fidget")
+		end,
+	},
 
-	-- telescope
+	-- file managing, picking, etc
 	{
 		"nvim-telescope/telescope.nvim",
 		config = function()
@@ -168,6 +174,12 @@ local plugins = {
 		end,
 		setup = function()
 			require("plugins.configs.telescope")
+		end,
+	},
+	{
+		"kyazdani42/nvim-tree.lua",
+		config = function()
+			require("plugins.configs.nvim_tree")
 		end,
 	},
 }
