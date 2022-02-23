@@ -61,6 +61,19 @@ local plugins = {
 		end,
 	},
 
+	-- git stuff
+	{
+		"tpope/vim-fugitive",
+		event = "BufRead",
+	},
+	{
+		"lewis6991/gitsigns.nvim",
+		event = "BufRead",
+		config = function()
+			require("plugins.configs.gitsigns").setup()
+		end,
+	},
+
 	-- lsp stuff
 	{
 		"neovim/nvim-lspconfig",
@@ -130,6 +143,21 @@ local plugins = {
 		config = function()
 			require("plugins.configs.nvim_autopairs")
 		end,
+	},
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		after = "nvim-autopairs",
+		config = function()
+			require("plugins.configs.indent-blankline")
+		end,
+	},
+	{
+		"famiu/bufdelete.nvim",
+		after = "indent-blankline.nvim",
+	},
+	{
+		"machakann/vim-highlightedyank",
+		after = "bufdelete.nvim",
 	},
 
 	-- telescope
