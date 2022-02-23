@@ -3,8 +3,28 @@ local hi = vim.highlight
 local fg = require("core.utils").fg
 local bg = require("core.utils").bg
 local fg_bg = require("core.utils").fg_bg
+local extract_highlight_colours = require("core.utils").extract_highlight_colours
 local highlight_group = require("core.utils").highlight_group
-local palette = require("core.utils").palette
+
+vim.cmd("colorscheme dracula")
+
+-- Define the colour palette
+local palette = {
+  cyan = extract_highlight_colours('DraculaCyan').guifg,
+  green = extract_highlight_colours('DraculaCyan').guifg,
+  orange = extract_highlight_colours('DraculaOrange').guifg,
+  purple = extract_highlight_colours('DraculaPurple').guifg,
+  red = extract_highlight_colours('DraculaRed').guifg,
+  pink = extract_highlight_colours('DraculaPink').guifg,
+
+  bg = extract_highlight_colours('Normal').guibg,
+  fg = extract_highlight_colours('Normal').guifg,
+
+  black2 = extract_highlight_colours('DraculaBgDark').guibg,
+  darker_black = extract_highlight_colours('DraculaBgDarker').guibg,
+  light = extract_highlight_colours('DraculaBgLight').guibg,
+  lighter = extract_highlight_colours('DraculaBgLighter').guibg
+}
 
 -- git
 hi.link("DiffDelete", "DraculaRed", true)
