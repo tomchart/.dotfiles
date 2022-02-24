@@ -57,7 +57,7 @@ local plugins = {
 		"nvim-treesitter/nvim-treesitter",
 		event = "BufRead",
 		config = function()
-			require("plugins.configs.nvim_treesitter")
+			require("plugins.configs.nvim_treesitter").setup()
 		end,
 	},
 
@@ -84,7 +84,7 @@ local plugins = {
 	},
 	{
 		"ray-x/lsp_signature.nvim",
-		after = "nvim-lspconfig",
+		event = "BufRead",
 		config = function()
 			require("plugins.configs.lsp_signature")
 		end,
@@ -141,45 +141,55 @@ local plugins = {
 		"windwp/nvim-autopairs",
 		after = "nvim-cmp",
 		config = function()
-			require("plugins.configs.nvim_autopairs")
+			require("plugins.configs.nvim_autopairs").setup()
 		end,
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		after = "nvim-autopairs",
+		event = "BufRead",
 		config = function()
 			require("plugins.configs.indent-blankline")
 		end,
 	},
 	{
 		"famiu/bufdelete.nvim",
-		after = "indent-blankline.nvim",
+		event = "BufRead",
 	},
 	{
 		"machakann/vim-highlightedyank",
-		after = "bufdelete.nvim",
+		event = "BufRead",
 	},
 	{
 		"j-hui/fidget.nvim",
-		setup = function()
-			require("plugins.configs.fidget")
+		event = "BufRead",
+		config = function()
+			require("plugins.configs.fidget").setup()
 		end,
+	},
+	{
+		"dstein64/vim-startuptime",
+		event = "VimEnter",
 	},
 
 	-- file managing, picking, etc
 	{
 		"nvim-telescope/telescope.nvim",
-		config = function()
+		after = "galaxyline.nvim",
+		setup = function()
 			require("core.mappings").tele()
 		end,
-		setup = function()
-			require("plugins.configs.telescope")
+		config = function()
+			require("plugins.configs.telescope").setup()
 		end,
 	},
 	{
 		"kyazdani42/nvim-tree.lua",
+		after = "telescope.nvim",
+		setup = function()
+			require("core.mappings").nvimtree()
+		end,
 		config = function()
-			require("plugins.configs.nvim_tree")
+			require("plugins.configs.nvim_tree").setup()
 		end,
 	},
 }
