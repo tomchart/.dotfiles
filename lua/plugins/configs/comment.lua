@@ -1,4 +1,4 @@
-local present, comment = pcall(require, "comment")
+local present, comment = pcall(require, "Comment")
 
 if not present then
 	return
