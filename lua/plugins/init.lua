@@ -54,8 +54,16 @@ local plugins = {
 		end,
 	},
 	{
-		"nvim-treesitter/nvim-treesitter",
+		"nvim-treesitter/nvim-treesitter-textobjects",
 		event = "BufRead",
+	},
+	{
+		"romgrk/nvim-treesitter-context",
+		after = "nvim-treesitter-textobjects",
+	},
+	{
+		"nvim-treesitter/nvim-treesitter",
+		after = "nvim-treesitter-context",
 		config = function()
 			require("plugins.configs.nvim_treesitter").setup()
 		end,
