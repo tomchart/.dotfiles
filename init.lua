@@ -7,7 +7,7 @@ end
 local core_modules = {
 	"core.misc",
 	"core.mappings",
-    "core.options",
+	"core.options",
 }
 
 for _, module in ipairs(core_modules) do
@@ -17,6 +17,8 @@ for _, module in ipairs(core_modules) do
 	end
 end
 
+-- non plugin mappings
 require("core.mappings").misc()
+
 require("plugins.init")
 require("colours.init").init("dracula")
