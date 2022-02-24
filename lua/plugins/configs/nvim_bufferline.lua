@@ -2,6 +2,12 @@ local bufferline = require("bufferline")
 
 bufferline.setup({
 	highlights = {
+		fill = {
+			guibg = {
+				attribute = "bg",
+				highlight = "DraculaBgDarker",
+			},
+		},
 		buffer_selected = {
 			gui = "bold",
 		},
@@ -35,6 +41,7 @@ bufferline.setup({
 			end
 			return s
 		end,
+		always_show_bufferline = true,
 		show_buffer_close_icons = false,
 		show_close_icon = false,
 		separator_style = "slant",
