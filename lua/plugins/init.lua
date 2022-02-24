@@ -167,6 +167,17 @@ local plugins = {
 		end,
 	},
 	{
+		"ggandor/lightspeed.nvim",
+		event = "BufRead",
+	},
+	{
+		"numToStr/Comment.nvim",
+		event = "BufRead",
+		config = function()
+			require("plugins.configs.comment").setup()
+		end,
+	},
+	{
 		"dstein64/vim-startuptime",
 		event = "VimEnter",
 	},
@@ -189,7 +200,7 @@ local plugins = {
 			require("core.mappings").nvimtree()
 		end,
 		config = function()
-			require("plugins.configs.nvim_tree").setup()
+			require("plugins.configs.nvimtree").setup()
 		end,
 	},
 }
