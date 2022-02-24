@@ -64,7 +64,7 @@ local plugins = {
 	-- git stuff
 	{
 		"tpope/vim-fugitive",
-		event = "BufRead",
+		after = "galaxyline.nvim",
 	},
 	{
 		"lewis6991/gitsigns.nvim",
@@ -83,13 +83,6 @@ local plugins = {
 		end,
 	},
 	{
-		"ray-x/lsp_signature.nvim",
-		event = "BufRead",
-		config = function()
-			require("plugins.configs.lsp_signature")
-		end,
-	},
-	{
 		"jose-elias-alvarez/null-ls.nvim",
 		after = "nvim-lspconfig",
 		config = function()
@@ -97,8 +90,16 @@ local plugins = {
 		end,
 	},
 	{
+		"ray-x/lsp_signature.nvim",
+		event = "BufRead",
+		config = function()
+			require("plugins.configs.lsp_signature")
+		end,
+	},
+
+	{
 		"hrsh7th/nvim-cmp",
-		after = "null-ls.nvim",
+		after = "lsp_signature.nvim",
 		config = function()
 			require("plugins.configs.cmp").setup()
 		end,
@@ -139,40 +140,40 @@ local plugins = {
 	-- misc plugins
 	{
 		"windwp/nvim-autopairs",
-		after = "nvim-cmp",
+		after = "lspkind-nvim",
 		config = function()
 			require("plugins.configs.nvim_autopairs").setup()
 		end,
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		event = "BufRead",
+		after = "nvim-autopairs",
 		config = function()
 			require("plugins.configs.indent-blankline")
 		end,
 	},
 	{
 		"famiu/bufdelete.nvim",
-		event = "BufRead",
+		after = "indent-blankline.nvim",
 	},
 	{
 		"machakann/vim-highlightedyank",
-		event = "BufRead",
+		after = "bufdelete.nvim",
 	},
 	{
 		"j-hui/fidget.nvim",
-		event = "BufRead",
+		after = "vim-highlightedyank",
 		config = function()
 			require("plugins.configs.fidget").setup()
 		end,
 	},
 	{
 		"ggandor/lightspeed.nvim",
-		event = "BufRead",
+		after = "fidget.nvim",
 	},
 	{
 		"numToStr/Comment.nvim",
-		event = "BufRead",
+		after = "lightspeed.nvim",
 		config = function()
 			require("plugins.configs.comment").setup()
 		end,
