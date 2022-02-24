@@ -1,23 +1,23 @@
 local present, galaxyline = pcall(require, "galaxyline")
 if not present then
-    return
+	return
 end
 
 local present, condition = pcall(require, "galaxyline.condition")
 if not condition then
-    return
+	return
 end
 
 local present, gps = pcall(require, "nvim-gps")
 if not present then
-    return
+	return
 end
 
 local fn = vim.fn
 local diag = vim.diagnostic
 local highlight = vim.highlight
 
-galaxyline.short_line_list = { "NvimTree", "term" }
+galaxyline.short_line_list = { "NvimTree", "term", "dashboard" }
 
 local mode_symbol_to_mode = {
 	n = "Normal",
