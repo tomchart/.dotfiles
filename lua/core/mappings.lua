@@ -7,16 +7,17 @@ M.misc = function()
 		-- copy to end of line from current pos with Y
 		keymap("n", "Y", "y$")
 
-		-- rekeymap jumplist to <leader>o and <leader>i
-		keymap("n", "<leader>o", "<c-o>")
-		keymap("n", "<leader>i", "<tab>")
-
 		-- open terminal with <c-t>
 		keymap("n", "<c-t>", "<cmd>terminal<cr>")
 	end
+
 	local function comfort()
 		-- set leader to space
 		vim.g.mapleader = " "
+		--
+		-- rekeymap jumplist to <leader>o and <leader>i
+		keymap("n", "<leader>o", "<c-o>")
+		keymap("n", "<leader>i", "<tab>")
 
 		-- in insert mode, jj exits this mode
 		keymap("i", "jj", "<esc>")
