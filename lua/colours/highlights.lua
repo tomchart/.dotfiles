@@ -10,20 +10,20 @@ vim.cmd("colorscheme dracula")
 
 -- Define the colour palette
 local palette = {
-  cyan = extract_highlight_colours('DraculaCyan').guifg,
-  green = extract_highlight_colours('DraculaCyan').guifg,
-  orange = extract_highlight_colours('DraculaOrange').guifg,
-  purple = extract_highlight_colours('DraculaPurple').guifg,
-  red = extract_highlight_colours('DraculaRed').guifg,
-  pink = extract_highlight_colours('DraculaPink').guifg,
+	cyan = extract_highlight_colours("DraculaCyan").guifg,
+	green = extract_highlight_colours("DraculaCyan").guifg,
+	orange = extract_highlight_colours("DraculaOrange").guifg,
+	purple = extract_highlight_colours("DraculaPurple").guifg,
+	red = extract_highlight_colours("DraculaRed").guifg,
+	pink = extract_highlight_colours("DraculaPink").guifg,
 
-  bg = extract_highlight_colours('Normal').guibg,
-  fg = extract_highlight_colours('Normal').guifg,
+	bg = extract_highlight_colours("Normal").guibg,
+	fg = extract_highlight_colours("Normal").guifg,
 
-  black2 = extract_highlight_colours('DraculaBgDark').guibg,
-  darker_black = extract_highlight_colours('DraculaBgDarker').guibg,
-  light = extract_highlight_colours('DraculaBgLight').guibg,
-  lighter = extract_highlight_colours('DraculaBgLighter').guibg
+	black2 = extract_highlight_colours("DraculaBgDark").guibg,
+	darker_black = extract_highlight_colours("DraculaBgDarker").guibg,
+	light = extract_highlight_colours("DraculaBgLight").guibg,
+	lighter = extract_highlight_colours("DraculaBgLighter").guibg,
 }
 
 -- git
@@ -46,6 +46,9 @@ for mode, colour in pairs(mode_to_colour) do
 	highlight_group("Galaxyline" .. mode .. "Mode", { guifg = palette.bg, guibg = colour })
 	highlight_group("Galaxyline" .. mode .. "ModeSeparator", { guifg = colour, guibg = palette.bg })
 end
+
+-- statusline
+bg("StatusLine", palette.bg)
 
 -- telescope
 fg_bg("TelescopeBorder", palette.black2, palette.black2)
