@@ -179,7 +179,6 @@ local plugins = {
 	},
 	{
 		"dstein64/vim-startuptime",
-		event = "VimEnter",
 	},
 
 	-- file managing, picking, etc
