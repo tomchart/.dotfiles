@@ -64,6 +64,8 @@ M.misc = function()
 		keymap("n", "<tab>v", "<c-w>v")
 		keymap("n", "<tab>h", "<c-w>s")
 		keymap("n", "<tab>q", "<c-w>q")
+		keymap("n", "<tab>_", "<c-w>_")
+		keymap("n", "<tab>|", "<c-w>|")
 
 		-- close buffer
 		keymap("n", "<c-w>", "<cmd>Bdelete<cr>")
