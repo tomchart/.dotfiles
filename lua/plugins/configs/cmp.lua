@@ -1,7 +1,7 @@
 local present, cmp = pcall(require, "cmp")
 
 if not present then
-    return
+	return
 end
 
 -- this whole lua file is stolen from marcus p much
@@ -46,7 +46,7 @@ local function should_tab_out()
 	return brackets[next_char] == true
 end
 
-local default = {
+local conf = {
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
 		{ name = "vsnip" },
@@ -78,14 +78,14 @@ local default = {
 		-- format = require("lspkind-nvim").cmp_format({ with_text = false, maxwidth = 50 }),
 	},
 	experimental = {
-		ghost_text = true,
+		ghost_text = { hl_group = "DraculaPurple" },
 	},
 }
 -- cmp.event:on("confirm_done", require("nvim-autopairs").completion.cmp.on_confirm_done())
 
 local M = {}
 M.setup = function()
-    cmp.setup(default)
+	cmp.setup(conf)
 end
 
 return M
