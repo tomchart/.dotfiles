@@ -10,6 +10,7 @@ default = {
 	ensure_installed = "maintained",
 	highlight = {
 		enable = true,
+		use_languagetree = true,
 		disable = { "yaml" },
 	},
 	incremental_selection = {

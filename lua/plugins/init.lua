@@ -54,21 +54,17 @@ local plugins = {
 		end,
 	},
 	{
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		event = "BufRead",
-	},
-	{
-		"romgrk/nvim-treesitter-context",
-		after = "nvim-treesitter-textobjects",
-	},
-	{
 		"nvim-treesitter/nvim-treesitter",
-		after = "nvim-treesitter-context",
+		event = "BufRead",
 		config = function()
 			require("plugins.configs.nvim_treesitter").setup()
 		end,
+		run = ":TSUpdate",
 	},
-
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		after = "nvim-treesitter",
+	},
 	-- git stuff
 	{
 		"tpope/vim-fugitive",
