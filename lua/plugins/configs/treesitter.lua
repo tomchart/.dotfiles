@@ -1,10 +1,8 @@
-local present, tree = pcall(require, "nvim-treesitter")
+local present, ts_config = pcall(require, "nvim-treesitter.configs")
 
 if not present then
 	return
 end
-
-local ts_configs = require("nvim-treesitter.configs")
 
 default = {
 	ensure_installed = "maintained",
@@ -67,7 +65,7 @@ default = {
 local M = {}
 
 M.setup = function()
-	ts_configs.setup(default)
+	ts_config.setup(default)
 end
 
 return M
