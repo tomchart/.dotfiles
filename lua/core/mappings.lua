@@ -104,6 +104,7 @@ end
 
 M.lspconf = function()
 	keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>")
+	keymap("n", "E", "<cmd>lua vim.diagnostic.open_float()<cr>")
 end
 
 M.trouble = function()
