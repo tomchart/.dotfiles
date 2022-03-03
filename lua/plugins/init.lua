@@ -55,7 +55,6 @@ local plugins = {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
-		event = { "BufRead", "BufNewFile" },
 		config = function()
 			require("plugins.configs.treesitter").setup()
 		end,
