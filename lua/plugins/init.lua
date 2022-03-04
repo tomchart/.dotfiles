@@ -192,6 +192,13 @@ local plugins = {
 		end,
 	},
 	{
+		"mvllow/modes.nvim",
+		after = "better-escape.vim",
+		config = function()
+			require("plugins.configs.mode_hi").setup()
+		end,
+	},
+	{
 		"dstein64/vim-startuptime",
 	},
 
