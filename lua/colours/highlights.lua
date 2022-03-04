@@ -51,9 +51,9 @@ end
 bg("StatusLine", palette.bg)
 
 -- cursorline
-hi.link("ModesInsert", "DraculaCyan", true)
-hi.link("ModesCopy", "DraculaOrange", true)
-hi.link("ModesVisual", "DraculaOrange", true)
+bg("ModesInsert", palette.cyan)
+bg("ModesCopy", palette.orange)
+bg("ModesVisual", palette.orange)
 
 -- telescope
 fg_bg("TelescopeBorder", palette.black2, palette.black2)
