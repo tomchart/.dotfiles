@@ -81,6 +81,9 @@ local plugins = {
 	{
 		"neovim/nvim-lspconfig",
 		after = "bufferline.nvim",
+		setup = function()
+			require("core.mappings").lspconf()
+		end,
 		config = function()
 			require("plugins.configs.lspconfig")
 		end,
@@ -179,6 +182,13 @@ local plugins = {
 		after = "lightspeed.nvim",
 		config = function()
 			require("plugins.configs.comment").setup()
+		end,
+	},
+	{
+		"jdhao/better-escape.vim",
+		after = "Comment.nvim",
+		setup = function()
+			vim.g.better_escape_shortcut = "jj"
 		end,
 	},
 	{
