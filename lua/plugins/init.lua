@@ -79,8 +79,12 @@ local plugins = {
 
 	-- lsp stuff
 	{
-		"neovim/nvim-lspconfig",
+		"RRethy/vim-illuminate",
 		after = "bufferline.nvim",
+	},
+	{
+		"neovim/nvim-lspconfig",
+		after = "vim-illuminate",
 		setup = function()
 			require("core.mappings").lspconf()
 		end,
