@@ -35,4 +35,15 @@ M.autopairs = function()
 	end
 end
 
+M.escape = function()
+	local present, escape = pcall(require, "better-escape.nvim")
+	if not present then
+		return
+	end
+
+	require(escape).setup({
+		mapping = "jj",
+	})
+end
+
 return M
