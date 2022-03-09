@@ -32,6 +32,9 @@ hi.link("DiffDelete", "DraculaRed", true)
 -- gitsigns
 hi.link("GitSignsCurrentLineBlame", "DraculaComment")
 
+--dashboard
+fg("DashBoardHeader", palette.cyan)
+
 -- galaxyline
 local mode_to_colour = {
 	Normal = palette.purple,
