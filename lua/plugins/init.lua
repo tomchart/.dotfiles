@@ -87,6 +87,7 @@ local plugins = {
 	{
 		"RRethy/vim-illuminate",
 		after = "indent-blankline.nvim",
+		config = [[ vim.g.Illuminate_delay = 500 ]],
 	},
 	{
 		"neovim/nvim-lspconfig",
