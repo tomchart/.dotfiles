@@ -54,6 +54,13 @@ local plugins = {
 		end,
 	},
 	{
+		"lukas-reineke/indent-blankline.nvim",
+		after = "nvim-autopairs",
+		config = function()
+			require("plugins.configs.others").indent()
+		end,
+	},
+	{
 		"nvim-treesitter/nvim-treesitter",
 		config = function()
 			require("plugins.configs.treesitter").setup()
@@ -67,11 +74,11 @@ local plugins = {
 	-- git stuff
 	{
 		"tpope/vim-fugitive",
-		after = "galaxyline.nvim",
+		after = "nvim-treesitter",
 	},
 	{
 		"lewis6991/gitsigns.nvim",
-		event = "BufRead",
+		after = "vim-fugitive",
 		config = function()
 			require("plugins.configs.gitsigns").setup()
 		end,
@@ -152,14 +159,7 @@ local plugins = {
 		"windwp/nvim-autopairs",
 		after = "lspkind-nvim",
 		config = function()
-			require("plugins.configs.nvim_autopairs").setup()
-		end,
-	},
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		after = "nvim-autopairs",
-		config = function()
-			require("plugins.configs.indent-blankline")
+			require("plugins.configs.others").autopairs()
 		end,
 	},
 	{
