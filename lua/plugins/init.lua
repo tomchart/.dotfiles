@@ -16,7 +16,6 @@ local plugins = {
 	{
 		"dracula/vim",
 		as = "dracula",
-		-- after = "packer.nvim"
 	},
 	{
 		"glepnir/dashboard-nvim",
@@ -55,7 +54,7 @@ local plugins = {
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		after = "nvim-autopairs",
+		after = "bufferline.nvim",
 		config = function()
 			require("plugins.configs.others").indent()
 		end,
@@ -190,14 +189,14 @@ local plugins = {
 	},
 	{
 		"jdhao/better-escape.vim",
-		after = "Comment.nvim",
-		setup = function()
-			vim.g.better_escape_shortcut = "jj"
+		event = "InsertCharPre",
+		config = function()
+			require("plugins.configs.others").escape()
 		end,
 	},
 	{
 		"mvllow/modes.nvim",
-		after = "better-escape.vim",
+		after = "Comment.nvim",
 		config = function()
 			require("plugins.configs.mode_hi").setup()
 		end,
