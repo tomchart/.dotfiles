@@ -54,7 +54,7 @@ local plugins = {
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		event = "BufRead",
+		event = "BufReadPost",
 		config = function()
 			require("plugins.configs.others").indent()
 		end,
@@ -77,7 +77,7 @@ local plugins = {
 	},
 	{
 		"lewis6991/gitsigns.nvim",
-		event = "BufRead",
+		event = "BufReadPost",
 		config = function()
 			require("plugins.configs.gitsigns").setup()
 		end,
@@ -163,7 +163,7 @@ local plugins = {
 	},
 	{
 		"famiu/bufdelete.nvim",
-		event = "BufRead",
+		event = "BufReadPost",
 	},
 	{
 		"machakann/vim-highlightedyank",
