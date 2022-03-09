@@ -54,7 +54,7 @@ local plugins = {
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		after = "bufferline.nvim",
+		event = "BufRead",
 		config = function()
 			require("plugins.configs.others").indent()
 		end,
@@ -77,7 +77,7 @@ local plugins = {
 	},
 	{
 		"lewis6991/gitsigns.nvim",
-		after = "vim-fugitive",
+		event = "BufRead",
 		config = function()
 			require("plugins.configs.gitsigns").setup()
 		end,
@@ -86,11 +86,11 @@ local plugins = {
 	-- lsp stuff
 	{
 		"RRethy/vim-illuminate",
-		after = "bufferline.nvim",
+		after = "indent-blankline.nvim",
 	},
 	{
 		"neovim/nvim-lspconfig",
-		after = "vim-illuminate",
+		after = "vim-fugitive",
 		setup = function()
 			require("core.mappings").lspconf()
 		end,
@@ -107,7 +107,7 @@ local plugins = {
 	},
 	{
 		"ray-x/lsp_signature.nvim",
-		event = "BufRead",
+		after = "nvim-lspconfig",
 		config = function()
 			require("plugins.configs.lsp_signature")
 		end,
@@ -115,7 +115,7 @@ local plugins = {
 
 	{
 		"hrsh7th/nvim-cmp",
-		after = "lsp_signature.nvim",
+		event = "InsertCharPre",
 		config = function()
 			require("plugins.configs.cmp").setup()
 		end,
@@ -163,7 +163,7 @@ local plugins = {
 	},
 	{
 		"famiu/bufdelete.nvim",
-		after = "indent-blankline.nvim",
+		event = "BufRead",
 	},
 	{
 		"machakann/vim-highlightedyank",
