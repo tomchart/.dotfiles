@@ -20,5 +20,8 @@ end
 -- non plugin mappings
 require("core.mappings").misc()
 
+-- call plugins
 require("plugins.init")
+
+-- call colours
 require("colours.init").init("dracula")
