@@ -1,3 +1,8 @@
+-- local wrapper for mapping, with default opts
+-- @param mode string
+-- @param lhs string
+-- @param rhs string|function
+-- @param opts table|nil
 local keymap = function(mode, lhs, rhs, opts)
 	if opts then
 		vim.keymap.set(mode, lhs, rhs, opts)
