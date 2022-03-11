@@ -20,7 +20,10 @@ M.misc = function()
 	local function comfort()
 		-- set leader to space
 		vim.g.mapleader = " "
-		--
+
+		-- remap ; to : (always miss it)
+		keymap("n", ";", ":")
+
 		-- rekeymap jumplist to <leader>o and <leader>i
 		keymap("n", "<leader>o", "<c-o>")
 		keymap("n", "<leader>i", "<tab>")
