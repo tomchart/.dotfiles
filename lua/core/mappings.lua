@@ -1,4 +1,10 @@
-local keymap = vim.keymap.set
+local keymap = function(mode, lhs, rhs, opts)
+	if opts then
+		vim.keymap.set(mode, lhs, rhs, opts)
+	else
+		vim.keymap.set(mode, lhs, rhs, { silent = true, noremap = true })
+	end
+end
 
 local M = {}
 
