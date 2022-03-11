@@ -30,6 +30,8 @@ if osx; then
     echo "Installing language servers..."
     npm i -g pyright
     npm i -g bash-language-server
+    npm i -g remark
+    npm i -g remark-language-server
 
 fi
 
