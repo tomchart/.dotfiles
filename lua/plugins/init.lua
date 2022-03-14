@@ -119,6 +119,8 @@ local plugins = {
 		module = "cmp_nvim_lsp",
 		event = "InsertEnter",
 	},
+
+	-- cmp is mostly working but throwing errors for galaxyline when running some snippets??
 	{
 		"hrsh7th/nvim-cmp",
 		after = "friendly-snippets",
