@@ -115,43 +115,60 @@ local plugins = {
 	},
 
 	{
+		"rafamadriz/friendly-snippets",
+		module = "cmp_nvim_lsp",
+		event = "InsertEnter",
+	},
+	{
 		"hrsh7th/nvim-cmp",
-		event = "InsertCharPre",
+		after = "friendly-snippets",
 		config = function()
 			require("plugins.configs.cmp").setup()
 		end,
 	},
 	{
-		"hrsh7th/vim-vsnip",
+		"L3MON4D3/LuaSnip",
+		wants = "friendly-snippets",
 		after = "nvim-cmp",
+		config = function()
+			require("plugins.configs.others").luasnip()
+		end,
 	},
 	{
-		"hrsh7th/cmp-vsnip",
-		after = "nvim-cmp",
-	},
-	{
-		"hrsh7th/cmp-nvim-lsp",
-		after = "nvim-cmp",
+		"saadparwaiz1/cmp_luasnip",
+		after = "LuaSnip",
 	},
 	{
 		"hrsh7th/cmp-nvim-lua",
-		after = "nvim-cmp",
+		after = "cmp_luasnip",
+	},
+	{
+		"hrsh7th/cmp-nvim-lsp",
+		after = "cmp-nvim-lua",
+	},
+	{
+		"hrsh7th/vim-vsnip",
+		after = "cmp-nvim-lsp",
+	},
+	{
+		"hrsh7th/cmp-vsnip",
+		after = "vim-vsnip",
 	},
 	{
 		"hrsh7th/cmp-buffer",
-		after = "nvim-cmp",
+		after = "cmp-vsnip",
 	},
 	{
 		"hrsh7th/cmp-path",
-		after = "nvim-cmp",
+		after = "cmp-buffer",
 	},
 	{
 		"hrsh7th/cmp-cmdline",
-		after = "nvim-cmp",
+		after = "cmp-path",
 	},
 	{
 		"onsails/lspkind-nvim",
-		after = "nvim-cmp",
+		after = "cmp-cmdline",
 	},
 
 	-- misc plugins
