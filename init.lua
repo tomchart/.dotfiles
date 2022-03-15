@@ -21,7 +21,7 @@ end
 require("core.mappings").misc()
 
 -- call plugins
-require("plugins.init")
+require("plugins")
 
 -- call colours
-require("colours.init").init("dracula")
+require("colours").init("dracula")
