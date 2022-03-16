@@ -163,6 +163,9 @@ alias v="lsb_release -a"
 # see octal permission for folder
 alias oct=octal_folder_perms
 
+# mkdocs shorthand
+alias mbuild="git pull && python3 -m mkdocs build && ./copy_site.sh"
+
 ##################
 #                #
 # nvm init stuff #
