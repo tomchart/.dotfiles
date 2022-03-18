@@ -43,6 +43,8 @@ local function get_diag_count(severity_level)
 	end
 end
 
+-- TODO - move vimode text to separator, then match text bg to ide bg and text fg to mode colour, then change icon colour to match mode colour
+-- basically just rip off nvchad a bit harder - it does look cool though
 galaxyline.section.left = {
 	{
 		ViMode = {
