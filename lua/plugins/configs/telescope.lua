@@ -7,7 +7,25 @@ end
 local layout = require("telescope.actions.layout")
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
+local utils = require("telescope.utils")
+local entry_display = require("telescope.pickers.entry_display")
 
+--- Splits a filepath into head / tail where tail is the last path component and
+--- head is everything before it.
+---@param path string
+---@return string head
+---@return string tail
+local function split_path(path)
+	local tail = utils.path_tail(path)
+	local head = path:gsub("/" .. tail .. "$", "")
+	return head, tail
+end
+
+--- Shortens the given path by either:
+--- - making it relative if it's part of the cwd
+--- - replacing the home directory with ~ if not
+---@param path string
+---@return string
 local function shorten_path(path)
 	local cwd = vim.fn.getcwd()
 	if path == cwd then
