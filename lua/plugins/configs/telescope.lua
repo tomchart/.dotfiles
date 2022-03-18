@@ -8,6 +8,20 @@ local layout = require("telescope.actions.layout")
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
 
+local function shorten_path(path)
+	local cwd = vim.fn.getcwd()
+	if path == cwd then
+		return ""
+	end
+	local relative_path
+	replacements = path:gsub("^" .. cwd .. "/", "")
+	if replacements == 1 then
+		return relative_path
+	end
+	local path_without_home = path:gsub("^" .. os.getenv("HOME"), "~")
+	return path_without_home
+end
+
 local M = {}
 
 M.setup = function()
@@ -15,16 +29,13 @@ M.setup = function()
 		defaults = {
 			mappings = {
 				i = {
-					["<c-h>"] = layout.toggle_preview,
-				},
-				n = {
-					["<c-h>"] = layout.toggle_preview,
-				},
-				i = {
 					["<c-s>"] = actions.select_vertical,
+					["<c-h>"] = layout.toggle_preview,
+					["<esc>"] = actions.close,
 				},
 				n = {
 					["<c-s>"] = actions.select_vertical,
+					["<c-h>"] = layout.toggle_preview,
 				},
 			},
 			file_ignore_patterns = { ".git/" },
@@ -49,6 +60,14 @@ M.setup = function()
 		pickers = {
 			find_files = {
 				hidden = true,
+				path_display = function(opts, path)
+					return shorten_path(path)
+				end,
+			},
+			oldfiles = {
+				path_display = function(opts, path)
+					return shorten_path(path)
+				end,
 			},
 		},
 		winblend = 0,
