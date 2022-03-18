@@ -54,6 +54,9 @@ end
 -- statusline
 bg("StatusLine", palette.bg)
 
+-- bufferline
+fg("BufferLineIndicatorSelected", palette.cyan)
+
 -- cursorline
 bg("ModesInsert", palette.cyan)
 bg("ModesCopy", palette.orange)
