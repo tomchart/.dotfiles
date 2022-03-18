@@ -27,6 +27,7 @@ local mode_symbol_to_mode = {
 	V = "Visual Line",
 	[""] = "Visual Block",
 	R = "Replace",
+	s = "Snippet",
 }
 
 local function get_diag_count(severity_level)

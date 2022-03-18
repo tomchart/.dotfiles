@@ -44,6 +44,7 @@ local mode_to_colour = {
 	VisualLine = palette.orange,
 	VisualBlock = palette.orange,
 	Replace = palette.red,
+	Snippet = palette.pink,
 }
 for mode, colour in pairs(mode_to_colour) do
 	highlight_group("Galaxyline" .. mode .. "Mode", { guifg = palette.bg, guibg = colour })
