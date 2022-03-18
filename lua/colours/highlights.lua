@@ -6,8 +6,6 @@ local fg_bg = require("core.utils").fg_bg
 local extract_highlight_colours = require("core.utils").extract_highlight_colours
 local highlight_group = require("core.utils").highlight_group
 
-vim.cmd("colorscheme dracula")
-
 -- Define the colour palette
 local palette = {
 	cyan = extract_highlight_colours("DraculaCyan").guifg,
@@ -53,9 +51,6 @@ end
 
 -- statusline
 bg("StatusLine", palette.bg)
-
--- bufferline
-fg("BufferLineIndicatorSelected", palette.cyan)
 
 -- cursorline
 bg("ModesInsert", palette.cyan)
