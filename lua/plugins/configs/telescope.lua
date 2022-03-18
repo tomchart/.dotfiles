@@ -31,13 +31,18 @@ local function shorten_path(path)
 	if path == cwd then
 		return ""
 	end
-	local relative_path
-	replacements = path:gsub("^" .. cwd .. "/", "")
+	local relative_path, replacements = path:gsub("^" .. cwd .. "/", "")
 	if replacements == 1 then
 		return relative_path
 	end
-	local path_without_home = path:gsub("^" .. os.getenv("HOME"), "~")
-	return path_without_home
+	local path_without_home, replacements2 = path:gsub("^" .. os.getenv("HOME"), "~")
+	if replacements2 == 1 then
+		return path_without_home
+	end
+	local path_without_home_win, replacements3 = path:gsub("/mnt/c/Users/tom", "win/~")
+	if replacements3 == 1 then
+		return path_without_home_win
+	end
 end
 
 local M = {}
