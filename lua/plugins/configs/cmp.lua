@@ -72,19 +72,23 @@ local function should_tab_out()
 end
 
 local conf = {
-	sources = cmp.config.sources({
-		{ name = "nvim_lsp" },
-		{ name = "vsnip" },
-	}, {
-		{ name = "buffer" },
-	}),
 	snippet = {
 		expand = function(args)
-			vim.fn["vsnip#anonymous"](args.body)
+			require("luasnip").lsp_expand(args.body)
 		end,
 	},
-	confirmation = {
-		default_behavior = cmp.ConfirmBehavior.Replace,
+	formatting = {
+		format = function(entry, vim_item)
+			vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
+
+			vim_item.menu = ({
+				nvim_lsp = "[LSP]",
+				nvim_lua = "[Lua]",
+				buffer = "[BUF]",
+			})[entry.source.name]
+
+			return vim_item
+		end,
 	},
 	mapping = {
 		["<c-space>"] = cmp.mapping.complete(),
@@ -99,8 +103,15 @@ local conf = {
 		end,
 		["<cr>"] = cmp.mapping.confirm({ select = true }),
 	},
-	formatting = {
-		-- format = require("lspkind-nvim").cmp_format({ with_text = false, maxwidth = 50 }),
+	confirmation = {
+		default_behavior = cmp.ConfirmBehavior.Replace,
+	},
+	sources = {
+		{ name = "nvim_lsp" },
+		{ name = "luasnip" },
+		{ name = "buffer" },
+		{ name = "nvim_lua" },
+		{ name = "path" },
 	},
 	experimental = {
 		ghost_text = { hl_group = "DraculaPurple" },
