@@ -17,6 +17,9 @@ bufferline.setup({
 		duplicate = {
 			gui = "",
 		},
+		indicator_selected = {
+			guifg = "#8BE9FD",
+		},
 	},
 	options = {
 		middle_mouse_command = function(bufnum)
