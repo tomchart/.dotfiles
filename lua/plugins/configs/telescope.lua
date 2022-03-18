@@ -54,11 +54,12 @@ M.setup = function()
 				i = {
 					["<c-s>"] = actions.select_vertical,
 					["<c-h>"] = layout.toggle_preview,
-					["<esc>"] = actions.close,
+					["<c-c>"] = actions.close,
 				},
 				n = {
 					["<c-s>"] = actions.select_vertical,
 					["<c-h>"] = layout.toggle_preview,
+					["<c-c>"] = actions.close,
 				},
 			},
 			file_ignore_patterns = { ".git/" },
