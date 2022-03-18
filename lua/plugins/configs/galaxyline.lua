@@ -20,14 +20,14 @@ local highlight = vim.highlight
 galaxyline.short_line_list = { "NvimTree", "term", "dashboard" }
 
 local mode_symbol_to_mode = {
-	n = "Normal",
-	i = "Insert",
-	c = "Command",
-	v = "Visual",
-	V = "Visual Line",
-	[""] = "Visual Block",
-	R = "Replace",
-	s = "Snippet",
+	n = "NORMAL",
+	i = "INSERT",
+	c = "COMMAND",
+	v = "VISUAL",
+	V = "VISUAL LINE",
+	[""] = "VISUAL BLOCK",
+	R = "REPLACE",
+	s = "SNIPPET",
 }
 
 local function get_diag_count(severity_level)
@@ -50,7 +50,7 @@ galaxyline.section.left = {
 				local mode = mode_symbol_to_mode[fn.mode()]
 				highlight.link("GalaxylineMode", "Galaxyline" .. mode:gsub(" ", "") .. "Mode", true)
 				highlight.link("GalaxylineModeSeparator", "Galaxyline" .. mode:gsub(" ", "") .. "ModeSeparator", true)
-				return "  " .. mode .. " "
+				return "    " .. mode .. " "
 			end,
 			highlight = "GalaxylineMode",
 			separator = "",
