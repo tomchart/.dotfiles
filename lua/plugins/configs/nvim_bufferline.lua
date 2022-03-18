@@ -31,7 +31,7 @@ bufferline.setup({
 		right_trunc_marker = "",
 		max_name_length = 30,
 		max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
-		tab_size = 12,
+		tab_size = 10,
 		diagnostics = "nvim_lsp",
 		diagnostics_indicator = function(count, level, diagnostics_dict, context)
 			local s = " "
@@ -44,7 +44,7 @@ bufferline.setup({
 		always_show_bufferline = true,
 		show_buffer_close_icons = false,
 		show_close_icon = false,
-		separator_style = "slant",
+		separator_style = "thick",
 		offsets = { { filetype = "NvimTree", text = "File Explorer" } },
 	},
 })
