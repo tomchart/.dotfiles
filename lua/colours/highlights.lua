@@ -58,6 +58,7 @@ bg("StatusLine", palette.bg)
 bg("ModesInsert", palette.cyan)
 bg("ModesCopy", palette.orange)
 bg("ModesVisual", palette.orange)
+bg("ModesDelete", palette.red)
 
 -- telescope
 fg_bg("TelescopeBorder", palette.black2, palette.black2)
