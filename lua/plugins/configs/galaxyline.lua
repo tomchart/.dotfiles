@@ -55,16 +55,29 @@ end
 -- basically just rip off nvchad a bit harder - it does look cool though
 galaxyline.section.left = {
 	{
+		ViSymbol = {
+			provider = function()
+				local mode = mode_symbol_to_mode[fn.mode()]
+				highlight.link("GalaxylineMode", "Galaxyline" .. mode:gsub(" ", "") .. "Mode", true)
+				highlight.link("GalaxylineModeSeparator", "Galaxyline" .. mode:gsub(" ", "") .. "ModeSeparator", true)
+				return "    "
+			end,
+			highlight = "GalaxylineMode",
+			separator = " ",
+			separator_highlight = "GalaxylineModeSeparator",
+		},
+	},
+	{
 		ViMode = {
 			provider = function()
 				local mode = mode_symbol_to_mode[fn.mode()]
 				highlight.link("GalaxylineMode", "Galaxyline" .. mode:gsub(" ", "") .. "Mode", true)
 				highlight.link("GalaxylineModeSeparator", "Galaxyline" .. mode:gsub(" ", "") .. "ModeSeparator", true)
-				return "    " .. mode .. " "
+				return mode
 			end,
 			highlight = "GalaxylineMode",
-			separator = " ",
-			separator_highlight = "GalaxylineModeSeparator",
+			-- separator = " ",
+			-- separator_highlight = "GalaxylineModeSeparator",
 		},
 	},
 	{
