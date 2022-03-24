@@ -43,6 +43,7 @@ local palette = {
 	lighter = extract_highlight_colours("DraculaBgLighter").guibg,
 	even_lighter = "#4d4f68",
 	lightest = "#626483",
+	medium_light = "#e9e9f4",
 	dark_light = "#3a3c4e",
 }
 
@@ -71,16 +72,18 @@ for mode, colour in pairs(mode_to_colour) do
 	highlight_group("Galaxyline" .. mode .. "ModeSeparator", { guifg = colour, guibg = palette.lightest })
 end
 highlight_group("GalaxylineSeparator", { guifg = palette.lighter, guibg = palette.even_lighter })
-highlight_group("GalaxylineSeparator2", { guifg = palette.lighter, guibg = palette.even_lighter })
+highlight_group("GalaxylineSeparator2", { guifg = palette.even_lighter, guibg = palette.lightest })
 highlight_group("GalaxylineSeparator3", { guifg = palette.dark_light, guibg = palette.bg })
 highlight_group("GalaxylineSeparator4", { guifg = palette.even_lighter, guibg = palette.even_lighter })
+highlight_group("GalaxylineSeparator5", { guifg = palette.dark_light, guibg = palette.even_lighter })
 
 -- left
-highlight_group("GalaxylineIcon", { guifg = palette.orange, guibg = palette.even_lighter })
-highlight_group("GalaxylineBranch", { guifg = palette.fg, guibg = palette.even_lighter })
-highlight_group("GalaxylineDiffAdd", { guifg = palette.green, guibg = palette.even_lighter })
-highlight_group("GalaxylineDiffModified", { guifg = palette.orange, guibg = palette.even_lighter })
-highlight_group("GalaxylineDiffRemove", { guifg = palette.red, guibg = palette.even_lighter })
+highlight_group("GalaxylineDir", { guifg = palette.fg, guibg = palette.even_lighter })
+highlight_group("GalaxylineIcon", { guifg = palette.lightest, guibg = palette.bg })
+highlight_group("GalaxylineBranch", { guifg = palette.lightest, guibg = palette.bg })
+highlight_group("GalaxylineDiffAdd", { guifg = palette.lightest, guibg = palette.bg })
+highlight_group("GalaxylineDiffModified", { guifg = palette.lightest, guibg = palette.bg })
+highlight_group("GalaxylineDiffRemove", { guifg = palette.lightest, guibg = palette.bg })
 highlight_group("GalaxylineFilename", { guifg = palette.fg, guibg = palette.dark_light })
 
 -- statusline

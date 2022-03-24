@@ -72,7 +72,43 @@ galaxyline.section.left = {
 			provider = function()
 				return " "
 			end,
-			highlight = "GalaxylineSeparator",
+			highlight = "GalaxylineSeparator2",
+		},
+	},
+	{
+		CurrentDir = {
+			provider = function()
+				local dir_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+				return "  " .. dir_name .. " "
+			end,
+			highlight = "GalaxylineDir",
+		},
+	},
+	{
+		Sep2 = {
+			provider = function()
+				return " "
+			end,
+			highlight = "GalaxylineSeparator5",
+		},
+	},
+	{
+		FileIcon = {
+			provider = "FileIcon",
+			condition = condition.buffer_not_empty,
+			highlight = {
+				require("galaxyline.providers.fileinfo").get_file_icon_color,
+				"#3a3c4e",
+			},
+		},
+	},
+	{
+		FileName = {
+			provider = "FileName",
+			condition = condition.buffer_not_empty,
+			separator = " ",
+			highlight = "GalaxylineFilename",
+			separator_highlight = "GalaxylineSeparator3",
 		},
 	},
 	{
@@ -89,14 +125,15 @@ galaxyline.section.left = {
 			provider = "GitBranch",
 			condition = condition.check_git_workspace,
 			highlight = "GalaxylineBranch",
-			separator = "",
+			separator = " ",
+			separator_highlight = "GalaxylineBranch",
 		},
 	},
 	{
 		DiffAdd = {
 			provider = "DiffAdd",
 			condition = condition.check_git_workspace,
-			icon = "  +",
+			icon = " ",
 			highlight = "GalaxylineDiffAdd",
 		},
 	},
@@ -104,7 +141,7 @@ galaxyline.section.left = {
 		DiffModified = {
 			provider = "DiffModified",
 			condition = condition.check_git_workspace,
-			icon = " ~",
+			icon = "  ",
 			highlight = "GalaxylineDiffModified",
 		},
 	},
@@ -112,37 +149,8 @@ galaxyline.section.left = {
 		DiffRemove = {
 			provider = "DiffRemove",
 			condition = condition.check_git_workspace,
-			icon = " -",
+			icon = "  ",
 			highlight = "GalaxylineDiffRemove",
-			separator = " ",
-			separator_highlight = "GalaxylineSeparator4",
-		},
-	},
-	{
-		Sep2 = {
-			provider = function()
-				return " "
-			end,
-			highlight = "GalaxylineSeparator2",
-		},
-	},
-	{
-		FileIcon = {
-			provider = "FileIcon",
-			condition = condition.buffer_not_empty,
-			highlight = {
-				require("galaxyline.providers.fileinfo").get_file_icon_color,
-				"#424450",
-			},
-		},
-	},
-	{
-		FileName = {
-			provider = "FileName",
-			condition = condition.buffer_not_empty,
-			separator = " ",
-			highlight = "GalaxylineFilename",
-			separator_highlight = "GalaxylineSeparator3",
 		},
 	},
 	{
