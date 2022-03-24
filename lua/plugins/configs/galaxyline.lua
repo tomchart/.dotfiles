@@ -189,14 +189,17 @@ galaxyline.section.right = {
 	{
 		GetLspClient = {
 			provider = "GetLspClient",
-			separator = " ",
+			highlight = "GalaxylineLsp",
+			separator = " ",
+			separator_highlight = "GalaxylineSeparator9",
 		},
 	},
 	{
-		Space = {
+		Sep3 = {
 			provider = function()
-				return " "
+				return " "
 			end,
+			highlight = "GalaxylineSeparator8",
 		},
 	},
 	{
@@ -204,7 +207,7 @@ galaxyline.section.right = {
 			provider = function()
 				return get_diag_count(diag.severity.HINT)
 			end,
-			highlight = "DiagnosticHint",
+			highlight = "GalaxylineHint",
 			icon = "  ",
 		},
 	},
@@ -213,7 +216,7 @@ galaxyline.section.right = {
 			provider = function()
 				return get_diag_count(diag.severity.WARN)
 			end,
-			highlight = "DiagnosticWarn",
+			highlight = "GalaxylineWarn",
 			icon = "   ",
 		},
 	},
@@ -222,21 +225,23 @@ galaxyline.section.right = {
 			provider = function()
 				return get_diag_count(diag.severity.ERROR)
 			end,
-			highlight = "DiagnosticError",
+			highlight = "GalaxylineError",
 			icon = "   ",
 		},
 	},
 	{
 		LineInfo = {
 			provider = "LineColumn",
-			separator = "  ",
+			separator = " ",
+            highlight = "GalaxylineModeText",
+            separator_highlight = "GalaxylineSeparator7"
 		},
 	},
 	{
 		PerCent = {
 			provider = "LinePercent",
 			highlight = "GalaxylineNormalMode",
-			separator = "",
+			separator = " ",
 			separator_highlight = "GalaxylineNormalModeSeparator",
 		},
 	},
