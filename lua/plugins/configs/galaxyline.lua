@@ -19,6 +19,14 @@ local highlight = vim.highlight
 
 galaxyline.short_line_list = { "NvimTree", "term", "dashboard" }
 
+local slant = {
+	left = " ",
+	right = " ",
+	main_icon = "  ",
+	vi_mode_icon = " ",
+	position_icon = " ",
+}
+
 local mode_symbol_to_mode = {
 	n = "NORMAL",
 	i = "INSERT",
@@ -55,8 +63,16 @@ galaxyline.section.left = {
 				return "    " .. mode .. " "
 			end,
 			highlight = "GalaxylineMode",
-			separator = "",
+			separator = " ",
 			separator_highlight = "GalaxylineModeSeparator",
+		},
+	},
+	{
+		Sep = {
+			provider = function()
+				return " "
+			end,
+			highlight = "GalaxylineSeparator",
 		},
 	},
 	{
@@ -65,29 +81,23 @@ galaxyline.section.left = {
 				return "  "
 			end,
 			condition = condition.check_git_workspace,
-			highlight = "DiffChange",
+			highlight = "GalaxylineIcon",
 		},
 	},
 	{
 		GitBranch = {
 			provider = "GitBranch",
 			condition = condition.check_git_workspace,
-		},
-	},
-	{
-		Space = {
-			provider = function()
-				return " "
-			end,
-			condition = condition.check_git_workspace,
+			highlight = "GalaxylineBranch",
+			separator = "",
 		},
 	},
 	{
 		DiffAdd = {
 			provider = "DiffAdd",
 			condition = condition.check_git_workspace,
-			icon = " +",
-			highlight = "DiffAdd",
+			icon = "  +",
+			highlight = "GalaxylineDiffAdd",
 		},
 	},
 	{
@@ -95,7 +105,7 @@ galaxyline.section.left = {
 			provider = "DiffModified",
 			condition = condition.check_git_workspace,
 			icon = " ~",
-			highlight = "DiffChange",
+			highlight = "GalaxylineDiffModified",
 		},
 	},
 	{
@@ -103,15 +113,17 @@ galaxyline.section.left = {
 			provider = "DiffRemove",
 			condition = condition.check_git_workspace,
 			icon = " -",
-			highlight = "DiffDelete",
-			separator = "",
+			highlight = "GalaxylineDiffRemove",
+			separator = " ",
+			separator_highlight = "GalaxylineSeparator4",
 		},
 	},
 	{
-		Space = {
+		Sep2 = {
 			provider = function()
-				return " "
+				return " "
 			end,
+			highlight = "GalaxylineSeparator2",
 		},
 	},
 	{
@@ -120,6 +132,7 @@ galaxyline.section.left = {
 			condition = condition.buffer_not_empty,
 			highlight = {
 				require("galaxyline.providers.fileinfo").get_file_icon_color,
+				"#424450",
 			},
 		},
 	},
@@ -127,7 +140,9 @@ galaxyline.section.left = {
 		FileName = {
 			provider = "FileName",
 			condition = condition.buffer_not_empty,
-			separator = "",
+			separator = " ",
+			highlight = "GalaxylineFilename",
+			separator_highlight = "GalaxylineSeparator3",
 		},
 	},
 	{

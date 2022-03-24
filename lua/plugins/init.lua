@@ -5,6 +5,7 @@ if not present then
 end
 
 local plugins = {
+	{ "chrisbra/Colorizer" },
 	{ "nvim-lua/plenary.nvim" },
 	{ "lewis6991/impatient.nvim" },
 	{ "nathom/filetype.nvim" },

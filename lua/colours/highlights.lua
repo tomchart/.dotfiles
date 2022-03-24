@@ -6,10 +6,29 @@ local fg_bg = require("core.utils").fg_bg
 local extract_highlight_colours = require("core.utils").extract_highlight_colours
 local highlight_group = require("core.utils").highlight_group
 
+local dracula = {
+	base00 = "#282936",
+	base01 = "#3a3c4e",
+	base02 = "#4d4f68",
+	base03 = "#626483",
+	base04 = "#62d6e8",
+	base05 = "#e9e9f4",
+	base06 = "#f1f2f8",
+	base07 = "#f7f7fb",
+	base08 = "#ea51b2",
+	base09 = "#b45bcf",
+	base0A = "#00f769",
+	base0B = "#ebff87",
+	base0C = "#a1efe4",
+	base0D = "#62d6e8",
+	base0E = "#b45bcf",
+	base0F = "#00f769",
+}
+
 -- Define the colour palette
 local palette = {
 	cyan = extract_highlight_colours("DraculaCyan").guifg,
-	green = extract_highlight_colours("DraculaCyan").guifg,
+	green = extract_highlight_colours("DraculaGreen").guifg,
 	orange = extract_highlight_colours("DraculaOrange").guifg,
 	purple = extract_highlight_colours("DraculaPurple").guifg,
 	red = extract_highlight_colours("DraculaRed").guifg,
@@ -22,6 +41,9 @@ local palette = {
 	darker_black = extract_highlight_colours("DraculaBgDarker").guibg,
 	light = extract_highlight_colours("DraculaBgLight").guibg,
 	lighter = extract_highlight_colours("DraculaBgLighter").guibg,
+	even_lighter = "#4d4f68",
+	lightest = "#626483",
+	dark_light = "#3a3c4e",
 }
 
 -- git
@@ -36,7 +58,7 @@ fg("DashBoardHeader", palette.cyan)
 -- galaxyline
 local mode_to_colour = {
 	Normal = palette.purple,
-	Insert = palette.green,
+	Insert = palette.cyan,
 	Command = palette.cyan,
 	Visual = palette.orange,
 	VisualLine = palette.orange,
@@ -46,8 +68,20 @@ local mode_to_colour = {
 }
 for mode, colour in pairs(mode_to_colour) do
 	highlight_group("Galaxyline" .. mode .. "Mode", { guifg = palette.bg, guibg = colour })
-	highlight_group("Galaxyline" .. mode .. "ModeSeparator", { guifg = colour, guibg = palette.bg })
+	highlight_group("Galaxyline" .. mode .. "ModeSeparator", { guifg = colour, guibg = palette.lightest })
 end
+highlight_group("GalaxylineSeparator", { guifg = palette.lighter, guibg = palette.even_lighter })
+highlight_group("GalaxylineSeparator2", { guifg = palette.lighter, guibg = palette.even_lighter })
+highlight_group("GalaxylineSeparator3", { guifg = palette.dark_light, guibg = palette.bg })
+highlight_group("GalaxylineSeparator4", { guifg = palette.even_lighter, guibg = palette.even_lighter })
+
+-- left
+highlight_group("GalaxylineIcon", { guifg = palette.orange, guibg = palette.even_lighter })
+highlight_group("GalaxylineBranch", { guifg = palette.fg, guibg = palette.even_lighter })
+highlight_group("GalaxylineDiffAdd", { guifg = palette.green, guibg = palette.even_lighter })
+highlight_group("GalaxylineDiffModified", { guifg = palette.orange, guibg = palette.even_lighter })
+highlight_group("GalaxylineDiffRemove", { guifg = palette.red, guibg = palette.even_lighter })
+highlight_group("GalaxylineFilename", { guifg = palette.fg, guibg = palette.dark_light })
 
 -- statusline
 bg("StatusLine", palette.bg)
