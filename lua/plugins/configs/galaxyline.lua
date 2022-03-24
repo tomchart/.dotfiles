@@ -237,17 +237,30 @@ galaxyline.section.right = {
 			icon = "   ",
 		},
 	},
-	{
-		LineInfo = {
-			provider = "LineColumn",
-			separator = " ",
-            highlight = "GalaxylineModeText",
-            separator_highlight = "GalaxylineSeparator7"
+    {
+		Sep5 = {
+			provider = function()
+				return " "
+			end,
+			highlight = "GalaxylineSeparator2",
 		},
 	},
     {
-        -- this is a space
-		Sep5 = {
+		Sep6 = {
+			provider = function()
+				return " "
+			end,
+			highlight = "GalaxylineSeparator6",
+		},
+	},
+	{
+		LineInfo = {
+			provider = "LineColumn",
+            highlight = "GalaxylineModeText",
+		},
+	},
+    {
+		Sep7 = {
 			provider = function()
 				return " "
 			end,
@@ -257,9 +270,9 @@ galaxyline.section.right = {
 	{
 		PerCent = {
 			provider = "LinePercent",
-			highlight = "GalaxylineNormalMode",
+			highlight = "GalaxylineMode",
 			separator = " ",
-			separator_highlight = "GalaxylineNormalModeSeparator",
+			separator_highlight = "GalaxylineModeSeparator",
 		},
 	},
 }
