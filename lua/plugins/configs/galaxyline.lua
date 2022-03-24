@@ -71,13 +71,12 @@ galaxyline.section.left = {
 		ViMode = {
 			provider = function()
 				local mode = mode_symbol_to_mode[fn.mode()]
-				highlight.link("GalaxylineMode", "Galaxyline" .. mode:gsub(" ", "") .. "Mode", true)
-				highlight.link("GalaxylineModeSeparator", "Galaxyline" .. mode:gsub(" ", "") .. "ModeSeparator", true)
-				return mode
+				highlight.link("GalaxylineModeText", "Galaxyline" .. mode:gsub(" ", "") .. "ModeText", true)
+				return " " .. mode
 			end,
-			highlight = "GalaxylineMode",
-			-- separator = " ",
-			-- separator_highlight = "GalaxylineModeSeparator",
+			highlight = "GalaxylineModeText",
+			separator = " ",
+			separator_highlight = "GalaxylineSeparator6",
 		},
 	},
 	{

@@ -69,6 +69,7 @@ local mode_to_colour = {
 }
 for mode, colour in pairs(mode_to_colour) do
 	highlight_group("Galaxyline" .. mode .. "Mode", { guifg = palette.bg, guibg = colour })
+	highlight_group("Galaxyline" .. mode .. "ModeText", { guifg = colour, guibg = palette.lightest })
 	highlight_group("Galaxyline" .. mode .. "ModeSeparator", { guifg = colour, guibg = palette.lightest })
 end
 highlight_group("GalaxylineSeparator", { guifg = palette.lighter, guibg = palette.even_lighter })
@@ -76,6 +77,7 @@ highlight_group("GalaxylineSeparator2", { guifg = palette.even_lighter, guibg = 
 highlight_group("GalaxylineSeparator3", { guifg = palette.dark_light, guibg = palette.bg })
 highlight_group("GalaxylineSeparator4", { guifg = palette.even_lighter, guibg = palette.even_lighter })
 highlight_group("GalaxylineSeparator5", { guifg = palette.dark_light, guibg = palette.even_lighter })
+highlight_group("GalaxylineSeparator6", { guifg = palette.lightest, guibg = palette.lightest })
 
 -- left
 highlight_group("GalaxylineDir", { guifg = palette.fg, guibg = palette.even_lighter })
