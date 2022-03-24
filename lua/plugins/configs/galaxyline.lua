@@ -51,8 +51,6 @@ local function get_diag_count(severity_level)
 	end
 end
 
--- TODO - move vimode text to separator, then match text bg to ide bg and text fg to mode colour, then change icon colour to match mode colour
--- basically just rip off nvchad a bit harder - it does look cool though
 galaxyline.section.left = {
 	{
 		ViSymbol = {
@@ -67,12 +65,21 @@ galaxyline.section.left = {
 			separator_highlight = "GalaxylineModeSeparator",
 		},
 	},
+    {
+        -- this is a space
+		Sep = {
+			provider = function()
+				return " "
+			end,
+			highlight = "GalaxylineSeparator10",
+		},
+	},
 	{
 		ViMode = {
 			provider = function()
 				local mode = mode_symbol_to_mode[fn.mode()]
 				highlight.link("GalaxylineModeText", "Galaxyline" .. mode:gsub(" ", "") .. "ModeText", true)
-				return " " .. mode
+				return "  " .. mode
 			end,
 			highlight = "GalaxylineModeText",
 			separator = " ",
@@ -80,7 +87,8 @@ galaxyline.section.left = {
 		},
 	},
 	{
-		Sep = {
+        -- this is a space
+		Sep2 = {
 			provider = function()
 				return " "
 			end,
@@ -97,7 +105,7 @@ galaxyline.section.left = {
 		},
 	},
 	{
-		Sep2 = {
+		Sep3 = {
 			provider = function()
 				return " "
 			end,
@@ -195,7 +203,7 @@ galaxyline.section.right = {
 		},
 	},
 	{
-		Sep3 = {
+		Sep4 = {
 			provider = function()
 				return " "
 			end,
@@ -235,6 +243,15 @@ galaxyline.section.right = {
 			separator = " ",
             highlight = "GalaxylineModeText",
             separator_highlight = "GalaxylineSeparator7"
+		},
+	},
+    {
+        -- this is a space
+		Sep5 = {
+			provider = function()
+				return " "
+			end,
+			highlight = "GalaxylineSeparator10",
 		},
 	},
 	{
