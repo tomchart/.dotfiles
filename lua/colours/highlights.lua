@@ -94,12 +94,11 @@ highlight_group("GalaxylineDiffModified", { guifg = palette.lightest, guibg = pa
 highlight_group("GalaxylineDiffRemove", { guifg = palette.lightest, guibg = palette.bg })
 highlight_group("GalaxylineFilename", { guifg = palette.fg, guibg = palette.bg_light })
 
-
 -- right
 -- bg_dark, lighter, even_lighter
-highlight_group("GalaxylineHint", { guifg = palette.cyan, guibg = palette.lighter })
-highlight_group("GalaxylineWarn", { guifg = palette.orange, guibg = palette.lighter })
-highlight_group("GalaxylineError", { guifg = palette.red, guibg = palette.lighter })
+highlight_group("GalaxylineHint", { guifg = palette.lightest, guibg = palette.bg })
+highlight_group("GalaxylineWarn", { guifg = palette.lightest, guibg = palette.bg })
+highlight_group("GalaxylineError", { guifg = palette.lightest, guibg = palette.bg })
 highlight_group("GalaxylineLsp", { guifg = palette.fg, guibg = palette.dark_light })
 
 -- statusline
