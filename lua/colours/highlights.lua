@@ -80,7 +80,7 @@ highlight_group("GalaxylineSeparator4", { guifg = palette.even_lighter, guibg = 
 highlight_group("GalaxylineSeparator5", { guifg = palette.dark_light, guibg = palette.lighter })
 highlight_group("GalaxylineSeparator6", { guifg = palette.even_lighter, guibg = palette.even_lighter })
 highlight_group("GalaxylineSeparator7", { guifg = palette.even_lighter, guibg = palette.lighter })
-highlight_group("GalaxylineSeparator8", { guifg = palette.even_lighter, guibg = palette.dark_light })
+highlight_group("GalaxylineSeparator8", { guifg = palette.even_lighter, guibg = palette.bg })
 highlight_group("GalaxylineSeparator9", { guifg = palette.dark_light, guibg = palette.bg })
 highlight_group("GalaxylineSeparator10", { guifg = palette.lightest, guibg = palette.even_lighter })
 
@@ -99,7 +99,7 @@ highlight_group("GalaxylineFilename", { guifg = palette.fg, guibg = palette.bg_l
 highlight_group("GalaxylineHint", { guifg = palette.lightest, guibg = palette.bg })
 highlight_group("GalaxylineWarn", { guifg = palette.lightest, guibg = palette.bg })
 highlight_group("GalaxylineError", { guifg = palette.lightest, guibg = palette.bg })
-highlight_group("GalaxylineLsp", { guifg = palette.fg, guibg = palette.dark_light })
+highlight_group("GalaxylineLsp", { guifg = palette.lightest, guibg = palette.bg })
 
 -- statusline
 bg("StatusLine", palette.bg)

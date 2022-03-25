@@ -230,10 +230,14 @@ galaxyline.section.right = {
 	},
 	{
 		GetLspClient = {
-			provider = "GetLspClient",
+			provider = function()
+				if next(vim.lsp.buf_get_clients()) ~= nil then
+					return "   LSP"
+				else
+					return ""
+				end
+			end,
 			highlight = "GalaxylineLsp",
-			separator = " ",
-			separator_highlight = "GalaxylineSeparator9",
 		},
 	},
 	{
