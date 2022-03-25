@@ -24,4 +24,4 @@ require("core.mappings").misc()
 require("plugins")
 
 -- call colours
-require("colours").init("dracula")
+require("colours").init("kanagawa")
