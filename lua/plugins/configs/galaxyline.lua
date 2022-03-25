@@ -268,7 +268,15 @@ galaxyline.section.right = {
 			provider = function()
 				return " "
 			end,
-			highlight = "GalaxylineModeSeparator2",
+			highlight = "GalaxylineSeparator14",
+		},
+	},
+	{
+		Sep8 = {
+			provider = function()
+				return " "
+			end,
+			highlight = "GalaxylineModeSeparator",
 		},
 	},
 	{
@@ -288,7 +296,7 @@ galaxyline.section.right = {
 		},
 	},
 	{
-		Sep8 = {
+		Sep9 = {
 			provider = function()
 				return " "
 			end,
