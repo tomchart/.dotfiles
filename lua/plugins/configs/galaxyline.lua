@@ -8,11 +8,6 @@ if not condition then
 	return
 end
 
-local present, gps = pcall(require, "nvim-gps")
-if not present then
-	return
-end
-
 local fn = vim.fn
 local diag = vim.diagnostic
 local highlight = vim.highlight
@@ -181,16 +176,6 @@ galaxyline.section.left = {
 			condition = condition.check_git_workspace,
 		},
 	},
-	-- {
-	-- 	nvimGPS = {
-	-- 		provider = function()
-	-- 			return gps.get_location()
-	-- 		end,
-	-- 		condition = function()
-	-- 			return gps.is_available()
-	-- 		end,
-	-- 	},
-	-- },
 }
 
 galaxyline.section.right = {
