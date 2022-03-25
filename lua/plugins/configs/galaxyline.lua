@@ -114,7 +114,7 @@ galaxyline.section.left = {
 			condition = condition.buffer_not_empty,
 			highlight = {
 				require("galaxyline.providers.fileinfo").get_file_icon_color,
-				"#33333c",
+				"#2b2b34",
 			},
 		},
 	},

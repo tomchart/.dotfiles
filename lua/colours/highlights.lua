@@ -145,10 +145,7 @@ end
 
 -- clean these highlights up soon - p sure i don't need half of them
 highlight_group("GalaxylineSeparator", { guifg = palette.lighter, guibg = palette.even_lighter })
-highlight_group("GalaxylineSeparator2", { guifg = palette.lighter, guibg = palette.even_lighter })
-highlight_group("GalaxylineSeparator3", { guifg = palette.bg_light, guibg = palette.bg })
 highlight_group("GalaxylineSeparator4", { guifg = palette.even_lighter, guibg = palette.even_lighter })
-highlight_group("GalaxylineSeparator5", { guifg = palette.light, guibg = palette.lighter })
 highlight_group("GalaxylineSeparator6", { guifg = palette.even_lighter, guibg = palette.even_lighter })
 highlight_group("GalaxylineSeparator7", { guifg = palette.even_lighter, guibg = palette.lighter })
 highlight_group("GalaxylineSeparator8", { guifg = palette.even_lighter, guibg = palette.bg })
@@ -160,21 +157,24 @@ highlight_group("GalaxylineSeparator14", { guifg = palette.lightest, guibg = pal
 
 -- left
 -- even_lighter, lighter, bg_dark
-highlight_group("GalaxylineDir", { guifg = palette.fg, guibg = palette.lighter })
+highlight_group("GalaxylineSeparator2", { guifg = palette.bg_light, guibg = palette.even_lighter })
+highlight_group("GalaxylineDir", { guifg = palette.fg, guibg = palette.bg_light })
+highlight_group("GalaxylineSeparator5", { guifg = palette.lighter, guibg = palette.bg_light })
+highlight_group("GalaxylineFilename", { guifg = palette.fg, guibg = palette.lighter })
+highlight_group("GalaxylineSeparator3", { guifg = palette.lighter, guibg = palette.bg })
 highlight_group("GalaxylineIcon", { guifg = palette.lightest, guibg = palette.bg })
 highlight_group("GalaxylineBranch", { guifg = palette.lightest, guibg = palette.bg })
 highlight_group("GalaxylineDiffAdd", { guifg = palette.light_green, guibg = palette.bg })
 highlight_group("GalaxylineDiffModified", { guifg = palette.light_orange, guibg = palette.bg })
 highlight_group("GalaxylineDiffRemove", { guifg = palette.light_red, guibg = palette.bg })
-highlight_group("GalaxylineFilename", { guifg = palette.fg, guibg = palette.bg_light })
-highlight_group("GalaxylineLineInfo", { guifg = palette.fg, guibg = palette.lighter })
-highlight_group("GalaxylinePercent", { guifg = palette.fg, guibg = palette.even_lighter })
 
 -- right
 -- bg_dark, lighter, even_lighter
 highlight_group("GalaxylineHint", { guifg = palette.light_cyan, guibg = palette.bg })
 highlight_group("GalaxylineWarn", { guifg = palette.light_orange, guibg = palette.bg })
 highlight_group("GalaxylineError", { guifg = palette.light_red, guibg = palette.bg })
+highlight_group("GalaxylineLineInfo", { guifg = palette.fg, guibg = palette.lighter })
+highlight_group("GalaxylinePercent", { guifg = palette.fg, guibg = palette.even_lighter })
 highlight_group("GalaxylineLsp", { guifg = palette.lightest, guibg = palette.bg })
 highlight_group("GalaxylinePercentIcon", { guifg = palette.bg, guibg = palette.light_green })
 highlight_group("GalaxylinePercentSep", { guifg = palette.light_green, guibg = palette.lightest })
