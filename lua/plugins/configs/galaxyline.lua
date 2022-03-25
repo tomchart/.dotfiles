@@ -99,7 +99,7 @@ galaxyline.section.left = {
 		CurrentDir = {
 			provider = function()
 				local dir_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
-				return "  " .. dir_name .. " "
+				return "   " .. dir_name .. " "
 			end,
 			highlight = "GalaxylineDir",
 		},
@@ -195,22 +195,6 @@ galaxyline.section.left = {
 
 galaxyline.section.right = {
 	{
-		GetLspClient = {
-			provider = "GetLspClient",
-			highlight = "GalaxylineLsp",
-			separator = " ",
-			separator_highlight = "GalaxylineSeparator9",
-		},
-	},
-	{
-		Sep4 = {
-			provider = function()
-				return " "
-			end,
-			highlight = "GalaxylineSeparator8",
-		},
-	},
-	{
 		DiagnosticHint = {
 			provider = function()
 				return get_diag_count(diag.severity.HINT)
@@ -238,13 +222,29 @@ galaxyline.section.right = {
 		},
 	},
 	{
-		Sep5 = {
+		Space = {
 			provider = function()
-				return " "
+				return " "
 			end,
-			highlight = "GalaxylineSeparator2",
 		},
 	},
+	{
+		GetLspClient = {
+			provider = "GetLspClient",
+			highlight = "GalaxylineLsp",
+			separator = " ",
+			separator_highlight = "GalaxylineSeparator9",
+		},
+	},
+	{
+		Sep4 = {
+			provider = function()
+				return " "
+			end,
+			highlight = "GalaxylineSeparator8",
+		},
+	},
+
 	{
 		Sep6 = {
 			provider = function()
