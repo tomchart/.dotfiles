@@ -24,9 +24,13 @@ local palette = {
 	lighter = extract_highlight_colours("DraculaBgLighter").guibg,
 	even_lighter = "#4d4f68",
 	lightest = "#626483",
-	medium_light = "#e9e9f4",
 	dark_light = "#3a3c4e",
 	bg_light = "#343746",
+
+	light_red = "#FF6F6F",
+	light_cyan = "#A5FFFF",
+	light_green = "#6AFF95",
+	light_orange = "#FFD286",
 }
 
 -- git
@@ -73,19 +77,20 @@ highlight_group("GalaxylineSeparator14", { guifg = palette.lightest, guibg = pal
 highlight_group("GalaxylineDir", { guifg = palette.fg, guibg = palette.lighter })
 highlight_group("GalaxylineIcon", { guifg = palette.lightest, guibg = palette.bg })
 highlight_group("GalaxylineBranch", { guifg = palette.lightest, guibg = palette.bg })
-highlight_group("GalaxylineDiffAdd", { guifg = palette.lightest, guibg = palette.bg })
-highlight_group("GalaxylineDiffModified", { guifg = palette.lightest, guibg = palette.bg })
-highlight_group("GalaxylineDiffRemove", { guifg = palette.lightest, guibg = palette.bg })
+highlight_group("GalaxylineDiffAdd", { guifg = palette.light_green, guibg = palette.bg })
+highlight_group("GalaxylineDiffModified", { guifg = palette.light_orange, guibg = palette.bg })
+highlight_group("GalaxylineDiffRemove", { guifg = palette.light_red, guibg = palette.bg })
 highlight_group("GalaxylineFilename", { guifg = palette.fg, guibg = palette.bg_light })
 highlight_group("GalaxylineLineInfo", { guifg = palette.fg, guibg = palette.lighter })
 highlight_group("GalaxylinePercent", { guifg = palette.fg, guibg = palette.even_lighter })
 
 -- right
 -- bg_dark, lighter, even_lighter
-highlight_group("GalaxylineHint", { guifg = palette.lightest, guibg = palette.bg })
-highlight_group("GalaxylineWarn", { guifg = palette.lightest, guibg = palette.bg })
-highlight_group("GalaxylineError", { guifg = palette.lightest, guibg = palette.bg })
+highlight_group("GalaxylineHint", { guifg = palette.light_cyan, guibg = palette.bg })
+highlight_group("GalaxylineWarn", { guifg = palette.light_orange, guibg = palette.bg })
+highlight_group("GalaxylineError", { guifg = palette.light_red, guibg = palette.bg })
 highlight_group("GalaxylineLsp", { guifg = palette.lightest, guibg = palette.bg })
+dd
 
 -- cursorline
 bg("ModesInsert", palette.cyan)
@@ -110,7 +115,7 @@ fg_bg("TelescopeResultsTitle", palette.black2, palette.black2)
 bg("TelescopeSelection", palette.light)
 
 -- fidget
-fg("FidgetTitle", palette.purple)
+fg("FidgetTitle", palette.lightest)
 
 -- statusline
 bg("StatusLine", palette.bg)
