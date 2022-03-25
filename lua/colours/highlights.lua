@@ -58,6 +58,8 @@ for mode, colour in pairs(mode_to_colour) do
 	highlight_group("Galaxyline" .. mode .. "ModeText", { guifg = colour, guibg = palette.even_lighter })
 	highlight_group("Galaxyline" .. mode .. "ModeSeparator", { guifg = colour, guibg = palette.lightest })
 end
+
+-- clean these highlights up soon - p sure i don't need half of them
 highlight_group("GalaxylineSeparator", { guifg = palette.lighter, guibg = palette.even_lighter })
 highlight_group("GalaxylineSeparator2", { guifg = palette.lighter, guibg = palette.even_lighter })
 highlight_group("GalaxylineSeparator3", { guifg = palette.bg_light, guibg = palette.bg })
