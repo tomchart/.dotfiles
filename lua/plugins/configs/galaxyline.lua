@@ -53,6 +53,7 @@ galaxyline.section.left = {
 				local mode = mode_symbol_to_mode[fn.mode()]
 				highlight.link("GalaxylineMode", "Galaxyline" .. mode:gsub(" ", "") .. "Mode", true)
 				highlight.link("GalaxylineModeSeparator", "Galaxyline" .. mode:gsub(" ", "") .. "ModeSeparator", true)
+				highlight.link("GalaxylineModeSeparator2", "Galaxyline" .. mode:gsub(" ", "") .. "ModeSeparator2", true)
 				return "    "
 			end,
 			highlight = "GalaxylineMode",
@@ -245,22 +246,21 @@ galaxyline.section.right = {
 			provider = function()
 				return " "
 			end,
-			highlight = "GalaxylineSeparator8",
+			highlight = "GalaxylineSeparator12",
 		},
 	},
-
 	{
 		Sep6 = {
 			provider = function()
 				return " "
 			end,
-			highlight = "GalaxylineSeparator6",
+			highlight = "GalaxylineSeparator11",
 		},
 	},
 	{
 		LineInfo = {
 			provider = "LineColumn",
-			highlight = "GalaxylineModeText",
+			highlight = "GalaxylineLineInfo",
 		},
 	},
 	{
@@ -268,12 +268,39 @@ galaxyline.section.right = {
 			provider = function()
 				return " "
 			end,
-			highlight = "GalaxylineSeparator10",
+			highlight = "GalaxylineModeSeparator2",
+		},
+	},
+	{
+		LineInfoIcon = {
+			provider = function()
+				return "   "
+			end,
+			highlight = "GalaxylineMode",
 		},
 	},
 	{
 		PerCent = {
 			provider = "LinePercent",
+			highlight = "GalaxylinePercent",
+			separator = " ",
+			separator_highlight = "GalaxylineSeparator6",
+		},
+	},
+	{
+		Sep8 = {
+			provider = function()
+				return " "
+			end,
+			highlight = "GalaxylineSeparator10",
+		},
+	},
+	{
+		PerCentIcon = {
+			-- provider = "LinePercent",
+			provider = function()
+				return " "
+			end,
 			highlight = "GalaxylineMode",
 			separator = " ",
 			separator_highlight = "GalaxylineModeSeparator",
