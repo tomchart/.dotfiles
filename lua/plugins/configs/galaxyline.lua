@@ -184,6 +184,11 @@ galaxyline.section.right = {
 			provider = function()
 				return get_diag_count(diag.severity.HINT)
 			end,
+			condition = function()
+				if get_diag_count(diag.severity.HINT) > 0 then
+					return true
+				end
+			end,
 			highlight = "GalaxylineHint",
 			icon = "  ",
 		},
@@ -193,6 +198,11 @@ galaxyline.section.right = {
 			provider = function()
 				return get_diag_count(diag.severity.WARN)
 			end,
+			condition = function()
+				if get_diag_count(diag.severity.WARN) > 0 then
+					return true
+				end
+			end,
 			highlight = "GalaxylineWarn",
 			icon = "   ",
 		},
@@ -201,6 +211,11 @@ galaxyline.section.right = {
 		DiagnosticError = {
 			provider = function()
 				return get_diag_count(diag.severity.ERROR)
+			end,
+			condition = function()
+				if get_diag_count(diag.severity.ERROR) > 0 then
+					return true
+				end
 			end,
 			highlight = "GalaxylineError",
 			icon = "   ",
