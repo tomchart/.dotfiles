@@ -105,10 +105,10 @@ local palette = {
 	light = kanagawa.lightbg,
 	lighter = kanagawa.lightbg2,
 
-	even_lighter = "#4d4f68",
-	lightest = "#626483",
-	dark_light = "#3a3c4e",
-	bg_light = "#343746",
+	even_lighter = kanagawa.grey,
+	lightest = kanagawa.light_grey,
+	dark_light = kanagawa.lightbg2,
+	bg_light = kanagawa.lightbg,
 
 	light_red = nord.red,
 	light_cyan = nord.cyan,
@@ -148,7 +148,7 @@ highlight_group("GalaxylineSeparator", { guifg = palette.lighter, guibg = palett
 highlight_group("GalaxylineSeparator2", { guifg = palette.lighter, guibg = palette.even_lighter })
 highlight_group("GalaxylineSeparator3", { guifg = palette.bg_light, guibg = palette.bg })
 highlight_group("GalaxylineSeparator4", { guifg = palette.even_lighter, guibg = palette.even_lighter })
-highlight_group("GalaxylineSeparator5", { guifg = palette.dark_light, guibg = palette.lighter })
+highlight_group("GalaxylineSeparator5", { guifg = palette.light, guibg = palette.lighter })
 highlight_group("GalaxylineSeparator6", { guifg = palette.even_lighter, guibg = palette.even_lighter })
 highlight_group("GalaxylineSeparator7", { guifg = palette.even_lighter, guibg = palette.lighter })
 highlight_group("GalaxylineSeparator8", { guifg = palette.even_lighter, guibg = palette.bg })
