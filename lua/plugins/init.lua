@@ -19,6 +19,14 @@ local plugins = {
 		as = "dracula",
 	},
 	{
+		"shaunsingh/nord.nvim",
+		as = "nord",
+	},
+	{
+		"rebelot/kanagawa.nvim",
+		as = "kanagawa",
+	},
+	{
 		"glepnir/dashboard-nvim",
 		after = "dracula",
 		config = function()
