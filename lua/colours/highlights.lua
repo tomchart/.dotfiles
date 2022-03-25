@@ -90,7 +90,6 @@ highlight_group("GalaxylineHint", { guifg = palette.light_cyan, guibg = palette.
 highlight_group("GalaxylineWarn", { guifg = palette.light_orange, guibg = palette.bg })
 highlight_group("GalaxylineError", { guifg = palette.light_red, guibg = palette.bg })
 highlight_group("GalaxylineLsp", { guifg = palette.lightest, guibg = palette.bg })
-dd
 
 -- cursorline
 bg("ModesInsert", palette.cyan)
