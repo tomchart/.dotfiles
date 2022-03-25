@@ -65,8 +65,8 @@ galaxyline.section.left = {
 			separator_highlight = "GalaxylineModeSeparator",
 		},
 	},
-    {
-        -- this is a space
+	{
+		-- grey separator
 		Sep = {
 			provider = function()
 				return " "
@@ -87,7 +87,7 @@ galaxyline.section.left = {
 		},
 	},
 	{
-        -- this is a space
+		-- this is a space
 		Sep2 = {
 			provider = function()
 				return " "
@@ -237,7 +237,7 @@ galaxyline.section.right = {
 			icon = "   ",
 		},
 	},
-    {
+	{
 		Sep5 = {
 			provider = function()
 				return " "
@@ -245,7 +245,7 @@ galaxyline.section.right = {
 			highlight = "GalaxylineSeparator2",
 		},
 	},
-    {
+	{
 		Sep6 = {
 			provider = function()
 				return " "
@@ -256,10 +256,10 @@ galaxyline.section.right = {
 	{
 		LineInfo = {
 			provider = "LineColumn",
-            highlight = "GalaxylineModeText",
+			highlight = "GalaxylineModeText",
 		},
 	},
-    {
+	{
 		Sep7 = {
 			provider = function()
 				return " "
