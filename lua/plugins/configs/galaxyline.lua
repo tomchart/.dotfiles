@@ -149,7 +149,7 @@ galaxyline.section.left = {
 		DiffAdd = {
 			provider = "DiffAdd",
 			condition = condition.check_git_workspace,
-			icon = " ",
+			icon = "  ",
 			highlight = "GalaxylineDiffAdd",
 		},
 	},
@@ -175,6 +175,17 @@ galaxyline.section.left = {
 				return " "
 			end,
 			condition = condition.check_git_workspace,
+		},
+	},
+}
+
+galaxyline.section.mid = {
+	{
+		Middle = {
+			provider = function()
+				return ""
+			end,
+			highlight = "GalaxylineMid",
 		},
 	},
 }
@@ -223,17 +234,10 @@ galaxyline.section.right = {
 		},
 	},
 	{
-		Space = {
-			provider = function()
-				return " "
-			end,
-		},
-	},
-	{
 		GetLspClient = {
 			provider = function()
 				if next(vim.lsp.buf_get_clients()) ~= nil then
-					return "   LSP"
+					return "     LSP"
 				else
 					return ""
 				end
