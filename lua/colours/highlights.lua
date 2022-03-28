@@ -96,6 +96,8 @@ local palette = {
 	purple = kanagawa.purple,
 	red = kanagawa.red,
 	pink = kanagawa.pink,
+	blue = kanagawa.blue,
+	baby_pink = kanagawa.baby_pink,
 
 	bg = kanagawa.black,
 	fg = kanagawa.white,
@@ -130,7 +132,7 @@ fg("DashBoardHeader", palette.cyan)
 local mode_to_colour = {
 	Normal = palette.purple,
 	Insert = palette.cyan,
-	Command = palette.cyan,
+	Command = palette.red,
 	Visual = palette.orange,
 	VisualLine = palette.orange,
 	VisualBlock = palette.orange,
