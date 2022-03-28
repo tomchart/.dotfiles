@@ -14,21 +14,21 @@ local plugins = {
 		"wbthomason/packer.nvim",
 		event = "VimEnter",
 	},
-	{
-		"dracula/vim",
-		as = "dracula",
-	},
-	{
-		"shaunsingh/nord.nvim",
-		as = "nord",
-	},
+	-- {
+	-- 	"dracula/vim",
+	-- 	as = "dracula",
+	-- },
+	-- {
+	-- 	"shaunsingh/nord.nvim",
+	-- 	as = "nord",
+	-- },
 	{
 		"rebelot/kanagawa.nvim",
 		as = "kanagawa",
 	},
 	{
 		"glepnir/dashboard-nvim",
-		after = "dracula",
+		after = "kanagawa",
 		config = function()
 			require("plugins.configs.dashboard-nvim")
 		end,
