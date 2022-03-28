@@ -108,17 +108,15 @@ local palette = {
 	one_bg = kanagawa.one_bg,
 	one_bg2 = kanagawa.one_bg2,
 	one_bg3 = kanagawa.one_bg3,
-
-	even_lighter = kanagawa.grey,
-	lightest = kanagawa.light_grey,
-	dark_light = kanagawa.lightbg2,
-	bg_light = kanagawa.lightbg,
+	light_grey = kanagawa.light_grey,
+	lightbg = kanagawa.lightbg,
+	lightbg2 = kanagawa.lightbg2,
+	grey = kanagawa.grey,
 
 	light_red = nord.red,
 	light_cyan = nord.cyan,
 	light_green = nord.green,
 	light_orange = nord.orange,
-	light_grey = nord.light_grey,
 }
 
 -- git
@@ -144,7 +142,7 @@ local mode_to_colour = {
 for mode, colour in pairs(mode_to_colour) do
 	highlight_group("Galaxyline" .. mode .. "Mode", { guifg = palette.bg, guibg = colour })
 	highlight_group("Galaxyline" .. mode .. "ModeText", { guifg = colour, guibg = palette.one_bg3 })
-	highlight_group("Galaxyline" .. mode .. "ModeSeparator", { guifg = colour, guibg = palette.light_grey })
+	highlight_group("Galaxyline" .. mode .. "ModeSeparator", { guifg = colour, guibg = palette.grey })
 end
 
 -- clean these highlights up soon - p sure i don't need half of them
@@ -153,7 +151,7 @@ highlight_group("GalaxylineSeparator", { guifg = palette.lighter, guibg = palett
 -- left
 -- even_lighter, lighter, bg_dark
 highlight_group("GalaxylineSeparator6", { guifg = palette.one_bg3, guibg = palette.one_bg3 })
-highlight_group("GalaxylineSeparator10", { guifg = palette.light_grey, guibg = palette.one_bg3 })
+highlight_group("GalaxylineSeparator10", { guifg = palette.grey, guibg = palette.one_bg3 })
 highlight_group("GalaxylineSeparator2", { guifg = palette.one_bg2, guibg = palette.one_bg3 })
 highlight_group("GalaxylineDir", { guifg = palette.fg, guibg = palette.one_bg2 })
 highlight_group("GalaxylineSeparator5", { guifg = palette.one_bg, guibg = palette.one_bg2 })
@@ -177,13 +175,13 @@ highlight_group("GalaxylineLsp", { guifg = palette.light_grey, guibg = palette.b
 highlight_group("GalaxylineSeparator11", { guifg = palette.one_bg2, guibg = palette.one_bg2 })
 highlight_group("GalaxylineSeparator12", { guifg = palette.one_bg2, guibg = palette.bg })
 highlight_group("GalaxylineLineInfo", { guifg = palette.fg, guibg = palette.one_bg2 })
-highlight_group("GalaxylineSeparator14", { guifg = palette.light_grey, guibg = palette.one_bg2 })
-highlight_group("GalaxylineLineInfoSep", { guifg = palette.light_red, guibg = palette.light_grey })
+highlight_group("GalaxylineSeparator14", { guifg = palette.grey, guibg = palette.one_bg2 })
+highlight_group("GalaxylineLineInfoSep", { guifg = palette.light_red, guibg = palette.grey })
 highlight_group("GalaxylineLineInfoIcon", { guifg = palette.bg, guibg = palette.light_red })
 highlight_group("GalaxylinePercent", { guifg = palette.fg, guibg = palette.one_bg3 })
 -- Sep10 is used here but already defined above
 highlight_group("GalaxylinePercentIcon", { guifg = palette.bg, guibg = palette.light_green })
-highlight_group("GalaxylinePercentSep", { guifg = palette.light_green, guibg = palette.light_grey })
+highlight_group("GalaxylinePercentSep", { guifg = palette.light_green, guibg = palette.grey })
 
 -- cursorline
 bg("ModesInsert", palette.cyan)
@@ -208,11 +206,11 @@ fg_bg("TelescopeResultsTitle", palette.black2, palette.black2)
 bg("TelescopeSelection", palette.light)
 
 -- fidget
-fg("FidgetTitle", palette.lightest)
+fg("FidgetTitle", palette.light_grey)
 
 -- statusline
 bg("StatusLine", palette.bg)
 bg("StatusLineNC", palette.bg)
 
 -- indent
-fg("IndentBlanklineContextChar", palette.lightest)
+fg("IndentBlanklineContextChar", palette.light_grey)
