@@ -29,6 +29,9 @@ M.misc = function()
 		-- remap ; to : (always miss it)
 		keymap("n", ";", ":")
 
+		-- source current file with <leader>S
+		keymap("n", "<leader>S", ":so %<cr>")
+
 		-- rekeymap jumplist to <leader>o and <leader>i
 		keymap("n", "<leader>o", "<c-o>")
 		keymap("n", "<leader>i", "<tab>")
