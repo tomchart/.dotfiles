@@ -105,6 +105,9 @@ local palette = {
 	darker_black = kanagawa.darker_black,
 	light = kanagawa.lightbg,
 	lighter = kanagawa.lightbg2,
+	one_bg = kanagawa.one_bg,
+	one_bg2 = kanagawa.one_bg2,
+	one_bg3 = kanagawa.one_bg3,
 
 	even_lighter = kanagawa.grey,
 	lightest = kanagawa.light_grey,
@@ -140,24 +143,22 @@ local mode_to_colour = {
 }
 for mode, colour in pairs(mode_to_colour) do
 	highlight_group("Galaxyline" .. mode .. "Mode", { guifg = palette.bg, guibg = colour })
-	highlight_group("Galaxyline" .. mode .. "ModeText", { guifg = colour, guibg = palette.even_lighter })
+	highlight_group("Galaxyline" .. mode .. "ModeText", { guifg = colour, guibg = palette.one_bg3 })
 	highlight_group("Galaxyline" .. mode .. "ModeSeparator", { guifg = colour, guibg = palette.light_grey })
 end
 
 -- clean these highlights up soon - p sure i don't need half of them
 highlight_group("GalaxylineSeparator", { guifg = palette.lighter, guibg = palette.even_lighter })
-highlight_group("GalaxylineSeparator10", { guifg = palette.light_grey, guibg = palette.even_lighter })
-highlight_group("GalaxylineSeparator11", { guifg = palette.lighter, guibg = palette.lighter })
-highlight_group("GalaxylineSeparator12", { guifg = palette.lighter, guibg = palette.bg })
-highlight_group("GalaxylineSeparator14", { guifg = palette.light_grey, guibg = palette.lighter })
 
 -- left
 -- even_lighter, lighter, bg_dark
-highlight_group("GalaxylineSeparator2", { guifg = palette.bg_light, guibg = palette.even_lighter })
-highlight_group("GalaxylineDir", { guifg = palette.fg, guibg = palette.bg_light })
-highlight_group("GalaxylineSeparator5", { guifg = palette.lighter, guibg = palette.bg_light })
-highlight_group("GalaxylineFilename", { guifg = palette.fg, guibg = palette.lighter })
-highlight_group("GalaxylineSeparator3", { guifg = palette.lighter, guibg = palette.bg })
+highlight_group("GalaxylineSeparator6", { guifg = palette.one_bg3, guibg = palette.one_bg3 })
+highlight_group("GalaxylineSeparator10", { guifg = palette.light_grey, guibg = palette.one_bg3 })
+highlight_group("GalaxylineSeparator2", { guifg = palette.one_bg2, guibg = palette.one_bg3 })
+highlight_group("GalaxylineDir", { guifg = palette.fg, guibg = palette.one_bg2 })
+highlight_group("GalaxylineSeparator5", { guifg = palette.one_bg, guibg = palette.one_bg2 })
+highlight_group("GalaxylineFilename", { guifg = palette.fg, guibg = palette.one_bg })
+highlight_group("GalaxylineSeparator3", { guifg = palette.one_bg, guibg = palette.bg })
 highlight_group("GalaxylineIcon", { guifg = palette.light_grey, guibg = palette.bg })
 highlight_group("GalaxylineBranch", { guifg = palette.light_grey, guibg = palette.bg })
 highlight_group("GalaxylineDiffAdd", { guifg = palette.light_grey, guibg = palette.bg })
@@ -173,15 +174,14 @@ highlight_group("GalaxylineHint", { guifg = palette.light_cyan, guibg = palette.
 highlight_group("GalaxylineWarn", { guifg = palette.light_orange, guibg = palette.bg })
 highlight_group("GalaxylineError", { guifg = palette.light_red, guibg = palette.bg })
 highlight_group("GalaxylineLsp", { guifg = palette.light_grey, guibg = palette.bg })
-highlight_group("GalaxylineSeparator4", { guifg = palette.even_lighter, guibg = palette.even_lighter })
-highlight_group("GalaxylineSeparator6", { guifg = palette.even_lighter, guibg = palette.even_lighter })
-highlight_group("GalaxylineLineInfo", { guifg = palette.fg, guibg = palette.lighter })
-highlight_group("GalaxylineSeparator7", { guifg = palette.even_lighter, guibg = palette.lighter })
-highlight_group("GalaxylineSeparator8", { guifg = palette.even_lighter, guibg = palette.bg })
+highlight_group("GalaxylineSeparator11", { guifg = palette.one_bg2, guibg = palette.one_bg2 })
+highlight_group("GalaxylineSeparator12", { guifg = palette.one_bg2, guibg = palette.bg })
+highlight_group("GalaxylineLineInfo", { guifg = palette.fg, guibg = palette.one_bg2 })
+highlight_group("GalaxylineSeparator14", { guifg = palette.light_grey, guibg = palette.one_bg2 })
 highlight_group("GalaxylineLineInfoSep", { guifg = palette.light_red, guibg = palette.light_grey })
 highlight_group("GalaxylineLineInfoIcon", { guifg = palette.bg, guibg = palette.light_red })
-highlight_group("GalaxylinePercent", { guifg = palette.fg, guibg = palette.even_lighter })
-highlight_group("GalaxylineSeparator9", { guifg = palette.dark_light, guibg = palette.bg })
+highlight_group("GalaxylinePercent", { guifg = palette.fg, guibg = palette.one_bg3 })
+-- Sep10 is used here but already defined above
 highlight_group("GalaxylinePercentIcon", { guifg = palette.bg, guibg = palette.light_green })
 highlight_group("GalaxylinePercentSep", { guifg = palette.light_green, guibg = palette.light_grey })
 
