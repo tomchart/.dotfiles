@@ -122,9 +122,6 @@ local palette = {
 -- git
 hi.link("DiffDelete", "DraculaRed", true)
 
--- gitsigns
-hi.link("GitSignsCurrentLineBlame", "DraculaComment")
-
 --dashboard
 fg("DashBoardHeader", palette.cyan)
 

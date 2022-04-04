@@ -25,7 +25,7 @@ end
 
 lspconfig.sumneko_lua.setup({
 	cmd = {
-		"lua-language-server",
+		"/opt/lua-language-server/bin/macOS/lua-language-server",
 		"-E",
 		"/opt/lua-language-server/main.lua",
 	},

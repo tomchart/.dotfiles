@@ -41,7 +41,7 @@ M.setup = function()
 			map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
 		end,
 
-		current_line_blame = true,
+		current_line_blame = false,
 		current_line_blame_opts = {
 			virt_text = true,
 			virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
