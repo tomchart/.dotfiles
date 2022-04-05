@@ -166,6 +166,14 @@ alias oct=octal_folder_perms
 # mkdocs shorthand
 alias mbuild="git pull && python3 -m mkdocs build && ./copy_site.sh"
 
+# sail
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+
+# php
+alias php='/usr/local/Cellar/php/8.1.4/bin/php'
+export PATH="/Users/tom/.composer/vendor/bin:$PATH"
+
+
 ##################
 #                #
 # nvm init stuff #

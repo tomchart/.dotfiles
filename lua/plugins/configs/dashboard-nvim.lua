@@ -121,4 +121,4 @@ g.dashboard_custom_section = {
 
 local plugins_count = vim.fn.len(vim.fn.globpath("~/.local/share/nvim/site/pack/packer/start", "*", 0, 1))
 local lazy_count = vim.fn.len(vim.fn.globpath("~/.local/share/nvim/site/pack/packer/opt", "*", 0, 1))
-g.dashboard_custom_footer = { "❤️ " .. plugins_count .. " plugins loaded, " .. lazy_count .. " lazy. ❤️" }
+g.dashboard_custom_footer = { "♡ " .. plugins_count .. " plugins loaded, " .. lazy_count .. " lazy. ♡" }
