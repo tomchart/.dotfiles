@@ -32,6 +32,8 @@ if osx; then
     npm i -g bash-language-server
     npm i -g remark
     npm i -g remark-language-server
+    npm i -g vscode-langservers-extracted
+    npm install -g intelephense
 
 fi
 
