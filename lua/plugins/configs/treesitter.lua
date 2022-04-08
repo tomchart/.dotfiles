@@ -9,7 +9,7 @@ default = {
 	highlight = {
 		enable = true,
 		use_languagetree = true,
-		disable = { "yaml" },
+		disable = { "yaml", "html", "php" },
 	},
 	incremental_selection = {
 		enable = true,
