@@ -223,13 +223,13 @@ local plugins = {
 			require("plugins.configs.others").escape()
 		end,
 	},
-	{
-		"mvllow/modes.nvim",
-		after = "Comment.nvim",
-		config = function()
-			require("plugins.configs.mode_hi").setup()
-		end,
-	},
+	-- {
+	-- 	"mvllow/modes.nvim",
+	-- 	after = "Comment.nvim",
+	-- 	config = function()
+	-- 		require("plugins.configs.mode_hi").setup()
+	-- 	end,
+	-- },
 	{
 		"dstein64/vim-startuptime",
 	},

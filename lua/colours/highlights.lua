@@ -180,11 +180,11 @@ highlight_group("GalaxylinePercent", { guifg = palette.fg, guibg = palette.one_b
 highlight_group("GalaxylinePercentIcon", { guifg = palette.bg, guibg = palette.light_green })
 highlight_group("GalaxylinePercentSep", { guifg = palette.light_green, guibg = palette.grey })
 
--- cursorline
-bg("ModesInsert", palette.cyan)
-bg("ModesCopy", palette.orange)
-bg("ModesVisual", palette.orange)
-bg("ModesDelete", palette.red)
+-- -- cursorline
+-- bg("ModesInsert", palette.cyan)
+-- bg("ModesCopy", palette.orange)
+-- bg("ModesVisual", palette.orange)
+-- bg("ModesDelete", palette.red)
 
 -- telescope
 fg_bg("TelescopeBorder", palette.black2, palette.black2)
