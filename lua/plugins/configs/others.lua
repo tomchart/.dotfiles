@@ -60,4 +60,14 @@ M.luasnip = function()
 	end
 end
 
+M.leap = function()
+    local present, leap = pcall(require, "leap")
+    if present then
+        leap.setup({
+            case_insensitive = true,
+        })
+        leap.set_default_keymaps()
+    end
+end
+
 return M
