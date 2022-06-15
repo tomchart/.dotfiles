@@ -104,9 +104,6 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 }
 for server, config in pairs(servers) do
 	lspconfig[server].setup({
-		on_attach = function(client)
-			require("illuminate").on_attach(client)
-		end,
 		capabilities = capabilities,
 		flags = {
 			debounce_text_changes = 150,

@@ -102,11 +102,11 @@ local plugins = {
 	},
 
 	-- lsp stuff
-	{
-		"RRethy/vim-illuminate",
-		after = "indent-blankline.nvim",
-		config = [[ vim.g.Illuminate_delay = 500 ]],
-	},
+	-- {
+	-- 	"RRethy/vim-illuminate",
+	-- 	after = "indent-blankline.nvim",
+	-- 	config = [[ vim.g.Illuminate_delay = 500 ]],
+	-- },
 	{
 		"neovim/nvim-lspconfig",
 		after = "vim-fugitive",
