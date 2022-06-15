@@ -117,13 +117,13 @@ local plugins = {
 			require("plugins.configs.lspconfig")
 		end,
 	},
-	{
-		"jose-elias-alvarez/null-ls.nvim",
-		after = "nvim-lspconfig",
-		config = function()
-			require("plugins.configs.null-ls")
-		end,
-	},
+	-- {
+		-- "jose-elias-alvarez/null-ls.nvim",
+		-- after = "nvim-lspconfig",
+		-- config = function()
+			-- require("plugins.configs.null-ls")
+		-- end,
+	-- },
 	{
 		"ray-x/lsp_signature.nvim",
 		after = "nvim-lspconfig",
