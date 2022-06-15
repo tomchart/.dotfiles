@@ -102,6 +102,9 @@ local conf = {
 			end
 		end,
 		["<cr>"] = cmp.mapping.confirm({ select = true }),
+		["<c-d>"] = cmp.mapping.select_next_item({ select = false }),
+		["<c-u>"] = cmp.mapping.select_prev_item({ select = false }),
+
 	},
 	confirmation = {
 		default_behavior = cmp.ConfirmBehavior.Replace,
