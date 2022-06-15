@@ -61,6 +61,15 @@ local plugins = {
 			require("core.mappings").bufferline()
 		end,
 	},
+    {
+		"ggandor/leap.nvim",
+        config = function()
+            require("plugins.configs.others").leap()
+        end,
+	},
+    {
+        "tpope/vim-repeat",
+    },
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = "BufReadPost",
