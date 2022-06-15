@@ -84,6 +84,14 @@ local servers = {
 	html = {},
     cssls = {},
     intelephense = {},
+    vuels = {},
+    emmet_ls = {
+        filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
+    },
+    tailwindcss = {},
+    eslint = {},
+    tsserver = {},
+
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
