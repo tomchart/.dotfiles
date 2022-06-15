@@ -4,19 +4,43 @@ if not present then
 	return
 end
 
-local g = vim.g
-
-g.nvim_tree_highlight_opened_files = 1
-g.nvim_tree_group_empty = 1
-g.nvim_tree_indent_markers = 1
-
 local default = {
-	auto_close = 0,
 	view = {
-		auto_resize = true,
 		width = 40,
 	},
-	git_hl = 1,
+    renderer = {
+        indent_markers = {
+          enable = true,
+          icons = {
+            corner = "└ ",
+            edge = "│ ",
+            none = "  ",
+          },
+        },
+        icons = {
+          webdev_colors = true,
+        },
+    },
+    diagnostics = {
+        enable = true,
+        show_on_dirs = true,
+        icons = {
+          hint = "",
+          info = "",
+          warning = "",
+          error = "",
+        },
+    },
+    git = {
+        enable = true,
+        ignore = true,
+        timeout = 400,
+    },
+    actions = {
+        open_file = {
+            quit_on_open = true,
+        },
+    },
 }
 
 local M = {}
