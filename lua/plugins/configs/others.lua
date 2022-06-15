@@ -54,6 +54,8 @@ M.luasnip = function()
 			updateevents = "TextChanged,TextChangedI",
 		}
 		luasnip.config.set_config(default)
+        luasnip.filetype_extend("javascript", { "javascriptreact" })
+        luasnip.filetype_extend("javascript", { "html" })
 		require("luasnip/loaders/from_vscode").load()
 	end
 end
