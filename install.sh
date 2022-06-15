@@ -34,6 +34,10 @@ if osx; then
     npm i -g remark-language-server
     npm i -g vscode-langservers-extracted
     npm i -g intelephense
+    npm i -g vls
+    npm i -g emmet-ls
+    npm install -g @tailwindcss/language-server
+    npm install -g typescript typescript-language-server
 
 fi
 
