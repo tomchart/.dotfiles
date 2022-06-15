@@ -215,12 +215,8 @@ local plugins = {
 		end,
 	},
 	{
-		"ggandor/lightspeed.nvim",
-		after = "fidget.nvim",
-	},
-	{
 		"numToStr/Comment.nvim",
-		after = "lightspeed.nvim",
+		after = "fidget.nvim",
 		config = function()
 			require("plugins.configs.comment").setup()
 		end,
