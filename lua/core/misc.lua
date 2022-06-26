@@ -10,5 +10,5 @@ cmd([[autocmd TermOpen * :lua require('utils').change_terminal_filetype()]])
 cmd([[autocmd FileType c,cpp setlocal formatoptions-=r]])
 
 -- run eslint on file save
-cmd([[autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll]])
+-- cmd([[autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll]])
 
