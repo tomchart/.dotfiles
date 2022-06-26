@@ -3,10 +3,7 @@ local bufferline = require("bufferline")
 bufferline.setup({
 	highlights = {
 		fill = {
-			guibg = {
-				attribute = "bg",
-				highlight = "DraculaBgDarker",
-			},
+			guibg = "#191922",
 		},
 		buffer_selected = {
 			gui = "bold",
@@ -14,12 +11,13 @@ bufferline.setup({
 		duplicate_selected = {
 			gui = "bold",
 		},
-		duplicate = {
-			gui = "",
-		},
 		indicator_selected = {
-			guifg = "#8BE9FD",
+			guifg = "#A3D4D5",
 		},
+    separator = {
+      guifg = "#191922",
+      guibg = "#1F1F28",
+    },
 	},
 	options = {
 		middle_mouse_command = function(bufnum)
