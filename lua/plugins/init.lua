@@ -37,16 +37,16 @@ local plugins = {
 		"kyazdani42/nvim-web-devicons",
 		after = "dashboard-nvim",
 	},
-	{
-		"SmiteshP/nvim-gps",
-		after = "nvim-web-devicons",
-		config = function()
-			require("plugins.configs.nvim-gps").setup()
-		end,
-	},
+	-- {
+	-- 	"SmiteshP/nvim-gps",
+	-- 	after = "nvim-web-devicons",
+	-- 	config = function()
+	-- 		require("plugins.configs.nvim-gps").setup()
+	-- 	end,
+	-- },
 	{
 		"NTBBloodbath/galaxyline.nvim",
-		after = "nvim-gps",
+		after = "dashboard-nvim",
 		config = function()
 			require("plugins.configs.galaxyline")
 		end,
@@ -61,15 +61,15 @@ local plugins = {
 			require("core.mappings").bufferline()
 		end,
 	},
-    {
+  {
 		"ggandor/leap.nvim",
         config = function()
             require("plugins.configs.others").leap()
         end,
 	},
-    {
-        "tpope/vim-repeat",
-    },
+  {
+      "tpope/vim-repeat",
+  },
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = "BufReadPost",
@@ -138,6 +138,7 @@ local plugins = {
 		event = "InsertEnter",
 	},
 
+	-- cmp is mostly working but throwing errors for galaxyline when running some snippets??
 	{
 		"hrsh7th/nvim-cmp",
 		after = "friendly-snippets",
@@ -179,16 +180,16 @@ local plugins = {
 		"machakann/vim-highlightedyank",
 		after = "bufdelete.nvim",
 	},
-	{
-		"j-hui/fidget.nvim",
-		after = "vim-highlightedyank",
-		config = function()
-			require("plugins.configs.fidget").setup()
-		end,
-	},
+	-- {
+	-- 	"j-hui/fidget.nvim",
+	-- 	after = "vim-highlightedyank",
+	-- 	config = function()
+	-- 		require("plugins.configs.fidget").setup()
+	-- 	end,
+	-- },
 	{
 		"numToStr/Comment.nvim",
-		after = "fidget.nvim",
+		after = "vim-highlightedyank",
 		config = function()
 			require("plugins.configs.comment").setup()
 		end,
