@@ -14,6 +14,14 @@ local highlight = vim.highlight
 
 galaxyline.short_line_list = { "NvimTree", "term", "dashboard" }
 
+local round = {
+  left = "",
+  right = "",
+	main_icon = "  ",
+	vi_mode_icon = " ",
+	position_icon = " "
+}
+
 local slant = {
 	left = " ",
 	right = " ",
@@ -21,6 +29,8 @@ local slant = {
 	vi_mode_icon = " ",
 	position_icon = " ",
 }
+
+local style = round
 
 local mode_symbol_to_mode = {
 	n = "NORMAL",
@@ -57,7 +67,7 @@ galaxyline.section.left = {
 				return "    "
 			end,
 			highlight = "GalaxylineMode",
-			separator = " ",
+			separator = style.right,
 			separator_highlight = "GalaxylineModeSeparator",
 		},
 	},
@@ -65,7 +75,7 @@ galaxyline.section.left = {
 		-- grey separator
 		Sep = {
 			provider = function()
-				return " "
+				return style.right
 			end,
 			highlight = "GalaxylineSeparator10",
 		},
@@ -78,7 +88,7 @@ galaxyline.section.left = {
 				return "  " .. mode
 			end,
 			highlight = "GalaxylineModeText",
-			separator = " ",
+			separator = style.right,
 			separator_highlight = "GalaxylineSeparator6",
 		},
 	},
@@ -86,9 +96,9 @@ galaxyline.section.left = {
 		-- this is a space
 		Sep2 = {
 			provider = function()
-				return " "
+				return style.right
 			end,
-			highlight = "GalaxylineSeparator2",
+			highlight = "GalaxylineSeparator13",
 		},
 	},
 	{
@@ -98,14 +108,17 @@ galaxyline.section.left = {
 				return "   " .. dir_name .. " "
 			end,
 			highlight = "GalaxylineDir",
+      separator = style.right,
+      separator_highlight = "GalaxylineSeparator15"
 		},
 	},
 	{
+    -- this is a space
 		Sep3 = {
 			provider = function()
-				return " "
+				return style.right
 			end,
-			highlight = "GalaxylineSeparator5",
+			highlight = "GalaxylineSeparator16",
 		},
 	},
 	{
@@ -122,7 +135,7 @@ galaxyline.section.left = {
 		FileName = {
 			provider = "FileName",
 			condition = condition.buffer_not_empty,
-			separator = " ",
+			separator = style.right,
 			highlight = "GalaxylineFilename",
 			separator_highlight = "GalaxylineSeparator3",
 		},
@@ -237,7 +250,7 @@ galaxyline.section.right = {
 		GetLspClient = {
 			provider = function()
 				if next(vim.lsp.buf_get_clients()) ~= nil then
-					return "     LSP"
+					return "     LSP "
 				else
 					return ""
 				end
@@ -248,7 +261,7 @@ galaxyline.section.right = {
 	{
 		Sep4 = {
 			provider = function()
-				return " "
+				return style.left
 			end,
 			highlight = "GalaxylineSeparator12",
 		},
@@ -256,7 +269,7 @@ galaxyline.section.right = {
 	{
 		Sep6 = {
 			provider = function()
-				return " "
+				return style.left
 			end,
 			highlight = "GalaxylineSeparator11",
 		},
@@ -270,7 +283,7 @@ galaxyline.section.right = {
 	{
 		Sep7 = {
 			provider = function()
-				return " "
+				return style.left
 			end,
 			highlight = "GalaxylineSeparator14",
 		},
@@ -278,7 +291,7 @@ galaxyline.section.right = {
 	{
 		Sep8 = {
 			provider = function()
-				return " "
+				return style.left
 			end,
 			highlight = "GalaxylineLineInfoSep",
 		},
@@ -295,14 +308,14 @@ galaxyline.section.right = {
 		PerCent = {
 			provider = "LinePercent",
 			highlight = "GalaxylinePercent",
-			separator = " ",
+			separator = style.left,
 			separator_highlight = "GalaxylineSeparator6",
 		},
 	},
 	{
 		Sep9 = {
 			provider = function()
-				return " "
+				return style.left
 			end,
 			highlight = "GalaxylineSeparator10",
 		},
@@ -314,7 +327,7 @@ galaxyline.section.right = {
 				return " "
 			end,
 			highlight = "GalaxylinePercentIcon",
-			separator = " ",
+			separator = style.left,
 			separator_highlight = "GalaxylinePercentSep",
 		},
 	},
