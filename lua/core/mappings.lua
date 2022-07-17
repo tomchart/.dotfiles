@@ -107,7 +107,7 @@ M.tele = function()
 	keymap("n", "<c-f>", telescope.current_buffer_fuzzy_find)
 	keymap("n", "<c-g>", telescope.live_grep)
 	keymap("n", "<c-o>", telescope.oldfiles)
-	keymap("n", "<c-l>", telescope.lsp_document_symbols)
+	keymap("n", "<c-s>", telescope.lsp_document_symbols)
 	keymap("n", "<leader>c", telescope.git_commits)
 	keymap("n", "<leader>bc", telescope.git_commits)
 	keymap("n", "<leader>h", telescope.git_branches)
@@ -124,11 +124,6 @@ end
 M.lspconf = function()
 	keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>")
 	keymap("n", "E", "<cmd>lua vim.diagnostic.open_float()<cr>")
-end
-
-M.trouble = function()
-	keymap("n", "<leader>xx", "<cmd>Trouble<cr>")
-	keymap("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>")
 end
 
 return M
