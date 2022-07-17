@@ -83,8 +83,11 @@ local conf = {
 
 			vim_item.menu = ({
 				nvim_lsp = "[LSP]",
-				nvim_lua = "[Lua]",
+        luasnip = "[SNIP]",
 				buffer = "[BUF]",
+        path = "[PATH]",
+        nvim_lua = "[LUA]",
+        cmdline = "[CMD]",
 			})[entry.source.name]
 
 			return vim_item
@@ -113,8 +116,9 @@ local conf = {
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
-		{ name = "nvim_lua" },
 		{ name = "path" },
+		{ name = "nvim_lua" },
+		{ name = "cmdline" },
 	},
 	experimental = {
 		ghost_text = { hl_group = "DraculaPurple" },

@@ -138,10 +138,18 @@ local plugins = {
 		event = "InsertEnter",
 	},
 
-	-- cmp is mostly working but throwing errors for galaxyline when running some snippets??
 	{
 		"hrsh7th/nvim-cmp",
 		after = "friendly-snippets",
+    requires = {
+      { 'hrsh7th/cmp-buffer', after = 'nvim-cmp', },
+      { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp', },
+      { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp', },
+      { "hrsh7th/cmp-path", after = "nvim-cmp", },
+      { "hrsh7th/cmp-cmdline", after = "nvim-cmp", },
+      { "onsails/lspkind-nvim", after = "nvim-cmp", },
+      { 'saadparwaiz1/cmp_luasnip', after = 'LuaSnip', },
+    },
 		config = function()
 			require("plugins.configs.cmp").setup()
 		end,
@@ -153,42 +161,6 @@ local plugins = {
 		config = function()
 			require("plugins.configs.others").luasnip()
 		end,
-	},
-	{
-		"saadparwaiz1/cmp_luasnip",
-		after = "LuaSnip",
-	},
-	{
-		"hrsh7th/cmp-nvim-lua",
-		after = "cmp_luasnip",
-	},
-	{
-		"hrsh7th/cmp-nvim-lsp",
-		after = "cmp-nvim-lua",
-	},
-	{
-		"hrsh7th/vim-vsnip",
-		after = "cmp-nvim-lsp",
-	},
-	{
-		"hrsh7th/cmp-vsnip",
-		after = "vim-vsnip",
-	},
-	{
-		"hrsh7th/cmp-buffer",
-		after = "cmp-vsnip",
-	},
-	{
-		"hrsh7th/cmp-path",
-		after = "cmp-buffer",
-	},
-	{
-		"hrsh7th/cmp-cmdline",
-		after = "cmp-path",
-	},
-	{
-		"onsails/lspkind-nvim",
-		after = "cmp-cmdline",
 	},
 
 	-- misc plugins
