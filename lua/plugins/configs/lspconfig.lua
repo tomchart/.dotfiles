@@ -86,11 +86,16 @@ local servers = {
     intelephense = {},
     vuels = {},
     emmet_ls = {
-        filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
+        filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'jsx' },
     },
-    tailwindcss = {},
+    -- tailwindcss = {},
     -- eslint = {},
-    tsserver = {},
+    tsserver = {
+      single_file_support = true,
+      preferences = {
+      quotePreference = "double",
+    },
+  },
 
 }
 
