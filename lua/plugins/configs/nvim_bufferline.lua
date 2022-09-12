@@ -3,20 +3,24 @@ local bufferline = require("bufferline")
 bufferline.setup({
 	highlights = {
 		fill = {
-			guibg = "#191922",
+			bg = "#191922",
 		},
 		buffer_selected = {
-			gui = "bold",
+			underline = false,
+			undercurl = false,
+			italic = true,
 		},
 		duplicate_selected = {
-			gui = "bold",
+			underline = false,
+			undercurl = false,
+			italic = true,
 		},
 		indicator_selected = {
-			guifg = "#A3D4D5",
+			fg = "#A3D4D5",
 		},
     separator = {
-      guifg = "#191922",
-      guibg = "#1F1F28",
+      fg = "#191922",
+      bg = "#1F1F28",
     },
 	},
 	options = {
@@ -24,7 +28,10 @@ bufferline.setup({
 			require("bufdelete").bufdelete(bufnum)
 		end,
 		right_mouse_command = "vertical sbuffer %d",
-		indicator_icon = "▎",
+    indicator = {
+      style = "icon",
+      icon = "▎",
+    },
 		buffer_close_icon = "",
 		modified_icon = "●",
 		close_icon = "",
