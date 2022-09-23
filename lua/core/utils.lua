@@ -20,6 +20,13 @@ end
 
 -- Highlights functions
 
+-- Highlight link
+-- @param from string
+-- @param to string
+M.hi = function(from, to)
+  api.nvim_set_hl(0, from, {link = to})
+end
+
 -- Define bg color
 -- @param group Group
 -- @param color Color
