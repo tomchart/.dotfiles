@@ -10,7 +10,7 @@ end
 
 local fn = vim.fn
 local diag = vim.diagnostic
-local highlight = vim.highlight
+local hi = require("core.utils").hi
 
 galaxyline.short_line_list = { "NvimTree", "term", "dashboard" }
 
@@ -61,9 +61,9 @@ galaxyline.section.left = {
 		ViSymbol = {
 			provider = function()
 				local mode = mode_symbol_to_mode[fn.mode()]
-				highlight.link("GalaxylineMode", "Galaxyline" .. mode:gsub(" ", "") .. "Mode", true)
-				highlight.link("GalaxylineModeSeparator", "Galaxyline" .. mode:gsub(" ", "") .. "ModeSeparator", true)
-				highlight.link("GalaxylineModeSeparator2", "Galaxyline" .. mode:gsub(" ", "") .. "ModeSeparator2", true)
+        hi("GalaxylineMode", "Galaxyline" .. mode:gsub(" ", "") .. "Mode")
+        hi("GalaxylineModeSeparator", "Galaxyline" .. mode:gsub(" ", "") .. "ModeSeparator")
+        hi("GalaxylineModeSeparator2", "Galaxyline" .. mode:gsub(" ", "") .. "ModeSeparator2")
 				return "    "
 			end,
 			highlight = "GalaxylineMode",
@@ -84,7 +84,7 @@ galaxyline.section.left = {
 		ViMode = {
 			provider = function()
 				local mode = mode_symbol_to_mode[fn.mode()]
-				highlight.link("GalaxylineModeText", "Galaxyline" .. mode:gsub(" ", "") .. "ModeText", true)
+        hi("GalaxylineModeText", "Galaxyline" .. mode:gsub(" ", "") .. "ModeText")
 				return "  " .. mode
 			end,
 			highlight = "GalaxylineModeText",
