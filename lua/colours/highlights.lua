@@ -1,5 +1,3 @@
-local hi = vim.highlight
-
 local fg = require("core.utils").fg
 local bg = require("core.utils").bg
 local fg_bg = require("core.utils").fg_bg
@@ -118,9 +116,6 @@ local palette = {
 	light_green = nord.green,
 	light_orange = nord.orange,
 }
-
--- git
-hi.link("DiffDelete", "DraculaRed", true)
 
 --dashboard
 fg("DashBoardHeader", palette.cyan)
