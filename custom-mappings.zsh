@@ -1,2 +1,1 @@
-bindkey '^ ' autosuggest-accept
-bindkey '^\n' autosuggest-execute
+/home/tom/dotfiles/custom-mappings.zsh

@@ -172,6 +172,9 @@ alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 # php
 export PATH="/Users/tom/.composer/vendor/bin:$PATH"
 
+# dev
+alias dep='cp -r /home/tom/oms-V1.4/ /mnt/c/xampp/htdocs/'
+
 
 ##################
 #                #
@@ -190,5 +193,5 @@ export NVM_DIR="$HOME/.nvm"
 ##################
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
+# eval "$(pyenv init --path)"
+# eval "$(pyenv init -)"
