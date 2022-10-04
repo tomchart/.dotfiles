@@ -87,7 +87,7 @@ local conf = {
 				buffer = "[BUF]",
         path = "[PATH]",
         nvim_lua = "[LUA]",
-        cmdline = "[CMD]",
+        -- cmdline = "[CMD]",
 			})[entry.source.name]
 
 			return vim_item
@@ -119,9 +119,6 @@ local conf = {
 		{ name = "path" },
 		{ name = "nvim_lua" },
 		{ name = "cmdline" },
-	},
-	experimental = {
-		ghost_text = { hl_group = "DraculaPurple" },
 	},
 }
 -- cmp.event:on("confirm_done", require("nvim-autopairs").completion.cmp.on_confirm_done())
