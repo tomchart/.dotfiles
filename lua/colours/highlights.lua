@@ -120,6 +120,32 @@ local palette = {
 --dashboard
 fg("DashBoardHeader", palette.cyan)
 
+---- cmp
+-- pmenu
+highlight_group("Pmenu", { guibg = palette.black2, guifg = palette.fg })
+highlight_group("PmenuSbar", { guibg = palette.black2, guifg = palette.fg })
+highlight_group("PmenuThumb", { guibg = palette.light, guifg = palette.fg })
+highlight_group("PmenuSel", { guibg = palette.light, guifg = palette.fg })
+highlight_group("CmpItemMenu", { guibg = palette.black2, guifg = palette.even_lighter })
+--grey
+highlight_group("CmpItemAbbr", { guibg = palette.black2, guifg = palette.fg })
+highlight_group("CmpItemAbbrDeprecated", { link = "CmpItemAbbr" })
+-- blue
+highlight_group("CmpItemAbbrMatch", { guibg = palette.black2, guifg = "#569CD6" })
+highlight_group("CmpItemAbbrMatchFuzzy", { link = "CmpItemAbbrMatch" })
+-- light blue
+highlight_group("CmpItemKindDefault", { guibg = palette.black2, guifg = "#9CDCFE" })
+highlight_group("CmpItemKindVariable", { guibg = palette.black2, guifg = "#9CDCFE" })
+highlight_group("CmpItemKindInterface", { link = "CmpItemKindVariable" })
+highlight_group("CmpItemKindText", { link = "CmpItemKindVariable" })
+-- pink
+highlight_group("CmpItemKindFunction", { guibg = palette.black2, guifg = "#C586C0" })
+highlight_group("CmpItemKindMethod", { link = "CmpItemKindFunction" })
+-- front
+highlight_group("CmpItemKindKeyword", { guibg = palette.black2, guifg = "#D4D4D4" })
+highlight_group("CmpItemKindProperty", { link = "CmpItemKindKeyword" })
+-- highlight_group("CmpItemKindUnit", { link = "CmpItemKindKeyword" })
+
 -- galaxyline
 local mode_to_colour = {
 	Normal = palette.purple,
