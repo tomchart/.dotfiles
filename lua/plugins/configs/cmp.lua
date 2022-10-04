@@ -120,11 +120,7 @@ local conf = {
 		{ name = "nvim_lua" },
 		{ name = "cmdline" },
 	},
-	experimental = {
-		ghost_text = { hl_group = "DraculaPurple" },
-	},
 }
--- cmp.event:on("confirm_done", require("nvim-autopairs").completion.cmp.on_confirm_done())
 
 local M = {}
 M.setup = function()
