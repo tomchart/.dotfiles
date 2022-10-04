@@ -19,6 +19,7 @@ o.signcolumn = "yes"
 o.swapfile = false
 o.updatetime = 100
 o.scrolloff = 5
+o.autoindent = true
 vim.o.relativenumber = true
 vim.wo.colorcolumn = "99999" -- fix annoying indent artifacts bug
 -- vim.lsp.set_log_level("debug")
