@@ -121,30 +121,66 @@ local palette = {
 fg("DashBoardHeader", palette.cyan)
 
 ---- cmp
--- pmenu
 highlight_group("Pmenu", { guibg = palette.black2, guifg = palette.fg })
 highlight_group("PmenuSbar", { guibg = palette.black2, guifg = palette.fg })
 highlight_group("PmenuThumb", { guibg = palette.light, guifg = palette.fg })
 highlight_group("PmenuSel", { guibg = palette.light, guifg = palette.fg })
 highlight_group("CmpItemMenu", { guibg = palette.black2, guifg = palette.even_lighter })
---grey
 highlight_group("CmpItemAbbr", { guibg = palette.black2, guifg = palette.fg })
 highlight_group("CmpItemAbbrDeprecated", { link = "CmpItemAbbr" })
--- blue
 highlight_group("CmpItemAbbrMatch", { guibg = palette.black2, guifg = "#569CD6" })
 highlight_group("CmpItemAbbrMatchFuzzy", { link = "CmpItemAbbrMatch" })
--- light blue
 highlight_group("CmpItemKindDefault", { guibg = palette.black2, guifg = "#9CDCFE" })
 highlight_group("CmpItemKindVariable", { guibg = palette.black2, guifg = "#9CDCFE" })
 highlight_group("CmpItemKindInterface", { link = "CmpItemKindVariable" })
 highlight_group("CmpItemKindText", { link = "CmpItemKindVariable" })
--- pink
 highlight_group("CmpItemKindFunction", { guibg = palette.black2, guifg = "#C586C0" })
 highlight_group("CmpItemKindMethod", { link = "CmpItemKindFunction" })
--- front
 highlight_group("CmpItemKindKeyword", { guibg = palette.black2, guifg = "#D4D4D4" })
 highlight_group("CmpItemKindProperty", { link = "CmpItemKindKeyword" })
--- highlight_group("CmpItemKindUnit", { link = "CmpItemKindKeyword" })
+
+-- local cmp = {
+--   PmenuSel = { guibg = "#282C34", guifg = "NONE" },
+--   Pmenu = { guifg = "#C5CDD9", guibg = "#22252A" },
+--
+--   CmpItemAbbrDeprecated = { guifg = "#7E8294", guibg = "NONE", fmt = "strikethrough" },
+--   CmpItemAbbrMatch = { guifg = "#82AAFF", guibg = "NONE", fmt = "bold" },
+--   CmpItemAbbrMatchFuzzy = { guifg = "#82AAFF", guibg = "NONE", fmt = "bold" },
+--   CmpItemMenu = { guifg = "#C792EA", guibg = "NONE", fmt = "italic" },
+--
+--   CmpItemKindField = { guifg = "#EED8DA", guibg = "#EED8DA" },
+--   CmpItemKindProperty = { link = "CmpItemKindField" },
+--
+--   CmpItemKindText = { guifg = "#C3E88D", guibg = "#9FBD73" },
+--   CmpItemKindEnum = { link = "CmpItemKindEnum" },
+--   CmpItemKindKeyword = { link = "CmpItemKindEnum" },
+--
+--   CmpItemKindConstant = { guifg = "#FFE082", guibg = "#D4BB6C" },
+--   CmpItemKindConstructor = { link = "CmpItemKindConstant" },
+--   CmpItemKindReference = { link = "CmpItemKindConstant" },
+--
+--   CmpItemKindFunction = { guifg = "#EADFF0", guibg = "#A377BF" },
+--   CmpItemKindStruct = { link = "CmpItemKindFunction" },
+--   CmpItemKindClass = { link = "CmpItemKindFunction" },
+--   CmpItemKindModule = { link = "CmpItemKindFunction" },
+--   CmpItemKindOperator = { link = "CmpItemKindFunction" },
+--
+--   CmpItemKindVariable = { guifg = "#C5CDD9", guibg = "#7E8294" },
+--   CmpItemKindFile = { link = "CmpItemKindVariable" },
+--
+--   CmpItemKindSnippet = { guifg = "#F5EBD9", guibg = "#D4A959" },
+--   CmpItemKindFolder = { link = "CmpItemKindSnippet" },
+--
+--   CmpItemKindMethod = { guifg = "#DDE5F5", guibg = "#6C8ED4" },
+--   CmpItemKindValue = { link = "CmpItemKindMethod" },
+--   CmpItemKindEnumMember = { link = "CmpItemKindMethod" },
+--
+--   CmpItemKindInterface = { guifg = "#D8EEEB", guibg = "#58B5A8" },
+--   CmpItemKindTypeParameter = { link = "CmpItemKindInterface" },
+-- }
+-- for hi, conf in pairs(cmp) do
+--   highlight_group(hi, conf)
+-- end
 
 -- galaxyline
 local mode_to_colour = {
