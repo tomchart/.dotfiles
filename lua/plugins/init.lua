@@ -85,6 +85,12 @@ local plugins = {
 		run = ":TSUpdate",
 	},
 	{
+		"kylechui/nvim-surround",
+		config = function()
+			require("plugins.configs.surround").setup()
+		end,
+	},
+	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		after = "nvim-treesitter",
 	},
