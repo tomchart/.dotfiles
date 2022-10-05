@@ -120,24 +120,25 @@ local palette = {
 --dashboard
 fg("DashBoardHeader", palette.cyan)
 
----- cmp
+-- cmp
 highlight_group("Pmenu", { guibg = palette.black2, guifg = palette.fg })
 highlight_group("PmenuSbar", { guibg = palette.black2, guifg = palette.fg })
 highlight_group("PmenuThumb", { guibg = palette.light, guifg = palette.fg })
 highlight_group("PmenuSel", { guibg = palette.light, guifg = palette.fg })
 highlight_group("CmpItemMenu", { guibg = palette.black2, guifg = palette.even_lighter })
 highlight_group("CmpItemAbbr", { guibg = palette.black2, guifg = palette.fg })
-highlight_group("CmpItemAbbrDeprecated", { link = "CmpItemAbbr" })
+-- highlight_group("CmpItemAbbrDeprecated", { link = "CmpItemAbbr" })
 highlight_group("CmpItemAbbrMatch", { guibg = palette.black2, guifg = "#569CD6" })
-highlight_group("CmpItemAbbrMatchFuzzy", { link = "CmpItemAbbrMatch" })
+-- highlight_group("CmpItemAbbrMatchFuzzy", { link = "CmpItemAbbrMatch" })
 highlight_group("CmpItemKindDefault", { guibg = palette.black2, guifg = "#9CDCFE" })
 highlight_group("CmpItemKindVariable", { guibg = palette.black2, guifg = "#9CDCFE" })
-highlight_group("CmpItemKindInterface", { link = "CmpItemKindVariable" })
-highlight_group("CmpItemKindText", { link = "CmpItemKindVariable" })
+-- highlight_group("CmpItemKindInterface", { link = "CmpItemKindVariable" })
+-- highlight_group("CmpItemKindText", { link = "CmpItemKindVariable" })
 highlight_group("CmpItemKindFunction", { guibg = palette.black2, guifg = "#C586C0" })
-highlight_group("CmpItemKindMethod", { link = "CmpItemKindFunction" })
+-- highlight_group("CmpItemKindMethod", { link = "CmpItemKindFunction" })
 highlight_group("CmpItemKindKeyword", { guibg = palette.black2, guifg = "#D4D4D4" })
-highlight_group("CmpItemKindProperty", { link = "CmpItemKindKeyword" })
+
+-- highlight_group("CmpItemKindProperty", { link = "CmpItemKindKeyword" })
 
 -- local cmp = {
 --   PmenuSel = { guibg = "#282C34", guifg = "NONE" },
