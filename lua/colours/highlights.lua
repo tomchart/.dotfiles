@@ -217,8 +217,8 @@ highlight_group("GalaxylineFilename", { guifg = palette.fg, guibg = palette.one_
 highlight_group("GalaxylineSeparator3", { guifg = palette.one_bg, guibg = palette.bg })
 highlight_group("GalaxylineIcon", { guifg = palette.light_grey, guibg = palette.bg })
 highlight_group("GalaxylineBranch", { guifg = palette.light_grey, guibg = palette.bg })
-highlight_group("GalaxylineDiffAdd", { guifg = palette.light_grey, guibg = palette.bg })
-highlight_group("GalaxylineDiffModified", { guifg = palette.light_grey, guibg = palette.bg })
+highlight_group("GalaxylineDiffAdd", { guifg = palette.light_green, guibg = palette.bg })
+highlight_group("GalaxylineDiffModified", { guifg = palette.light_orange, guibg = palette.bg })
 highlight_group("GalaxylineDiffRemove", { guifg = palette.light_red, guibg = palette.bg })
 
 -- mid
