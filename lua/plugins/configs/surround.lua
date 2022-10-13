@@ -1,4 +1,4 @@
-local present, surround_conf = pcall(require, "nvim-surround")
+local present, nvim_surround = pcall(require, "nvim-surround")
 
 if not present then
 	return
@@ -7,7 +7,7 @@ end
 local M = {}
 
 M.setup = function()
-  surround_conf.setup()
+  nvim_surround.setup({})
 end
 
 return M
