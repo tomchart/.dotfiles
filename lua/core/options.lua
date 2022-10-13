@@ -1,8 +1,6 @@
 local o = vim.o
 
-o.expandtab = true
 o.mouse = "a"
-o.smartcase = true
 o.ignorecase = true
 o.termguicolors = true
 o.cursorline = true
@@ -10,17 +8,18 @@ o.swapfile = false
 o.splitbelow = true
 o.splitright = true
 o.showtabline = 2
-o.tabstop = 2
 o.number = true
 o.hidden = true
 o.showmode = false
-o.shiftwidth = 2
 o.signcolumn = "yes"
 o.swapfile = false
 o.updatetime = 100
 o.scrolloff = 5
+o.expandtab = true
+o.tabstop = 2
+o.shiftwidth = 2
 o.autoindent = true
-vim.o.relativenumber = true
+o.relativenumber = true
 vim.wo.colorcolumn = "99999" -- fix annoying indent artifacts bug
 -- vim.lsp.set_log_level("debug")
 
