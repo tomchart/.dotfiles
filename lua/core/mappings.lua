@@ -17,9 +17,6 @@ M.misc = function()
 	local function non_config_mappings()
 		-- copy to end of line from current pos with Y
 		keymap("n", "Y", "y$")
-
-		-- open terminal with <c-t>
-		keymap("n", "<c-t>", "<cmd>terminal<cr>")
 	end
 
 	local function comfort()
