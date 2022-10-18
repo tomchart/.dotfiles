@@ -77,6 +77,13 @@ local conf = {
 			require("luasnip").lsp_expand(args.body)
 		end,
 	},
+  enabled = function()
+    if require"cmp.config.context".in_treesitter_capture("comment")==true or require"cmp.config.context".in_syntax_group("Comment") then
+      return false
+    else
+      return true
+    end
+  end,
 	formatting = {
     fields = {"kind", "abbr", "menu"},
 		-- format = function(entry, vim_item)
