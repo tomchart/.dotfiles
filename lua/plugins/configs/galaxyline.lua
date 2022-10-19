@@ -326,9 +326,9 @@ galaxyline.section.right = {
 			provider = function()
 				return " "
 			end,
-			highlight = "GalaxylinePercentIcon",
+			highlight = "GalaxylineMode",
 			separator = style.left,
-			separator_highlight = "GalaxylinePercentSep",
+			separator_highlight = "GalaxylineModeSeparator",
 		},
 	},
 }
