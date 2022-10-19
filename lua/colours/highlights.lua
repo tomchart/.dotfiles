@@ -234,8 +234,8 @@ highlight_group("GalaxylineSeparator11", { guifg = palette.one_bg2, guibg = pale
 highlight_group("GalaxylineSeparator12", { guifg = palette.one_bg2, guibg = palette.bg })
 highlight_group("GalaxylineLineInfo", { guifg = palette.fg, guibg = palette.one_bg2 })
 highlight_group("GalaxylineSeparator14", { guifg = palette.grey, guibg = palette.one_bg2 })
-highlight_group("GalaxylineLineInfoSep", { guifg = palette.light_red, guibg = palette.grey })
-highlight_group("GalaxylineLineInfoIcon", { guifg = palette.bg, guibg = palette.light_red })
+highlight_group("GalaxylineLineInfoSep", { guifg = palette.baby_pink, guibg = palette.grey })
+highlight_group("GalaxylineLineInfoIcon", { guifg = palette.bg, guibg = palette.baby_pink })
 highlight_group("GalaxylinePercent", { guifg = palette.fg, guibg = palette.one_bg3 })
 -- Sep10 is used here but already defined above
 highlight_group("GalaxylinePercentIcon", { guifg = palette.bg, guibg = palette.light_green })
