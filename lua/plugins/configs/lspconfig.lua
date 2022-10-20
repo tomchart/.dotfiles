@@ -81,20 +81,22 @@ local servers = {
 		filetypes = { "markdown" },
 	},
 	dockerls = {},
-	html = {},
-    cssls = {},
-    intelephense = {},
-    vuels = {},
-    emmet_ls = {
-        filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'jsx' },
-    },
-    -- tailwindcss = {},
-    -- eslint = {},
-    tsserver = {
-      single_file_support = true,
-      preferences = {
-      quotePreference = "double",
-    },
+	html = {
+    filetypes = { 'html', 'php' },
+  },
+  cssls = {},
+  intelephense = {},
+  vuels = {},
+  emmet_ls = {
+      filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'jsx', 'php' },
+  },
+  -- tailwindcss = {},
+  -- eslint = {},
+  tsserver = {
+    single_file_support = true,
+    preferences = {
+    quotePreference = "double",
+  },
   },
 
 }
