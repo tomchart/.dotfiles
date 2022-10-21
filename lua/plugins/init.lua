@@ -41,13 +41,6 @@ local plugins = {
 		"kyazdani42/nvim-web-devicons",
 		after = "dashboard-nvim",
 	},
-	-- {
-	-- 	"SmiteshP/nvim-gps",
-	-- 	after = "nvim-web-devicons",
-	-- 	config = function()
-	-- 		require("plugins.configs.nvim-gps").setup()
-	-- 	end,
-	-- },
 	{
 		"NTBBloodbath/galaxyline.nvim",
 		after = "dashboard-nvim",
@@ -55,16 +48,23 @@ local plugins = {
 			require("plugins.configs.galaxyline")
 		end,
 	},
-	{
-		"akinsho/bufferline.nvim",
-		after = "galaxyline.nvim",
-		config = function()
-			require("plugins.configs.nvim_bufferline")
-		end,
-		setup = function()
-			require("core.mappings").bufferline()
-		end,
-	},
+  -- {
+  --   "feline-nvim/feline.nvim",
+  --   after = "dashboard-nvim",
+  --   setup = function()
+  --     require("plugins.configs.statusline").setup()
+  --   end,
+  -- },
+	-- {
+	-- 	"akinsho/bufferline.nvim",
+	-- 	after = "galaxyline.nvim",
+	-- 	config = function()
+	-- 		require("plugins.configs.nvim_bufferline")
+	-- 	end,
+	-- 	setup = function()
+	-- 		require("core.mappings").bufferline()
+	-- 	end,
+	-- },
   {
 		"ggandor/leap.nvim",
         config = function()
@@ -112,11 +112,6 @@ local plugins = {
 	},
 
 	-- lsp stuff
-	-- {
-	-- 	"RRethy/vim-illuminate",
-	-- 	after = "indent-blankline.nvim",
-	-- 	config = [[ vim.g.Illuminate_delay = 500 ]],
-	-- },
 	{
 		"neovim/nvim-lspconfig",
 		after = "vim-fugitive",
@@ -127,13 +122,6 @@ local plugins = {
 			require("plugins.configs.lspconfig")
 		end,
 	},
-	-- {
-		-- "jose-elias-alvarez/null-ls.nvim",
-		-- after = "nvim-lspconfig",
-		-- config = function()
-			-- require("plugins.configs.null-ls")
-		-- end,
-	-- },
 	{
 		"ray-x/lsp_signature.nvim",
 		after = "nvim-lspconfig",
@@ -187,19 +175,8 @@ local plugins = {
 		event = "BufReadPost",
 	},
 	{
-		"machakann/vim-highlightedyank",
-		after = "bufdelete.nvim",
-	},
-	-- {
-	-- 	"j-hui/fidget.nvim",
-	-- 	after = "vim-highlightedyank",
-	-- 	config = function()
-	-- 		require("plugins.configs.fidget").setup()
-	-- 	end,
-	-- },
-	{
 		"numToStr/Comment.nvim",
-		after = "vim-highlightedyank",
+    after = "nvim-autopairs",
 		config = function()
 			require("plugins.configs.comment").setup()
 		end,
@@ -211,13 +188,6 @@ local plugins = {
 			require("plugins.configs.others").escape()
 		end,
 	},
-	-- {
-	-- 	"mvllow/modes.nvim",
-	-- 	after = "Comment.nvim",
-	-- 	config = function()
-	-- 		require("plugins.configs.mode_hi").setup()
-	-- 	end,
-	-- },
 	{
 		"dstein64/vim-startuptime",
 	},
@@ -233,16 +203,16 @@ local plugins = {
 			require("plugins.configs.telescope").setup()
 		end,
 	},
-	{
-		"kyazdani42/nvim-tree.lua",
-		after = "telescope.nvim",
-		setup = function()
-			require("core.mappings").nvimtree()
-		end,
-		config = function()
-			require("plugins.configs.nvimtree").setup()
-		end,
-	},
+	-- {
+	-- 	"kyazdani42/nvim-tree.lua",
+	-- 	after = "telescope.nvim",
+	-- 	setup = function()
+	-- 		require("core.mappings").nvimtree()
+	-- 	end,
+	-- 	config = function()
+	-- 		require("plugins.configs.nvimtree").setup()
+	-- 	end,
+	-- },
 }
 
 return packer.startup(function(use)

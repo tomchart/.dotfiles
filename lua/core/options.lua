@@ -7,7 +7,7 @@ o.cursorline = true
 o.swapfile = false
 o.splitbelow = true
 o.splitright = true
-o.showtabline = 2
+o.showtabline = 0
 o.number = true
 o.hidden = true
 o.showmode = false
@@ -20,6 +20,7 @@ o.tabstop = 2
 o.shiftwidth = 2
 o.autoindent = true
 o.relativenumber = true
+-- vim.g.do_filetype_lua = 1
 vim.wo.colorcolumn = "99999" -- fix annoying indent artifacts bug
 -- vim.lsp.set_log_level("debug")
 
