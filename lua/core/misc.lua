@@ -12,3 +12,5 @@ cmd([[autocmd FileType c,cpp setlocal formatoptions-=r]])
 -- run eslint on file save
 -- cmd([[autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll]])
 
+-- highlight yanked text
+cmd[[au TextYankPost * silent! lua vim.highlight.on_yank()]]
