@@ -30,6 +30,25 @@ local gruvbox = {
   red = '#ea6962',
 }
 
+local vi_mode_colors = {
+  NORMAL = 'green',
+  OP = 'green',
+  INSERT = 'red',
+  CONFIRM = 'red',
+  VISUAL = 'skyblue',
+  LINES = 'skyblue',
+  BLOCK = 'skyblue',
+  REPLACE = 'violet',
+  ['V-REPLACE'] = 'violet',
+  ENTER = 'cyan',
+  MORE = 'cyan',
+  SELECT = 'orange',
+  COMMAND = 'green',
+  SHELL = 'green',
+  TERM = 'green',
+  NONE = 'yellow'
+}
+
 local colors = gruvbox
 
 local icons = {
@@ -224,17 +243,9 @@ local comps = {
 local components = {
     left = {
         active = {
-            comps.vi_mode.left,
-            comps.file.info,
-            comps.lsp.name,
-            comps.diagnos.err,
-            comps.diagnos.warn,
-            comps.diagnos.hint,
-            comps.diagnos.info
+          comps.diagnos.info,
         },
         inactive = {
-            comps.vi_mode.left,
-            comps.file.info
         }
     },
     mid = {
@@ -243,17 +254,29 @@ local components = {
     },
     right = {
         active = {
-            comps.git.add,
-            comps.git.change,
-            comps.git.remove,
-            comps.file.os,
-            comps.git.branch,
-            comps.line_percentage,
-            comps.scroll_bar,
-            comps.vi_mode.right
         },
         inactive = {}
     }
+}
+
+local taketwo = {
+  active = {
+    {
+      provider = 'git_diff_changed',
+      hl = {
+        fg = 'orange',
+        bg = 'bg',
+        style = 'bold'
+      }
+    },
+    {},
+    {}
+  },
+  inactive = {
+    {},
+    {},
+    {},
+  },
 }
 
 local M = {}
@@ -261,7 +284,10 @@ local M = {}
 M.setup = function()
   feline.setup({
     theme = gruvbox,
-    components = components,
+    default_bg = colors.bg,
+    default_fg = colors.fg,
+    vi_mode_colors = vi_mode_colors,
+    components = taketwo,
   })
 end
 
