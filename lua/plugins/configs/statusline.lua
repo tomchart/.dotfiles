@@ -77,6 +77,13 @@ local tokyonightstorm = {
   red = "#f7768e",
 }
 
+-- define all components in large table c
+-- then build left, right, and middle tables like 
+  -- left = { c.file, c.vi_mode, c.foo, etc. }
+-- define setup component table like 
+-- components = { active = { left, middle, right }, inactive = { left, middle, right } }
+-- then pass this components table to feline.setup like components = components
+
 local components = {
   active = {},
   inactive = {}
