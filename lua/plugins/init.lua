@@ -41,20 +41,20 @@ local plugins = {
 		"kyazdani42/nvim-web-devicons",
 		after = "dashboard-nvim",
 	},
-	{
-		"NTBBloodbath/galaxyline.nvim",
-		after = "dashboard-nvim",
-		config = function()
-			require("plugins.configs.galaxyline")
-		end,
-	},
-  -- {
-  --   "feline-nvim/feline.nvim",
-  --   after = "dashboard-nvim",
-  --   setup = function()
-  --     require("plugins.configs.statusline").setup()
-  --   end,
-  -- },
+	-- {
+	-- 	"NTBBloodbath/galaxyline.nvim",
+	-- 	after = "dashboard-nvim",
+	-- 	config = function()
+	-- 		require("plugins.configs.galaxyline")
+	-- 	end,
+	-- },
+  {
+    "feline-nvim/feline.nvim",
+    after = "dashboard-nvim",
+    config = function()
+      require("plugins.configs.statusline").setup()
+    end,
+  },
 	-- {
 	-- 	"akinsho/bufferline.nvim",
 	-- 	after = "galaxyline.nvim",
@@ -195,7 +195,7 @@ local plugins = {
 	-- file managing, picking, etc
 	{
 		"nvim-telescope/telescope.nvim",
-		after = "galaxyline.nvim",
+		after = "dashboard-nvim",
 		setup = function()
 			require("core.mappings").tele()
 		end,
