@@ -84,6 +84,9 @@ M.misc = function()
 
 		-- close buffer
 		keymap("n", "<c-w>", "<cmd>Bdelete<cr>")
+
+    -- prev buffer comfort
+		keymap("n", "<leader>p", "<c-6>")
 	end
 
 	non_config_mappings()
