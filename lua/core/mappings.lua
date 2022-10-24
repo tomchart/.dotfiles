@@ -113,6 +113,7 @@ M.tele = function()
 	keymap("n", "<leader>h", telescope.git_branches)
 	keymap("n", "<leader>r", telescope.resume)
 	keymap("n", "<leader>d", telescope.lsp_definitions)
+	keymap("n", "<leader>i", telescope.diagnostics)
 	keymap("n", "<leader>s", telescope.git_status)
 end
 
