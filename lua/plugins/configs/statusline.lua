@@ -107,7 +107,7 @@ local M = {}
 M.setup = function()
   feline.setup({
     theme = kanagawa,
-    components = components,
+    -- components = components,
   })
 end
 
