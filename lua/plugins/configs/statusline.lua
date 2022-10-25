@@ -83,9 +83,31 @@ local tokyonightstorm = {
 -- define setup component table like 
 -- components = { active = { left, middle, right }, inactive = { left, middle, right } }
 -- then pass this components table to feline.setup like components = components
+--
+-- the issue i was having before was from not having defined the table fully before appending to it
+-- for a reason i dont yet understand this simply does not work
+--
+-- what i have below is now working, thankfully
+local c = {
+  block = {
+    provider = ' ',
+    hl = {
+      fg = kanagawa.fg,
+      bg = kanagawa.bg
+    }
+  },
+  vi_mode = {
+    provider = '',
+    hl = {
+      fg = kanagawa.green,
+    }
+  }
+}
+
+local left = { c.block, c.vi_mode }
 
 local components = {
-  active = {},
+  active = { left },
   inactive = {}
 }
 
@@ -94,13 +116,13 @@ table.insert(components.active, {})
 table.insert(components.inactive, {})
 table.insert(components.inactive, {})
 
-table.insert(components.active[1], {
-  provider = 'vi_mode',
-  hl = {
-    fg = kanagawa.skyblue,
-  },
-  right_sep = ' ',
-})
+-- table.insert(components.active[1], {
+--   provider = 'vi_mode',
+--   hl = {
+--     fg = kanagawa.skyblue,
+--   },
+--   right_sep = ' ',
+-- })
 
 local M = {}
 
