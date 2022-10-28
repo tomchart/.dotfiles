@@ -2,10 +2,22 @@ local present, feline = pcall(require, "feline")
 if not present then
 	return
 end
+local present2, vi_mode_utils = pcall(require, "feline.providers.vi_mode")
+if not present2 then
+  return
+end
 
 local kanagawa = {
 	bg = "#1F1F28", --  nvim bg
+	darker_black = "#191922",
 	black = "#1F1F28", --  nvim bg
+	black2 = "#25252e",
+	one_bg = "#272730",
+	one_bg2 = "#2f2f38",
+	one_bg3 = "#363646",
+	grey = "#43434c",
+	grey_fg = "#4c4c55",
+	grey_fg2 = "#53535c",
 	yellow = "#FF9E3B",
 	cyan = "#A3D4D5",
 	skyblue = "#957FB8",
@@ -77,6 +89,25 @@ local tokyonightstorm = {
   red = "#f7768e",
 }
 
+local vi_mode_colors = {
+  NORMAL = 'green',
+  OP = 'green',
+  INSERT = 'red',
+  CONFIRM = 'red',
+  VISUAL = 'orange',
+  LINES = 'skyblue',
+  BLOCK = 'skyblue',
+  REPLACE = 'skyblue',
+  ['V-REPLACE'] = 'skyblue',
+  ENTER = 'cyan',
+  MORE = 'cyan',
+  SELECT = 'orange',
+  COMMAND = 'red',
+  SHELL = 'green',
+  TERM = 'green',
+  NONE = 'yellow'
+}
+
 -- define all components in large table c
 -- then build left, right, and middle tables like 
   -- left = { c.file, c.vi_mode, c.foo, etc. }
@@ -89,22 +120,90 @@ local tokyonightstorm = {
 --
 -- what i have below is now working, thankfully
 local c = {
-  block = {
-    provider = ' ',
+  vi_mode_icon = {
+    -- provider = ' ',
+    provider = ' ',
+    hl = function()
+      local val = {}
+      val.bg = kanagawa.statusline_bg
+      val.fg = vi_mode_colors[vi_mode_utils.get_vim_mode()]
+      return val
+    end,
+    left_sep = 'block',
+    right_sep = 'block'
+  },
+  vi_mode_text = {
+    provider = function ()
+      return ' ' .. vi_mode_utils.get_vim_mode() .. ' '
+    end,
+    hl = function()
+      local val = {}
+      val.bg = vi_mode_colors[vi_mode_utils.get_vim_mode()]
+      val.fg = kanagawa.statusline_bg
+      return val
+    end,
+    left_sep = {
+      str = 'left_filled',
+      hl = function()
+        local val = {}
+        val.fg = vi_mode_colors[vi_mode_utils.get_vim_mode()]
+        val.bg = kanagawa.statusline_bg
+        return val
+      end,
+    },
+    right_sep = {
+      str = 'right_filled',
+      hl = function()
+        local val = {}
+        val.fg = vi_mode_colors[vi_mode_utils.get_vim_mode()]
+        val.bg = kanagawa.statusline_bg
+        return val
+      end,
+    },
+  },
+  folder = {
+    provider = function()
+      local dir_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+      return "   " .. dir_name .. " "
+    end,
     hl = {
-      fg = kanagawa.fg,
-      bg = kanagawa.bg
+      fg = kanagawa.white,
+      bg = kanagawa.statusline_bg
+    },
+  },
+  file_info = {
+    provider = 'file_info',
+    hl = function()
+        local val = {}
+        val.fg = vi_mode_colors[vi_mode_utils.get_vim_mode()]
+        val.bg = kanagawa.statusline_bg
+        return val
+      end,
+    left_sep = 'block',
+    right_sep = 'block'
+  },
+  relative_folder = {
+    provider = function()
+      return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":.:h")
+    end,
+    hl = {
+      fg = kanagawa.white,
+      bg = kanagawa.statusline_bg
+    },
+    left_sep = 'block',
+    right_sep = 'block'
+  },
+  bg = {
+    hl = {
+      bg = kanagawa.statusline_bg
     }
   },
-  vi_mode = {
-    provider = '',
-    hl = {
-      fg = kanagawa.green,
-    }
-  }
 }
+print(vim.api.nvim_buf_get_name(0))
+print(vim.fn.fnamemodify(vim.fn.getcwd(), ":t"))
+print(vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":.:h"))
 
-local left = { c.block, c.vi_mode }
+local left = { c.vi_mode_icon, c.vi_mode_text, c.folder, c.relative_folder, c.file_info, c.bg }
 
 local components = {
   active = { left },
@@ -129,7 +228,7 @@ local M = {}
 M.setup = function()
   feline.setup({
     theme = kanagawa,
-    -- components = components,
+    components = components,
   })
 end
 
