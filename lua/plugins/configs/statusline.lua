@@ -163,35 +163,49 @@ local c = {
   },
   folder = {
     provider = function()
-      local dir_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
-      return "   " .. dir_name .. " "
+      local dir_name = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":.:h")
+      return "  " .. dir_name .. " "
     end,
-    hl = {
-      fg = kanagawa.white,
-      bg = kanagawa.statusline_bg
-    },
+    hl = function()
+      local val = {}
+      val.fg = kanagawa.light_grey
+      val.bg = kanagawa.statusline_bg
+      return val
+    end,
+    right_sep = 'block'
   },
   file_info = {
     provider = 'file_info',
-    hl = function()
-        local val = {}
-        val.fg = vi_mode_colors[vi_mode_utils.get_vim_mode()]
-        val.bg = kanagawa.statusline_bg
-        return val
-      end,
-    left_sep = 'block',
-    right_sep = 'block'
-  },
-  relative_folder = {
-    provider = function()
-      return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":.:h")
-    end,
     hl = {
       fg = kanagawa.white,
       bg = kanagawa.statusline_bg
     },
     left_sep = 'block',
     right_sep = 'block'
+  },
+  git_diff_added = {
+    provider = 'git_diff_added',
+    hl = {
+      fg = kanagawa.green,
+      bg = kanagawa.statusline_bg
+    },
+    right_sep = 'block',
+  },
+  git_diff_removed = {
+    provider = 'git_diff_removed',
+    hl = {
+      fg = kanagawa.red,
+      bg = kanagawa.statusline_bg
+    },
+    right_sep = 'block',
+  },
+  git_diff_changed = {
+    provider = 'git_diff_changed',
+    hl = {
+      fg = kanagawa.yellow,
+      bg = kanagawa.statusline_bg
+    },
+    right_sep = 'block',
   },
   bg = {
     hl = {
@@ -199,11 +213,8 @@ local c = {
     }
   },
 }
-print(vim.api.nvim_buf_get_name(0))
-print(vim.fn.fnamemodify(vim.fn.getcwd(), ":t"))
-print(vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":.:h"))
 
-local left = { c.vi_mode_icon, c.vi_mode_text, c.folder, c.relative_folder, c.file_info, c.bg }
+local left = { c.vi_mode_icon, c.vi_mode_text, c.file_info, c.git_diff_added, c.git_diff_removed, c.git_diff_changed, c.folder, c.bg }
 
 local components = {
   active = { left },
