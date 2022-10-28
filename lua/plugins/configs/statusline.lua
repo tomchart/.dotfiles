@@ -7,6 +7,32 @@ if not present2 then
   return
 end
 
+local icons = {
+    linux = ' ',
+    macos = ' ',
+    windows = ' ',
+
+    errs = ' ',
+    warns = ' ',
+    infos = ' ',
+    hints = ' ',
+
+    lsp = ' ',
+}
+
+local function file_osinfo()
+    local os = vim.bo.fileformat:upper()
+    local icon
+    if os == 'UNIX' then
+        icon = icons.linux
+    elseif os == 'MAC' then
+        icon = icons.macos
+    else
+        icon = icons.windows
+    end
+    return icon .. os
+end
+
 local kanagawa = {
 	bg = "#1F1F28", --  nvim bg
 	darker_black = "#191922",
@@ -39,6 +65,10 @@ local kanagawa = {
 	lightbg2 = "#2b2b34",
 	pmenu_bg = "#a48ec7",
 	folder_bg = "#7E9CD8",
+	baby_pink = "#D27E99",
+	pink = "#c8748f",
+	purple = "#a48ec7",
+	dark_purple = "#957FB8",
 }
 
 local gruvbox = {
@@ -164,7 +194,7 @@ local c = {
   folder = {
     provider = function()
       local dir_name = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":.:h")
-      return "  " .. dir_name .. " "
+      return "  " .. dir_name
     end,
     hl = function()
       local val = {}
@@ -177,7 +207,7 @@ local c = {
   file_info = {
     provider = 'file_info',
     hl = {
-      fg = kanagawa.white,
+      fg = kanagawa.fg,
       bg = kanagawa.statusline_bg
     },
     left_sep = 'block',
@@ -246,27 +276,63 @@ local c = {
   encoding = {
     provider = 'file_encoding',
     hl = {
-      fg = kanagawa.white,
+      fg = kanagawa.light_grey,
       bg = kanagawa.statusline_bg
     },
     left_sep = 'block',
     right_sep = 'block'
   },
   format = {
-    provider = function()
-      return vim.bo.fileformat:upper()
-    end,
+    provider = file_osinfo,
     hl = {
-      fg = kanagawa.white,
+      fg = kanagawa.cyan,
       bg = kanagawa.statusline_bg
     },
     left_sep = 'block',
     right_sep = 'block'
   },
+  lsp_name = {
+    provider = 'lsp_client_names',
+    hl = {
+      fg = kanagawa.purple,
+      bg = kanagawa.statusline_bg,
+      style = 'bold',
+    },
+    left_sep = 'block',
+    right_sep = 'block'
+  },
+  diag_err = {
+    provider = 'diagnostic_errors',
+    hl = {
+      fg = kanagawa.red,
+      bg = kanagawa.statusline_bg
+    }
+  },
+  diag_warn = {
+    provider = 'diagnostic_warnings',
+    hl = {
+      fg = kanagawa.yellow,
+      bg = kanagawa.statusline_bg
+    }
+  },
+  diag_hint = {
+    provider = 'diagnostic_hints',
+    hl = {
+      fg = kanagawa.cyan,
+      bg = kanagawa.statusline_bg
+    }
+  },
+  diag_info = {
+    provider = 'diagnostic_info',
+    hl = {
+      fg = kanagawa.purple,
+      bg = kanagawa.statusline_bg
+    }
+  },
 }
 
 local left = { c.vi_mode_icon, c.vi_mode_text, c.file_info, c.git_branch, c.git_diff_added, c.git_diff_removed, c.git_diff_changed, c.bg }
-local right = { c.folder, c.format, c.encoding, c.line_percentage, c.scroller }
+local right = { c.folder, c.diag_info, c.diag_hint, c.diag_warn, c.diag_err, c.lsp_name, c.format, c.line_percentage, c.scroller }
 
 local components = {
   active = { left, right },
