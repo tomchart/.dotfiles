@@ -120,22 +120,22 @@ local tokyonightstorm = {
 }
 
 local vi_mode_colors = {
-  NORMAL = 'green',
-  OP = 'green',
-  INSERT = 'red',
-  CONFIRM = 'red',
-  VISUAL = 'orange',
-  LINES = 'skyblue',
-  BLOCK = 'skyblue',
-  REPLACE = 'skyblue',
-  ['V-REPLACE'] = 'skyblue',
-  ENTER = 'cyan',
-  MORE = 'cyan',
-  SELECT = 'orange',
-  COMMAND = 'red',
-  SHELL = 'green',
-  TERM = 'green',
-  NONE = 'yellow'
+  NORMAL = kanagawa.green,
+  OP = kanagawa.green,
+  INSERT = kanagawa.red,
+  CONFIRM = kanagawa.red,
+  VISUAL = kanagawa.orange,
+  LINES = kanagawa.skyblue,
+  BLOCK = kanagawa.skyblue,
+  REPLACE = kanagawa.skyblue,
+  ['V-REPLACE'] = kanagawa.skyblue,
+  ENTER = kanagawa.cyan,
+  MORE = kanagawa.cyan,
+  SELECT = kanagawa.orange,
+  COMMAND = kanagawa.red,
+  SHELL = kanagawa.green,
+  TERM = kanagawa.green,
+  NONE = kanagawa.yellow
 }
 
 -- define all components in large table c
