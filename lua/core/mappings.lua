@@ -109,11 +109,10 @@ M.tele = function()
 	keymap("n", "<c-o>", telescope.oldfiles)
 	keymap("n", "<c-s>", telescope.lsp_document_symbols)
 	keymap("n", "<leader>c", telescope.git_commits)
-	keymap("n", "<leader>bc", telescope.git_commits)
 	keymap("n", "<leader>h", telescope.git_branches)
 	keymap("n", "<leader>r", telescope.resume)
 	keymap("n", "<leader>d", telescope.lsp_definitions)
-	keymap("n", "<leader>i", telescope.diagnostics)
+	keymap("n", "<leader>w", telescope.diagnostics)
 	keymap("n", "<leader>s", telescope.git_status)
 end
 
