@@ -208,7 +208,8 @@ local c = {
     provider = 'file_info',
     hl = {
       fg = kanagawa.fg,
-      bg = kanagawa.statusline_bg
+      bg = kanagawa.statusline_bg,
+      style = 'bold'
     },
     left_sep = 'block',
     right_sep = 'block'
@@ -295,8 +296,7 @@ local c = {
     provider = 'lsp_client_names',
     hl = {
       fg = kanagawa.purple,
-      bg = kanagawa.statusline_bg,
-      style = 'bold',
+      bg = kanagawa.statusline_bg
     },
     left_sep = 'block',
     right_sep = 'block'
