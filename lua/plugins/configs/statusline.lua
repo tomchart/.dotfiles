@@ -212,17 +212,69 @@ local c = {
       bg = kanagawa.statusline_bg
     }
   },
+  git_branch = {
+    provider = 'git_branch',
+    hl = {
+      fg = kanagawa.orange,
+      bg = kanagawa.statusline_bg
+    },
+    left_sep = 'block',
+    right_sep = 'block'
+  },
+  line_percentage = {
+    provider = 'line_percentage',
+    hl = function()
+      local val = {}
+      val.fg = vi_mode_colors[vi_mode_utils.get_vim_mode()]
+      val.bg = kanagawa.statusline_bg
+      return val
+    end,
+    left_sep = 'block',
+    right_sep = 'block'
+  },
+  scroller = {
+    provider = 'scroll_bar',
+    hl = function()
+      local val = {}
+      val.fg = vi_mode_colors[vi_mode_utils.get_vim_mode()]
+      val.bg = kanagawa.statusline_bg
+      return val
+    end,
+    left_sep = 'block',
+    right_sep = 'block'
+  },
+  encoding = {
+    provider = 'file_encoding',
+    hl = {
+      fg = kanagawa.white,
+      bg = kanagawa.statusline_bg
+    },
+    left_sep = 'block',
+    right_sep = 'block'
+  },
+  format = {
+    provider = function()
+      return vim.bo.fileformat:upper()
+    end,
+    hl = {
+      fg = kanagawa.white,
+      bg = kanagawa.statusline_bg
+    },
+    left_sep = 'block',
+    right_sep = 'block'
+  },
 }
 
-local left = { c.vi_mode_icon, c.vi_mode_text, c.file_info, c.git_diff_added, c.git_diff_removed, c.git_diff_changed, c.folder, c.bg }
+local left = { c.vi_mode_icon, c.vi_mode_text, c.file_info, c.git_branch, c.git_diff_added, c.git_diff_removed, c.git_diff_changed, c.bg }
+local right = { c.folder, c.format, c.encoding, c.line_percentage, c.scroller }
 
 local components = {
-  active = { left },
+  active = { left, right },
   inactive = {}
 }
 
-table.insert(components.active, {})
-table.insert(components.active, {})
+-- table.insert(components.active, {})
+-- table.insert(components.active, {})
 table.insert(components.inactive, {})
 table.insert(components.inactive, {})
 
