@@ -198,7 +198,7 @@ local c = {
     end,
     hl = function()
       local val = {}
-      val.fg = kanagawa.light_grey
+      val.fg = kanagawa.teal
       val.bg = kanagawa.statusline_bg
       return val
     end,
@@ -285,7 +285,7 @@ local c = {
   format = {
     provider = file_osinfo,
     hl = {
-      fg = kanagawa.cyan,
+      fg = kanagawa.light_grey,
       bg = kanagawa.statusline_bg
     },
     left_sep = 'block',
@@ -329,10 +329,19 @@ local c = {
       bg = kanagawa.statusline_bg
     }
   },
+  position = {
+    provider = 'position',
+    hl = {
+      fg = kanagawa.light_grey,
+      bg = kanagawa.statusline_bg
+    },
+    left_sep = 'block',
+    right_sep = 'block',
+  }
 }
 
 local left = { c.vi_mode_icon, c.vi_mode_text, c.file_info, c.git_branch, c.git_diff_added, c.git_diff_removed, c.git_diff_changed, c.bg }
-local right = { c.folder, c.diag_info, c.diag_hint, c.diag_warn, c.diag_err, c.lsp_name, c.format, c.line_percentage, c.scroller }
+local right = { c.diag_info, c.diag_hint, c.diag_warn, c.diag_err, c.lsp_name, c.folder, c.format, c.encoding, c.position, c.line_percentage, c.scroller }
 
 local components = {
   active = { left, right },
