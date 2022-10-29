@@ -332,12 +332,11 @@ local c = {
   }
 }
 
-local left = { c.vi_mode_icon, c.vi_mode_text, c.git_branch, c.git_diff_added, c.git_diff_removed, c.git_diff_changed, c.bg }
-local mid = { c.filename, c.bg }
-local right = { c.diag_info, c.diag_hint, c.diag_warn, c.diag_err, c.lsp_name, c.format, c.encoding, c.position, c.line_percentage, c.scroller }
+local left = { c.vi_mode_icon, c.vi_mode_text, c.filename, c.git_branch, c.git_diff_added, c.git_diff_removed, c.git_diff_changed, c.bg }
+local right = { c.diag_info, c.diag_hint, c.diag_warn, c.diag_err, c.lsp_name, c.folder, c.format, c.encoding, c.position, c.line_percentage, c.scroller }
 
 local components = {
-  active = { left, mid, right },
+  active = { left, right },
   inactive = {}
 }
 
