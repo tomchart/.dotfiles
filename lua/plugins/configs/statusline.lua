@@ -193,10 +193,13 @@ local c = {
     end,
     right_sep = 'block'
   },
-  file_info = {
+  filename = {
     provider = 'file_info',
+    opts = {
+      type = 'relative'
+    },
     hl = {
-      fg = kanagawa.fg,
+      fg = kanagawa.teal,
       bg = kanagawa.statusline_bg,
       style = 'bold'
     },
@@ -329,26 +332,17 @@ local c = {
   }
 }
 
-local left = { c.vi_mode_icon, c.vi_mode_text, c.file_info, c.git_branch, c.git_diff_added, c.git_diff_removed, c.git_diff_changed, c.bg }
-local right = { c.diag_info, c.diag_hint, c.diag_warn, c.diag_err, c.lsp_name, c.folder, c.format, c.encoding, c.position, c.line_percentage, c.scroller }
+local left = { c.vi_mode_icon, c.vi_mode_text, c.git_branch, c.git_diff_added, c.git_diff_removed, c.git_diff_changed, c.bg }
+local mid = { c.filename, c.bg }
+local right = { c.diag_info, c.diag_hint, c.diag_warn, c.diag_err, c.lsp_name, c.format, c.encoding, c.position, c.line_percentage, c.scroller }
 
 local components = {
-  active = { left, right },
+  active = { left, mid, right },
   inactive = {}
 }
 
--- table.insert(components.active, {})
--- table.insert(components.active, {})
 table.insert(components.inactive, {})
 table.insert(components.inactive, {})
-
--- table.insert(components.active[1], {
---   provider = 'vi_mode',
---   hl = {
---     fg = kanagawa.skyblue,
---   },
---   right_sep = ' ',
--- })
 
 local M = {}
 

@@ -113,7 +113,8 @@ alias path='echo $PATH | tr -s ":" "\n"'
 # officedata
 alias sshv="ssh -o PubkeyAuthentication=no Version6@10.50.4.97"
 # ubuntu
-alias s="ssh -i ~/.ssh/id_ubuntu tom@192.168.48.59 -p 988"
+# alias s="ssh -i ~/.ssh/id_ubuntu tom@192.168.48.59 -p 988"
+alias s="cd ~/scratch"
 
 # ls stuff
 alias ll='exa -alF --group-directories-first'
