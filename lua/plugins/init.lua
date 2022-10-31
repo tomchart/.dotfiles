@@ -18,14 +18,6 @@ local plugins = {
 		"wbthomason/packer.nvim",
 		event = "VimEnter",
 	},
-	-- {
-	-- 	"dracula/vim",
-	-- 	as = "dracula",
-	-- },
-	-- {
-	-- 	"shaunsingh/nord.nvim",
-	-- 	as = "nord",
-	-- },
 	{
 		"rebelot/kanagawa.nvim",
 		as = "kanagawa",
@@ -41,13 +33,6 @@ local plugins = {
 		"kyazdani42/nvim-web-devicons",
 		after = "dashboard-nvim",
 	},
-	-- {
-	-- 	"NTBBloodbath/galaxyline.nvim",
-	-- 	after = "dashboard-nvim",
-	-- 	config = function()
-	-- 		require("plugins.configs.galaxyline")
-	-- 	end,
-	-- },
   {
     "feline-nvim/feline.nvim",
     after = "dashboard-nvim",
@@ -55,16 +40,6 @@ local plugins = {
       require("plugins.configs.statusline").setup()
     end,
   },
-	-- {
-	-- 	"akinsho/bufferline.nvim",
-	-- 	after = "galaxyline.nvim",
-	-- 	config = function()
-	-- 		require("plugins.configs.nvim_bufferline")
-	-- 	end,
-	-- 	setup = function()
-	-- 		require("core.mappings").bufferline()
-	-- 	end,
-	-- },
   {
 		"ggandor/leap.nvim",
         config = function()
@@ -88,6 +63,13 @@ local plugins = {
 		end,
 		run = ":TSUpdate",
 	},
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    config = function()
+      require("plugins.configs.ts_context").setup()
+    end,
+    after = "nvim-treesitter"
+  },
 	{
 		"kylechui/nvim-surround",
 		config = function()
@@ -203,16 +185,6 @@ local plugins = {
 			require("plugins.configs.telescope").setup()
 		end,
 	},
-	-- {
-	-- 	"kyazdani42/nvim-tree.lua",
-	-- 	after = "telescope.nvim",
-	-- 	setup = function()
-	-- 		require("core.mappings").nvimtree()
-	-- 	end,
-	-- 	config = function()
-	-- 		require("plugins.configs.nvimtree").setup()
-	-- 	end,
-	-- },
 }
 
 return packer.startup(function(use)

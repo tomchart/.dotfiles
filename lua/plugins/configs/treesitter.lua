@@ -6,6 +6,9 @@ end
 
 default = {
 	ensure_installed = "all",
+  context = {
+    enable = true,
+  },
 	highlight = {
 		enable = true,
 		use_languagetree = true,
