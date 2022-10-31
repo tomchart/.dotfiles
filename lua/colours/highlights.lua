@@ -272,3 +272,7 @@ bg("StatusLineNC", palette.bg)
 
 -- indent
 fg("IndentBlanklineContextChar", palette.light_grey)
+
+-- treesitter-context
+fg_bg("TreesitterContext", kanagawa.pink, palette.bg)
+fg_bg("TreesitterContextLineNumber", kanagawa.yellow, palette.bg)
