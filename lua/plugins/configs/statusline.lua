@@ -33,6 +33,15 @@ local function file_osinfo()
     return icon .. os
 end
 
+local function dir_info()
+  local dir = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":.:h")
+  if dir == '.' then
+    return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":p:h")
+  else
+    return dir
+  end
+end
+
 local kanagawa = {
 	bg = "#1F1F28", --  nvim bg
 	darker_black = "#191922",
@@ -182,7 +191,7 @@ local c = {
   },
   folder = {
     provider = function()
-      local dir_name = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":.:h")
+      local dir_name = dir_info()
       return "  " .. dir_name
     end,
     hl = function()
