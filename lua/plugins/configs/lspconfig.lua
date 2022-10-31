@@ -82,21 +82,27 @@ local servers = {
 	},
 	dockerls = {},
 	html = {
-    filetypes = { 'html', 'php' },
+    filetypes = { 'html', 'php', 'inc.php'},
   },
   cssls = {},
+  jsonls = {},
+
   intelephense = {},
   vuels = {},
   emmet_ls = {
       filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'jsx', 'php' },
   },
   -- tailwindcss = {},
-  -- eslint = {},
+  eslint = {
+		root_dir = function(fname)
+			return fn.getcwd()
+		end,
+  },
   tsserver = {
     single_file_support = true,
     preferences = {
-    quotePreference = "double",
-  },
+    quotePreference = "single",
+    },
   },
 
 }
