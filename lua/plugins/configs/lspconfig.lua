@@ -82,9 +82,11 @@ local servers = {
 	},
 	dockerls = {},
 	html = {
-    filetypes = { 'html', 'php', 'inc.php'},
+    filetypes = { 'html', 'php' },
   },
-  cssls = {},
+  cssls = {
+    filetypes = { 'html', 'css', 'php' }
+  },
   jsonls = {},
 
   intelephense = {},
@@ -93,11 +95,11 @@ local servers = {
       filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'jsx', 'php' },
   },
   -- tailwindcss = {},
-  eslint = {
-		root_dir = function(fname)
-			return fn.getcwd()
-		end,
-  },
+  -- eslint = {
+		-- root_dir = function(fname)
+		-- 	return fn.getcwd()
+		-- end,
+  -- },
   tsserver = {
     single_file_support = true,
     preferences = {
@@ -129,6 +131,7 @@ for server, config in pairs(servers) do
 		flags = {
 			debounce_text_changes = 150,
 		},
+    filetypes = config.filetypes,
 		settings = config.settings,
 		root_dir = config.root_dir,
 		cmd = config.cmd,
