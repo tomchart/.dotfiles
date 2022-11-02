@@ -91,9 +91,9 @@ local servers = {
 
   intelephense = {},
   vuels = {},
-  emmet_ls = {
-      filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'jsx', 'php' },
-  },
+  -- emmet_ls = {
+  --     filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'jsx', 'php' },
+  -- },
   -- tailwindcss = {},
   -- eslint = {
 		-- root_dir = function(fname)
