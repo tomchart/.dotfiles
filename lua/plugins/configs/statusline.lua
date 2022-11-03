@@ -358,6 +358,23 @@ M.setup = function()
   feline.setup({
     theme = kanagawa,
     components = components,
+    disable = {
+      {
+        filetypes = {
+            '^NvimTree$',
+            '^packer$',
+            '^startify$',
+            '^fugitive$',
+            '^fugitiveblame$',
+            '^qf$',
+            '^help$'
+        },
+        buftypes = {
+            '^terminal$'
+        },
+        bufnames = {}
+      }
+    }
   })
 end
 
