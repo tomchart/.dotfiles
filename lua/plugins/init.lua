@@ -184,6 +184,10 @@ local plugins = {
 			require("plugins.configs.telescope").setup()
 		end,
 	},
+  {
+    "tpope/vim-vinegar",
+    after = "telescope.nvim"
+  },
 }
 
 return packer.startup(function(use)
