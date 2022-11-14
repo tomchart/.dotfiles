@@ -53,12 +53,11 @@ M.misc = function()
 		keymap("n", "gl", "$")
 		keymap("v", "gl", "g_")
 
-		-- quit binds (some of these are a bit lairy)
-		keymap("i", "<c-Q>", "<esc>:q<cr>")
-		keymap("n", "<c-Q>", ":q<cr>")
-		keymap("v", "<c-Q>", "<esc>")
-		keymap("n", "<leader>q", ":q<cr>")
-		keymap("n", "<leader>Q", ":qa!<cr>")
+    -- prime recentering
+    keymap("n", "<c-u>", "<c-u>zz")
+    keymap("n", "<c-d>", "<c-d>zz")
+    keymap("n", "n", "nzz")
+
 	end
 
 	local function windows_buffers()
