@@ -62,10 +62,10 @@ M.misc = function()
 
 	local function windows_buffers()
 		-- move & manipulate windows
-		keymap("n", "<c-j>", "<c-w>j")
-		keymap("n", "<c-k>", "<c-w>k")
-		keymap("n", "<c-l>", "<c-w>l")
-		keymap("n", "<c-h>", "<c-w>h")
+		-- keymap("n", "<c-j>", "<c-w>j")
+		-- keymap("n", "<c-k>", "<c-w>k")
+		-- keymap("n", "<c-l>", "<c-w>l")
+		-- keymap("n", "<c-h>", "<c-w>h")
 		keymap("n", "<tab>j", "<c-w>J")
 		keymap("n", "<tab>k", "<c-w>K")
 		keymap("n", "<tab>l", "<c-w>L")
@@ -82,7 +82,7 @@ M.misc = function()
 		keymap("n", "<tab>|", "<c-w>|")
 
 		-- close buffer
-		keymap("n", "<c-w>", "<cmd>Bdelete<cr>")
+		-- keymap("n", "<c-w>", "<cmd>Bdelete<cr>")
 
     -- prev buffer comfort
 		keymap("n", "<leader>p", "<c-6>")
@@ -97,6 +97,15 @@ M.nvimtree = function()
 	nvim_tree = require("nvim-tree")
 	keymap("n", "<c-n>", nvim_tree.toggle)
 	keymap("n", "<leader>n", nvim_tree.toggle)
+end
+
+M.harp = function()
+  keymap("n", "<leader>a", function() require("harpoon.mark").add_file() end)
+  keymap("n", "<c-e>", function() require("harpoon.ui").toggle_quick_menu() end)
+  keymap("n", "<c-h>", function() require("harpoon.ui").nav_file(1) end)
+  keymap("n", "<c-j>", function() require("harpoon.ui").nav_file(2) end)
+  keymap("n", "<c-k>", function() require("harpoon.ui").nav_file(3) end)
+  keymap("n", "<c-l>", function() require("harpoon.ui").nav_file(4) end)
 end
 
 M.tele = function()

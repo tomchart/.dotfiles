@@ -174,6 +174,14 @@ local plugins = {
 	},
 
 	-- file managing, picking, etc
+  {
+    "ThePrimeagen/harpoon",
+    after = "dashboard-nvim",
+    before = "telescope.nvim",
+    setup = function()
+      require("core.mappings").harp()
+    end,
+  },
 	{
 		"nvim-telescope/telescope.nvim",
 		after = "dashboard-nvim",

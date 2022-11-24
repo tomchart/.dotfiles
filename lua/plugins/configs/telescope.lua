@@ -9,6 +9,7 @@ local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
 local utils = require("telescope.utils")
 local entry_display = require("telescope.pickers.entry_display")
+telescope.load_extension('harpoon')
 
 --- Splits a filepath into head / tail where tail is the last path component and
 --- head is everything before it.
