@@ -95,6 +95,7 @@ local palette = {
 	pink = kanagawa.pink,
 	blue = kanagawa.blue,
 	baby_pink = kanagawa.baby_pink,
+  teal = kanagawa.teal,
 
 	bg = kanagawa.black,
 	fg = kanagawa.white,
@@ -124,64 +125,38 @@ fg("DashBoardHeader", palette.cyan)
 highlight_group("Pmenu", { guibg = palette.black2, guifg = palette.fg })
 highlight_group("PmenuSbar", { guibg = palette.black2, guifg = palette.fg })
 highlight_group("PmenuThumb", { guibg = palette.light, guifg = palette.fg })
-highlight_group("PmenuSel", { guibg = palette.light, guifg = palette.fg })
-highlight_group("CmpItemMenu", { guibg = palette.black2, guifg = palette.even_lighter })
-highlight_group("CmpItemAbbr", { guibg = palette.black2, guifg = palette.fg })
--- highlight_group("CmpItemAbbrDeprecated", { link = "CmpItemAbbr" })
-highlight_group("CmpItemAbbrMatch", { guibg = palette.black2, guifg = "#569CD6" })
--- highlight_group("CmpItemAbbrMatchFuzzy", { link = "CmpItemAbbrMatch" })
-highlight_group("CmpItemKindDefault", { guibg = palette.black2, guifg = "#9CDCFE" })
-highlight_group("CmpItemKindVariable", { guibg = palette.black2, guifg = "#9CDCFE" })
--- highlight_group("CmpItemKindInterface", { link = "CmpItemKindVariable" })
--- highlight_group("CmpItemKindText", { link = "CmpItemKindVariable" })
-highlight_group("CmpItemKindFunction", { guibg = palette.black2, guifg = "#C586C0" })
--- highlight_group("CmpItemKindMethod", { link = "CmpItemKindFunction" })
-highlight_group("CmpItemKindKeyword", { guibg = palette.black2, guifg = "#D4D4D4" })
-
--- highlight_group("CmpItemKindProperty", { link = "CmpItemKindKeyword" })
-
--- local cmp = {
---   PmenuSel = { guibg = "#282C34", guifg = "NONE" },
---   Pmenu = { guifg = "#C5CDD9", guibg = "#22252A" },
---
---   CmpItemAbbrDeprecated = { guifg = "#7E8294", guibg = "NONE", fmt = "strikethrough" },
---   CmpItemAbbrMatch = { guifg = "#82AAFF", guibg = "NONE", fmt = "bold" },
---   CmpItemAbbrMatchFuzzy = { guifg = "#82AAFF", guibg = "NONE", fmt = "bold" },
---   CmpItemMenu = { guifg = "#C792EA", guibg = "NONE", fmt = "italic" },
---
---   CmpItemKindField = { guifg = "#EED8DA", guibg = "#EED8DA" },
---   CmpItemKindProperty = { link = "CmpItemKindField" },
---
---   CmpItemKindText = { guifg = "#C3E88D", guibg = "#9FBD73" },
---   CmpItemKindEnum = { link = "CmpItemKindEnum" },
---   CmpItemKindKeyword = { link = "CmpItemKindEnum" },
---
---   CmpItemKindConstant = { guifg = "#FFE082", guibg = "#D4BB6C" },
---   CmpItemKindConstructor = { link = "CmpItemKindConstant" },
---   CmpItemKindReference = { link = "CmpItemKindConstant" },
---
---   CmpItemKindFunction = { guifg = "#EADFF0", guibg = "#A377BF" },
---   CmpItemKindStruct = { link = "CmpItemKindFunction" },
---   CmpItemKindClass = { link = "CmpItemKindFunction" },
---   CmpItemKindModule = { link = "CmpItemKindFunction" },
---   CmpItemKindOperator = { link = "CmpItemKindFunction" },
---
---   CmpItemKindVariable = { guifg = "#C5CDD9", guibg = "#7E8294" },
---   CmpItemKindFile = { link = "CmpItemKindVariable" },
---
---   CmpItemKindSnippet = { guifg = "#F5EBD9", guibg = "#D4A959" },
---   CmpItemKindFolder = { link = "CmpItemKindSnippet" },
---
---   CmpItemKindMethod = { guifg = "#DDE5F5", guibg = "#6C8ED4" },
---   CmpItemKindValue = { link = "CmpItemKindMethod" },
---   CmpItemKindEnumMember = { link = "CmpItemKindMethod" },
---
---   CmpItemKindInterface = { guifg = "#D8EEEB", guibg = "#58B5A8" },
---   CmpItemKindTypeParameter = { link = "CmpItemKindInterface" },
--- }
--- for hi, conf in pairs(cmp) do
---   highlight_group(hi, conf)
--- end
+highlight_group("PmenuSel", { guibg = palette.light, guifg = "NONE" })
+highlight_group("CmpItemMenu", { guibg = "NONE", guifg = palette.even_lighter })
+highlight_group("CmpItemAbbr", { guibg = "NONE", guifg = palette.fg })
+highlight_group("CmpItemAbbrMatch", { guibg = "NONE", guifg = palette.blue })
+highlight_group("CmpItemAbbrMatchFuzzy", { guibg = "NONE", guifg = palette.light_red })
+highlight_group("CmpItemKindDefault", { guibg = "NONE", guifg = palette.fg })
+highlight_group("CmpItemKindKeyword", { guibg = "NONE", guifg = palette.fg })
+highlight_group("CmpItemKindField", { guibg = "NONE", guifg = palette.red })
+highlight_group("CmpItemKindProperty", { guibg = "NONE", guifg = palette.red })
+highlight_group("CmpItemKindEvent", { guibg = "NONE", guifg = palette.red })
+highlight_group("CmpItemKindText", { guibg = "NONE", guifg = palette.green })
+highlight_group("CmpItemKindEnum", { guibg = "NONE", guifg = palette.green })
+highlight_group("CmpItemKindKeyword", { guibg = "NONE", guifg = palette.green })
+highlight_group("CmpItemKindConstant", { guibg = "NONE", guifg = palette.orange })
+highlight_group("CmpItemKindConstructor", { guibg = "NONE", guifg = palette.orange })
+highlight_group("CmpItemKindReference", { guibg = "NONE", guifg = palette.orange })
+highlight_group("CmpItemKindFunction", { guibg = "NONE", guifg = palette.purple })
+highlight_group("CmpItemKindStruct", { guibg = "NONE", guifg = palette.purple })
+highlight_group("CmpItemKindClass", { guibg = "NONE", guifg = palette.purple })
+highlight_group("CmpItemKindModule", { guibg = "NONE", guifg = palette.purple })
+highlight_group("CmpItemKindOperator", { guibg = "NONE", guifg = palette.purple })
+highlight_group("CmpItemKindVariable", { guibg = "NONE", guifg = palette.blue })
+highlight_group("CmpItemKindFile", { guibg = "NONE", guifg = palette.grey })
+highlight_group("CmpItemKindUnit", { guibg = "NONE", guifg = palette.orange })
+highlight_group("CmpItemKindSnippet", { guibg = "NONE", guifg = palette.orange })
+highlight_group("CmpItemKindFolder", { guibg = "NONE", guifg = palette.orange })
+highlight_group("CmpItemKindMethod", { guibg = "NONE", guifg = palette.light_cyan })
+highlight_group("CmpItemKindValue", { guibg = "NONE", guifg = palette.light_cyan })
+highlight_group("CmpItemKindEnumMember", { guibg = "NONE", guifg = palette.light_cyan })
+highlight_group("CmpItemKindInterface", { guibg = "NONE", guifg = palette.teal })
+highlight_group("CmpItemKindColor", { guibg = "NONE", guifg = palette.teal })
+highlight_group("CmpItemKindTypeParameter", { guibg = "NONE", guifg = palette.teal })
 
 -- galaxyline
 local mode_to_colour = {

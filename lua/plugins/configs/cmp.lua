@@ -107,8 +107,18 @@ local conf = {
     format = function(entry, vim_item)
       local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
       local strings = vim.split(kind.kind, "%s", { trimempty = true })
+
+      -- do i like this????
+      local sources = {
+				nvim_lsp = "LSP",
+        luasnip = "SNIP",
+				buffer = "BUF",
+        path = "PATH",
+        nvim_lua = "LUA",
+        cmdline = "CMD",
+      }
       kind.kind = " " .. strings[1] .. " "
-      kind.menu = "    " .. strings[2] .. ' (' .. entry.source.name .. ")"
+      kind.menu = "    " .. strings[2] .. " (" .. sources[entry.source.name] .. ")"
 
       return kind
 		end,
