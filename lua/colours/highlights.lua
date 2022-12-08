@@ -253,4 +253,5 @@ fg_bg("TreesitterContext", kanagawa.pink, palette.bg)
 fg_bg("TreesitterContextLineNumber", kanagawa.yellow, palette.bg)
 
 -- linenr
-fg("LineNr", palette.light_grey)
+fg("LineNr", nord.light_grey)
+fg("CursorLineNr", kanagawa.green)
