@@ -26,6 +26,9 @@ M.misc = function()
 		-- remap ; to : (always miss it)
 		keymap("n", ";", ":")
 
+		-- remap increment (tmux bad)
+		keymap("n", "<c-c>", "<c-a>")
+
 		-- source current file with <leader>S
 		keymap("n", "<leader>S", ":so %<cr>")
 

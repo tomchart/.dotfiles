@@ -8,12 +8,12 @@ local plugins = {
 	{ "chrisbra/Colorizer" },
 	{ "nvim-lua/plenary.nvim" },
 	{ "lewis6991/impatient.nvim" },
-	{
-    "nathom/filetype.nvim",
-    config = function()
-      require("plugins.configs.filetype")
-    end,
-  },
+	-- {
+ --    "nathom/filetype.nvim",
+ --    config = function()
+ --      require("plugins.configs.filetype")
+ --    end,
+ --  },
 	{
 		"wbthomason/packer.nvim",
 		event = "VimEnter",

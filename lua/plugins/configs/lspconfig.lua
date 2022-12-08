@@ -90,6 +90,9 @@ local servers = {
   jsonls = {},
   intelephense = {},
   vuels = {},
+  sqlls = {
+    cmd = { "sql-language-server", "up", "--method", "stdio" }
+  },
   -- emmet_ls = {
   --     filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'jsx', 'php' },
   -- },
