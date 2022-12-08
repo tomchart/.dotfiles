@@ -255,3 +255,8 @@ fg_bg("TreesitterContextLineNumber", kanagawa.yellow, palette.bg)
 -- linenr
 fg("LineNr", nord.light_grey)
 fg("CursorLineNr", kanagawa.green)
+
+-- leap
+fg_bg("LeapLabelPrimary", palette.bg, palette.light_cyan)
+fg_bg("LeapLabelSecondary", palette.bg, palette.green)
+
