@@ -260,3 +260,8 @@ fg("CursorLineNr", kanagawa.green)
 fg_bg("LeapLabelPrimary", palette.bg, palette.light_cyan)
 fg_bg("LeapLabelSecondary", palette.bg, palette.green)
 
+-- lsp
+fg("DiagnosticError", kanagawa.red)
+fg("DiagnosticWarn", kanagawa.yellow)
+fg("DiagnosticHint", kanagawa.teal)
+fg("DiagnosticInfo", kanagawa.purple)

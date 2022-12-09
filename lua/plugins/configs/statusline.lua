@@ -162,7 +162,7 @@ local c = {
   },
   vi_mode_text = {
     provider = function ()
-      return ' ' .. vi_mode_utils.get_vim_mode() .. ' '
+      return  vi_mode_utils.get_vim_mode()
     end,
     hl = function()
       local val = {}
@@ -319,7 +319,7 @@ local c = {
   diag_hint = {
     provider = 'diagnostic_hints',
     hl = {
-      fg = kanagawa.cyan,
+      fg = kanagawa.teal,
       bg = kanagawa.statusline_bg
     }
   },
