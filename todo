@@ -1,3 +1,2 @@
-- clean up/improve tmux setup (dont like dividers really)
-- configure feline properly
 - fix stupid nvim setup, generally clean up plugins etc
+- write git log command to generate weekly report
