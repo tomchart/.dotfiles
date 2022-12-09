@@ -66,7 +66,7 @@ M.setup = function()
 					["<c-s>"] = actions.select_vertical,
 					["<c-h>"] = layout.toggle_preview,
 					["<c-c>"] = actions.close,
-					["<c-w>"] = actions.delete_buffer,
+					["dd"] = actions.delete_buffer,
 				},
 			},
 			file_ignore_patterns = { ".git/" },
