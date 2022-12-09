@@ -179,6 +179,13 @@ local plugins = {
     after = "dashboard-nvim",
     before = "telescope.nvim",
     setup = function()
+      require("harpoon").setup({
+        menu = {
+          width = vim.api.nvim_win_get_width(0) - 4,
+        }
+      })
+    end,
+    config = function()
       require("core.mappings").harp()
     end,
   },
