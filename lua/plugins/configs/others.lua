@@ -2,7 +2,7 @@ local M = {}
 
 M.indent = function()
 	local default = {
-		indentLine_enabled = 1,
+		enabled = 0,
 		char = "▏",
 		filetype_exclude = {
 			"help",
