@@ -171,7 +171,7 @@ local c = {
       return val
     end,
     left_sep = {
-      str = 'left_filled',
+      str = 'block',
       hl = function()
         local val = {}
         val.fg = vi_mode_colors[vi_mode_utils.get_vim_mode()]
@@ -180,7 +180,7 @@ local c = {
       end,
     },
     right_sep = {
-      str = 'right_filled',
+      str = 'block',
       hl = function()
         local val = {}
         val.fg = vi_mode_colors[vi_mode_utils.get_vim_mode()]
