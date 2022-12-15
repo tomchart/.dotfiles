@@ -73,25 +73,12 @@ local kanagawa = {
 
 -- Define the colour palette
 local palette = {
-	-- cyan = extract_highlight_colours("DraculaCyan").guifg,
-	-- green = extract_highlight_colours("DraculaGreen").guifg,
-	-- orange = extract_highlight_colours("DraculaOrange").guifg,
-	-- purple = extract_highlight_colours("DraculaPurple").guifg,
-	-- red = extract_highlight_colours("DraculaRed").guifg,
-	-- pink = extract_highlight_colours("DraculaPink").guifg,
-	--
-	-- bg = extract_highlight_colours("Normal").guibg,
-	-- fg = extract_highlight_colours("Normal").guifg,
-	--
-	-- black2 = extract_highlight_colours("DraculaBgDark").guibg,
-	-- darker_black = extract_highlight_colours("DraculaBgDarker").guibg,
-	-- light = extract_highlight_colours("DraculaBgLight").guibg,
-	-- lighter = extract_highlight_colours("DraculaBgLighter").guibg,
 	cyan = kanagawa.cyan,
 	green = kanagawa.green,
 	orange = kanagawa.orange,
 	purple = kanagawa.purple,
 	red = kanagawa.red,
+	yellow = kanagawa.yellow,
 	pink = kanagawa.pink,
 	blue = kanagawa.blue,
 	baby_pink = kanagawa.baby_pink,
@@ -119,7 +106,7 @@ local palette = {
 }
 
 --dashboard
-fg("DashBoardHeader", palette.cyan)
+fg("DashBoardHeader", palette.teal)
 
 -- cmp
 highlight_group("Pmenu", { guibg = palette.black2, guifg = palette.fg })
@@ -158,70 +145,6 @@ highlight_group("CmpItemKindInterface", { guibg = "NONE", guifg = palette.teal }
 highlight_group("CmpItemKindColor", { guibg = "NONE", guifg = palette.teal })
 highlight_group("CmpItemKindTypeParameter", { guibg = "NONE", guifg = palette.teal })
 
--- galaxyline
-local mode_to_colour = {
-	Normal = palette.purple,
-	Insert = palette.cyan,
-	Command = palette.red,
-	Visual = palette.orange,
-	VisualLine = palette.orange,
-	VisualBlock = palette.orange,
-	Replace = palette.red,
-	Snippet = palette.pink,
-}
-for mode, colour in pairs(mode_to_colour) do
-	highlight_group("Galaxyline" .. mode .. "Mode", { guifg = palette.bg, guibg = colour })
-	highlight_group("Galaxyline" .. mode .. "ModeText", { guifg = colour, guibg = palette.one_bg3 })
-	highlight_group("Galaxyline" .. mode .. "ModeSeparator", { guifg = colour, guibg = palette.grey })
-end
-
--- clean these highlights up soon - p sure i don't need half of them
-highlight_group("GalaxylineSeparator", { guifg = palette.lighter, guibg = palette.even_lighter })
-
--- left
--- even_lighter, lighter, bg_dark
-highlight_group("GalaxylineSeparator6", { guifg = palette.one_bg3, guibg = palette.one_bg3 })
-highlight_group("GalaxylineSeparator10", { guifg = palette.grey, guibg = palette.one_bg3 })
-highlight_group("GalaxylineSeparator2", { guifg = palette.one_bg2, guibg = palette.one_bg3 })
-highlight_group("GalaxylineSeparator13", { guifg = palette.one_bg3, guibg = palette.one_bg2 })
-highlight_group("GalaxylineDir", { guifg = palette.fg, guibg = palette.one_bg2 })
-highlight_group("GalaxylineSeparator5", { guifg = palette.one_bg, guibg = palette.one_bg2 })
-highlight_group("GalaxylineSeparator15", { guifg = palette.one_bg2, guibg = palette.one_bg })
-highlight_group("GalaxylineSeparator16", { guifg = palette.one_bg, guibg = palette.one_bg })
-highlight_group("GalaxylineFilename", { guifg = palette.fg, guibg = palette.one_bg })
-highlight_group("GalaxylineSeparator3", { guifg = palette.one_bg, guibg = palette.bg })
-highlight_group("GalaxylineIcon", { guifg = palette.light_grey, guibg = palette.bg })
-highlight_group("GalaxylineBranch", { guifg = palette.light_grey, guibg = palette.bg })
-highlight_group("GalaxylineDiffAdd", { guifg = palette.light_green, guibg = palette.bg })
-highlight_group("GalaxylineDiffModified", { guifg = palette.light_orange, guibg = palette.bg })
-highlight_group("GalaxylineDiffRemove", { guifg = palette.light_red, guibg = palette.bg })
-
--- mid
-highlight_group("GalaxylineMid", { guifg = palette.bg, guibg = palette.bg })
-
--- right
--- bg_dark, lighter, even_lighter
-highlight_group("GalaxylineHint", { guifg = palette.light_cyan, guibg = palette.bg })
-highlight_group("GalaxylineWarn", { guifg = palette.light_orange, guibg = palette.bg })
-highlight_group("GalaxylineError", { guifg = palette.light_red, guibg = palette.bg })
-highlight_group("GalaxylineLsp", { guifg = palette.light_grey, guibg = palette.bg })
-highlight_group("GalaxylineSeparator11", { guifg = palette.one_bg2, guibg = palette.one_bg2 })
-highlight_group("GalaxylineSeparator12", { guifg = palette.one_bg2, guibg = palette.bg })
-highlight_group("GalaxylineLineInfo", { guifg = palette.fg, guibg = palette.one_bg2 })
-highlight_group("GalaxylineSeparator14", { guifg = palette.grey, guibg = palette.one_bg2 })
-highlight_group("GalaxylineLineInfoSep", { guifg = palette.baby_pink, guibg = palette.grey })
-highlight_group("GalaxylineLineInfoIcon", { guifg = palette.bg, guibg = palette.baby_pink })
-highlight_group("GalaxylinePercent", { guifg = palette.fg, guibg = palette.one_bg3 })
--- Sep10 is used here but already defined above
-highlight_group("GalaxylinePercentIcon", { guifg = palette.bg, guibg = palette.light_green })
-highlight_group("GalaxylinePercentSep", { guifg = palette.light_green, guibg = palette.grey })
-
--- -- cursorline
--- bg("ModesInsert", palette.cyan)
--- bg("ModesCopy", palette.orange)
--- bg("ModesVisual", palette.orange)
--- bg("ModesDelete", palette.red)
-
 -- telescope
 fg_bg("TelescopeBorder", palette.black2, palette.black2)
 fg_bg("TelescopePromptBorder", palette.light, palette.light)
@@ -249,19 +172,19 @@ bg("StatusLineNC", palette.bg)
 fg("IndentBlanklineContextChar", palette.light_grey)
 
 -- treesitter-context
-fg_bg("TreesitterContext", kanagawa.pink, palette.bg)
-fg_bg("TreesitterContextLineNumber", kanagawa.yellow, palette.bg)
+fg_bg("TreesitterContext", palette.pink, palette.bg)
+fg_bg("TreesitterContextLineNumber", palette.yellow, palette.bg)
 
 -- linenr
 fg("LineNr", nord.light_grey)
-fg("CursorLineNr", kanagawa.green)
+fg("CursorLineNr", palette.green)
 
 -- leap
 fg_bg("LeapLabelPrimary", palette.bg, palette.light_cyan)
 fg_bg("LeapLabelSecondary", palette.bg, palette.green)
 
 -- lsp
-fg("DiagnosticError", kanagawa.red)
-fg("DiagnosticWarn", kanagawa.yellow)
-fg("DiagnosticHint", kanagawa.teal)
-fg("DiagnosticInfo", kanagawa.purple)
+fg("DiagnosticError", palette.red)
+fg("DiagnosticWarn", palette.yellow)
+fg("DiagnosticHint", palette.teal)
+fg("DiagnosticInfo", palette.purple)
