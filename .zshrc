@@ -145,7 +145,7 @@ alias dd='sudo dockerd \
 alias uu="sudo apt update && sudo apt upgrade -y"
 
 # nv4lyf
-alias nv="nvim"
+alias nv="/usr/local/bin/nvim"
 
 # cd aliases
 alias d='cd ~/dotfiles/'
