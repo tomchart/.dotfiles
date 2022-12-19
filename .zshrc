@@ -9,7 +9,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="dracula"
 
-export TERM="xterm-256color"
+export TERM="alacritty"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
@@ -175,6 +175,11 @@ export PATH="/Users/tom/.composer/vendor/bin:$PATH"
 
 # dev
 alias dep='cp -r /home/tom/oms-V1.4/ /mnt/c/xampp/htdocs/'
+
+# xampp/lampp service up/down
+alias xu='sudo /opt/lampp/lampp start'
+alias xd='sudo /opt/lampp/lampp stop'
+alias o='cd /opt/lampp/htdocs/oms-V1.4/'
 
 
 ##################
