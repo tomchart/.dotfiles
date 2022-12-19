@@ -128,23 +128,70 @@ local tokyonightstorm = {
   red = "#f7768e",
 }
 
+local oxocarbon = {
+  author = "shaunsingh/IBM",
+  base00 = "#161616",
+  base01 = "#262626",
+  base02 = "#393939",
+  base03 = "#525252",
+  base04 = "#dde1e6",
+  base05 = "#f2f4f8",
+  base06 = "#ffffff",
+  base07 = "#08bdba",
+  base08 = "#3ddbd9",
+  base09 = "#78a9ff",
+  base0A = "#ee5396",
+  base0B = "#33b1ff",
+  base0C = "#ff7eb6",
+  base0D = "#42be65",
+  base0E = "#be95ff",
+  base0F = "#82cfff",
+}
+
+local colors = {
+  cursor = oxocarbon.base04,
+  background = oxocarbon.base00,
+  foreground = oxocarbon.base06,
+  normal = {
+    black = oxocarbon.base00,
+    red = oxocarbon.base0B,
+    green = oxocarbon.base0C,
+    yellow = oxocarbon.base0D,
+    blue = oxocarbon.base07,
+    magenta = oxocarbon.base0F,
+    cyan = oxocarbon.base09,
+    white = oxocarbon.base04,
+    light_grey = oxocarbon.base02,
+  },
+  bright = {
+    black = oxocarbon.base03,
+    red = oxocarbon.base0B,
+    green = oxocarbon.base0C,
+    yellow = oxocarbon.base0D,
+    blue = oxocarbon.base07,
+    magenta = oxocarbon.base0F,
+    cyan = oxocarbon.base09,
+    white = oxocarbon.base06,
+  },
+}
+
 local vi_mode_colors = {
-  NORMAL = kanagawa.green,
-  OP = kanagawa.green,
-  INSERT = kanagawa.red,
-  CONFIRM = kanagawa.red,
-  VISUAL = kanagawa.orange,
-  LINES = kanagawa.skyblue,
-  BLOCK = kanagawa.skyblue,
-  REPLACE = kanagawa.skyblue,
-  ['V-REPLACE'] = kanagawa.skyblue,
-  ENTER = kanagawa.cyan,
-  MORE = kanagawa.cyan,
-  SELECT = kanagawa.orange,
-  COMMAND = kanagawa.red,
-  SHELL = kanagawa.green,
-  TERM = kanagawa.green,
-  NONE = kanagawa.yellow
+  NORMAL = colors.normal.green,
+  OP = colors.normal.green,
+  INSERT = colors.normal.red,
+  CONFIRM = colors.normal.red,
+  VISUAL = colors.normal.yellow,
+  LINES = colors.normal.blue,
+  BLOCK = colors.normal.blue,
+  REPLACE = colors.normal.blue,
+  ['V-REPLACE'] = colors.normal.blue,
+  ENTER = colors.normal.cyan,
+  MORE = colors.normal.cyan,
+  SELECT = colors.normal.yellow,
+  COMMAND = colors.normal.red,
+  SHELL = colors.normal.green,
+  TERM = colors.normal.green,
+  NONE = colors.normal.yellow
 }
 
 local c = {
@@ -153,7 +200,7 @@ local c = {
     provider = ' ',
     hl = function()
       local val = {}
-      val.bg = kanagawa.statusline_bg
+      val.bg = colors.background
       val.fg = vi_mode_colors[vi_mode_utils.get_vim_mode()]
       return val
     end,
@@ -167,7 +214,7 @@ local c = {
     hl = function()
       local val = {}
       val.bg = vi_mode_colors[vi_mode_utils.get_vim_mode()]
-      val.fg = kanagawa.statusline_bg
+      val.fg = colors.background
       return val
     end,
     left_sep = {
@@ -175,7 +222,7 @@ local c = {
       hl = function()
         local val = {}
         val.fg = vi_mode_colors[vi_mode_utils.get_vim_mode()]
-        val.bg = kanagawa.statusline_bg
+        val.bg = colors.background
         return val
       end,
     },
@@ -184,7 +231,7 @@ local c = {
       hl = function()
         local val = {}
         val.fg = vi_mode_colors[vi_mode_utils.get_vim_mode()]
-        val.bg = kanagawa.statusline_bg
+        val.bg = colors.background
         return val
       end,
     },
@@ -196,8 +243,8 @@ local c = {
     end,
     hl = function()
       local val = {}
-      val.fg = kanagawa.teal
-      val.bg = kanagawa.statusline_bg
+      val.fg = colors.normal.white
+      val.bg = colors.background
       return val
     end,
     right_sep = 'block'
@@ -208,8 +255,8 @@ local c = {
       type = 'relative'
     },
     hl = {
-      fg = kanagawa.teal,
-      bg = kanagawa.statusline_bg,
+      fg = colors.normal.white,
+      bg = colors.background,
       style = 'bold'
     },
     left_sep = 'block',
@@ -218,37 +265,37 @@ local c = {
   git_diff_added = {
     provider = 'git_diff_added',
     hl = {
-      fg = kanagawa.green,
-      bg = kanagawa.statusline_bg
+      fg = colors.normal.green,
+      bg = colors.background
     },
     right_sep = 'block',
   },
   git_diff_removed = {
     provider = 'git_diff_removed',
     hl = {
-      fg = kanagawa.red,
-      bg = kanagawa.statusline_bg
+      fg = colors.normal.red,
+      bg = colors.background
     },
     right_sep = 'block',
   },
   git_diff_changed = {
     provider = 'git_diff_changed',
     hl = {
-      fg = kanagawa.yellow,
-      bg = kanagawa.statusline_bg
+      fg = colors.normal.yellow,
+      bg = colors.background
     },
     right_sep = 'block',
   },
   bg = {
     hl = {
-      bg = kanagawa.statusline_bg
+      bg = colors.background
     }
   },
   git_branch = {
     provider = 'git_branch',
     hl = {
-      fg = kanagawa.orange,
-      bg = kanagawa.statusline_bg
+      fg = colors.normal.green,
+      bg = colors.background
     },
     left_sep = 'block',
     right_sep = 'block'
@@ -258,7 +305,7 @@ local c = {
     hl = function()
       local val = {}
       val.fg = vi_mode_colors[vi_mode_utils.get_vim_mode()]
-      val.bg = kanagawa.statusline_bg
+      val.bg = colors.background
       return val
     end,
     left_sep = 'block',
@@ -269,7 +316,7 @@ local c = {
     hl = function()
       local val = {}
       val.fg = vi_mode_colors[vi_mode_utils.get_vim_mode()]
-      val.bg = kanagawa.statusline_bg
+      val.bg = colors.background
       return val
     end,
     left_sep = 'block',
@@ -278,8 +325,8 @@ local c = {
   encoding = {
     provider = 'file_encoding',
     hl = {
-      fg = kanagawa.light_grey,
-      bg = kanagawa.statusline_bg
+      fg = colors.normal.light_grey,
+      bg = colors.background
     },
     left_sep = 'block',
     right_sep = 'block'
@@ -287,8 +334,8 @@ local c = {
   format = {
     provider = file_osinfo,
     hl = {
-      fg = kanagawa.light_grey,
-      bg = kanagawa.statusline_bg
+      fg = colors.normal.light_grey,
+      bg = colors.background
     },
     left_sep = 'block',
     right_sep = 'block'
@@ -296,8 +343,8 @@ local c = {
   lsp_name = {
     provider = 'lsp_client_names',
     hl = {
-      fg = kanagawa.purple,
-      bg = kanagawa.statusline_bg
+      fg = colors.normal.purple,
+      bg = colors.background
     },
     left_sep = 'block',
     right_sep = 'block'
@@ -305,36 +352,36 @@ local c = {
   diag_err = {
     provider = 'diagnostic_errors',
     hl = {
-      fg = kanagawa.red,
-      bg = kanagawa.statusline_bg
+      fg = colors.normal.red,
+      bg = colors.background
     }
   },
   diag_warn = {
     provider = 'diagnostic_warnings',
     hl = {
-      fg = kanagawa.yellow,
-      bg = kanagawa.statusline_bg
+      fg = colors.normal.yellow,
+      bg = colors.background
     }
   },
   diag_hint = {
     provider = 'diagnostic_hints',
     hl = {
-      fg = kanagawa.teal,
-      bg = kanagawa.statusline_bg
+      fg = colors.normal.white,
+      bg = colors.background
     }
   },
   diag_info = {
     provider = 'diagnostic_info',
     hl = {
-      fg = kanagawa.purple,
-      bg = kanagawa.statusline_bg
+      fg = colors.normal.purple,
+      bg = colors.background
     }
   },
   position = {
     provider = 'position',
     hl = {
-      fg = kanagawa.light_grey,
-      bg = kanagawa.statusline_bg
+      fg = colors.normal.light_grey,
+      bg = colors.background
     },
     left_sep = 'block',
     right_sep = 'block',
@@ -356,7 +403,6 @@ local M = {}
 
 M.setup = function()
   feline.setup({
-    theme = kanagawa,
     components = components,
     disable = {
       {
@@ -370,7 +416,7 @@ M.setup = function()
             '^help$'
         },
         buftypes = {
-            '^terminal$'
+            -- '^terminal$'
         },
         bufnames = {}
       }

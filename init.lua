@@ -20,8 +20,9 @@ end
 -- non plugin mappings
 require("core.mappings").misc()
 
+-- call colours
+require("colours").init("oxocarbon")
+
 -- call plugins
 require("plugins")
 
--- call colours
-require("colours").init("kanagawa")

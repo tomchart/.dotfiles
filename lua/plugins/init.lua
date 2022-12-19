@@ -18,13 +18,14 @@ local plugins = {
 		"wbthomason/packer.nvim",
 		event = "VimEnter",
 	},
-	{
-		"rebelot/kanagawa.nvim",
-		as = "kanagawa",
-	},
+	-- {
+	-- 	"rebelot/kanagawa.nvim",
+	-- 	as = "kanagawa",
+	-- },
+  {'nyoom-engineering/oxocarbon.nvim'},
 	{
 		"glepnir/dashboard-nvim",
-		after = "kanagawa",
+		after = "oxocarbon.nvim",
 		config = function()
 			require("plugins.configs.dashboard-nvim")
 		end,

@@ -166,7 +166,7 @@ fg("FidgetTitle", palette.light_grey)
 
 -- statusline
 bg("StatusLine", palette.bg)
-bg("StatusLineNC", palette.bg)
+fg("StatusLineNC", palette.bg)
 
 -- indent
 fg("IndentBlanklineContextChar", palette.light_grey)
