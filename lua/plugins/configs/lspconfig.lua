@@ -76,10 +76,10 @@ local servers = {
 		filetypes = { "sh", "zsh", "zshrc" },
 		single_file_support = true,
 	},
-	remark_ls = {
-		cmd = { "remark-language-server", "--stdio" },
-		filetypes = { "markdown" },
-	},
+	-- remark_ls = {
+	-- 	cmd = { "remark-language-server", "--stdio" },
+	-- 	filetypes = { "markdown" },
+	-- },
 	dockerls = {},
 	html = {
     filetypes = { 'html', 'php' },
