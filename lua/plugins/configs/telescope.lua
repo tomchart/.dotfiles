@@ -14,10 +14,11 @@ local utils = require("telescope.utils")
 local entry_display = require("telescope.pickers.entry_display")
 telescope.load_extension('harpoon')
 
+local gruvMedBg = '#282828'
 local tele = {
   light = x('GruvboxBg1').guifg,
   fg = x('GruvboxFg0').guifg,
-  bg = x('GruvboxBg0').guifg,
+  bg = gruvMedBg,
   red = x('GruvboxRed').guifg,
   green = x('GruvboxGreen').guifg
 }

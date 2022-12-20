@@ -162,7 +162,7 @@ local colors = {
 }
 
 local gruvbox = {
-  background = u.extract_highlight_colours('GruvboxBg0').guifg,
+  background = '#282828',
   normal = {
     bg = u.extract_highlight_colours('GruvboxBg0').guifg,
     black = u.extract_highlight_colours('GruvboxBg0').guifg,
@@ -204,16 +204,16 @@ local vi_mode_colors = {
 
 local c = {
   vi_mode_icon = {
-    -- provider = ' ',
-    provider = ' ',
+    provider = '  ',
+    -- provider = ' ',
     hl = function()
       local val = {}
       val.bg = colors.background
       val.fg = vi_mode_colors[vi_mode_utils.get_vim_mode()]
       return val
     end,
-    left_sep = 'block',
-    right_sep = 'block'
+    -- left_sep = 'block',
+    -- right_sep = 'block',
   },
   vi_mode_text = {
     provider = function ()
@@ -396,7 +396,7 @@ local c = {
   }
 }
 
-local left = { c.vi_mode_icon, c.vi_mode_text, c.filename, c.git_branch, c.git_diff_added, c.git_diff_removed, c.git_diff_changed, c.bg }
+local left = { c.vi_mode_icon, c.filename, c.git_branch, c.git_diff_added, c.git_diff_removed, c.git_diff_changed, c.bg }
 local right = { c.diag_info, c.diag_hint, c.diag_warn, c.diag_err, c.lsp_name, c.folder, c.format, c.encoding, c.position, c.line_percentage, c.scroller }
 
 local components = {
