@@ -115,7 +115,7 @@ db.custom_header = {
 
 local plugins_count = vim.fn.len(vim.fn.globpath("~/.local/share/nvim/site/pack/packer/start", "*", 0, 1))
 local lazy_count = vim.fn.len(vim.fn.globpath("~/.local/share/nvim/site/pack/packer/opt", "*", 0, 1))
-local plugin_string = "♡ " .. plugins_count .. " plugins loaded, " .. lazy_count .. " lazy. ♡"
+local plugin_string = "♡  " .. plugins_count .. " plugins loaded, " .. lazy_count .. " lazy. ♡"
 
 db.custom_center = {
   {icon = nil, desc = plugin_string}

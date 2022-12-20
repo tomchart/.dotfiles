@@ -7,6 +7,8 @@ if not present2 then
   return
 end
 
+local u = require('core.utils')
+
 local icons = {
     linux = ' ',
     macos = ' ',
@@ -78,22 +80,6 @@ local kanagawa = {
 	pink = "#c8748f",
 	purple = "#a48ec7",
 	dark_purple = "#957FB8",
-}
-
-local gruvbox = {
-  bg = '#282828',
-  black = '#282828',
-  yellow = '#d8a657',
-  cyan = '#89b482',
-  oceanblue = '#45707a',
-  green = '#a9b665',
-  orange = '#e78a4e',
-  violet = '#d3869b',
-  magenta = '#c14a4a',
-  white = '#a89984',
-  fg = '#a89984',
-  skyblue = '#7daea3',
-  red = '#ea6962',
 }
 
 local catppuccin = {
@@ -174,6 +160,27 @@ local colors = {
     white = oxocarbon.base06,
   },
 }
+
+local gruvbox = {
+  background = u.extract_highlight_colours('GruvboxBg0').guifg,
+  normal = {
+    bg = u.extract_highlight_colours('GruvboxBg0').guifg,
+    black = u.extract_highlight_colours('GruvboxBg0').guifg,
+    yellow = u.extract_highlight_colours('GruvboxYellow').guifg,
+    cyan = u.extract_highlight_colours('GruvboxBlue').guifg,
+    oceanblue = u.extract_highlight_colours('GruvboxBlue').guifg,
+    green = u.extract_highlight_colours('GruvboxGreen').guifg,
+    orange = u.extract_highlight_colours('GruvboxOrange').guifg,
+    violet = u.extract_highlight_colours('GruvboxPurple').guifg,
+    magenta = u.extract_highlight_colours('GruvboxRed').guifg,
+    white = u.extract_highlight_colours('GruvboxFg0').guifg,
+    fg = u.extract_highlight_colours('GruvboxFg0').guifg,
+    red = u.extract_highlight_colours('GruvboxRed').guifg,
+    light_grey = u.extract_highlight_colours('GruvboxBg2').guifg,
+  },
+}
+
+local colors = gruvbox
 
 local vi_mode_colors = {
   NORMAL = colors.normal.green,
@@ -294,7 +301,7 @@ local c = {
   git_branch = {
     provider = 'git_branch',
     hl = {
-      fg = colors.normal.green,
+      fg = colors.normal.orange,
       bg = colors.background
     },
     left_sep = 'block',

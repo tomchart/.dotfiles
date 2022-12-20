@@ -21,7 +21,7 @@ end
 require("core.mappings").misc()
 
 -- call colours
-require("colours").init("oxocarbon")
+require("colours").init("gruvbox")
 
 -- call plugins
 require("plugins")

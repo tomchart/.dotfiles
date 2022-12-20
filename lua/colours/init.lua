@@ -5,8 +5,7 @@ M.init = function(theme)
     theme = "dracula"
   end
 
-  vim.o.background = "dark"
-  vim.cmd("colorscheme " .. theme)
+  require("colours.theme").setup()
   -- require "colours.highlights"
 end
 

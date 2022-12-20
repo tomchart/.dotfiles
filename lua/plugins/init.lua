@@ -18,11 +18,13 @@ local plugins = {
 		"wbthomason/packer.nvim",
 		event = "VimEnter",
 	},
-	-- {
-	-- 	"rebelot/kanagawa.nvim",
-	-- 	as = "kanagawa",
-	-- },
-  {'nyoom-engineering/oxocarbon.nvim'},
+	{
+		"rebelot/kanagawa.nvim",
+		as = "kanagawa",
+	},
+  { 'nyoom-engineering/oxocarbon.nvim' },
+  { "folke/tokyonight.nvim" },
+  { "ellisonleao/gruvbox.nvim" },
 	{
 		"glepnir/dashboard-nvim",
 		after = "oxocarbon.nvim",
