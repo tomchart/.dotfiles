@@ -184,9 +184,9 @@ local gruvbox = {
 local colors = gruvbox
 
 local vi_mode_colors = {
-  NORMAL = colors.normal.red,
+  NORMAL = colors.normal.green,
   OP = colors.normal.green,
-  INSERT = colors.normal.green,
+  INSERT = colors.normal.red,
   CONFIRM = colors.normal.red,
   VISUAL = colors.normal.yellow,
   LINES = colors.normal.blue,
