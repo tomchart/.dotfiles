@@ -6,7 +6,7 @@ M.init = function(theme)
   end
 
   require("colours.theme").setup()
-  -- require "colours.highlights"
+
 end
 
 return M

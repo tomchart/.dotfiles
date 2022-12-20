@@ -1,6 +1,7 @@
 local fg = require("core.utils").fg
 local bg = require("core.utils").bg
 local fg_bg = require("core.utils").fg_bg
+local x = require("core.utils").extract_highlight_colours
 local highlight_group = require("core.utils").highlight_group
 
 local nord = {
@@ -144,22 +145,6 @@ highlight_group("CmpItemKindEnumMember", { guibg = "NONE", guifg = palette.light
 highlight_group("CmpItemKindInterface", { guibg = "NONE", guifg = palette.teal })
 highlight_group("CmpItemKindColor", { guibg = "NONE", guifg = palette.teal })
 highlight_group("CmpItemKindTypeParameter", { guibg = "NONE", guifg = palette.teal })
-
--- telescope
-fg_bg("TelescopeBorder", palette.black2, palette.black2)
-fg_bg("TelescopePromptBorder", palette.light, palette.light)
-
-fg_bg("TelescopePromptNormal", palette.fg, palette.light)
-fg_bg("TelescopePromptPrefix", palette.red, palette.light)
-fg("TelescopePromptCounter", palette.fg)
-
-bg("TelescopeNormal", palette.black2)
-
-fg_bg("TelescopePreviewTitle", palette.black2, palette.green)
-fg_bg("TelescopePromptTitle", palette.black2, palette.red)
-fg_bg("TelescopeResultsTitle", palette.black2, palette.black2)
-
-bg("TelescopeSelection", palette.light)
 
 -- fidget
 fg("FidgetTitle", palette.light_grey)

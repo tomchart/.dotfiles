@@ -1,3 +1,6 @@
+local bg = require("core.utils").bg
+local fg_bg = require("core.utils").fg_bg
+local x = require("core.utils").extract_highlight_colours
 local present, telescope = pcall(require, "telescope")
 
 if not present then
@@ -10,6 +13,24 @@ local builtin = require("telescope.builtin")
 local utils = require("telescope.utils")
 local entry_display = require("telescope.pickers.entry_display")
 telescope.load_extension('harpoon')
+
+local tele = {
+  light = x('GruvboxBg1').guifg,
+  fg = x('GruvboxFg0').guifg,
+  bg = x('GruvboxBg0').guifg,
+  red = x('GruvboxRed').guifg,
+  green = x('GruvboxGreen').guifg
+}
+
+bg("TelescopeSelection", tele.light)
+fg_bg("TelescopeNormal", tele.fg, tele.bg)
+fg_bg("TelescopeBorder", tele.bg, tele.bg)
+bg("TelescopePromptNormal", tele.light)
+fg_bg("TelescopePromptBorder", tele.light, tele.light)
+fg_bg("TelescopePreviewBorder", tele.bg, tele.bg)
+fg_bg("TelescopePromptTitle", tele.bg, tele.red)
+fg_bg("TelescopePreviewTitle", tele.bg, tele.green)
+fg_bg("TelescopeResultsTitle", tele.bg, tele.bg)
 
 --- Splits a filepath into head / tail where tail is the last path component and
 --- head is everything before it.
