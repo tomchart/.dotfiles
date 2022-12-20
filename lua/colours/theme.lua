@@ -3,7 +3,7 @@ local function gruv()
     undercurl = true,
     underline = true,
     bold = true,
-    italic = true,
+    italic = false,
     strikethrough = true,
     invert_selection = false,
     invert_signs = false,

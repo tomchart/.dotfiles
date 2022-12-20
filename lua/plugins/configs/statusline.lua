@@ -167,8 +167,9 @@ local gruvbox = {
     bg = u.extract_highlight_colours('GruvboxBg0').guifg,
     black = u.extract_highlight_colours('GruvboxBg0').guifg,
     yellow = u.extract_highlight_colours('GruvboxYellow').guifg,
-    cyan = u.extract_highlight_colours('GruvboxBlue').guifg,
-    oceanblue = u.extract_highlight_colours('GruvboxBlue').guifg,
+    cyan = u.extract_highlight_colours('GruvboxAqua').guifg,
+    blue = u.extract_highlight_colours('GruvboxBlue').guifg,
+    oceanblue = u.extract_highlight_colours('GruvboxAqua').guifg,
     green = u.extract_highlight_colours('GruvboxGreen').guifg,
     orange = u.extract_highlight_colours('GruvboxOrange').guifg,
     violet = u.extract_highlight_colours('GruvboxPurple').guifg,
@@ -176,16 +177,16 @@ local gruvbox = {
     white = u.extract_highlight_colours('GruvboxFg0').guifg,
     fg = u.extract_highlight_colours('GruvboxFg0').guifg,
     red = u.extract_highlight_colours('GruvboxRed').guifg,
-    light_grey = u.extract_highlight_colours('GruvboxBg2').guifg,
+    light_grey = u.extract_highlight_colours('GruvboxBg3').guifg,
   },
 }
 
 local colors = gruvbox
 
 local vi_mode_colors = {
-  NORMAL = colors.normal.green,
+  NORMAL = colors.normal.red,
   OP = colors.normal.green,
-  INSERT = colors.normal.red,
+  INSERT = colors.normal.green,
   CONFIRM = colors.normal.red,
   VISUAL = colors.normal.yellow,
   LINES = colors.normal.blue,
@@ -195,7 +196,7 @@ local vi_mode_colors = {
   ENTER = colors.normal.cyan,
   MORE = colors.normal.cyan,
   SELECT = colors.normal.yellow,
-  COMMAND = colors.normal.red,
+  COMMAND = colors.normal.violet,
   SHELL = colors.normal.green,
   TERM = colors.normal.green,
   NONE = colors.normal.yellow
@@ -350,7 +351,7 @@ local c = {
   lsp_name = {
     provider = 'lsp_client_names',
     hl = {
-      fg = colors.normal.purple,
+      fg = colors.normal.blue,
       bg = colors.background
     },
     left_sep = 'block',
@@ -373,7 +374,7 @@ local c = {
   diag_hint = {
     provider = 'diagnostic_hints',
     hl = {
-      fg = colors.normal.white,
+      fg = colors.normal.cyan,
       bg = colors.background
     }
   },
