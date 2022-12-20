@@ -44,7 +44,7 @@ local function shorten_path(path)
 	if replacements3 == 1 then
 		return path_without_home_win
 	end
-	local path_without_home_oms, replacements4 = path:gsub("/mnt/c/xampp/htdocs", "xampp")
+	local path_without_home_oms, replacements4 = path:gsub("/opt/lampp/htdocs/", "")
 	if replacements4 == 1 then
     return path_without_home_oms
 	end
