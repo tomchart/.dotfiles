@@ -175,6 +175,12 @@ local plugins = {
 	{
 		"dstein64/vim-startuptime",
 	},
+  {
+    "jpalardy/vim-slime",
+    after = "Comment.nvim"
+    -- this is making telescope hang when closing
+    -- as the <c-c> bind is my tele close bind
+  },
 
 	-- file managing, picking, etc
   {

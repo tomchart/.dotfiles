@@ -40,6 +40,8 @@ opt.formatoptions = opt.formatoptions
   - "2" -- I'm not in gradeschool anymore
 
 vim.g.PHP_autoformatcomment = 0
+vim.g.slime_target = "tmux"
+vim.g.slime_paste_file = "~/.slime_paste"
 
 -- disable some builtin vim plugins
 local disabled_built_ins = {

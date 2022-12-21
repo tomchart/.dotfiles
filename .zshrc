@@ -182,6 +182,10 @@ alias xd='sudo /opt/lampp/lampp stop'
 alias o='cd /opt/lampp/htdocs/oms-V1.4/'
 
 
+# when sliming to mysql
+# pager less -SeX
+
+
 ##################
 #                #
 # nvm init stuff #
