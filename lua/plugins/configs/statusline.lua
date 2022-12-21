@@ -208,12 +208,12 @@ local c = {
     -- provider = ' ',
     hl = function()
       local val = {}
-      val.bg = colors.background
-      val.fg = vi_mode_colors[vi_mode_utils.get_vim_mode()]
+      val.bg = vi_mode_colors[vi_mode_utils.get_vim_mode()]
+      val.fg = colors.background
       return val
     end,
-    -- left_sep = 'block',
-    -- right_sep = 'block',
+    left_sep = 'block',
+    right_sep = 'block',
   },
   vi_mode_text = {
     provider = function ()
