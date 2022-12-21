@@ -1,2 +1,8 @@
 - fix stupid nvim setup, generally clean up plugins etc
 - write git log command to generate weekly report
+- fork gruvbox and fix italics (and maybe special char stuff)
+- write config file for work for psysh (is this a thing?)
+- introduce mycli into workflow?
+- restructure dotfiles
+- redo symlinks
+- rename files

@@ -85,7 +85,11 @@ curl -L https://raw.githubusercontent.com/sbugzu/gruvbox-zsh/master/gruvbox.zsh-
 echo "Installing tmux plugin manager..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+echo "+x psysh..."
+chmod +x ~/psysh
+
 echo "Making symlinks..."
+sudo ln -isv ~/dotfiles/psysh /usr/local/bin/psysh
 ln -isv ~/dotfiles/.cmtm.sh ~
 ln -isv ~/dotfiles/.gitconfig ~
 ln -isv ~/dotfiles/.tmux.conf ~
