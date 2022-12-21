@@ -137,4 +137,10 @@ M.lspconf = function()
 	keymap("n", "E", "<cmd>lua vim.diagnostic.open_float()<cr>")
 end
 
+M.slime = function()
+  -- borked atm
+  -- keymap("n", "<leader>k", "<cmd>SlimeLineSend<cr>")
+  -- keymap("n", "<leader>l", "<cmd>SlimeRegionSend<cr>")
+end
+
 return M

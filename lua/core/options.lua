@@ -41,7 +41,8 @@ opt.formatoptions = opt.formatoptions
 
 vim.g.PHP_autoformatcomment = 0
 vim.g.slime_target = "tmux"
-vim.g.slime_paste_file = "~/.slime_paste"
+vim.g.slime_paste_file = "/home/tom/.slime_paste"
+vim.g.slime_no_mappings = 1
 
 -- disable some builtin vim plugins
 local disabled_built_ins = {
