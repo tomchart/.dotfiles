@@ -1,3 +1,8 @@
+-- would be good to fork gruvbox
+-- so that i can fix the italics
+-- and re-enable them
+-- bit fucked atm
+
 local function gruv()
   require("gruvbox").setup({
     undercurl = true,
