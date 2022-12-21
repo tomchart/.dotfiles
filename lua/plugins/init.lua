@@ -181,8 +181,6 @@ local plugins = {
     config = function ()
       require("core.mappings").slime()
     end
-    -- this is making telescope hang when closing
-    -- as the <c-c> bind is my tele close bind
   },
 
 	-- file managing, picking, etc
