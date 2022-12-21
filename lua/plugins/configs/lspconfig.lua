@@ -82,10 +82,10 @@ local servers = {
 	-- },
 	dockerls = {},
 	html = {
-    filetypes = { 'html', 'php' },
+    filetypes = { 'html' },
   },
   cssls = {
-    filetypes = { 'html', 'css', 'php' }
+    filetypes = { 'html', 'css' }
   },
   jsonls = {},
   intelephense = {},
@@ -105,7 +105,7 @@ local servers = {
   tsserver = {
     single_file_support = true,
     preferences = {
-    quotePreference = "single",
+    quotePreference = "double",
     },
   },
 

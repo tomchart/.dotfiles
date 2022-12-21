@@ -24,7 +24,7 @@ default = {
 		},
 	},
 	indent = {
-		enable = true,
+		enable = false,
 		disable = { "yaml", "python" },
 	},
 	textobjects = {

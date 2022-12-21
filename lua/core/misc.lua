@@ -14,3 +14,6 @@ cmd([[autocmd FileType c,cpp setlocal formatoptions-=r]])
 
 -- highlight yanked text
 cmd[[au TextYankPost * silent! lua vim.highlight.on_yank()]]
+
+-- set inc.php to filetype html
+cmd[[au BufRead,BufNewFile *.inc.php set filetype=html]]
