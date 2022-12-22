@@ -24,7 +24,7 @@ local plugins = {
 	},
   { 'nyoom-engineering/oxocarbon.nvim' },
   { "folke/tokyonight.nvim" },
-  { "ellisonleao/gruvbox.nvim" },
+  { "hctomhart/gruvbox.nvim" },
 	{
 		"glepnir/dashboard-nvim",
 		after = "oxocarbon.nvim",
