@@ -77,6 +77,8 @@ local M = {}
 M.setup = function()
 	telescope.setup({
 		defaults = {
+      border = true,
+      borderchars = {" ", " ", " ", " ", " ", " ", " ", " "},
 			mappings = {
 				i = {
 					["<c-s>"] = actions.select_vertical,
@@ -118,8 +120,6 @@ M.setup = function()
 			},
 		},
 		winblend = 0,
-		border = {},
-		borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 		color_devicons = true,
 		use_less = true,
 		set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,

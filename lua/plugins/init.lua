@@ -27,7 +27,7 @@ local plugins = {
   { "hctomhart/gruvbox.nvim" },
 	{
 		"glepnir/dashboard-nvim",
-		after = "oxocarbon.nvim",
+		after = "gruvbox.nvim",
 		config = function()
 			require("plugins.configs.dashboard-nvim")
 		end,
