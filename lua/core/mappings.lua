@@ -135,6 +135,8 @@ end
 M.lspconf = function()
 	keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>")
 	keymap("n", "E", "<cmd>lua vim.diagnostic.open_float()<cr>")
+  keymap('n', '[d', vim.diagnostic.goto_next)
+  keymap('n', ']d', vim.diagnostic.goto_prev)
 end
 
 M.slime = function()
