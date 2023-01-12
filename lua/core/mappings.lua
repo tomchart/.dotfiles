@@ -139,6 +139,7 @@ M.lspconf = function()
   keymap('n', '[d', vim.diagnostic.goto_next)
   keymap('n', ']d', vim.diagnostic.goto_prev)
   keymap("n", "<leader>f", vim.lsp.buf.format)
+  keymap("n", "<leader>vrn", vim.lsp.buf.rename)
 end
 
 M.slime = function()
