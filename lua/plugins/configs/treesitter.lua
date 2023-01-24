@@ -8,8 +8,7 @@ default = {
 	highlight = {
 		enable = true,
 		use_languagetree = true,
-		disable = { "yaml" },
-    additional_vim_regex_highlighting = true
+		disable = { "yaml", "html" },
 	},
 	incremental_selection = {
 		enable = true,
