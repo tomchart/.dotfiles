@@ -1,8 +1,4 @@
-local present, ts_config = pcall(require, "nvim-treesitter.configs")
-
-if not present then
-	return
-end
+ts_config = require("nvim-treesitter.configs")
 
 default = {
 	ensure_installed = "all",
@@ -12,7 +8,8 @@ default = {
 	highlight = {
 		enable = true,
 		use_languagetree = true,
-		disable = { "yaml", "html", "php" },
+		disable = { "yaml" },
+    additional_vim_regex_highlighting = true
 	},
 	incremental_selection = {
 		enable = true,
@@ -48,6 +45,7 @@ default = {
 			goto_next_start = {
 				["[f"] = "@function.outer",
 				["[c"] = "@class.outer",
+				["[a"] = "@parameter.inner",
 			},
 			goto_next_end = {
 				["[F"] = "@function.outer",
@@ -56,6 +54,7 @@ default = {
 			goto_previous_start = {
 				["]f"] = "@function.outer",
 				["]c"] = "@class.outer",
+				["]a"] = "@parameter.inner",
 			},
 			goto_previous_end = {
 				["]F"] = "@function.outer",

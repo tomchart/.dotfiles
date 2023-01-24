@@ -112,6 +112,7 @@ local servers = {
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.semanticTokensProdiver = nil -- is this doing anything?
 for server, config in pairs(servers) do
 	lspconfig[server].setup({
 		capabilities = capabilities,
