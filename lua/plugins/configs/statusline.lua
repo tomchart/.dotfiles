@@ -162,7 +162,7 @@ local colors = {
 }
 
 local gruvbox = {
-  background = '#282828',
+  background = '#32302f',
   normal = {
     bg = u.extract_highlight_colours('GruvboxBg0').guifg,
     black = u.extract_highlight_colours('GruvboxBg0').guifg,
