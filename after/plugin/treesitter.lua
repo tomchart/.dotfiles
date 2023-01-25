@@ -20,7 +20,7 @@ default = {
 		},
 	},
 	indent = {
-		enable = false,
+		enable = true,
 		disable = { "yaml", "python" },
 	},
 	textobjects = {
