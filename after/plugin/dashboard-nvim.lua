@@ -29,7 +29,5 @@ require("dashboard").setup({
       "       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ",
       "                                   ",
     },
-    center = {},
-    footer = {},
   }
 })
