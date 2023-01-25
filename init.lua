@@ -17,12 +17,11 @@ for _, module in ipairs(core_modules) do
 	end
 end
 
+-- call plugins
+require("plugins")
+
 -- non plugin mappings
 require("core.mappings").misc()
 
 -- call colours
 require("colours").init("gruvbox")
-
--- call plugins
-require("plugins")
-

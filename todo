@@ -1,7 +1,0 @@
-- fix stupid nvim setup, generally clean up plugins etc
-- write git log command to generate weekly report
-- write config file for work for psysh (is this a thing?)
-- introduce mycli into workflow?
-- restructure dotfiles
-- redo symlinks
-- rename files
