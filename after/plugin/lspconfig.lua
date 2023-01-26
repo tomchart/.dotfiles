@@ -1,121 +1,98 @@
-require("mason").setup()
-require("mason-lspconfig").setup({
-  ensure_installed = {
-    "sumneko_lua",
-    "pyright",
-    "bashls",
-    "dockerls",
-    "html",
-    "cssls",
-    "cssmodules_ls",
-    "jsonls",
-    "intelephense",
-    "sqlls",
-    "tsserver",
-  }
+local lspconfig = require("lspconfig")
+local cmp_nvim_lsp = require("cmp_nvim_lsp")
+local mason_lspconfig = require("mason-lspconfig")
+
+
+mason_lspconfig.setup({
+  automatic_installation = true
 })
 
-local lspconfig = require("lspconfig")
-local fn = vim.fn
-
-local runtime_path = vim.split(package.path, ";")
-table.insert(runtime_path, "lua/?.lua")
-table.insert(runtime_path, "lua/core/?.lua")
-table.insert(runtime_path, "lua/?/init.lua")
-
--- Don't add ~/.config/nvim to the LSP libraries because that's just a symlink
--- to ~/.dotfiles/nvim/lua, so when we're in ~/.dotfiles/nvim/lua we end up
--- with duplicate symbols
--- (stolen from marcus)
-local runtime_files = vim.api.nvim_get_runtime_file("", true)
-local config_dir = fn.expand("~/.config/nvim")
-local lua_library = {}
-for _, file in ipairs(runtime_files) do
-	if file:sub(1, #config_dir) ~= config_dir then
-		table.insert(lua_library, file)
-	end
+local on_attach = function (client)
+  client.server_capabilities.semanticTokensProdiver = nil
 end
 
-local servers = {
-  sumneko_lua = {},
-	pyright = {
-		root_dir = function(fname)
-			return fn.getcwd()
-		end,
-		settings = {
-			python = {
-				analysis = {
-					autoSearchPaths = true,
-					autoImportCompletions = false,
-					diagnosticMode = "workspace",
-					useLibraryCodeForTypes = true,
-					pythonPath = "/usr/bin/python",
-					extraPaths = {
-						"/home/tom/.local/lib/python3.7/site-packages",
-						"/usr/local/lib/python3.7/site-packages",
-						"/home/tom/.pyenv/versions/rev3910/lib/python3.9/site-packages",
-					},
-				},
-			},
-		},
-	},
-	bashls = {
-		cmd = { "bash-language-server", "start" },
-		cmd_env = {
-			GLOB_PATTERN = "*@(.sh|.inc|.bash|.command|.zsh|.zshrc)",
-		},
-		filetypes = { "sh", "zsh", "zshrc" },
-		single_file_support = true,
-	},
-	-- remark_ls = {
-	-- 	cmd = { "remark-language-server", "--stdio" },
-	-- 	filetypes = { "markdown" },
-	-- },
-	dockerls = {},
-	html = {
-    filetypes = { 'html' },
-  },
-  cssls = {
-    filetypes = { 'html', 'css' }
-  },
-  cssmodules_ls = {},
-  jsonls = {},
-  intelephense = {},
-  sqlls = {
-    cmd = { "sql-language-server", "up", "--method", "stdio" }
-  },
-  -- emmet_ls = {
-  --     filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'jsx', 'php' },
-  -- },
-  -- tailwindcss = {},
-  -- eslint = {
-		-- root_dir = function(fname)
-		-- 	return fn.getcwd()
-		-- end,
-  -- },
-  tsserver = {
-    single_file_support = true,
-    preferences = {
-    quotePreference = "double",
+lspconfig.bashls.setup({
+  capabilities = cmp_nvim_lsp.default_capabilities(),
+  on_attach = on_attach,
+})
+
+lspconfig.cssls.setup({
+  capabilities = cmp_nvim_lsp.default_capabilities(),
+  on_attach = on_attach,
+})
+
+lspconfig.cssmodules_ls.setup({
+  capabilities = cmp_nvim_lsp.default_capabilities(),
+  on_attach = on_attach,
+})
+
+lspconfig.intelephense.setup({
+  capabilities = cmp_nvim_lsp.default_capabilities(),
+  on_attach = on_attach,
+})
+
+lspconfig.jsonls.setup({
+  capabilities = cmp_nvim_lsp.default_capabilities(),
+  on_attach = on_attach,
+})
+
+lspconfig.pyright.setup({
+  capabilities = cmp_nvim_lsp.default_capabilities(),
+  on_attach = on_attach,
+  root_dir = function(fname)
+    return vim.fn.getcwd()
+  end,
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        autoImportCompletions = false,
+        diagnosticMode = "workspace",
+        useLibraryCodeForTypes = true,
+        pythonPath = "/usr/bin/python",
+        extraPaths = {
+          "/home/tom/.local/lib/python3.7/site-packages",
+          "/usr/local/lib/python3.7/site-packages",
+          "/home/tom/.pyenv/versions/rev3910/lib/python3.9/site-packages",
+        },
+      },
     },
   },
+})
 
-}
+lspconfig.sumneko_lua.setup({
+  capabilities = cmp_nvim_lsp.default_capabilities(),
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        globals = { 'vim' },
+      },
+      workspace = {
+        library = vim.api.nvim_get_runtime_file('', true),
+        checkThirdParty = false,
+      },
+      telemetry = {
+        enable = false,
+      },
+      completion = {
+        keywordSnippet = 'Disable',
+      },
+    },
+  },
+})
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.semanticTokensProdiver = nil -- is this doing anything?
-for server, config in pairs(servers) do
-	lspconfig[server].setup({
-		capabilities = capabilities,
-		flags = {
-			debounce_text_changes = 150,
-		},
-    filetypes = config.filetypes,
-		settings = config.settings,
-		root_dir = config.root_dir,
-		cmd = config.cmd,
-	})
-end
+lspconfig.tsserver.setup({
+  capabilities = cmp_nvim_lsp.default_capabilities(),
+  on_attach = on_attach,
+  root_dir = function()
+    return vim.fn.getcwd()
+  end,
+})
+
 local signs = {
   Error = "",
   Warn = "",

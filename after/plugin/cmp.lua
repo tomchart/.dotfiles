@@ -67,7 +67,7 @@ local function should_tab_out()
 	return brackets[next_char] == true
 end
 
-local conf = {
+cmp.setup({
 	snippet = {
 		expand = function(args)
 			require("luasnip").lsp_expand(args.body)
@@ -138,14 +138,12 @@ local conf = {
 	confirmation = {
 		default_behavior = cmp.ConfirmBehavior.Replace,
 	},
-	sources = {
+	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
 		{ name = "nvim_lua" },
 		{ name = "cmdline" },
-	},
-}
-
-cmp.setup(conf)
+	}),
+})
