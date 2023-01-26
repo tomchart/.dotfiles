@@ -30,7 +30,7 @@ default = {
   highlight = {
 		enable = true,
 		use_languagetree = true,
-		disable = { "yaml", "html" },
+		disable = { "yaml" },
 	},
 	incremental_selection = {
 		enable = true,
