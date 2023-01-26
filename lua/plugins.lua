@@ -38,6 +38,8 @@ packer.startup({
     use("dstein64/vim-startuptime")
     use("jpalardy/vim-slime")
     use("tpope/vim-vinegar")
+    use("j-hui/fidget.nvim")
+    use("windwp/nvim-ts-autotag")
     use({
       "lewis6991/gitsigns.nvim",
       requires = {
@@ -63,7 +65,6 @@ packer.startup({
         { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp', },
         { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp', },
         { "hrsh7th/cmp-path", after = "nvim-cmp", },
-        -- { "hrsh7th/cmp-cmdline", after = "nvim-cmp", },
         { "onsails/lspkind-nvim", after = "nvim-cmp", },
         { 'saadparwaiz1/cmp_luasnip', after = 'LuaSnip', },
       },
