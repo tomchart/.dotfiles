@@ -1,6 +1,6 @@
-ts_config = require("nvim-treesitter.configs")
+local ts_config = require("nvim-treesitter.configs")
 
-default = {
+local default = {
 	ensure_installed = {
     "php",
     "lua",
@@ -30,7 +30,7 @@ default = {
   highlight = {
 		enable = true,
 		use_languagetree = true,
-		disable = { "yaml", "html" },
+		disable = { "yaml" },
 	},
 	incremental_selection = {
 		enable = true,
