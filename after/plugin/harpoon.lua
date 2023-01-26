@@ -1,5 +1,7 @@
 require("harpoon").setup({
-  
+  menu = {
+    width = 100
+  }
 })
 
 vim.keymap.set("n", "<leader>a", function() require("harpoon.mark").add_file() end)
