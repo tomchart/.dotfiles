@@ -1,6 +1,7 @@
+local mason = require("mason").setup()
+local mason_lspconfig = require("mason-lspconfig")
 local lspconfig = require("lspconfig")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
-local mason_lspconfig = require("mason-lspconfig")
 
 
 mason_lspconfig.setup({
@@ -19,11 +20,22 @@ lspconfig.bashls.setup({
 lspconfig.cssls.setup({
   capabilities = cmp_nvim_lsp.default_capabilities(),
   on_attach = on_attach,
+  filetypes = {
+    "html",
+    "css"
+  }
 })
 
 lspconfig.cssmodules_ls.setup({
   capabilities = cmp_nvim_lsp.default_capabilities(),
   on_attach = on_attach,
+  filetypes = {
+    "html",
+    "css"
+  },
+  root_dir = function(fname)
+    return vim.fn.getcwd()
+  end,
 })
 
 lspconfig.intelephense.setup({
