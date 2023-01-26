@@ -40,6 +40,8 @@ packer.startup({
     use("tpope/vim-vinegar")
     use("j-hui/fidget.nvim")
     use("windwp/nvim-ts-autotag")
+    use("williamboman/mason.nvim")
+    use("williamboman/mason-lspconfig.nvim")
     use({
       "lewis6991/gitsigns.nvim",
       requires = {

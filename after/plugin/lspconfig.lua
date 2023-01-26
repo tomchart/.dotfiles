@@ -1,3 +1,20 @@
+require("mason").setup()
+require("mason-lspconfig").setup({
+  ensure_installed = {
+    "sumneko_lua",
+    "pyright",
+    "bashls",
+    "dockerls",
+    "html",
+    "cssls",
+    "cssmodules_ls",
+    "jsonls",
+    "intelephense",
+    "sqlls",
+    "tsserver",
+  }
+})
+
 local lspconfig = require("lspconfig")
 local fn = vim.fn
 
@@ -19,30 +36,8 @@ for _, file in ipairs(runtime_files) do
 	end
 end
 
-lspconfig.sumneko_lua.setup({
-	cmd = {
-		"/opt/lua-language-server/bin/lua-language-server",
-		"-E",
-		"/opt/lua-language-server/main.lua",
-	},
-	settings = {
-		Lua = {
-			runtime = {
-				version = "LuaJIT",
-				path = runtime_path,
-			},
-			diagnostics = {
-				globals = { "vim" },
-				disable = { "lowercase-global" },
-			},
-			workspace = {
-				library = lua_library,
-			},
-		},
-	},
-})
-
 local servers = {
+  sumneko_lua = {},
 	pyright = {
 		root_dir = function(fname)
 			return fn.getcwd()
@@ -83,9 +78,9 @@ local servers = {
   cssls = {
     filetypes = { 'html', 'css' }
   },
+  cssmodules_ls = {},
   jsonls = {},
   intelephense = {},
-  vuels = {},
   sqlls = {
     cmd = { "sql-language-server", "up", "--method", "stdio" }
   },
