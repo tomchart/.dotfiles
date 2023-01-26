@@ -15,6 +15,7 @@ packer.startup({
     })
     use("nvim-treesitter/nvim-treesitter-context")
     use("nvim-treesitter/nvim-treesitter-textobjects")
+    use("nvim-treesitter/playground")
     use("chrisbra/Colorizer")
     use("nvim-lua/plenary.nvim")
     use("lewis6991/impatient.nvim")

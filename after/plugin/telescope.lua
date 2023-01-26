@@ -112,9 +112,6 @@ telescope.setup({
   pickers = {
     find_files = {
       find_command = { "rg", "--files" },
-      path_display = function(opts, path)
-        return shorten_path(path)
-      end,
     },
     oldfiles = {
       path_display = function(opts, path)

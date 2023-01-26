@@ -1,11 +1,33 @@
 ts_config = require("nvim-treesitter.configs")
 
 default = {
-	ensure_installed = "all",
+	ensure_installed = {
+    "php",
+    "lua",
+    "html",
+    "sql",
+    "query",
+    "bash",
+    "comment",
+    "git_rebase",
+    "gitcommit",
+    "javascript",
+    "json",
+    "markdown",
+    "yaml"
+  },
   context = {
     enable = true,
   },
-	highlight = {
+  playground = {
+    enable = true,
+  },
+  query_linter = {
+    enable = true,
+    use_virtual_text = true,
+    lint_events = { 'BufWrite', 'CursorHold' },
+  },
+  highlight = {
 		enable = true,
 		use_languagetree = true,
 		disable = { "yaml", "html" },
