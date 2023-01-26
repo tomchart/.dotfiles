@@ -60,17 +60,13 @@ packer.startup({
         "nvim-lua/plenary.nvim"
       }
     })
-    use({
-      "hrsh7th/nvim-cmp",
-      requires = {
-        { 'hrsh7th/cmp-buffer', after = 'nvim-cmp', },
-        { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp', },
-        { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp', },
-        { "hrsh7th/cmp-path", after = "nvim-cmp", },
-        { "onsails/lspkind-nvim", after = "nvim-cmp", },
-        { 'saadparwaiz1/cmp_luasnip', after = 'LuaSnip', },
-      },
-    })
+    use("hrsh7th/nvim-cmp")
+    use("hrsh7th/cmp-buffer")
+    use("hrsh7th/cmp-nvim-lsp")
+    use("hrsh7th/cmp-nvim-lua")
+    use("hrsh7th/cmp-path")
+    use("onsails/lspkind-nvim")
+    use("saadparwaiz1/cmp_luasnip")
     use({
       "L3MON4D3/LuaSnip",
       wants = "friendly-snippets",
