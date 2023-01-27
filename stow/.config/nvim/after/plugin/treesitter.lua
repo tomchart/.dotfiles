@@ -32,7 +32,7 @@ configs.setup({
   highlight = {
 		enable = true,
 		use_languagetree = true,
-		disable = { "yaml" },
+		disable = { "yaml", "html" },
 	},
 	incremental_selection = {
 		enable = true,

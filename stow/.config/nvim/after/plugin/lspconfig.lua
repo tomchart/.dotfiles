@@ -38,6 +38,11 @@ lspconfig.cssmodules_ls.setup({
   end,
 })
 
+lspconfig.html.setup({
+  capabilities = cmp_nvim_lsp.default_capabilities(),
+  on_attach = on_attach,
+})
+
 lspconfig.intelephense.setup({
   capabilities = cmp_nvim_lsp.default_capabilities(),
   on_attach = on_attach,
