@@ -35,7 +35,7 @@ if linux; then
         sudo apt install $pkg
     done
 
-    cargo_pkgs="exa fd-find ripgrep stylua"
+    cargo_pkgs="exa fd-find ripgrep stylua tree-sitter-cli"
     for pkg in $pkgs; do
         echo "Installing $pkg..."
         cargo install $pkg
