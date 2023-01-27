@@ -1,6 +1,8 @@
+local context = require("treesitter-context")
+local configs = require("nvim-treesitter.configs")
 local ts_config = require("nvim-treesitter.configs")
 
-local default = {
+configs.setup({
 	ensure_installed = {
     "php",
     "lua",
@@ -45,6 +47,11 @@ local default = {
 		enable = true,
 		disable = { "yaml", "python" },
 	},
+  autotag = {
+    enable = true,
+    enable_close = true,
+    enable_rename = true,
+  },
 	textobjects = {
 		select = {
 			enable = true,
@@ -83,12 +90,7 @@ local default = {
 			},
 		},
 	},
-}
+})
 
-local M = {}
 
-M.setup = function()
-	ts_config.setup(default)
-end
-
-return M
+context.setup()

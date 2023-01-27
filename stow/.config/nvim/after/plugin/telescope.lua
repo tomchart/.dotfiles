@@ -1,4 +1,6 @@
 local telescope = require("telescope")
+local transform_mod = require('telescope.actions.mt').transform_mod
+local state = require('telescope.actions.state')
 local bg = require("core.utils").bg
 local fg_bg = require("core.utils").fg_bg
 local x = require("core.utils").extract_highlight_colours
@@ -71,6 +73,27 @@ local function shorten_path(path)
 	end
 end
 
+local custom_actions = transform_mod({
+  open_first_qf_item = function(_)
+    vim.cmd.cfirst()
+  end,
+  grep_in_files = function(prompt_bufnr)
+    local picker = state.get_current_picker(prompt_bufnr)
+    local selections = picker:get_multi_selection()
+    local filenames = {}
+    if #selections > 0 then
+      for _, entry in pairs(selections) do
+        table.insert(filenames, entry[1])
+      end
+    else
+      for entry in picker.manager:iter() do
+        table.insert(filenames, entry[1])
+      end
+    end
+    actions.close(prompt_bufnr)
+    builtin.live_grep({ search_dirs = filenames })
+  end,
+})
 
 telescope.setup({
   defaults = {
@@ -111,7 +134,15 @@ telescope.setup({
   },
   pickers = {
     find_files = {
-      find_command = { "rg", "--files" },
+      find_command = { 'fd', '--type', 'f', '--strip-cwd-prefix', '--follow', '--hidden', '--exclude', '.git' },
+      mappings = {
+        i = {
+          ['<c-g>'] = custom_actions.grep_in_files,
+        },
+        n = {
+          ['<c-g>'] = custom_actions.grep_in_files,
+        },
+      },
     },
     oldfiles = {
       path_display = function(opts, path)
