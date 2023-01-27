@@ -61,16 +61,13 @@ packer.startup({
       }
     })
     use("hrsh7th/nvim-cmp")
-    use("hrsh7th/cmp-buffer")
+    use("saadparwaiz1/cmp_luasnip")
     use("hrsh7th/cmp-nvim-lsp")
     use("hrsh7th/cmp-nvim-lua")
+    use("hrsh7th/cmp-buffer")
     use("hrsh7th/cmp-path")
     use("onsails/lspkind-nvim")
-    use("saadparwaiz1/cmp_luasnip")
-    use({
-      "L3MON4D3/LuaSnip",
-      wants = "friendly-snippets",
-    })
+    use("L3MON4D3/LuaSnip")
   end,
   config ={
     display = {
