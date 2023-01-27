@@ -26,23 +26,10 @@ if osx; then
 
     echo "Setting up fzf..."
     $(brew --prefix)/opt/fzf/install
-
-    echo "Installing language servers..."
-    npm i -g pyright
-    npm i -g bash-language-server
-    npm i -g remark
-    npm i -g remark-language-server
-    npm i -g vscode-langservers-extracted
-    npm i -g intelephense
-    npm i -g vls
-    npm i -g emmet-ls
-    npm install -g @tailwindcss/language-server
-    npm install -g typescript typescript-language-server
-
 fi
 
 if linux; then
-    pkgs='zsh tmux neovim git build-essential cargo'
+    pkgs='zsh tmux git build-essential cargo'
     for pkg in $pkgs; do
         echo "Installing $pkg..."
         sudo apt install $pkg
@@ -54,19 +41,8 @@ if linux; then
         cargo install $pkg
     done
 
-    echo "Installing nvm and node ${node_version}..."
-    if curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash && nvm install $node_version; then
-        echo "Installing language servers..."
-        npm i -g pyright
-        npm i -g bash-language-server
-
     echo "Installing fzf..."
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
-
-    echo "Installing nvim..."
-    sudo add-apt-repository ppa:neovim-ppa/unstable
-    sudo apt-get update
-    sudo apt-get install neovim
 
 fi
 
@@ -85,17 +61,8 @@ curl -L https://raw.githubusercontent.com/sbugzu/gruvbox-zsh/master/gruvbox.zsh-
 echo "Installing tmux plugin manager..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-echo "+x psysh..."
-chmod +x ~/psysh
-
 echo "Making symlinks..."
-sudo ln -isv ~/dotfiles/psysh /usr/local/bin/psysh
-ln -isv ~/dotfiles/.cmtm.sh ~
-ln -isv ~/dotfiles/.gitconfig ~
-ln -isv ~/dotfiles/.tmux.conf ~
-ln -isv ~/dotfiles/.zshrc ~
 ln -isv ~/dotfiles/custom-mappings.zsh ${ZSH_CUSTOM}
-mkdir -pv ~/.config/nvim && ln -isv ~/dotfiles/init.lua ~/.config/nvim && ln -isv ~/dotfiles/lua ~/.config/nvim
 
 echo "Changing login shell..."
 chsh -s $(which zsh)
