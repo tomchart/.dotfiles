@@ -16,6 +16,9 @@ o.shiftwidth = 2 -- shift line by 2 spaces
 o.tabstop = 2 -- tab appears as 2 spaces
 o.softtabstop = 2 -- tab behaves like 2 spaces when editing
 
+-- clipboard
+o.clipboard = 'unnamed'
+
 -- colors
 o.termguicolors = true
 o.background = "dark"
