@@ -22,7 +22,7 @@ lspconfig.cssls.setup({
   on_attach = on_attach,
   filetypes = {
     "html",
-    "css"
+    "css",
   }
 })
 
@@ -31,7 +31,7 @@ lspconfig.cssmodules_ls.setup({
   on_attach = on_attach,
   filetypes = {
     "html",
-    "css"
+    "css",
   },
   root_dir = function(fname)
     return vim.fn.getcwd()
@@ -41,6 +41,10 @@ lspconfig.cssmodules_ls.setup({
 lspconfig.html.setup({
   capabilities = cmp_nvim_lsp.default_capabilities(),
   on_attach = on_attach,
+  filetypes = {
+    "html",
+    "php"
+  },
 })
 
 lspconfig.intelephense.setup({
@@ -129,7 +133,7 @@ vim.diagnostic.config({
 	},
 	signs = true,
 	underline = true,
-	update_in_insert = false,
+	update_in_insert = true,
 	severity_sort = true,
 })
 
