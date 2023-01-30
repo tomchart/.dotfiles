@@ -11,6 +11,7 @@ local function gruv()
     italic = true,
     italic_operator = false,
     italic_string = false,
+    italic_virtual = true,
     strikethrough = true,
     invert_selection = false,
     invert_signs = false,
