@@ -49,11 +49,6 @@ o.wildmenu = true -- tab complete on command line
 
 vim.g.PHP_autoformatcomment = 0 -- do not continue comments when using o in PHP
 
--- some slime defaults that dont work
-vim.g.slime_target = "tmux"
-vim.g.slime_paste_file = "/home/tom/.slime_paste"
-vim.g.slime_no_mappings = 1
-
 -- disable some builtin vim plugins
 local disabled_built_ins = {
 	"2html_plugin",
