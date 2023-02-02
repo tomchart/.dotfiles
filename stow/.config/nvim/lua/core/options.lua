@@ -56,7 +56,6 @@ local disabled_built_ins = {
 	"getscriptPlugin",
 	"gzip",
 	"logipat",
-	"matchit",
 	"tar",
 	"tarPlugin",
 	"rrhelper",
