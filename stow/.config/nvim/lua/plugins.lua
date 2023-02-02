@@ -36,7 +36,6 @@ packer.startup({
     use("numToStr/Comment.nvim")
     use("jdhao/better-escape.vim")
     use("dstein64/vim-startuptime")
-    use("jpalardy/vim-slime")
     use("tpope/vim-vinegar")
     use("j-hui/fidget.nvim")
     use("windwp/nvim-ts-autotag")
