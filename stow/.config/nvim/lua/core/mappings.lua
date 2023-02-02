@@ -69,3 +69,6 @@
 
     -- prev buffer comfort
     vim.keymap.set("n", "<leader>p", "<c-6>")
+
+    -- remap % to <leader>m
+    vim.keymap.set("n", "<c-m>", "<Plug>(MatchitNormalForward)")
