@@ -41,6 +41,8 @@ packer.startup({
     use("windwp/nvim-ts-autotag")
     use("williamboman/mason.nvim")
     use("williamboman/mason-lspconfig.nvim")
+    use("jose-elias-alvarez/null-ls.nvim")
+    use("jay-babu/mason-null-ls.nvim")
     use({
       "lewis6991/gitsigns.nvim",
       requires = {
