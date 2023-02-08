@@ -28,7 +28,6 @@ packer.startup({
     use("lukas-reineke/indent-blankline.nvim")
     use("kylechui/nvim-surround")
     use("tpope/vim-fugitive")
-    use("neovim/nvim-lspconfig")
     use("ray-x/lsp_signature.nvim")
     use("rafamadriz/friendly-snippets")
     use("windwp/nvim-autopairs")
@@ -41,6 +40,9 @@ packer.startup({
     use("windwp/nvim-ts-autotag")
     use("williamboman/mason.nvim")
     use("williamboman/mason-lspconfig.nvim")
+    use("neovim/nvim-lspconfig")
+    use("jose-elias-alvarez/null-ls.nvim")
+    use("jay-babu/mason-null-ls.nvim")
     use({
       "lewis6991/gitsigns.nvim",
       requires = {
