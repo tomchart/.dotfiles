@@ -96,6 +96,31 @@ lspconfig.pyright.setup({
 	},
 })
 
+lspconfig.sumneko_lua.setup({
+	capabilities = cmp_nvim_lsp.default_capabilities(),
+	on_attach = on_attach,
+	settings = {
+		Lua = {
+			runtime = {
+				version = "LuaJIT",
+			},
+			diagnostics = {
+				globals = { "vim" },
+			},
+			workspace = {
+				library = vim.api.nvim_get_runtime_file("", true),
+				checkThirdParty = false,
+			},
+			telemetry = {
+				enable = false,
+			},
+			completion = {
+				keywordSnippet = "Disable",
+			},
+		},
+	},
+})
+
 lspconfig.tsserver.setup({
 	capabilities = cmp_nvim_lsp.default_capabilities(),
 	on_attach = on_attach,
