@@ -12,6 +12,8 @@ null_ls.setup({
 		null_ls.builtins.code_actions.gitsigns,
 		null_ls.builtins.formatting.prettierd,
 		null_ls.builtins.formatting.phpcbf,
+		null_ls.builtins.formatting.stylua,
+		null_ls.builtins.diagnostics.selene,
 		null_ls.builtins.diagnostics.phpstan,
 	},
 })
@@ -89,31 +91,6 @@ lspconfig.pyright.setup({
 					"/usr/local/lib/python3.7/site-packages",
 					"/home/tom/.pyenv/versions/rev3910/lib/python3.9/site-packages",
 				},
-			},
-		},
-	},
-})
-
-lspconfig.sumneko_lua.setup({
-	capabilities = cmp_nvim_lsp.default_capabilities(),
-	on_attach = on_attach,
-	settings = {
-		Lua = {
-			runtime = {
-				version = "LuaJIT",
-			},
-			diagnostics = {
-				globals = { "vim" },
-			},
-			workspace = {
-				library = vim.api.nvim_get_runtime_file("", true),
-				checkThirdParty = false,
-			},
-			telemetry = {
-				enable = false,
-			},
-			completion = {
-				keywordSnippet = "Disable",
 			},
 		},
 	},
