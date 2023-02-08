@@ -10,14 +10,10 @@ require("mason-lspconfig").setup({
 null_ls.setup({
 	sources = {
 		null_ls.builtins.code_actions.gitsigns,
-		null_ls.builtins.diagnostics.selene,
+		null_ls.builtins.formatting.prettierd,
 		null_ls.builtins.formatting.phpcbf,
+		null_ls.builtins.diagnostics.phpstan,
 	},
-	-- on_attach = function(client)
-	-- 	if client.server_capabilities.document_formatting then
-	-- 		vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
-	-- 	end
-	-- end,
 })
 
 require("mason-null-ls").setup({
