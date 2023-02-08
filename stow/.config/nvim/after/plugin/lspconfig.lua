@@ -48,7 +48,7 @@ lspconfig.cssmodules_ls.setup({
 		"html",
 		"css",
 	},
-	root_dir = function(fname)
+	root_dir = function(_fname)
 		return vim.fn.getcwd()
 	end,
 })
@@ -75,7 +75,7 @@ lspconfig.jsonls.setup({
 lspconfig.pyright.setup({
 	capabilities = cmp_nvim_lsp.default_capabilities(),
 	on_attach = on_attach,
-	root_dir = function(fname)
+	root_dir = function(_fname)
 		return vim.fn.getcwd()
 	end,
 	settings = {
