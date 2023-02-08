@@ -182,6 +182,9 @@ alias xu='sudo /opt/lampp/lampp start'
 alias xd='sudo /opt/lampp/lampp stop'
 alias o='cd /opt/lampp/htdocs/oms-V1.4/'
 
+# git
+alias oops="gau && gcn!"
+
 # symlink windows desktop to home
 # forces relinking
 ln -sf /mnt/c/Users/Admin/Desktop/ ~/
