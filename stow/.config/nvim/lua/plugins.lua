@@ -43,11 +43,11 @@ packer.startup({
       use("neovim/nvim-lspconfig")
       use("jose-elias-alvarez/null-ls.nvim")
       use("jay-babu/mason-null-ls.nvim")
+      use("rcarriga/nvim-notify")
       use({
           "folke/noice.nvim",
           requires = {
               "MunifTanjim/nui.nvim",
-              "rcarriga/nvim-notify",
           },
       })
       use({
