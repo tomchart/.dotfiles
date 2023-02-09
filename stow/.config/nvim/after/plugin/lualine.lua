@@ -183,19 +183,20 @@ require 'lualine'.setup {
                 colored = true,
                 source = diff_source,
                 symbols = {
-                    added = ' ',
-                    modified = ' ',
-                    removed = ' '
+                    added = '  ',
+                    modified = ' 柳',
+                    removed = '  '
                 },
+                foo_bar = {},
                 diff_color = {
-                    added = { fg = c.gray4, gui = 'bold' },
-                    modified = { fg = c.gray4, gui = 'bold' },
-                    removed = { fg = c.gray4, gui = 'bold' },
+                    added = { fg = c.green.base, gui = 'bold' },
+                    modified = { fg = c.yellow.base, gui = 'bold' },
+                    removed = { fg = c.red.base, gui = 'bold' },
+                },
+                icon = {
+                    ' ',
+                    color = { fg = c.orange.base },
                 }
-                -- icon = {
-                    -- ' ',
-                    -- color = { fg = c.orange.base },
-                -- }
             },
         },
         lualine_x = {
@@ -204,10 +205,10 @@ require 'lualine'.setup {
                 sources = { 'nvim_diagnostic' },
                 separator = '',
                 symbols = {
-                    error = ' ',
-                    warn = ' ',
-                    info = ' ',
-                    hint = ' ',
+                    error = '  ',
+                    warn = '  ',
+                    info = '  ',
+                    hint = '  ',
                 },
                 diagnostics_color = {
                     error = { fg=c.error, gui='bold'   },
@@ -215,7 +216,6 @@ require 'lualine'.setup {
                     info =  { fg=c.info, gui='bold'   },
                     hint =  { fg=c.hint, gui='bold'  },
                 },
-                colored = true,
             },
         },
         lualine_y = {
