@@ -1,5 +1,9 @@
 local context = require("treesitter-context")
 local configs = require("nvim-treesitter.configs")
+local parsers = require("nvim-treesitter.parsers")
+
+-- local parser_config = parsers.get_parser_configs()
+-- parser_config.phtml.filetype_to_parsername = "php"
 
 configs.setup({
 	ensure_installed = {

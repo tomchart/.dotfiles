@@ -1,3 +1,9 @@
+-- call plugins
+require("plugins")
+
+-- call colours
+require("colours.theme").setup()
+
 -- imp
 require("impatient").enable_profile()
 
@@ -5,9 +11,3 @@ require("impatient").enable_profile()
 require("core.misc")
 require("core.mappings")
 require("core.options")
-
--- call plugins
-require("plugins")
-
--- call colours
-require("colours").init("gruvbox")

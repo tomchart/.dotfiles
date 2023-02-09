@@ -94,6 +94,15 @@ cmp.setup({
       return true
     end
   end,
+  window = {
+    completion = cmp.config.window.bordered {
+      winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+      scrollbar = false
+    },
+    documentation = cmp.config.window.bordered {
+      winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+    }
+  },
 	formatting = {
     fields = {"kind", "abbr", "menu"},
     format = function(entry, vim_item)
