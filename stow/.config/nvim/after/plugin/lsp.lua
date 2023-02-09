@@ -59,12 +59,17 @@ lspconfig.html.setup({
 	filetypes = {
 		"html",
 		"php",
+		"phtml",
 	},
 })
 
 lspconfig.intelephense.setup({
 	capabilities = cmp_nvim_lsp.default_capabilities(),
 	on_attach = on_attach,
+  filetypes = {
+    "php",
+    "phtml"
+  }
 })
 
 lspconfig.jsonls.setup({
