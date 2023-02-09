@@ -24,6 +24,7 @@ packer.startup({
     use("glepnir/dashboard-nvim")
     use("kyazdani42/nvim-web-devicons")
     use("feline-nvim/feline.nvim")
+    use("nvim-lualine/lualine.nvim")
     use("ggandor/leap.nvim")
     use("tpope/vim-repeat")
     use("lukas-reineke/indent-blankline.nvim")
