@@ -1,6 +1,5 @@
 local context = require("treesitter-context")
 local configs = require("nvim-treesitter.configs")
-local ts_config = require("nvim-treesitter.configs")
 
 configs.setup({
 	ensure_installed = {
@@ -44,7 +43,7 @@ configs.setup({
 		},
 	},
 	indent = {
-		enable = true,
+		enable = false,
 		disable = { "yaml", "python" },
 	},
   autotag = {
