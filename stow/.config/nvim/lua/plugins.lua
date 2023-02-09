@@ -20,6 +20,7 @@ packer.startup({
     use("nvim-lua/plenary.nvim")
     use("lewis6991/impatient.nvim")
     use("hctomhart/gruvbox.nvim")
+    use("AlexvZyl/nordic.nvim")
     use("glepnir/dashboard-nvim")
     use("kyazdani42/nvim-web-devicons")
     use("feline-nvim/feline.nvim")

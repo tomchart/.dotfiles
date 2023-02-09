@@ -15,24 +15,25 @@ telescope.load_extension('harpoon')
 local gruvMedBg = '#282828'
 local gruvHardBg = '#1d2021'
 local gruvSoftBg = '#32302f'
-local tele = {
-  light = x('GruvboxBg2').guifg,
-  fg = x('GruvboxFg0').guifg,
-  bg = gruvSoftBg,
-  -- bg = gruvMedBg,
-  red = x('GruvboxRed').guifg,
-  green = x('GruvboxGreen').guifg
-}
 
-bg("TelescopeSelection", tele.light)
-fg_bg("TelescopeNormal", tele.fg, tele.bg)
-fg_bg("TelescopeBorder", tele.bg, tele.bg)
-bg("TelescopePromptNormal", tele.light)
-fg_bg("TelescopePromptBorder", tele.light, tele.light)
-fg_bg("TelescopePreviewBorder", tele.bg, tele.bg)
-fg_bg("TelescopePromptTitle", tele.bg, tele.red)
-fg_bg("TelescopePreviewTitle", tele.bg, tele.green)
-fg_bg("TelescopeResultsTitle", tele.bg, tele.bg)
+-- local tele = {
+--   light = x('GruvboxBg2').guifg,
+--   fg = x('GruvboxFg0').guifg,
+--   bg = gruvSoftBg,
+--   -- bg = gruvMedBg,
+--   red = x('GruvboxRed').guifg,
+--   green = x('GruvboxGreen').guifg
+-- }
+--
+-- bg("TelescopeSelection", tele.light)
+-- fg_bg("TelescopeNormal", tele.fg, tele.bg)
+-- fg_bg("TelescopeBorder", tele.bg, tele.bg)
+-- bg("TelescopePromptNormal", tele.light)
+-- fg_bg("TelescopePromptBorder", tele.light, tele.light)
+-- fg_bg("TelescopePreviewBorder", tele.bg, tele.bg)
+-- fg_bg("TelescopePromptTitle", tele.bg, tele.red)
+-- fg_bg("TelescopePreviewTitle", tele.bg, tele.green)
+-- fg_bg("TelescopeResultsTitle", tele.bg, tele.bg)
 
 --- Splits a filepath into head / tail where tail is the last path component and
 --- head is everything before it.

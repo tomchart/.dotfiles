@@ -31,7 +31,8 @@ local M = {}
 
 M.setup = function()
   vim.o.background = "dark"
-  gruv()
+  -- gruv()
+  vim.cmd("colorscheme nordic")
 end
 
 return M
