@@ -9,6 +9,10 @@ require("noice").setup({
       filter = { event = "msg_showmode" },
     },
   },
+  notify = {
+    -- this just seems to get ignored, which is handy
+    enabled = false,
+  },
   lsp = {
     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
     override = {
