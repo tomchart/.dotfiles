@@ -21,7 +21,7 @@ o.clipboard = 'unnamed'
 
 -- colors
 o.termguicolors = true
-o.background = "dark"
+-- o.background = "dark"
 -- o.colorscheme -- theme is set elsewhere
 
 -- look and feel
