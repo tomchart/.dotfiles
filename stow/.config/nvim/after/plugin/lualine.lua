@@ -84,7 +84,7 @@ function M:get_current_filename_with_icon()
 	end
 
 	-- Return the formatted string.
-	return icon .. " " .. f_name .. " "
+	return icon .. " " .. f_name .. ""
 end
 
 -- Get the lsp of the current buffer, when using native lsp.
