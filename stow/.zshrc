@@ -10,7 +10,7 @@ export LESS="-SRXF"
 
 ZSH_THEME="gruvbox"
 
-export TERM="alacritty"
+export TERM="tmux-256color"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
