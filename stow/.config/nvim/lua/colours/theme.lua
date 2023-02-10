@@ -28,16 +28,7 @@ local function gruv()
 end
 
 local function nordic()
-  require("nordic").setup({
-    bold_keywords = true,
-    italic_comments = true,
-    reduced_blue = true,
-    underline = false,
-    telescope = {
-      style = "flat",
-    },
-  })
-  vim.cmd("colorscheme nordic")
+  vim.cmd.colorscheme 'nordic'
 end
 
 local M = {}
