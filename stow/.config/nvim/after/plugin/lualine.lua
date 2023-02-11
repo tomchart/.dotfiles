@@ -246,7 +246,7 @@ require("lualine").setup({
 	options = {
 		disabled_filetypes = { "dashboard" },
 		globalstatus = true,
-		section_separators = { left = "█", right = "█" },
+		section_separators = { left = "", right = "" },
 		component_separators = { left = "", right = "" },
 		theme = "nordic",
 	},
@@ -255,3 +255,16 @@ require("lualine").setup({
 		"nvim-tree",
 	},
 })
+
+vim.api.nvim_set_hl(0, 'lualine_a_insert', {fg = c.black, bg = c.red.base})
+vim.api.nvim_set_hl(0, 'lualine_a_normal', {fg = c.black, bg = c.green.base})
+vim.api.nvim_set_hl(0, 'lualine_a_visual', {fg = c.black, bg = c.magenta.base})
+vim.api.nvim_set_hl(0, 'lualine_z_insert', {fg = c.black, bg = c.red.base})
+vim.api.nvim_set_hl(0, 'lualine_z_normal', {fg = c.black, bg = c.green.base})
+vim.api.nvim_set_hl(0, 'lualine_z_visual', {fg = c.black, bg = c.magenta.base})
+vim.api.nvim_set_hl(0, 'lualine_z_location_insert', {fg = c.black, bg = c.red.base})
+vim.api.nvim_set_hl(0, 'lualine_z_location_normal', {fg = c.black, bg = c.green.base})
+vim.api.nvim_set_hl(0, 'lualine_z_location_visual', {fg = c.black, bg = c.magenta.base})
+vim.api.nvim_set_hl(0, 'lualine_z_progress_insert', {fg = c.black, bg = c.red.base})
+vim.api.nvim_set_hl(0, 'lualine_z_progress_normal', {fg = c.black, bg = c.green.base})
+vim.api.nvim_set_hl(0, 'lualine_z_progress_visual', {fg = c.black, bg = c.magenta.base})
