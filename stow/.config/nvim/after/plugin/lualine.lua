@@ -22,12 +22,6 @@ local function get_current_buftype()
 	return vim.api.nvim_buf_get_option(0, "buftype")
 end
 
--- Get the buffer's filename.
-local function get_current_filename()
-	local bufname = vim.api.nvim_buf_get_name(0)
-	return bufname ~= "" and vim.fn.fnamemodify(bufname, ":t") or "[No Name]"
-end
-
 -- Gets the current buffer's filename with the filetype icon supplied
 -- by devicons.
 local M = require("lualine.components.filetype"):extend()
@@ -67,24 +61,6 @@ function M:get_current_filetype_icon()
 
 	-- Return the formatted string.
 	return icon
-end
-
--- Return the current buffer's filename with the filetype icon.
-function M:get_current_filename_with_icon()
-	-- Get icon and filename.
-	local icon = M.get_current_filetype_icon(self)
-	local f_name = get_current_filename()
-
-	-- Add readonly icon.
-	local readonly = vim.api.nvim_buf_get_option(0, "readonly")
-	local modifiable = vim.api.nvim_buf_get_option(0, "modifiable")
-	local nofile = get_current_buftype() == "nofile"
-	if readonly or nofile or not modifiable then
-		f_name = f_name .. " "
-	end
-
-	-- Return the formatted string.
-	return icon .. " " .. f_name .. ""
 end
 
 -- Get the lsp of the current buffer, when using native lsp.
@@ -137,6 +113,16 @@ end
 
 -- Required to properly set the colors.
 local c = require("nordic.colors")
+local n = require("lualine.themes.nordic")
+
+-- some customization
+n.normal.a.bg = c.green.base
+n.insert.a.bg = c.red.base
+n.visual.a.bg = c.magenta.base
+n.normal.y = { fg = c.fg, bg = c.black }
+n.insert.y = { fg = c.fg, bg = c.black }
+n.visual.y = { fg = c.fg, bg = c.black }
+n.command.y = { fg = c.fg, bg = c.black }
 
 require("lualine").setup({
 	sections = {
@@ -147,8 +133,22 @@ require("lualine").setup({
 			},
 		},
 		lualine_b = {
+      {
+        "filetype",
+        icon_only = true,
+        icon = {
+          align = "right"
+        }
+      },
 			{
-				M.get_current_filename_with_icon,
+				"filename",
+        path = 0,
+        symbols = {
+          modified = '',
+          readonly = '[-]',
+          unnamed = '[no name]',
+          newfile = '[new]',
+        },
 			},
 		},
 		lualine_c = {
@@ -158,7 +158,6 @@ require("lualine").setup({
 					"",
 					color = { fg = c.orange.bright, gui = "bold" },
 				},
-				separator = " ",
 			},
 			{
 				get_git_compare,
@@ -180,7 +179,6 @@ require("lualine").setup({
 					modified = " 柳",
 					removed = "  ",
 				},
-				foo_bar = {},
 				diff_color = {
 					added = { fg = c.green.base, gui = "bold" },
 					modified = { fg = c.yellow.base, gui = "bold" },
@@ -193,10 +191,12 @@ require("lualine").setup({
 			},
 		},
 		lualine_x = {
+      {
+        "searchcount",
+      },
 			{
 				"diagnostics",
 				sources = { "nvim_diagnostic" },
-				separator = " ",
 				symbols = {
 					error = "  ",
 					warn = "  ",
@@ -246,25 +246,12 @@ require("lualine").setup({
 	options = {
 		disabled_filetypes = { "dashboard" },
 		globalstatus = true,
-		section_separators = { left = "", right = "" },
+		section_separators = { left = "▊ ", right = "" },
 		component_separators = { left = "", right = "" },
-		theme = "nordic",
+		theme = n,
 	},
 	extensions = {
 		"toggleterm",
 		"nvim-tree",
 	},
 })
-
-vim.api.nvim_set_hl(0, 'lualine_a_insert', {fg = c.black, bg = c.red.base})
-vim.api.nvim_set_hl(0, 'lualine_a_normal', {fg = c.black, bg = c.green.base})
-vim.api.nvim_set_hl(0, 'lualine_a_visual', {fg = c.black, bg = c.magenta.base})
-vim.api.nvim_set_hl(0, 'lualine_z_insert', {fg = c.black, bg = c.red.base})
-vim.api.nvim_set_hl(0, 'lualine_z_normal', {fg = c.black, bg = c.green.base})
-vim.api.nvim_set_hl(0, 'lualine_z_visual', {fg = c.black, bg = c.magenta.base})
-vim.api.nvim_set_hl(0, 'lualine_z_location_insert', {fg = c.black, bg = c.red.base})
-vim.api.nvim_set_hl(0, 'lualine_z_location_normal', {fg = c.black, bg = c.green.base})
-vim.api.nvim_set_hl(0, 'lualine_z_location_visual', {fg = c.black, bg = c.magenta.base})
-vim.api.nvim_set_hl(0, 'lualine_z_progress_insert', {fg = c.black, bg = c.red.base})
-vim.api.nvim_set_hl(0, 'lualine_z_progress_normal', {fg = c.black, bg = c.green.base})
-vim.api.nvim_set_hl(0, 'lualine_z_progress_visual', {fg = c.black, bg = c.magenta.base})
