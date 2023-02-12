@@ -15,7 +15,10 @@ configs.setup({
     "javascript",
     "json",
     "markdown",
-    "yaml"
+    "yaml",
+    "markdown_inline",
+    "vim",
+    "regex",
   },
   context = {
     enable = true,
