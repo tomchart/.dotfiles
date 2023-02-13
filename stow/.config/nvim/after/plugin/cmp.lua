@@ -97,12 +97,12 @@ cmp.setup({
     end
   end,
   window = {
-    completion = cmp.config.window.bordered {
-      winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+    completion = {
+      winhighlight = "Normal:Pmenu,CursorLine:PmenuSel,Search:None",
       scrollbar = false
     },
-    documentation = cmp.config.window.bordered {
-      winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+    documentation = {
+      winhighlight = "Normal:Pmenu,CursorLine:PmenuSel,Search:None",
     }
   },
 	formatting = {

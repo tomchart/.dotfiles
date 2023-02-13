@@ -37,6 +37,13 @@ local function nordic()
     },
   })
   n.load()
+  local c = require("nordic.colors")
+  vim.api.nvim_set_hl(0, "MasonNormal", {fg = c.white, bg = c.black})
+  vim.api.nvim_set_hl(0, "FloatBorder", {fg = c.black})
+  vim.api.nvim_set_hl(0, "Pmenu", {fg = c.white, bg = c.black})
+  vim.api.nvim_set_hl(0, "PmenuSel", {fg = c.white, bg = c.gray1})
+  vim.api.nvim_set_hl(0, "PmenuSbar", {bg = c.gray1})
+  vim.api.nvim_set_hl(0, "NormalFloat", {fg = c.white, bg = c.black})
 end
 
 local M = {}

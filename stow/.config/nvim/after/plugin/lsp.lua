@@ -164,6 +164,3 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_next)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename)
-
--- border
-require('lspconfig.ui.windows').default_options.border = 'single'
