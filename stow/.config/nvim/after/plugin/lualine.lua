@@ -215,7 +215,7 @@ require("lualine").setup({
 			{
 				get_native_lsp,
 				icon = {
-					",",
+					"",
 					align = "left",
 					color = {
 						fg = c.blue.bright,
