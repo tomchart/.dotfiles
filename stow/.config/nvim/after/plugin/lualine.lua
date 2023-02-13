@@ -228,7 +228,7 @@ require("lualine").setup({
 			{
 				"location",
 				icon = {
-					"",
+					"",
 					align = "left",
 					color = { fg = c.black },
 				},
