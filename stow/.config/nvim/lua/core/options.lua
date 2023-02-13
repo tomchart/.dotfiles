@@ -5,7 +5,7 @@ o.swapfile = false
 o.inccommand = "nosplit"
 o.grepprg = "rg --vimgrep --smart-case --no-heading" -- search with rg
 o.grepformat = "%f:%l:%c:%m" -- filename:line number:column number:error message
-o.updatetime = 1000 -- too low causes issues it seems
+o.updatetime = 250 -- too low causes issues it seems
 
 -- indentation
 o.autoindent = true -- continue indentation to new line
