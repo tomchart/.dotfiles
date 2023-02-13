@@ -10,7 +10,7 @@ export LESS="-SRXF"
 
 ZSH_THEME="gruvbox"
 
-export TERM="tmux-256color"
+export TERM="xterm-256color"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
@@ -146,7 +146,7 @@ alias dd='sudo dockerd \
 alias uu="sudo apt update && sudo apt upgrade -y"
 
 # nv4lyf
-alias nv="/usr/local/bin/nvim"
+alias nv="/usr/bin/nvim"
 
 # cd aliases
 alias d='cd ~/dotfiles/'
