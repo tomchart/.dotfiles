@@ -52,3 +52,12 @@ vim.keymap.set({"n", "i", "s"}, "<c-b>", function()
     return "<c-b>"
   end
 end, { silent = true, expr = true })
+
+vim.keymap.set("n", "<leader>nl", function()
+  require("noice").cmd("last")
+end)
+
+vim.keymap.set("n", "<leader>nh", function()
+  require("noice").cmd("history")
+end)
+
