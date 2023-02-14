@@ -11,8 +11,8 @@ window:
     
 font:
   normal:
-    family: Monego Nerd Font Fix
-  size: 10
+    family: JetBrainsMono NF
+  size: 12
   builtin_box_drawing: true
 
 shell:
