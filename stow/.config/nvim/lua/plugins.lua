@@ -85,7 +85,3 @@ packer.startup({
         },
     },
 })
-vim.keymap.set("n", "<leader>as", "<cmd>PackerSync<cr>")
-vim.keymap.set("n", "<leader>au", "<cmd>PackerUpdate<cr>")
-vim.keymap.set("n", "<leader>ai", "<cmd>PackerInstall<cr>")
-vim.keymap.set("n", "<leader>at", "<cmd>PackerStatus<cr>")
