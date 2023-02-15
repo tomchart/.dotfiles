@@ -176,8 +176,8 @@ export PATH="/Users/tom/.composer/vendor/bin:$PATH"
 alias dep='cp -r /home/tom/oms-V1.4/ /mnt/c/xampp/htdocs/'
 
 # xampp/lampp service up/down
-alias xu='sudo /opt/lampp/lampp start'
-alias xd='sudo /opt/lampp/lampp stop'
+alias xup='sudo /opt/lampp/lampp start'
+alias xdown='sudo /opt/lampp/lampp stop'
 alias o='cd /opt/lampp/htdocs/oms-V1.4/'
 
 # git
