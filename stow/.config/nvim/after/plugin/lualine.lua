@@ -12,11 +12,6 @@ local function diff_source()
 	end
 end
 
--- Get the current buffer's filetype.
-local function get_current_filetype()
-	return vim.api.nvim_buf_get_option(0, "filetype")
-end
-
 -- Get the current buffer's type.
 local function get_current_buftype()
 	return vim.api.nvim_buf_get_option(0, "buftype")
@@ -63,20 +58,14 @@ function M:get_current_filetype_icon()
 	return icon
 end
 
--- Get the lsp of the current buffer, when using native lsp.
-local function get_native_lsp()
-	local buf_ft = get_current_filetype()
-	local clients = vim.lsp.get_active_clients()
-	if next(clients) == nil then
-		return "None"
-	end
-	for _, client in ipairs(clients) do
-		local filetypes = client.config.filetypes
-		if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-			return client.name
-		end
-	end
-	return "None"
+local function lsp_client_names()
+  local clients = {}
+
+  for _, client in pairs(vim.lsp.buf_get_clients(0)) do
+    clients[#clients + 1] = client.name
+  end
+
+  return table.concat(clients, ' ')
 end
 
 -- Display the difference in commits between local and head.
@@ -213,7 +202,7 @@ require("lualine").setup({
 		},
 		lualine_y = {
 			{
-				get_native_lsp,
+				lsp_client_names,
 				icon = {
 					"",
 					align = "left",
