@@ -60,6 +60,7 @@
 
   # Right prompt segments.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
+    php_version               # php version
     # command_execution_time  # previous command duration
     # virtualenv              # python virtual environment
     # context                 # user@host
@@ -96,6 +97,14 @@
   typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
   typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=
 
+  ####################[ php_version: php version (https://www.php.net/) ]######################
+  # PHP version color.
+  typeset -g POWERLEVEL9K_PHP_VERSION_FOREGROUND=5
+  typeset -g POWERLEVEL9K_PHP_VERSION_BACKGROUND=0
+  # Show PHP version only when in a PHP project subdirectory.
+  typeset -g POWERLEVEL9K_PHP_VERSION_PROJECT_ONLY=true
+  # Custom icon.
+  # typeset -g POWERLEVEL9K_PHP_VERSION_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # Cyan current directory.
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=$cyan
 
@@ -126,12 +135,12 @@
   # asynchronously when Git state changes.
   typeset -g POWERLEVEL9K_VCS_MAX_SYNC_LATENCY_SECONDS=0
 
-  # Cyan ahead/behind arrows.
-  typeset -g POWERLEVEL9K_VCS_{INCOMING,OUTGOING}_CHANGESFORMAT_FOREGROUND=$cyan
+  # Orange ahead/behind arrows.
+  typeset -g POWERLEVEL9K_VCS_{INCOMING,OUTGOING}_CHANGESFORMAT_FOREGROUND=$orange
   # Don't show remote branch, current tag or stashes.
   typeset -g POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-untracked git-aheadbehind)
   # Don't show the branch icon.
-  typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=
+  typeset -g POWERLEVEL9K_VCS_BRANCH_ICON='::'
   # When in detached HEAD state, show @commit where branch normally goes.
   typeset -g POWERLEVEL9K_VCS_COMMIT_ICON='@'
   # Don't show staged, unstaged, untracked indicators.
