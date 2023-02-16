@@ -94,7 +94,7 @@ octal_folder_perms() {
 # quickly update and upgrade with no prompting
 alias uu="sudo apt update && sudo apt upgrade -y"
 # nvim
-alias nv="/usr/bin/nvim"
+alias nv="nvim"
 # helpful to see version in ubuntu (always forget lsb_release)
 alias v="lsb_release -a"
 # Pretty print the path
