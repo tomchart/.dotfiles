@@ -122,8 +122,6 @@ alias xup='sudo /opt/lampp/lampp start'
 alias xdown='sudo /opt/lampp/lampp stop'
 # git
 alias oops="gau && gcn!"
-# force relink of symlinked windows desktop to home
-# ln -sf /mnt/c/Users/Admin/Desktop/ ~/
 
 ##################
 #                #
@@ -145,13 +143,6 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init --path)"
 # eval "$(pyenv init -)"
 
-
-##################
-#                #
-#     p10k       #
-#                #
-##################
-# source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
