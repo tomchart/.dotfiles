@@ -11,8 +11,8 @@ window:
     
 font:
   normal:
-    family: JetBrainsMono NF
-  size: 12
+    family: JetBrainsMono Nerd Font Mono
+  size: 14
   builtin_box_drawing: true
   offset:
     x: 0
@@ -21,10 +21,10 @@ font:
     x: 0
     y: 1
 
-shell:
-    program: "C:\\Windows\\System32\\wsl.exe"
-    args:
-      - --cd ~
+# shell:
+#     program: "C:\\Windows\\System32\\wsl.exe"
+#     args:
+#       - --cd ~
         
 live_config_reload: true
 hide_cursor_when_typing: true
