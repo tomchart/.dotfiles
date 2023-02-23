@@ -69,14 +69,19 @@ local spec = {
       "nvim-lua/plenary.nvim",
     },
   },
-  { "hrsh7th/nvim-cmp" },
-  { "saadparwaiz1/cmp_luasnip" },
-  { "hrsh7th/cmp-nvim-lsp" },
-  { "hrsh7th/cmp-nvim-lua" },
-  { "hrsh7th/cmp-buffer" },
-  { "hrsh7th/cmp-path" },
-  { "onsails/lspkind-nvim" },
-  { "L3MON4D3/LuaSnip" },
+  {
+    "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+    dependencies = {
+      "saadparwaiz1/cmp_luasnip",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-nvim-lua",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "onsails/lspkind-nvim",
+      "L3MON4D3/LuaSnip",
+    }
+  },
 }
 
 require("lazy").setup(spec, {})
