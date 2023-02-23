@@ -37,7 +37,7 @@ require("dashboard").setup({
     command = 'cat |',
     file_path = vim.env.HOME .. '/.config/static/doom_small.sh',
     file_width = 52,
-    file_height = 26,
+    file_height = 16,
   }
 })
 
