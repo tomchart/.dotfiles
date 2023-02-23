@@ -26,8 +26,8 @@ require("dashboard").setup({
   config = {
     header = {},
     shortcut = {
-      { desc = ' Update Packer', group = '@property', action = 'PackerSync', key = 'p' },
-      { desc = ' Open Mason', group = '@text.literal', action = 'Mason', key = 'm' },
+      { desc = ' Lazy', group = '@property', action = 'Lazy', key = 'l' },
+      { desc = ' Mason', group = '@text.literal', action = 'Mason', key = 'm' },
     },
     project = {
       enable = false,

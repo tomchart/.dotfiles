@@ -1,87 +1,82 @@
-local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  vim.fn.system({ "git", "clone", "https://github.com/wbthomason/packer.nvim", install_path })
-  vim.cmd.packadd("packer.nvim")
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
-local packer = require("packer")
+vim.opt.rtp:prepend(lazypath)
 
-packer.startup({
-    function(use)
-      use("wbthomason/packer.nvim")
-      use({
-          "nvim-treesitter/nvim-treesitter",
-          run = ":TSUpdate",
-      })
-      use("nvim-treesitter/nvim-treesitter-context")
-      use("nvim-treesitter/nvim-treesitter-textobjects")
-      use("nvim-treesitter/playground")
-      use("chrisbra/Colorizer")
-      use("nvim-lua/plenary.nvim")
-      use("lewis6991/impatient.nvim")
-      use("hctomhart/gruvbox.nvim")
-      use("AlexvZyl/nordic.nvim")
-      use("glepnir/dashboard-nvim")
-      use("kyazdani42/nvim-web-devicons")
-      use("nvim-lualine/lualine.nvim")
-      use("ggandor/leap.nvim")
-      use("tpope/vim-repeat")
-      use("lukas-reineke/indent-blankline.nvim")
-      use("kylechui/nvim-surround")
-      use("tpope/vim-fugitive")
-      use("ray-x/lsp_signature.nvim")
-      use("rafamadriz/friendly-snippets")
-      use("windwp/nvim-autopairs")
-      use("famiu/bufdelete.nvim")
-      use("numToStr/Comment.nvim")
-      use("jdhao/better-escape.vim")
-      use("dstein64/vim-startuptime")
-      use("tpope/vim-vinegar")
-      use("j-hui/fidget.nvim")
-      use("windwp/nvim-ts-autotag")
-      use("williamboman/mason.nvim")
-      use("williamboman/mason-lspconfig.nvim")
-      use("neovim/nvim-lspconfig")
-      use("jose-elias-alvarez/null-ls.nvim")
-      use("jay-babu/mason-null-ls.nvim")
-      use("rcarriga/nvim-notify")
-      use({
-          "folke/noice.nvim",
-          requires = {
-              "MunifTanjim/nui.nvim",
-          },
-      })
-      use({
-          "lewis6991/gitsigns.nvim",
-          requires = {
-              "nvim-lua/plenary.nvim",
-          },
-      })
-      use({
-          "nvim-telescope/telescope.nvim",
-          requires = {
-              "nvim-lua/plenary.nvim",
-          },
-      })
-      use({
-          "ThePrimeagen/harpoon",
-          requires = {
-              "nvim-lua/plenary.nvim",
-          },
-      })
-      use("hrsh7th/nvim-cmp")
-      use("saadparwaiz1/cmp_luasnip")
-      use("hrsh7th/cmp-nvim-lsp")
-      use("hrsh7th/cmp-nvim-lua")
-      use("hrsh7th/cmp-buffer")
-      use("hrsh7th/cmp-path")
-      use("onsails/lspkind-nvim")
-      use("L3MON4D3/LuaSnip")
-    end,
-    config = {
-        display = {
-            open_fn = function()
-              return require("packer.util").float({ border = 'none' })
-            end,
-        },
+local spec = {
+  { "nvim-treesitter/nvim-treesitter" },
+  { "nvim-treesitter/nvim-treesitter-context" },
+  { "nvim-treesitter/nvim-treesitter-textobjects" },
+  { "nvim-treesitter/playground" },
+  { "chrisbra/Colorizer" },
+  { "nvim-lua/plenary.nvim" },
+  { "lewis6991/impatient.nvim" },
+  { "hctomhart/gruvbox.nvim" },
+  { "AlexvZyl/nordic.nvim" },
+  { "glepnir/dashboard-nvim" },
+  { "kyazdani42/nvim-web-devicons" },
+  { "nvim-lualine/lualine.nvim" },
+  { "ggandor/leap.nvim" },
+  { "tpope/vim-repeat" },
+  { "lukas-reineke/indent-blankline.nvim" },
+  { "kylechui/nvim-surround" },
+  { "tpope/vim-fugitive" },
+  { "ray-x/lsp_signature.nvim" },
+  { "rafamadriz/friendly-snippets" },
+  { "windwp/nvim-autopairs" },
+  { "famiu/bufdelete.nvim" },
+  { "numToStr/Comment.nvim" },
+  { "jdhao/better-escape.vim" },
+  { "dstein64/vim-startuptime" },
+  { "tpope/vim-vinegar" },
+  { "j-hui/fidget.nvim" },
+  { "windwp/nvim-ts-autotag" },
+  { "williamboman/mason.nvim" },
+  { "williamboman/mason-lspconfig.nvim" },
+  { "neovim/nvim-lspconfig" },
+  { "jose-elias-alvarez/null-ls.nvim" },
+  { "jay-babu/mason-null-ls.nvim" },
+  { "rcarriga/nvim-notify" },
+  {
+    "folke/noice.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
     },
-})
+  },
+  {
+    "lewis6991/gitsigns.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
+  {
+    "ThePrimeagen/harpoon",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
+  { "hrsh7th/nvim-cmp" },
+  { "saadparwaiz1/cmp_luasnip" },
+  { "hrsh7th/cmp-nvim-lsp" },
+  { "hrsh7th/cmp-nvim-lua" },
+  { "hrsh7th/cmp-buffer" },
+  { "hrsh7th/cmp-path" },
+  { "onsails/lspkind-nvim" },
+  { "L3MON4D3/LuaSnip" },
+}
+
+require("lazy").setup(spec, {})
