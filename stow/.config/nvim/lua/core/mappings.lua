@@ -1,9 +1,6 @@
     -- copy to end of line from current pos with Y
     vim.keymap.set("n", "Y", "y$")
 
-    -- set leader to space
-    vim.g.mapleader = " "
-
     -- remap ; to : (always miss it)
     vim.keymap.set("n", ";", ":")
 

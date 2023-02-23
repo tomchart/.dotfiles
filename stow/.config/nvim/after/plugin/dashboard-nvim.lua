@@ -26,7 +26,7 @@ require("dashboard").setup({
   config = {
     header = {},
     shortcut = {
-      { desc = ' Lazy', group = '@property', action = 'Lazy', key = 'l' },
+      { desc = ' Lazy', group = '@property', action = 'Lazy check', key = 'l' },
       { desc = ' Mason', group = '@text.literal', action = 'Mason', key = 'm' },
     },
     project = {

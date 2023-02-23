@@ -1,3 +1,6 @@
+-- set leader to space
+vim.g.mapleader = " "
+
 -- call plugins
 require("plugins")
 
