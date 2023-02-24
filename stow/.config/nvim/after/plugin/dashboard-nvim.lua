@@ -24,7 +24,7 @@ local hydra = {
 require("dashboard").setup({
   theme = 'hyper',
   config = {
-    header = {},
+    header = hydra,
     shortcut = {
       { desc = ' Lazy', group = '@property', action = 'Lazy check', key = 'l' },
       { desc = ' Mason', group = '@text.literal', action = 'Mason', key = 'm' },
@@ -33,11 +33,11 @@ require("dashboard").setup({
       enable = false,
     },
   },
-  preview = {
-    command = 'cat |',
-    file_path = vim.env.HOME .. '/.config/static/doom_small.sh',
-    file_width = 52,
-    file_height = 16,
-  }
+  -- preview = {
+  --   command = 'cat |',
+  --   file_path = vim.env.HOME .. '/.config/static/doom_small.sh',
+  --   file_width = 52,
+  --   file_height = 16,
+  -- }
 })
 
