@@ -28,15 +28,7 @@ local function gruv()
 end
 
 local function nordic()
-  -- vim.cmd.colorscheme 'nordic'
-  local n = require("nordic")
-  n.setup({
-    cursorline = {
-      bold = false,
-      theme = "dark,"
-    },
-  })
-  n.load()
+  vim.cmd.colorscheme 'nordic'
   local c = require("nordic.colors")
   vim.api.nvim_set_hl(0, "MasonNormal", {fg = c.white, bg = c.black})
   vim.api.nvim_set_hl(0, "FloatBorder", {fg = c.black})
