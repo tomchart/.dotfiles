@@ -4,34 +4,6 @@ local cmp = require("cmp")
 local luasnip = require("luasnip")
 require("luasnip.loaders.from_vscode").lazy_load()
 
-local icons = {
-	Text = "",
-	Method = "",
-	Function = "",
-	Constructor = "",
-	Field = "ﰠ",
-	Variable = "",
-	Class = "ﴯ",
-	Interface = "",
-	Module = "",
-	Property = "ﰠ",
-	Unit = "塞",
-	Value = "",
-	Enum = "",
-	Keyword = "",
-	Snippet = "",
-	Color = "",
-	File = "",
-	Reference = "",
-	Folder = "",
-	EnumMember = "",
-	Constant = "",
-	Struct = "פּ",
-	Event = "",
-	Operator = "",
-	TypeParameter = "",
-}
-
 vim.o.shortmess = vim.o.shortmess .. "c"
 
 local function replace_termcodes(s)
@@ -149,3 +121,32 @@ cmp.setup({
 		default_behavior = cmp.ConfirmBehavior.Replace,
 	},
 })
+
+vim.api.nvim_set_hl(0, 'CmpItemAbbrDeprecated', {link = '@comment'})
+
+vim.api.nvim_set_hl(0, 'CmpItemAbbrMatch', {link = 'TelescopeMatching'})
+vim.api.nvim_set_hl(0, 'CmpItemAbbrMatchFuzzy', {link = 'CmpItemAbbrMatch'})
+
+vim.api.nvim_set_hl(0, 'CmpItemKindVariable', {link = '@variable'})
+vim.api.nvim_set_hl(0, 'CmpItemKindInterface', {link = 'CmpItemKindVariable'})
+
+vim.api.nvim_set_hl(0, 'CmpItemKindText', {link = '@comment'})
+
+vim.api.nvim_set_hl(0, 'CmpItemKindFunction', {link = '@function'})
+vim.api.nvim_set_hl(0, 'CmpItemKindMethod', {link = 'CmpItemKindFunction'})
+
+vim.api.nvim_set_hl(0, 'CmpItemKindKeyword', {link = '@keyword'})
+vim.api.nvim_set_hl(0, 'CmpItemKindUnit', {link = 'CmpItemKindKeyword'})
+
+vim.api.nvim_set_hl(0, 'CmpItemKindProperty', {link = '@property'})
+
+vim.api.nvim_set_hl(0, 'CmpItemKindField', {link = '@field'})
+
+vim.api.nvim_set_hl(0, 'CmpItemKindConstructor', {link = '@constructor'})
+
+vim.api.nvim_set_hl(0, 'CmpItemKindClass', {link = '@class'})
+
+vim.api.nvim_set_hl(0, 'CmpItemKindConstant', {link = '@constant'})
+
+vim.api.nvim_set_hl(0, 'CmpItemKindFile', {link = '@include'})
+vim.api.nvim_set_hl(0, 'CmpItemKindSnippet', {link = 'CmpItemKindFile'})
