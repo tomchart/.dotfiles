@@ -78,20 +78,22 @@ cmp.setup({
     }
   },
 	formatting = {
-    fields = {"kind", "abbr", "menu"},
+    fields = {"abbr", "kind", "menu"},
     format = function(entry, vim_item)
-      local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
-      local strings = vim.split(kind.kind, "%s", { trimempty = true })
-      local sources = {
-				nvim_lsp = "LSP",
-        luasnip = "SNIP",
-				buffer = "BUF",
-        path = "PATH",
-        nvim_lua = "LUA",
-        cmdline = "CMD",
-      }
-      kind.kind = " " .. strings[1] .. " "
-      kind.menu = "    " .. strings[2] .. " (" .. sources[entry.source.name] .. ")"
+      local kind = require("lspkind").cmp_format(
+        {
+          mode = "symbol_text",
+          maxwidth = 25,
+          menu = ({
+            nvim_lsp = "[LSP]",
+            luasnip = "[SNIP]",
+            buffer = "[BUF]",
+            path = "[PATH]",
+            nvim_lua = "[LUA]",
+            cmdline = "[CMD]",
+          }),
+        }
+      )(entry, vim_item)
       return kind
 		end,
 	},
