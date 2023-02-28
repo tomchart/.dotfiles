@@ -50,10 +50,17 @@ configs.setup({
 		enable = false,
 		disable = { "yaml", "python" },
 	},
+  -- need support for phtml i think
   autotag = {
     enable = true,
     enable_close = true,
     enable_rename = true,
+    filetypes = {
+      "php",
+      "javascript",
+      "phtml",
+      "markdown"
+    },
   },
 	textobjects = {
 		select = {
