@@ -122,6 +122,9 @@ alias xup='sudo /opt/lampp/lampp start'
 alias xdown='sudo /opt/lampp/lampp stop'
 # git
 alias oops="gau && gcn!"
+# heh
+alias terror="tail /opt/lampp/logs/php_error_log -f"
+
 # force relink of symlinked windows desktop to home
 ln -sf /mnt/c/Users/Admin/Desktop/ ~/
 
