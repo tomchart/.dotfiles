@@ -19,7 +19,7 @@
     vim.keymap.set("t", "jj", "<c-\\><c-n>")
 
     -- <leader><cr> hides highlight
-    vim.keymap.set("n", "<leader><cr>", ":noh<cr>")
+    vim.keymap.set("n", "<leader><cr>", ":noh<cr>", { silent = true })
 
     -- qq to record, Q to replay
     vim.keymap.set("n", "Q", "@q")
