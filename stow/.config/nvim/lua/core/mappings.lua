@@ -67,11 +67,5 @@
     -- prev buffer comfort
     vim.keymap.set("n", "<leader>p", "<c-6>")
 
-    -- remap % to <leader>m
+    -- remap % to <c-m>
     vim.keymap.set("n", "<c-m>", "<Plug>(MatchitNormalForward)")
-
-    -- packer
-    vim.keymap.set("n", "<leader>ks", "<cmd>PackerSync<cr>")
-    vim.keymap.set("n", "<leader>ku", "<cmd>PackerUpdate<cr>")
-    vim.keymap.set("n", "<leader>ki", "<cmd>PackerInstall<cr>")
-    vim.keymap.set("n", "<leader>kt", "<cmd>PackerStatus<cr>")
