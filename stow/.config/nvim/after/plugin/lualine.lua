@@ -214,6 +214,12 @@ require("lualine").setup({
 			},
 		},
 		lualine_z = {
+      {
+        "fileformat",
+      },
+      {
+        "encoding",
+      },
 			{
 				"location",
 				icon = {
