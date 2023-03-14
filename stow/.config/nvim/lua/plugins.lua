@@ -82,6 +82,10 @@ local spec = {
       "L3MON4D3/LuaSnip",
     }
   },
+  {
+    'Wansmer/treesj',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+  }
 }
 
 require("lazy").setup(spec, {})

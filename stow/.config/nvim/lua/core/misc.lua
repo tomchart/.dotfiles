@@ -15,4 +15,4 @@ cmd[[au TextYankPost * silent! lua vim.highlight.on_yank()]]
 -- set inc.php to filetype phtml
 -- solves dodgy indentation, breaks commenting format...
 -- time to get a better comment plugin?
-cmd[[au BufRead,BufNewFile *.inc.php set filetype=phtml]]
+cmd[[au BufRead,BufNewFile *.inc.php set filetype=html]]
