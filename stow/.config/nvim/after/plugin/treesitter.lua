@@ -57,6 +57,7 @@ configs.setup({
     enable_rename = true,
     filetypes = {
       "php",
+      "html",
       "javascript",
       "phtml",
       "markdown"
