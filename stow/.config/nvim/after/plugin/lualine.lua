@@ -68,50 +68,27 @@ local function lsp_client_names()
   return table.concat(clients, ' ')
 end
 
--- Display the difference in commits between local and head.
-local Job = require("plenary.job")
-local function get_git_compare()
-	-- Get the path of the current directory.
-	local curr_dir = vim.api.nvim_buf_get_name(0):match("(.*" .. "/" .. ")")
-
-	-- Run job to get git.
-	local result = Job:new({
-		command = "git",
-		cwd = curr_dir,
-		args = { "rev-list", "--left-right", "--count", "HEAD...@{upstream}" },
-	})
-		:sync(100)[1]
-
-	-- Process the result.
-	if type(result) ~= "string" then
-		return ""
-	end
-	local ok, ahead, behind = pcall(string.match, result, "(%d+)%s*(%d+)")
-	if not ok then
-		return ""
-	end
-
-	-- No file, so no git.
-	if get_current_buftype() == "nofile" then
-		return ""
-	end
-
-	-- Format for lualine.
-	return " " .. behind .. "  " .. ahead
+local function lsp_ready()
+  if vim.lsp.buf.server_ready() == true then
+    return "LSP";
+  else
+    return "...";
+  end
 end
 
 -- Required to properly set the colors.
 local c = require("nordic.colors")
-local n = require("lualine.themes.nordic")
+-- local n = require("lualine.themes.nordic")
 
--- some customization
-n.normal.a.bg = c.green.base
-n.insert.a.bg = c.red.base
-n.visual.a.bg = c.magenta.base
-n.normal.y = { fg = c.fg, bg = c.black }
-n.insert.y = { fg = c.fg, bg = c.black }
-n.visual.y = { fg = c.fg, bg = c.black }
-n.command.y = { fg = c.fg, bg = c.black }
+-- -- some customization
+-- n.normal.a.bg = c.cyan.base
+-- n.insert.a.bg = c.green.base
+-- n.visual.a.bg = c.magenta.base
+-- n.command.a.bg = c.red.base
+-- n.normal.y = { fg = c.fg, bg = c.black }
+-- n.insert.y = { fg = c.fg, bg = c.black }
+-- n.visual.y = { fg = c.fg, bg = c.black }
+-- n.command.y = { fg = c.fg, bg = c.black }
 
 require("lualine").setup({
 	sections = {
@@ -131,7 +108,7 @@ require("lualine").setup({
       },
 			{
 				"filename",
-        path = 1,
+        path = 0,
         symbols = {
           modified = '',
           readonly = '[-]',
@@ -147,17 +124,6 @@ require("lualine").setup({
 					"",
 					color = { fg = c.orange.bright, gui = "bold" },
 				},
-			},
-			{
-				get_git_compare,
-				separator = " ",
-				color = {
-					fg = c.orange.bright,
-				},
-				-- icon = {
-				--     ' ',
-				--     color = { fg = c.orange.bright, gui = 'bold' },
-				-- }
 			},
 			{
 				"diff",
@@ -202,7 +168,7 @@ require("lualine").setup({
 		},
 		lualine_y = {
 			{
-				lsp_client_names,
+				lsp_ready,
 				icon = {
 					"",
 					align = "left",
@@ -214,25 +180,14 @@ require("lualine").setup({
 			},
 		},
 		lualine_z = {
-      {
-        "fileformat",
-      },
-      {
-        "encoding",
-      },
 			{
 				"location",
-				icon = {
-					"",
-					align = "left",
-					color = { fg = c.black },
-				},
 			},
 			{
 				"progress",
 				icon = {
-					"",
-					align = "left",
+					"  ",
+					align = "right",
 					color = { fg = c.black },
 				},
 			},
@@ -246,7 +201,7 @@ require("lualine").setup({
 		-- section_separators = { left = "", right = " " },
 		section_separators = { left = "", right = "" },
 		component_separators = { left = "", right = "" },
-		theme = n,
+		theme = 'nordic',
 	},
 	extensions = {
 		"toggleterm",
