@@ -182,11 +182,16 @@ require("lualine").setup({
 		lualine_z = {
 			{
 				"location",
+        icon = {
+					" ",
+          align = "right",
+          color = { fg = c.black },
+        },
 			},
 			{
 				"progress",
 				icon = {
-					"  ",
+          " ",
 					align = "right",
 					color = { fg = c.black },
 				},
