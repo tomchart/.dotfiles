@@ -15,6 +15,8 @@ local spec = {
   { "nvim-treesitter/nvim-treesitter" },
   { "nvim-treesitter/nvim-treesitter-context" },
   { "nvim-treesitter/nvim-treesitter-textobjects" },
+  { "Wansmer/treesj" },
+  { "windwp/nvim-ts-autotag" },
   { "nvim-treesitter/playground" },
   { "chrisbra/Colorizer" },
   { "nvim-lua/plenary.nvim" },
@@ -38,7 +40,6 @@ local spec = {
   { "dstein64/vim-startuptime" },
   { "tpope/vim-vinegar" },
   { "j-hui/fidget.nvim" },
-  { "windwp/nvim-ts-autotag" },
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
   { "neovim/nvim-lspconfig" },
@@ -51,24 +52,7 @@ local spec = {
       "MunifTanjim/nui.nvim",
     },
   },
-  {
-    "lewis6991/gitsigns.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-  },
-  {
-    "nvim-telescope/telescope.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-  },
-  {
-    "ThePrimeagen/harpoon",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-  },
+  { "lewis6991/gitsigns.nvim" },
   {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
@@ -80,12 +64,10 @@ local spec = {
       "hrsh7th/cmp-path",
       "onsails/lspkind-nvim",
       "L3MON4D3/LuaSnip",
-    }
+    },
   },
-  {
-    'Wansmer/treesj',
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
-  }
+  { "nvim-telescope/telescope.nvim" },
+  { "ThePrimeagen/harpoon" },
 }
 
 require("lazy").setup(spec, {})

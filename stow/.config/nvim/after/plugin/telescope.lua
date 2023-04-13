@@ -162,7 +162,7 @@ telescope.setup({
 
         local make_display = function(entry)
           return displayer({
-            { entry.symbol_type, 'CmpItemKind' .. entry.symbol_type },
+            { entry.symbol_type, '@' .. entry.symbol_type },
             entry.symbol_name,
           })
         end
