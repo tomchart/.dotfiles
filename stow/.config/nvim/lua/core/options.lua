@@ -17,7 +17,7 @@ o.tabstop = 2 -- tab appears as 2 spaces
 o.softtabstop = 2 -- tab behaves like 2 spaces when editing
 
 -- line length
-vim.opt.colorcolumn = "120"
+vim.opt.colorcolumn = "80"
 
 -- clipboard
 o.clipboard = 'unnamed'
