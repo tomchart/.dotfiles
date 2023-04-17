@@ -36,6 +36,7 @@ local function nordic()
   vim.api.nvim_set_hl(0, "PmenuSel", {fg = c.white, bg = c.gray1})
   vim.api.nvim_set_hl(0, "PmenuSbar", {bg = c.gray1})
   vim.api.nvim_set_hl(0, "NormalFloat", {fg = c.white, bg = c.black})
+  vim.api.nvim_set_hl(0, "ColorColumn", {bg = c.gray1})
 end
 
 local M = {}
