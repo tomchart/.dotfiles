@@ -38,7 +38,7 @@ local spec = {
   { "numToStr/Comment.nvim" },
   { "jdhao/better-escape.vim" },
   { "dstein64/vim-startuptime" },
-  { "tpope/vim-vinegar" },
+  { "stevearc/oil.nvim" },
   { "j-hui/fidget.nvim" },
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },

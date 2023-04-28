@@ -14,6 +14,7 @@ configs.setup({
     "git_rebase",
     "gitcommit",
     "javascript",
+    "jsdoc",
     "json",
     "markdown",
     "yaml",
