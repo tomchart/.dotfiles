@@ -106,6 +106,7 @@ alias d='cd ~/dotfiles/'
 alias o='cd /opt/lampp/htdocs/oms-V1.4/'
 alias s="cd ~/scratch"
 # tmux
+alias tmux="/usr/local/bin/tmux"
 alias tm="tmux"
 alias tma="tmux attach"
 alias tmd="tmux detach"

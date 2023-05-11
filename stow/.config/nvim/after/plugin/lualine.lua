@@ -123,6 +123,10 @@ require("lualine").setup({
 		lualine_c = {
 			{
 				"branch",
+        color = {
+          fg = c.orange.base,
+          gui = "",
+        },
 				icon = {
 					"",
 					color = { fg = c.orange.bright, gui = "bold" },
@@ -133,9 +137,12 @@ require("lualine").setup({
 				colored = true,
 				source = diff_source,
 				symbols = {
-					added = "  ",
-					modified = " 柳",
-					removed = "  ",
+					added = "  ",
+					modified = "  ",
+					removed = "  ",
+					-- added = "  ",
+					-- modified = " 柳",
+					-- removed = "  ",
 				},
 				diff_color = {
 					added = { fg = c.green.base, gui = "bold" },
