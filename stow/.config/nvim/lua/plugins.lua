@@ -46,12 +46,6 @@ local spec = {
   { "jose-elias-alvarez/null-ls.nvim" },
   { "jay-babu/mason-null-ls.nvim" },
   { "rcarriga/nvim-notify" },
-  {
-    "folke/noice.nvim",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-    },
-  },
   { "lewis6991/gitsigns.nvim" },
   {
     "hrsh7th/nvim-cmp",
