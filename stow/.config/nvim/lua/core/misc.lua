@@ -16,3 +16,6 @@ cmd[[au TextYankPost * silent! lua vim.highlight.on_yank()]]
 -- solves dodgy indentation, breaks commenting format...
 -- time to get a better comment plugin?
 cmd[[au BufRead,BufNewFile *.inc.php set filetype=html]]
+
+-- clear cmdline if cursor moved (this will probably annoy me later)
+cmd[[autocmd CursorMoved * echo]]

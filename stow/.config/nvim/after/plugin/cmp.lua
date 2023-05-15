@@ -82,7 +82,7 @@ cmp.setup({
     format = function(entry, vim_item)
       local kind = require("lspkind").cmp_format(
         {
-          mode = "symbol_text",
+          mode = "text",
           maxwidth = 25,
           menu = ({
             nvim_lsp = "[LSP]",
@@ -92,7 +92,34 @@ cmp.setup({
             nvim_lua = "[LUA]",
             cmdline = "[CMD]",
           }),
-        }
+          symbol_map = {
+            Text = "󰉿",
+            Method = "󰆧",
+            Function = "󰊕",
+            Constructor = "",
+            Field = "󰜢",
+            Variable = "󰀫",
+            Class = "󰠱",
+            Interface = "",
+            Module = "",
+            Property = "󰜢",
+            Unit = "󰑭",
+            Value = "󰎠",
+            Enum = "",
+            Keyword = "󰌋",
+            Snippet = "",
+            Color = "󰏘",
+            File = "󰈙",
+            Reference = "󰈇",
+            Folder = "󰉋",
+            EnumMember = "",
+            Constant = "󰏿",
+            Struct = "󰙅",
+            Event = "",
+            Operator = "󰆕",
+            TypeParameter = "",
+          },
+      }
       )(entry, vim_item)
       return kind
 		end,
