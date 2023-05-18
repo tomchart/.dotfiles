@@ -40,6 +40,7 @@ o.signcolumn = "yes" -- always show the sign column
 o.scrolloff = 10 -- 10 lines of padding from screen top/bot to cursor
 o.number = true -- display line numbers
 o.relativenumber = true -- relative line numbers son
+o.cmdheight = 0
 
 -- search
 o.ignorecase = true -- case insensitive search..
