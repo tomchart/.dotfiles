@@ -11,8 +11,8 @@
     vim.keymap.set("n", "<leader>S", ":so %<cr>")
 
     -- revim.keymap.set jumplist to <leader>o and <leader>i
-    vim.keymap.set("n", "<leader>o", "<c-o>")
-    vim.keymap.set("n", "<leader>i", "<tab>")
+    vim.keymap.set("n", "<leader>o", "<c-o>zz")
+    vim.keymap.set("n", "<leader>i", "<tab>zz")
 
     -- in insert mode, jj exits this mode
     vim.keymap.set("i", "jj", "<esc>")
