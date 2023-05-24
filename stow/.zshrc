@@ -125,6 +125,8 @@ alias xdown='sudo /opt/lampp/lampp stop'
 alias oops="gau && gcn!"
 # heh
 alias terror="tail /opt/lampp/logs/php_error_log -f"
+# mycli
+alias mc="mycli -u root -D oms"
 
 # force relink of symlinked windows desktop to home
 ln -sf /mnt/c/Users/Admin/Desktop/ ~/
