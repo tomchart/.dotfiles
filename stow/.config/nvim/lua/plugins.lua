@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local spec = {
-  { "glepnir/dashboard-nvim" },
+  -- { "glepnir/dashboard-nvim" },
   { "nvim-treesitter/nvim-treesitter" },
   { "nvim-treesitter/nvim-treesitter-context" },
   { "nvim-treesitter/nvim-treesitter-textobjects" },
@@ -45,6 +45,7 @@ local spec = {
   { "jose-elias-alvarez/null-ls.nvim" },
   { "jay-babu/mason-null-ls.nvim" },
   { "lewis6991/gitsigns.nvim" },
+  { "smithbm2316/centerpad.nvim" },
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
