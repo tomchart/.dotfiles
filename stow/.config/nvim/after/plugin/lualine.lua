@@ -95,9 +95,9 @@ require("lualine").setup({
 		lualine_a = {
 			{
 				"mode",
-				-- icon = { " " },
-        fmt = function (_, _)
-          return "  "
+				icon = { "" },
+        fmt = function (mode, _)
+          return " " .. mode
         end
 			},
 		},
