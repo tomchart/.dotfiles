@@ -19,3 +19,7 @@ cmd[[au BufRead,BufNewFile *.inc.php set filetype=html]]
 
 -- clear cmdline if cursor moved (this will probably annoy me later)
 cmd[[autocmd CursorMoved * echo]]
+
+-- set colorcolumn lengths per filetype
+cmd[[autocmd FileType php set colorcolumn=80]]
+cmd[[autocmd FileType html set colorcolumn=100]]
