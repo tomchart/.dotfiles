@@ -1,4 +1,3 @@
-local context = require("treesitter-context")
 local configs = require("nvim-treesitter.configs")
 
 configs.setup({
@@ -21,9 +20,6 @@ configs.setup({
     "markdown_inline",
     "vim",
     "regex",
-  },
-  context = {
-    enable = true,
   },
   playground = {
     enable = true,
@@ -103,6 +99,3 @@ configs.setup({
 		},
 	},
 })
-
-
-context.setup()

@@ -14,7 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 local spec = {
   -- { "glepnir/dashboard-nvim" },
   { "nvim-treesitter/nvim-treesitter" },
-  { "nvim-treesitter/nvim-treesitter-context" },
   { "nvim-treesitter/nvim-treesitter-textobjects" },
   { "Wansmer/treesj" },
   { "windwp/nvim-ts-autotag" },
