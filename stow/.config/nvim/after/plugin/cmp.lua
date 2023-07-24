@@ -126,15 +126,15 @@ cmp.setup({
 	},
 	mapping = {
 		["<c-space>"] = cmp.mapping.complete(),
-		["<Tab>"] = function(fallback)
-			if cmp.visible() then
-				cmp.close()
-			elseif should_tab_out() then
-				feedkeys("<right>", "i")
-			else
-				fallback()
-			end
-		end,
+		-- ["<Tab>"] = function(fallback)
+		-- 	if cmp.visible() then
+		-- 		cmp.close()
+		-- 	elseif should_tab_out() then
+		-- 		feedkeys("<right>", "i")
+		-- 	else
+		-- 		fallback()
+		-- 	end
+		-- end,
 		["<cr>"] = cmp.mapping.confirm({ select = true }),
 		["<c-d>"] = cmp.mapping.select_next_item({ select = false }),
 		["<c-u>"] = cmp.mapping.select_prev_item({ select = false }),
