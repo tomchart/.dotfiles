@@ -42,7 +42,7 @@ require("lualine").setup({
 			{
 				"branch",
         color = {
-          fg = mocha.yellow,
+          fg = mocha.peach,
         },
 				icon = {
 					"",
