@@ -1,3 +1,5 @@
+local mocha = require("catppuccin.palettes").get_palette "mocha"
+
 local function lsp_ready()
   if vim.lsp.buf.server_ready() == true then
     return "LSP";
@@ -39,6 +41,9 @@ require("lualine").setup({
 		lualine_c = {
 			{
 				"branch",
+        color = {
+          fg = mocha.yellow,
+        },
 				icon = {
 					"",
 				},
@@ -46,7 +51,6 @@ require("lualine").setup({
 			{
 				"diff",
 				colored = true,
-				source = diff_source,
 				symbols = {
 					added = "  ",
 					modified = "  ",
@@ -103,8 +107,8 @@ require("lualine").setup({
 		globalstatus = true,
 		-- section_separators = { left = "", right = "" },
 		-- section_separators = { left = "█", right = "█" },
-		section_separators = { left = " ", right = " " },
-		-- section_separators = { left = "", right = "" },
+		-- section_separators = { left = " ", right = " " },
+		section_separators = { left = " ", right = " " },
 		component_separators = { left = "", right = "" },
     theme = 'catppuccin',
 	},
