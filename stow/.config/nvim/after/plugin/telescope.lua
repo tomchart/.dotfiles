@@ -1,50 +1,12 @@
 local telescope = require("telescope")
 local transform_mod = require('telescope.actions.mt').transform_mod
 local state = require('telescope.actions.state')
-local bg = require("core.utils").bg
-local fg_bg = require("core.utils").fg_bg
-local x = require("core.utils").extract_highlight_colours
 
 local layout = require("telescope.actions.layout")
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
-local utils = require("telescope.utils")
 local entry_display = require("telescope.pickers.entry_display")
 telescope.load_extension('harpoon')
-
-local gruvMedBg = '#282828'
-local gruvHardBg = '#1d2021'
-local gruvSoftBg = '#32302f'
-
--- local tele = {
---   light = x('GruvboxBg2').guifg,
---   fg = x('GruvboxFg0').guifg,
---   bg = gruvSoftBg,
---   -- bg = gruvMedBg,
---   red = x('GruvboxRed').guifg,
---   green = x('GruvboxGreen').guifg
--- }
---
--- bg("TelescopeSelection", tele.light)
--- fg_bg("TelescopeNormal", tele.fg, tele.bg)
--- fg_bg("TelescopeBorder", tele.bg, tele.bg)
--- bg("TelescopePromptNormal", tele.light)
--- fg_bg("TelescopePromptBorder", tele.light, tele.light)
--- fg_bg("TelescopePreviewBorder", tele.bg, tele.bg)
--- fg_bg("TelescopePromptTitle", tele.bg, tele.red)
--- fg_bg("TelescopePreviewTitle", tele.bg, tele.green)
--- fg_bg("TelescopeResultsTitle", tele.bg, tele.bg)
-
---- Splits a filepath into head / tail where tail is the last path component and
---- head is everything before it.
----@param path string
----@return string head
----@return string tail
-local function split_path(path)
-	local tail = utils.path_tail(path)
-	local head = path:gsub("/" .. tail .. "$", "")
-	return head, tail
-end
 
 --- Shortens the given path by either:
 --- - making it relative if it's part of the cwd

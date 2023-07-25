@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local spec = {
+  { "catppuccin/nvim" },
   { "nvim-treesitter/nvim-treesitter" },
   { "nvim-treesitter/nvim-treesitter-context" },
   { "nvim-treesitter/nvim-treesitter-textobjects" },
