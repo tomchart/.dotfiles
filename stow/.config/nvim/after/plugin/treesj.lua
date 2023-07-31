@@ -19,5 +19,5 @@ tsj.setup({
   dot_repeat = true,
 })
 
-vim.keymap.set('n', '<leader>m', require('treesj').toggle)
+vim.keymap.set('n', '<leader>m', tsj.toggle)
 
