@@ -30,6 +30,3 @@ require("treesitter-context").setup({
     },
   },
 })
-
-vim.api.nvim_set_hl(0, "TreesitterContext", { fg = require("nordic.colors").magenta.bright })
-vim.api.nvim_set_hl(0, "TreesitterContextBottom", { fg = require("nordic.colors").magenta.bright, underline = true })
