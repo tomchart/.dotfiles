@@ -103,7 +103,7 @@ require("lualine").setup({
 		},
 	},
 	options = {
-		disabled_filetypes = { "dashboard" },
+		disabled_filetypes = { "" },
 		globalstatus = true,
 		-- section_separators = { left = "", right = "" },
 		-- section_separators = { left = "█", right = "█" },
