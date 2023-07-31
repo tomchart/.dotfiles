@@ -107,6 +107,12 @@ telescope.setup({
         },
       },
     },
+    live_grep = {
+      glob_pattern = {
+        '*',
+        '!vendor/**', -- ignore vendor dir in oms
+      },
+    },
     oldfiles = {
       path_display = function(opts, path)
         return shorten_path(path)
