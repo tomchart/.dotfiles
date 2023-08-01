@@ -14,6 +14,7 @@ cmp.setup({
     { name = "path" },
     { name = "nvim_lua" },
     { name = "cmdline" },
+    { name = "nvim_lsp_signature_help" },
   },
 	snippet = {
 		expand = function(args)
@@ -31,15 +32,6 @@ cmp.setup({
       return true
     end
   end,
-  window = {
-    completion = {
-      winhighlight = "Normal:Pmenu,CursorLine:PmenuSel,Search:None",
-      scrollbar = false
-    },
-    documentation = {
-      winhighlight = "Normal:Pmenu,CursorLine:PmenuSel,Search:None",
-    }
-  },
 	formatting = {
     fields = {"abbr", "kind", "menu"},
     format = function(entry, vim_item)
@@ -111,32 +103,3 @@ cmp.setup({
 		default_behavior = cmp.ConfirmBehavior.Replace,
 	},
 })
-
-vim.api.nvim_set_hl(0, 'CmpItemAbbrDeprecated', {link = '@comment'})
-
-vim.api.nvim_set_hl(0, 'CmpItemAbbrMatch', {link = 'TelescopeMatching'})
-vim.api.nvim_set_hl(0, 'CmpItemAbbrMatchFuzzy', {link = 'CmpItemAbbrMatch'})
-
-vim.api.nvim_set_hl(0, 'CmpItemKindVariable', {link = '@variable'})
-vim.api.nvim_set_hl(0, 'CmpItemKindInterface', {link = 'CmpItemKindVariable'})
-
-vim.api.nvim_set_hl(0, 'CmpItemKindText', {link = '@comment'})
-
-vim.api.nvim_set_hl(0, 'CmpItemKindFunction', {link = '@function'})
-vim.api.nvim_set_hl(0, 'CmpItemKindMethod', {link = 'CmpItemKindFunction'})
-
-vim.api.nvim_set_hl(0, 'CmpItemKindKeyword', {link = '@keyword'})
-vim.api.nvim_set_hl(0, 'CmpItemKindUnit', {link = 'CmpItemKindKeyword'})
-
-vim.api.nvim_set_hl(0, 'CmpItemKindProperty', {link = '@property'})
-
-vim.api.nvim_set_hl(0, 'CmpItemKindField', {link = '@field'})
-
-vim.api.nvim_set_hl(0, 'CmpItemKindConstructor', {link = '@constructor'})
-
-vim.api.nvim_set_hl(0, 'CmpItemKindClass', {link = '@class'})
-
-vim.api.nvim_set_hl(0, 'CmpItemKindConstant', {link = '@constant'})
-
-vim.api.nvim_set_hl(0, 'CmpItemKindFile', {link = '@include'})
-vim.api.nvim_set_hl(0, 'CmpItemKindSnippet', {link = 'CmpItemKindFile'})
