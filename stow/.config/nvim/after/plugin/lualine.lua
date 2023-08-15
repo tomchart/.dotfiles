@@ -1,11 +1,53 @@
-local mocha = require("catppuccin.palettes").get_palette "mocha"
+local function get_attached_clients()
+	local buf_clients = vim.lsp.get_active_clients({ bufnr = 0 })
+	if #buf_clients == 0 then
+		return "LSP Inactive"
+	end
 
-local function lsp_ready()
-  if vim.lsp.buf.server_ready() == true then
-    return "LSP";
-  else
-    return "...";
-  end
+	local buf_ft = vim.bo.filetype
+	local buf_client_names = {}
+
+	-- add client
+	for _, client in pairs(buf_clients) do
+		if client.name ~= "copilot" and client.name ~= "null-ls" then
+			table.insert(buf_client_names, client.name)
+		end
+	end
+
+	-- Add sources (from null-ls)
+	-- null-ls registers each source as a separate attached client, so we need to filter for unique names down below.
+	local null_ls_s, null_ls = pcall(require, "null-ls")
+	if null_ls_s then
+		local sources = null_ls.get_sources()
+		for _, source in ipairs(sources) do
+			if source._validated then
+				for ft_name, ft_active in pairs(source.filetypes) do
+					if ft_name == buf_ft and ft_active then
+						table.insert(buf_client_names, source.name)
+					end
+				end
+			end
+		end
+	end
+
+	-- This needs to be a string only table so we can use concat below
+	local unique_client_names = {}
+	for _, client_name_target in ipairs(buf_client_names) do
+		local is_duplicate = false
+		for _, client_name_compare in ipairs(unique_client_names) do
+			if client_name_target == client_name_compare then
+				is_duplicate = true
+			end
+		end
+		if not is_duplicate then
+			table.insert(unique_client_names, client_name_target)
+		end
+	end
+
+	local client_names_str = table.concat(unique_client_names, ", ")
+	local language_servers = string.format("%s", client_names_str)
+
+	return language_servers
 end
 
 require("lualine").setup({
@@ -20,44 +62,38 @@ require("lualine").setup({
 			},
 		},
 		lualine_b = {
+			{
+				"branch",
+				icon = {
+					"",
+				},
+			},
+		},
+		lualine_c = {
       {
         "filetype",
-        icon_only = true,
-        icon = {
-          align = "right"
-        }
+        icon_only = true
       },
 			{
 				"filename",
         path = 0,
         symbols = {
-          modified = '',
+          modified = '[+]',
           readonly = '[-]',
           unnamed = '[no name]',
           newfile = '[new]',
         },
 			},
-		},
-		lualine_c = {
-			{
-				"branch",
-        color = {
-          fg = mocha.peach,
-        },
-				icon = {
-					"",
-				},
-			},
 			{
 				"diff",
 				colored = true,
 				symbols = {
-					added = "  ",
-					modified = "  ",
-					removed = "  ",
-					-- added = "  ",
-					-- modified = " 󰝤",
-					-- removed = "  ",
+					-- added = "  ",
+					-- modified = "  ",
+					-- removed = "  ",
+          -- added = "  ",
+          -- modified = " 󰝤",
+          -- removed = "  ",
 				},
 			},
 		},
@@ -75,30 +111,18 @@ require("lualine").setup({
 		},
 		lualine_y = {
 			{
-				lsp_ready,
+				get_attached_clients,
 				icon = {
 					"",
-					align = "left",
-					color = {
-						gui = "bold",
-					},
 				},
 			},
 		},
 		lualine_z = {
 			{
-				"location",
-        icon = {
-					" ",
-          align = "left",
-        },
+				"progress",
 			},
 			{
-				"progress",
-				icon = {
-          " ",
-					align = "left",
-				},
+				"location",
 			},
 		},
 	},
