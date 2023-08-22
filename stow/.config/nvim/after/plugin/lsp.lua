@@ -58,11 +58,6 @@ lspconfig.cssmodules_ls.setup({
 lspconfig.html.setup({
 	capabilities = cmp_nvim_lsp.default_capabilities(),
 	on_attach = on_attach,
-	filetypes = {
-		"html",
-		"php",
-		"phtml",
-	},
 })
 
 lspconfig.intelephense.setup({
