@@ -13,9 +13,9 @@ o.autoindent = true -- continue indentation to new line
 o.smartindent = true -- add extra indent when it makes sense
 o.smarttab = true -- tab at start of line behaves as expected
 o.expandtab = true -- tab inserts spaces
-o.shiftwidth = 2 -- shift line by 2 spaces
-o.tabstop = 2 -- tab appears as 2 spaces
-o.softtabstop = 2 -- tab behaves like 2 spaces when editing
+o.shiftwidth = 4 -- shift line by 4 spaces
+o.tabstop = 4 -- tab appears as 4 spaces
+o.softtabstop = 4 -- tab behaves like 4 spaces when editing
 
 -- line length
 vim.opt.colorcolumn = "80"
