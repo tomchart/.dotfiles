@@ -4,141 +4,141 @@ local lspconfig = require("lspconfig")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 require("mason-lspconfig").setup({
-	automatic_installation = true,
+    automatic_installation = true,
 })
 
 null_ls.setup({
-	sources = {
-		null_ls.builtins.code_actions.gitsigns,
-		null_ls.builtins.formatting.prettierd,
-		null_ls.builtins.formatting.phpcbf,		null_ls.builtins.formatting.stylua,
-		null_ls.builtins.diagnostics.selene,
-		null_ls.builtins.diagnostics.phpstan,
-	},
+    sources = {
+        null_ls.builtins.code_actions.gitsigns,
+        null_ls.builtins.formatting.prettierd,
+        null_ls.builtins.formatting.phpcbf,
+        null_ls.builtins.formatting.stylua,
+        null_ls.builtins.diagnostics.selene,
+        null_ls.builtins.diagnostics.phpstan,
+    },
 })
 
 require("mason-null-ls").setup({
-	automatic_installation = true,
-	automatic_setup = false,
+    automatic_installation = true,
+    automatic_setup = false,
 })
 
 local on_attach = function(client)
-	client.server_capabilities.semanticTokensProdiver = nil
+    client.server_capabilities.semanticTokensProdiver = nil
 end
 
 lspconfig.bashls.setup({
-	capabilities = cmp_nvim_lsp.default_capabilities(),
-	on_attach = on_attach,
+    capabilities = cmp_nvim_lsp.default_capabilities(),
+    on_attach = on_attach,
 })
 
 lspconfig.cssmodules_ls.setup({
-	capabilities = cmp_nvim_lsp.default_capabilities(),
-	on_attach = on_attach,
-	filetypes = {
-		"html",
-		"css",
-	},
-	root_dir = function(_fname)
-		return vim.fn.getcwd()
-	end,
+    capabilities = cmp_nvim_lsp.default_capabilities(),
+    on_attach = on_attach,
+    filetypes = {
+        "html",
+        "css",
+    },
+    root_dir = function(_fname)
+        return vim.fn.getcwd()
+    end,
 })
 
 lspconfig.html.setup({
-	capabilities = cmp_nvim_lsp.default_capabilities(),
-	on_attach = on_attach,
+    capabilities = cmp_nvim_lsp.default_capabilities(),
+    on_attach = on_attach,
 })
 
 lspconfig.intelephense.setup({
-	capabilities = cmp_nvim_lsp.default_capabilities(),
-	on_attach = on_attach,
-  filetypes = {
-    "php",
-    "phtml"
-  }
+    capabilities = cmp_nvim_lsp.default_capabilities(),
+    on_attach = on_attach,
+    filetypes = {
+        "php",
+    },
 })
 
 lspconfig.jsonls.setup({
-	capabilities = cmp_nvim_lsp.default_capabilities(),
-	on_attach = on_attach,
+    capabilities = cmp_nvim_lsp.default_capabilities(),
+    on_attach = on_attach,
 })
 
 lspconfig.pyright.setup({
-	capabilities = cmp_nvim_lsp.default_capabilities(),
-	on_attach = on_attach,
-	root_dir = function(_fname)
-		return vim.fn.getcwd()
-	end,
-	settings = {
-		python = {
-			analysis = {
-				autoSearchPaths = true,
-				autoImportCompletions = false,
-				diagnosticMode = "workspace",
-				useLibraryCodeForTypes = true,
-				pythonPath = "/usr/bin/python",
-				extraPaths = {
-					"/home/tom/.local/lib/python3.7/site-packages",
-					"/usr/local/lib/python3.7/site-packages",
-					"/home/tom/.pyenv/versions/rev3910/lib/python3.9/site-packages",
-				},
-			},
-		},
-	},
+    capabilities = cmp_nvim_lsp.default_capabilities(),
+    on_attach = on_attach,
+    root_dir = function(_fname)
+        return vim.fn.getcwd()
+    end,
+    settings = {
+        python = {
+            analysis = {
+                autoSearchPaths = true,
+                autoImportCompletions = false,
+                diagnosticMode = "workspace",
+                useLibraryCodeForTypes = true,
+                pythonPath = "/usr/bin/python",
+                extraPaths = {
+                    "/home/tom/.local/lib/python3.7/site-packages",
+                    "/usr/local/lib/python3.7/site-packages",
+                    "/home/tom/.pyenv/versions/rev3910/lib/python3.9/site-packages",
+                },
+            },
+        },
+    },
 })
 
 lspconfig.lua_ls.setup({
-	capabilities = cmp_nvim_lsp.default_capabilities(),
-	on_attach = on_attach,
-	settings = {
-		Lua = {
-			runtime = {
-				version = "LuaJIT",
-			},
-			diagnostics = {
-				globals = { "vim" },
-			},
-			workspace = {
-				library = vim.api.nvim_get_runtime_file("", true),
-				checkThirdParty = false,
-			},
-			telemetry = {
-				enable = false,
-			},
-			completion = {
-				keywordSnippet = "Disable",
-			},
-		},
-	},
+    capabilities = cmp_nvim_lsp.default_capabilities(),
+    on_attach = on_attach,
+    settings = {
+        Lua = {
+            runtime = {
+                version = "LuaJIT",
+            },
+            diagnostics = {
+                globals = { "vim" },
+            },
+            workspace = {
+                library = vim.api.nvim_get_runtime_file("", true),
+                checkThirdParty = false,
+            },
+            telemetry = {
+                enable = false,
+            },
+            completion = {
+                keywordSnippet = "Disable",
+            },
+        },
+    },
 })
 
 lspconfig.tsserver.setup({
-	capabilities = cmp_nvim_lsp.default_capabilities(),
-	on_attach = on_attach,
-	root_dir = function()
-		return vim.fn.getcwd()
-	end,
+    capabilities = cmp_nvim_lsp.default_capabilities(),
+    on_attach = on_attach,
+    root_dir = function()
+        return vim.fn.getcwd()
+    end,
 })
 
 local signs = {
-	Error = "",
-	Warn = "",
-	Hint = "",
-	Info = "",
+    Error = "",
+    Warn = "",
+    Hint = "",
+    Info = "",
 }
 -- local signs = { Error = "󰅚 ", Warn = " ", Hint = "󰌶 ", Info = " " }
 for type, icon in pairs(signs) do
-	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
 vim.diagnostic.config({
-	virtual_text = true,
-	float = {
-		source = "always",
-	},
-	signs = true,
-	underline = true,
-	severity_sort = true,
+    virtual_text = true,
+    float = {
+        source = "always",
+    },
+    signs = true,
+    underline = true,
+    severity_sort = true,
 })
 
 -- mappings
