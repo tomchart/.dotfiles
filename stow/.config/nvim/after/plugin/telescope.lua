@@ -61,7 +61,6 @@ local custom_actions = transform_mod({
 telescope.setup({
   defaults = {
     border = true,
-    borderchars = {" ", " ", " ", " ", " ", " ", " ", " "},
     mappings = {
       i = {
         ["<c-s>"] = actions.select_vertical,
@@ -93,7 +92,7 @@ telescope.setup({
       preview_cutoff = 120,
     },
     prompt_prefix = "   ",
-    selection_caret = "  ",
+    selection_caret = "> ",
   },
   pickers = {
     find_files = {

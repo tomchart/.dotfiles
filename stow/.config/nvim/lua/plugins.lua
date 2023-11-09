@@ -38,8 +38,6 @@ local spec = {
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
   { "neovim/nvim-lspconfig" },
-  { "jose-elias-alvarez/null-ls.nvim" },
-  { "jay-babu/mason-null-ls.nvim" },
   { "lewis6991/gitsigns.nvim" },
   { "smithbm2316/centerpad.nvim" },
   {

@@ -39,7 +39,7 @@ require("catppuccin").setup({
     treesitter_context = true,
     telescope = {
       enabled = true,
-      style = "nvchad"
+      -- style = "nvchad"
     },
     harpoon = true,
     mason = true,

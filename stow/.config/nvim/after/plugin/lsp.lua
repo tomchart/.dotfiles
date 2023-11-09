@@ -1,26 +1,9 @@
 require("mason").setup()
-local null_ls = require("null-ls")
 local lspconfig = require("lspconfig")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 require("mason-lspconfig").setup({
     automatic_installation = true,
-})
-
-null_ls.setup({
-    sources = {
-        null_ls.builtins.code_actions.gitsigns,
-        null_ls.builtins.formatting.prettierd,
-        null_ls.builtins.formatting.phpcbf,
-        null_ls.builtins.formatting.stylua,
-        null_ls.builtins.diagnostics.selene,
-        null_ls.builtins.diagnostics.phpstan,
-    },
-})
-
-require("mason-null-ls").setup({
-    automatic_installation = true,
-    automatic_setup = false,
 })
 
 local on_attach = function(client)
