@@ -11,7 +11,7 @@ window:
     
 font:
   normal:
-    family: JetBrainsMono Nerd Font Propo
+    family: JetBrainsMono Nerd Font Mono
   size: 12
   builtin_box_drawing: true
   offset:
@@ -21,11 +21,6 @@ font:
     x: 0
     y: 1
 
-shell:
-    program: "C:\\Windows\\System32\\wsl.exe"
-    args:
-      - --cd ~
-        
 mouse:
   hide_when_typing: true
         

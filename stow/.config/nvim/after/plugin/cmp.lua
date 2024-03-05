@@ -84,15 +84,15 @@ cmp.setup({
         end,
     },
     mapping = {
-        ["<c-space>"] = cmp.mapping.complete(),
-        ["<Tab>"] = function(fallback)
-            if cmp.visible() then
-                cmp.close()
-            else
-                fallback()
-            end
-        end,
-        ["<cr>"] = cmp.mapping.confirm({ select = true }),
+        -- ["<c-space>"] = cmp.mapping.complete(),
+        -- ["<Tab>"] = function(fallback)
+        --     if cmp.visible() then
+        --         cmp.close()
+        --     else
+        --         fallback()
+        --     end
+        -- end,
+        ["<Tab>"] = cmp.mapping.confirm({ select = true }),
         ["<c-d>"] = cmp.mapping.select_next_item({ select = false }),
         ["<c-u>"] = cmp.mapping.select_prev_item({ select = false }),
     },
