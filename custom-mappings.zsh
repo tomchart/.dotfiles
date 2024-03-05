@@ -1,2 +1,2 @@
 bindkey '^ ' autosuggest-accept
-bindkey '^\n' autosuggest-execute
+bindkey '^\r' autosuggest-execute
