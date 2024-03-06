@@ -1,9 +1,9 @@
 local function get_attached_clients()
     local buf_clients = vim.lsp.get_active_clients({ bufnr = 0 })
     if #buf_clients == 0 then
-        return "LSP Inactive "
+        return "LSP Inactive"
     else
-        return "LSP Active "
+        return "LSP Active"
     end
 
     local buf_ft = vim.bo.filetype
@@ -57,7 +57,7 @@ require("lualine").setup({
         lualine_a = {
             {
                 "mode",
-                icon = { " " },
+                icon = { "" },
                 fmt = function(mode, _)
                     return mode
                 end,
@@ -67,7 +67,7 @@ require("lualine").setup({
             {
                 "branch",
                 icon = {
-                    " ",
+                    "",
                 },
             },
         },
@@ -135,7 +135,7 @@ require("lualine").setup({
             {
                 "location",
                 fmt = function(location)
-                    return location .. " "
+                    return location
                 end,
             },
         },
@@ -144,7 +144,7 @@ require("lualine").setup({
         disabled_filetypes = { "" },
         globalstatus = true,
         -- section_separators = { left = "", right = "" },
-        section_separators = { left = "█", right = "█" },
+        section_separators = { left = "", right = "" },
         -- section_separators = { left = " ", right = " " },
         -- section_separators = { left = " ", right = " " },
         component_separators = { left = "", right = "" },
