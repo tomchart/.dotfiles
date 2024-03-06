@@ -12,10 +12,8 @@ cmd([[autocmd FileType c,cpp setlocal formatoptions-=r]])
 -- highlight yanked text
 cmd[[au TextYankPost * silent! lua vim.highlight.on_yank()]]
 
--- set inc.php to filetype phtml
--- solves dodgy indentation, breaks commenting format...
--- time to get a better comment plugin?
-cmd[[au BufRead,BufNewFile *.inc.php set filetype=html]]
+-- set blade.php to filetype html
+cmd[[au BufRead,BufNewFile *.blade.php set filetype=html]]
 
 -- clear cmdline if cursor moved (this will probably annoy me later)
 cmd[[autocmd CursorMoved * echo]]
