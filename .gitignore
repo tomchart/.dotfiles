@@ -1,0 +1,7 @@
+./node_modules/
+*.swp
+*.swo
+.ccls-cache
+stow/.config/nvim/lazy-lock.json
+stow/.config/nvim/plugin
+stow/.config/tmux/plugins

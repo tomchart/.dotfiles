@@ -1,10 +1,9 @@
-local context = require("treesitter-context")
 local configs = require("nvim-treesitter.configs")
-local ts_config = require("nvim-treesitter.configs")
 
 configs.setup({
 	ensure_installed = {
     "php",
+    "phpdoc",
     "lua",
     "html",
     "sql",
@@ -14,12 +13,13 @@ configs.setup({
     "git_rebase",
     "gitcommit",
     "javascript",
+    "jsdoc",
     "json",
     "markdown",
-    "yaml"
-  },
-  context = {
-    enable = true,
+    "yaml",
+    "markdown_inline",
+    "vim",
+    "regex",
   },
   playground = {
     enable = true,
@@ -32,7 +32,7 @@ configs.setup({
   highlight = {
 		enable = true,
 		use_languagetree = true,
-		disable = { "yaml" },
+		disable = { "yaml", "html" },
 	},
 	incremental_selection = {
 		enable = true,
@@ -44,13 +44,21 @@ configs.setup({
 		},
 	},
 	indent = {
-		enable = true,
+		enable = false,
 		disable = { "yaml", "python" },
 	},
+  -- need support for phtml i think
   autotag = {
     enable = true,
     enable_close = true,
     enable_rename = true,
+    filetypes = {
+      "php",
+      "html",
+      "javascript",
+      "phtml",
+      "markdown"
+    },
   },
 	textobjects = {
 		select = {
@@ -91,6 +99,3 @@ configs.setup({
 		},
 	},
 })
-
-
-context.setup()

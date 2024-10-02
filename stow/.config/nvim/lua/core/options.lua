@@ -5,20 +5,27 @@ o.swapfile = false
 o.inccommand = "nosplit"
 o.grepprg = "rg --vimgrep --smart-case --no-heading" -- search with rg
 o.grepformat = "%f:%l:%c:%m" -- filename:line number:column number:error message
-o.updatetime = 1000 -- too low causes issues it seems
+o.updatetime = 100 -- too low causes issues it seems
+o.laststatus = 3
 
 -- indentation
 o.autoindent = true -- continue indentation to new line
 o.smartindent = true -- add extra indent when it makes sense
 o.smarttab = true -- tab at start of line behaves as expected
 o.expandtab = true -- tab inserts spaces
-o.shiftwidth = 2 -- shift line by 2 spaces
-o.tabstop = 2 -- tab appears as 2 spaces
-o.softtabstop = 2 -- tab behaves like 2 spaces when editing
+o.shiftwidth = 4 -- shift line by 4 spaces
+o.tabstop = 4 -- tab appears as 4 spaces
+o.softtabstop = 4 -- tab behaves like 4 spaces when editing
+
+-- line length
+vim.opt.colorcolumn = "80"
+
+-- clipboard
+o.clipboard = 'unnamed'
 
 -- colors
 o.termguicolors = true
-o.background = "dark"
+-- o.background = "dark"
 -- o.colorscheme -- theme is set elsewhere
 
 -- look and feel
@@ -46,11 +53,6 @@ o.wildmenu = true -- tab complete on command line
 
 vim.g.PHP_autoformatcomment = 0 -- do not continue comments when using o in PHP
 
--- some slime defaults that dont work
-vim.g.slime_target = "tmux"
-vim.g.slime_paste_file = "/home/tom/.slime_paste"
-vim.g.slime_no_mappings = 1
-
 -- disable some builtin vim plugins
 local disabled_built_ins = {
 	"2html_plugin",
@@ -58,7 +60,6 @@ local disabled_built_ins = {
 	"getscriptPlugin",
 	"gzip",
 	"logipat",
-	"matchit",
 	"tar",
 	"tarPlugin",
 	"rrhelper",

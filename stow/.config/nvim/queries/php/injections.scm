@@ -1,9 +1,14 @@
 ; extends
 
-((heredoc_body) @injection.content
-        (#set! injection.language "sql")
-        (#set! injection.combined))
+(assignment_expression
+  left: (variable_name
+    (name) @_name (#match? @_name "sql"))
+  right: (encapsed_string
+    (string_value) @sql))
 
-; (call_expression
-;   arguments: (arguments ((string)+ @desc))
-;   )
+(property_element
+  (variable_name
+    (name) @_name (#match? @_name "sql"))
+  (property_initializer
+    (encapsed_string
+    (string_value) @sql)))

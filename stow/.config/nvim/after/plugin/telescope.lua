@@ -1,49 +1,12 @@
 local telescope = require("telescope")
 local transform_mod = require('telescope.actions.mt').transform_mod
 local state = require('telescope.actions.state')
-local bg = require("core.utils").bg
-local fg_bg = require("core.utils").fg_bg
-local x = require("core.utils").extract_highlight_colours
 
 local layout = require("telescope.actions.layout")
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
-local utils = require("telescope.utils")
 local entry_display = require("telescope.pickers.entry_display")
 telescope.load_extension('harpoon')
-
-local gruvMedBg = '#282828'
-local gruvHardBg = '#1d2021'
-local gruvSoftBg = '#32302f'
-local tele = {
-  light = x('GruvboxBg2').guifg,
-  fg = x('GruvboxFg0').guifg,
-  bg = gruvSoftBg,
-  -- bg = gruvMedBg,
-  red = x('GruvboxRed').guifg,
-  green = x('GruvboxGreen').guifg
-}
-
-bg("TelescopeSelection", tele.light)
-fg_bg("TelescopeNormal", tele.fg, tele.bg)
-fg_bg("TelescopeBorder", tele.bg, tele.bg)
-bg("TelescopePromptNormal", tele.light)
-fg_bg("TelescopePromptBorder", tele.light, tele.light)
-fg_bg("TelescopePreviewBorder", tele.bg, tele.bg)
-fg_bg("TelescopePromptTitle", tele.bg, tele.red)
-fg_bg("TelescopePreviewTitle", tele.bg, tele.green)
-fg_bg("TelescopeResultsTitle", tele.bg, tele.bg)
-
---- Splits a filepath into head / tail where tail is the last path component and
---- head is everything before it.
----@param path string
----@return string head
----@return string tail
-local function split_path(path)
-	local tail = utils.path_tail(path)
-	local head = path:gsub("/" .. tail .. "$", "")
-	return head, tail
-end
 
 --- Shortens the given path by either:
 --- - making it relative if it's part of the cwd
@@ -98,7 +61,6 @@ local custom_actions = transform_mod({
 telescope.setup({
   defaults = {
     border = true,
-    borderchars = {" ", " ", " ", " ", " ", " ", " ", " "},
     mappings = {
       i = {
         ["<c-s>"] = actions.select_vertical,
@@ -130,7 +92,7 @@ telescope.setup({
       preview_cutoff = 120,
     },
     prompt_prefix = "   ",
-    selection_caret = "  ",
+    selection_caret = "> ",
   },
   pickers = {
     find_files = {
@@ -144,9 +106,184 @@ telescope.setup({
         },
       },
     },
+    live_grep = {
+      glob_pattern = {
+        '*',
+        '!vendor/**', -- ignore vendor dir in oms
+      },
+    },
     oldfiles = {
       path_display = function(opts, path)
         return shorten_path(path)
+      end,
+    },
+    lsp_document_symbols = {
+      entry_maker = function(entry)
+        local displayer = entry_display.create({
+          separator = ' ',
+          items = {
+            { width = 13 }, -- symbol type
+            { remaining = true }, -- symbol name
+          },
+        })
+
+        local make_display = function(entry)
+          return displayer({
+            { entry.symbol_type, '@' .. entry.symbol_type },
+            entry.symbol_name,
+          })
+        end
+
+        return {
+          valid = true,
+          value = entry,
+          ordinal = entry.text,
+          display = make_display,
+          filename = entry.filename or vim.api.nvim_buf_get_name(entry.bufnr),
+          lnum = entry.lnum,
+          col = entry.col,
+          symbol_name = entry.text:match('%[.+%]%s+(.*)'),
+          symbol_type = entry.kind,
+          start = entry.start,
+          finish = entry.finish,
+        }
+      end,
+    },
+    lsp_dynamic_workspace_symbols = {
+      entry_maker = function(entry)
+        local displayer = entry_display.create({
+          separator = ' ',
+          items = {
+            { width = 13 }, -- symbol type
+            { remaining = true }, -- symbol name
+            { remaining = true }, -- filepath
+          },
+        })
+
+        local make_display = function(entry)
+          return displayer({
+            { entry.symbol_type, 'CmpItemKind' .. entry.symbol_type },
+            entry.symbol_name,
+            { shorten_path(entry.filename), 'TelescopeResultsLineNr' },
+          })
+        end
+
+        return {
+          valid = true,
+          value = entry,
+          ordinal = entry.filename .. entry.text,
+          display = make_display,
+          filename = entry.filename or vim.api.nvim_buf_get_name(entry.bufnr),
+          lnum = entry.lnum,
+          col = entry.col,
+          symbol_name = entry.text:match('%[.+%]%s+(.*)'),
+          symbol_type = entry.kind,
+          start = entry.start,
+          finish = entry.finish,
+        }
+      end,
+    },
+    lsp_references = {
+      entry_maker = function(entry)
+        local displayer = entry_display.create({
+          separator = ' ',
+          items = {
+            { remaining = true }, -- filename
+            { remaining = true }, -- line:col
+            { remaining = true }, -- directory
+          },
+        })
+
+        local make_display = function(entry)
+          return displayer({
+            vim.fs.basename(entry.filename),
+            { entry.lnum .. ':' .. entry.col, 'TelescopeResultsLineNr' },
+            { shorten_path(vim.fs.dirname(entry.filename)), 'TelescopeResultsLineNr' },
+          })
+        end
+
+        return {
+          valid = true,
+          value = entry,
+          ordinal = entry.filename .. entry.text,
+          display = make_display,
+          bufnr = entry.bufnr,
+          filename = entry.filename,
+          lnum = entry.lnum,
+          col = entry.col,
+          text = entry.text,
+          start = entry.start,
+          finish = entry.finish,
+        }
+      end,
+    },
+    lsp_implementations = {
+      entry_maker = function(entry)
+        local displayer = entry_display.create({
+          separator = ' ',
+          items = {
+            { remaining = true }, -- filename
+            { remaining = true }, -- line:col
+            { remaining = true }, -- directory
+          },
+        })
+
+        local make_display = function(entry)
+          return displayer({
+            vim.fs.basename(entry.filename),
+            { entry.lnum .. ':' .. entry.col, 'TelescopeResultsLineNr' },
+            { shorten_path(vim.fs.dirname(entry.filename)), 'TelescopeResultsLineNr' },
+          })
+        end
+
+        return {
+          valid = true,
+          value = entry,
+          ordinal = entry.filename .. entry.text,
+          display = make_display,
+          bufnr = entry.bufnr,
+          filename = entry.filename,
+          lnum = entry.lnum,
+          col = entry.col,
+          text = entry.text,
+          start = entry.start,
+          finish = entry.finish,
+        }
+      end,
+    },
+    lsp_definitions = {
+      entry_maker = function(entry)
+        local displayer = entry_display.create({
+          separator = ' ',
+          items = {
+            { remaining = true }, -- filename
+            { remaining = true }, -- directory
+          },
+        })
+
+        local make_display = function(entry)
+          local head = vim.fs.dirname(entry.filename)
+          local tail = vim.fs.basename(entry.filename)
+          head = shorten_path(head)
+          return displayer({
+            tail,
+            { head, 'TelescopeResultsLineNr' },
+          })
+        end
+
+        return {
+          valid = true,
+          value = entry,
+          ordinal = entry.filename .. entry.text,
+          display = make_display,
+          bufnr = entry.bufnr,
+          filename = entry.filename,
+          lnum = entry.lnum,
+          col = entry.col,
+          text = entry.text,
+          start = entry.start,
+          finish = entry.finish,
+        }
       end,
     },
   },
@@ -154,40 +291,6 @@ telescope.setup({
   color_devicons = true,
   use_less = true,
   set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
-  lsp_definitions = {
-    -- copied and modified from make_entry.gen_from_quickfix
-    entry_maker = function(entry)
-      local displayer = entry_display.create({
-        separator = " ",
-        items = {
-          { remaining = true },
-          { remaining = true },
-        },
-      })
-
-      local make_display = function(entry)
-        local head, tail = split_path(entry.filename)
-        return displayer({
-          tail,
-          { head, "TelescopeResultsLineNr" },
-        })
-      end
-
-      return {
-        valid = true,
-        value = entry,
-        ordinal = entry.filename .. " " .. entry.text,
-        display = make_display,
-        bufnr = entry.bufnr,
-        filename = entry.filename,
-        lnum = entry.lnum,
-        col = entry.col,
-        text = entry.text,
-        start = entry.start,
-        finish = entry.finish,
-      }
-    end,
-  },
 })
 
 vim.keymap.set("n", "<c-p>", builtin.find_files)
@@ -196,9 +299,15 @@ vim.keymap.set("n", "<c-f>", builtin.current_buffer_fuzzy_find)
 vim.keymap.set("n", "<c-g>", builtin.live_grep)
 vim.keymap.set("n", "<c-o>", builtin.oldfiles)
 vim.keymap.set("n", "<c-s>", builtin.lsp_document_symbols)
-vim.keymap.set("n", "<leader>c", builtin.git_commits)
-vim.keymap.set("n", "<leader>h", builtin.git_branches)
-vim.keymap.set("n", "<leader>r", builtin.resume)
-vim.keymap.set("n", "<leader>d", builtin.lsp_definitions)
-vim.keymap.set("n", "<leader>w", builtin.diagnostics)
 vim.keymap.set("n", "<leader>s", builtin.git_status)
+vim.keymap.set("n", "<leader>d", builtin.lsp_definitions)
+vim.keymap.set("n", "<leader>rs", builtin.resume)
+vim.keymap.set("n", "<leader>gc", builtin.git_commits)
+vim.keymap.set("n", "<leader>bc", builtin.git_bcommits)
+vim.keymap.set("n", "<leader>gb", builtin.git_branches)
+vim.keymap.set("n", "<leader>ht", builtin.help_tags)
+vim.keymap.set("n", "<leader>hl", builtin.highlights)
+vim.keymap.set("n", "<leader>lr", builtin.lsp_references)
+vim.keymap.set("n", "<leader>wd", builtin.diagnostics)
+vim.keymap.set("n", "<leader>ws", builtin.lsp_dynamic_workspace_symbols)
+vim.keymap.set("n", "<leader>bg", function () builtin.live_grep({grep_open_files=true}) end)

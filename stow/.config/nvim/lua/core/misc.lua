@@ -3,9 +3,6 @@ local cmd = vim.cmd
 -- jump to last position when opening a file
 cmd([[autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]])
 
--- set filetype when terminal opened
-cmd([[autocmd TermOpen * :lua require('utils').change_terminal_filetype()]])
-
 -- no comment markers on newlines from commented line
 cmd([[autocmd FileType c,cpp setlocal formatoptions-=r]])
 
@@ -15,5 +12,12 @@ cmd([[autocmd FileType c,cpp setlocal formatoptions-=r]])
 -- highlight yanked text
 cmd[[au TextYankPost * silent! lua vim.highlight.on_yank()]]
 
--- set inc.php to filetype html
-cmd[[au BufRead,BufNewFile *.inc.php set filetype=html]]
+-- set blade.php to filetype html
+cmd[[au BufRead,BufNewFile *.blade.php set filetype=html]]
+
+-- clear cmdline if cursor moved (this will probably annoy me later)
+cmd[[autocmd CursorMoved * echo]]
+
+-- set colorcolumn lengths per filetype
+cmd[[autocmd FileType php set colorcolumn=80]]
+cmd[[autocmd FileType html set colorcolumn=100]]
